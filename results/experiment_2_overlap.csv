@@ -1,0 +1,4 @@
+mix,weight_a,weight_b,species_a,confidence_a,species_b,confidence_b
+50/50,0.5,0.5,Junco hyemalis_Dark-eyed Junco,0.921823,Poecile atricapillus_Black-capped Chickadee,0.775239
+75/25,0.75,0.25,Junco hyemalis_Dark-eyed Junco,0.946072,Poecile atricapillus_Black-capped Chickadee,0.651646
+90/10,0.9,0.1,Junco hyemalis_Dark-eyed Junco,0.946808,Poecile atricapillus_Black-capped Chickadee,0.419066

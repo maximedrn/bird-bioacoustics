@@ -1,0 +1,3 @@
+input,start_time,end_time,species_name,confidence
+target_snr_5db.wav,00:00:00.00,00:00:03.00,Asio otus_Long-eared Owl,0.299862
+target_snr_5db.wav,00:00:00.00,00:00:03.00,Accipiter nisus_Eurasian Sparrowhawk,0.111013

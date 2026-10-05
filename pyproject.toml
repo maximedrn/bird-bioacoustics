@@ -1,0 +1,16 @@
+[project]
+name = "bird-bioacoustics"
+version = "0.1.0"
+description = "Experiments on bird bioacoustics and BirdNET robustness."
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "birdnet>=1.0.0",
+    "ipykernel",
+    "jupyterlab",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "scipy",
+    "soundfile",
+    "pydantic>=2",
+]

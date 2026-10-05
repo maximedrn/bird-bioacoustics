@@ -1,0 +1,5 @@
+threshold,detections,distinct_species
+0.1,86,15
+0.25,69,8
+0.5,54,7
+0.75,29,6

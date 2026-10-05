@@ -1,0 +1,3 @@
+input,start_time,end_time,species_name,confidence
+target_snr_20db.wav,00:00:00.00,00:00:03.00,Cyanocitta cristata_Blue Jay,0.824135
+target_snr_20db.wav,00:00:00.00,00:00:03.00,Junco hyemalis_Dark-eyed Junco,0.721704

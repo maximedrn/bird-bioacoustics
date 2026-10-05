@@ -1,0 +1,63 @@
+# Project related.
+data/
+generated_audio/
+
+# LaTeX files.
+*.tex
+*.cls
+
+# PDF files.
+*.pdf
+
+# LaTeX intermediate files.
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.bak*
+indent.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Distribution / build
+build/
+dist/
+*.egg-info/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type checking / linting
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+# IDEs
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
