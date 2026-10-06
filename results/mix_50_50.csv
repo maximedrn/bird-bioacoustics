@@ -1,5 +1,0 @@
-input,start_time,end_time,species_name,confidence
-mix_50_50.wav,00:00:00.00,00:00:03.00,Junco hyemalis_Dark-eyed Junco,0.921823
-mix_50_50.wav,00:00:00.00,00:00:03.00,Cyanocitta cristata_Blue Jay,0.783688
-mix_50_50.wav,00:00:00.00,00:00:03.00,Poecile atricapillus_Black-capped Chickadee,0.775239
-mix_50_50.wav,00:00:00.00,00:00:03.00,Haemorhous mexicanus_House Finch,0.411813

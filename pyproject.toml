@@ -13,4 +13,68 @@ dependencies = [
     "scipy",
     "soundfile",
     "pydantic>=2",
+    "sqlalchemy>=2.0,<2.2",
+    "filelock>=4.0.9",
+    "tqdm>=4.67",
+    "av>=16",
 ]
+
+[project.scripts]
+app = "app.cli:main"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.20",
+    "pandas-stubs>=3.0,<3.1",
+    "pyright>=1.1.411",
+    "ruff>=0.16",
+    "scipy-stubs>=1.18,<1.19",
+    "types-tqdm>=4.67",
+]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/app"]
+
+[tool.hatch.build.targets.sdist]
+exclude = []
+
+[tool.uv]
+no-build = false
+
+[tool.mypy]
+files = ["src", "typings"]
+mypy_path = [
+    "$MYPY_CONFIG_FILE_DIR/src",
+    "$MYPY_CONFIG_FILE_DIR/typings",
+]
+python_version = "3.12"
+strict = true
+explicit_package_bases = true
+warn_unreachable = true
+show_error_codes = true
+
+[tool.pyright]
+include = ["src", "typings"]
+pythonVersion = "3.12"
+typeCheckingMode = "strict"
+venvPath = "."
+venv = ".venv"
+stubPath = "typings"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 79
+extend-exclude = ["data"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "UP", "RUF", "ANN", "W505"]
+
+[tool.ruff.lint.pycodestyle]
+max-doc-length = 79
+
+[tool.ruff.format]
+docstring-code-format = true

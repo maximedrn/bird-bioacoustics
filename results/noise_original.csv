@@ -1,4 +1,0 @@
-input,start_time,end_time,species_name,confidence
-target_original.wav,00:00:00.00,00:00:03.00,Junco hyemalis_Dark-eyed Junco,0.94942
-target_original.wav,00:00:00.00,00:00:03.00,Haemorhous mexicanus_House Finch,0.843973
-target_original.wav,00:00:00.00,00:00:03.00,Cyanocitta cristata_Blue Jay,0.828368

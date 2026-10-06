@@ -1,72 +1,69 @@
 # Bird Bioacoustics
 
-Experiments on bird bioacoustics using BirdNET 3.0 to evaluate robustness to background noise, overlapping vocalizations, and confidence thresholds.
+Experiments with BirdNET 3.0 on bird recordings from [Xeno-canto](https://xeno-canto.org/), measuring sensitivity to noise,
+overlapping vocalizations, and confidence thresholds. The project aims to cover the full bird catalogue through resumable batches of 1,000 recordings.
 
 ## Prerequisites
 
 - [Python](https://www.python.org/) 3.12 or 3.13
 - [uv](https://docs.astral.sh/uv/)
+- An [Xeno-canto API key](https://xeno-canto.org/account) to run batches - _viewing saved results does not require a key_
 
 ## Usage
+
+### Jupyter Notebook
 
 ```bash
 uv sync --frozen
 uv run jupyter lab
 ```
 
+Open [`notebook.ipynb`](notebook.ipynb) to display the saved results and plots.
+
+### Batch
+
+Copy `.env.example` to `.env` and set `XENO_CANTO_API_KEY` before running a batch. Each execution processes one batch and resumes from the saved cursor.
+
+```bash
+uv run app batch
+uv run app report
+uv run app status
+```
+
+- `report` regenerates cumulative CSV summaries and PNG plots in [`data/results`](data/results).
+- `status` displays the current progress.
+
 ## Results
 
-### 1. Background noise
+_**2,000 recordings attempted**, **1,909 analysed**, and **91 failures**._
+ 
+This represents about **0.19%** of the catalogue snapshot of 1,043,820 recordings. The plots summarize all measurements stored so far.
 
-Added noise reduces confidence in the **Dark-eyed Junco (*Junco hyemalis*)** from **0.949** to **0.722** at 20 dB SNR. At 10 dB and below, the species is no longer detected. Lower SNR values mean more noise.
+![Catalogue coverage and processing outcomes](data/results/corpus_progress.png)
 
-| Condition | Target confidence | Rank |
-| --- | ---: | ---: |
-| Original segment | 0.949 | 1 |
-| 20 dB SNR | 0.722 | 2 |
-| 10 dB SNR | Not returned | — |
-| 5 dB SNR | Not returned | — |
-| 0 dB SNR | Not returned | — |
+### Noise
 
-![Target-species confidence under increasing background noise](results/experiment_1_noise.png)
+Across **1,594 recordings**, mean target confidence drops from **0.768** without added noise to **0.526** at 0 dB SNR. The target detection rate drops from **99.9%** to **80.6%** as noise increases.
 
-### 2. Overlapping vocalizations
+![Target confidence and detection rate under noise](data/results/experiment_noise.png)
 
-Both species remain detected in all three mixtures. Confidence in **species A (Dark-eyed Junco)** stays high, while confidence in **species B (Black-capped Chickadee)** falls from **0.775** to **0.419** as its contribution decreases.
+### Overlapping vocalizations
 
-The A/B ratios are amplitude weights. The two segments have different original signal levels.
+Across **775 recording pairs**, changing the mix from 50/50 to 90/10 raises mean confidence for target A from **0.322** to **0.533**, while confidence for target B falls from **0.317** to **0.121**. A and B identify the two species in each pair.
 
-| A/B amplitude coefficients | Confidence A | Confidence B |
-| --- | ---: | ---: |
-| 50/50 | 0.922 | 0.775 |
-| 75/25 | 0.946 | 0.652 |
-| 90/10 | 0.947 | 0.419 |
+![Confidence for two overlapping bird vocalizations](data/results/experiment_overlap.png)
 
-![Confidence of the two target species in overlapping audio segments](results/experiment_2_overlap.png)
+### Confidence thresholds
 
-### 3. Confidence threshold
+Raising the threshold from **0.10** to **0.75** reduces retained detections from **56,475** to **11,285**. Recovery of the main species listed on Xeno-canto falls from **86.3%** to **58.8%** across **1,847 recordings** with an identified target covered by BirdNET.
 
-Raising the confidence threshold from **0.10** to **0.75** reduces retained detections from **86 to 29** and distinct predicted species from **15 to 6**. A higher threshold keeps fewer predictions; these counts alone do not show whether they are correct.
+![Retained predictions and target recovery by threshold](data/results/experiment_threshold.png)
 
-| Confidence threshold | Retained detections | Distinct predicted species |
-| --- | ---: | ---: |
-| 0.10 | 86 | 15 |
-| 0.25 | 69 | 8 |
-| 0.50 | 54 | 7 |
-| 0.75 | 29 | 6 |
+## Development
 
-![Number of retained detections and species at each confidence threshold](results/experiment_3_threshold.png)
-
-### Target-segment spectrogram
-
-![Time-frequency representation of the original target segment](results/target_spectrogram.png)
-
-The spectrogram shows how frequencies change over the original three-second segment. Time is on the horizontal axis, frequency on the vertical axis, and brighter colors indicate stronger energy.
-
-## Result files
-
-All CSV files and figures are available in [`results/`](results/), including the [baseline predictions](results/baseline_predictions.csv) and predictions for each noisy or mixed segment.
-
-## Limits
-
-These observations come from one recording and a few segments. More recordings, repeated trials, and reference annotations would be needed to evaluate BirdNET's overall accuracy.
+```bash
+uv run mypy
+uv run pyright
+uv run ruff check .
+uv run ruff format --check .
+```

@@ -1,0 +1,19 @@
+{
+  "phase": "ready_for_next_batch",
+  "query": "grp:birds nr:1-1183848",
+  "snapshot_at": "2026-10-06T08:16:57.197129+00:00",
+  "expected_recordings": 1043820,
+  "catalogued_recordings": 2000,
+  "catalogue_complete": false,
+  "processed_recordings": 1909,
+  "failed_recordings": 91,
+  "pending_recordings": 0,
+  "all_recordings_attempted": false,
+  "cursor": 2000,
+  "next_page": 5,
+  "batch_size": 1000,
+  "current_batch": 2,
+  "completed_batches": 2,
+  "downloaded_bytes": 3169813339,
+  "processed_audio_seconds": 109878.11711160715
+}

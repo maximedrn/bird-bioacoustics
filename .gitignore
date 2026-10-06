@@ -1,6 +1,11 @@
 # Project related.
-data/
-generated_audio/
+data/*
+!data/database.sqlite3
+!data/results
+!data/results/*
+.env
+.env.*
+!.env.example
 
 # LaTeX files.
 *.tex
