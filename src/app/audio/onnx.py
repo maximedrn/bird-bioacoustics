@@ -6,7 +6,8 @@ from importlib import import_module
 from pathlib import Path
 from typing import Protocol, cast
 
-from numpy import float32, isfinite, zeros
+from numpy import float32, isfinite
+from numpy.random import Generator, default_rng
 
 from app.audio.diagnostics import silent_native_diagnostics
 from app.domain.constants import (
@@ -256,6 +257,9 @@ def check_cuda_model(
 ) -> str:
     """Run real convolutions for small, partial and full inference batches.
 
+    Use reproducible non-constant audio because BirdNET V3's min-max
+    normalization produces non-finite values for digital silence.
+
     :param model_path: Cached FP32 model weights.
     :type model_path: Path
     :param batch_size: Requested maximum number of audio windows.
@@ -281,18 +285,25 @@ def check_cuda_model(
     sizes: list[int] = sorted(
         {1, min(OnnxOption.PROBE_PARTIAL_BATCH, batch_size), batch_size}
     )
+    generator: Generator = default_rng(OnnxOption.PROBE_SEED)
+    audio: FloatArray = generator.uniform(
+        low=-OnnxOption.PROBE_AMPLITUDE,
+        high=OnnxOption.PROBE_AMPLITUDE,
+        size=(batch_size, samples),
+    ).astype(float32)
     size: int
     for size in sizes:
-        audio: FloatArray = zeros((size, samples), dtype=float32)
         scores: FloatArray = session.run(
-            [output_name], {inputs[0].name: audio}
+            [output_name], {inputs[0].name: audio[:size]}
         )[0]
-        if (
-            scores.ndim != 2
-            or scores.shape[0] != size
-            or not bool(isfinite(scores).all())
-        ):
+        finite: bool = bool(isfinite(scores).all())
+        if scores.ndim != 2 or scores.shape[0] != size or not finite:
             raise RuntimeError(
-                ErrorMessage.INVALID_CUDA_PROBE_OUTPUT.format(batch_size=size)
+                ErrorMessage.INVALID_CUDA_PROBE_OUTPUT.format(
+                    batch_size=size,
+                    output=output_name,
+                    shape=scores.shape,
+                    finite=finite,
+                )
             )
     return ExecutionProvider.CUDA

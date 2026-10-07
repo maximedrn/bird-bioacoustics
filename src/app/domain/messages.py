@@ -151,6 +151,7 @@ class ErrorMessage:
     )
     INVALID_CUDA_PROBE_OUTPUT: Final[str] = (
         "CUDA verification produced invalid scores for {batch_size} windows."
+        " Output {output}: shape={shape}, finite={finite}."
     )
     INVALID_PLOT_ARTIFACT: Final[str] = "{artifact} is not a plot artifact."
     INVALID_PROGRESS_INTERVAL: Final[str] = (

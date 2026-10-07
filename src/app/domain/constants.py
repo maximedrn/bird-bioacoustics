@@ -221,6 +221,8 @@ class OnnxOption:
     SESSION_ATTRIBUTE: Final[str] = "_session"
     LOG_ERROR: Final[int] = 3
     PROBE_PARTIAL_BATCH: Final[int] = 4
+    PROBE_SEED: Final[int] = 0
+    PROBE_AMPLITUDE: Final[float] = 0.1
 
 
 class ConvolutionSearch(StrEnum):
