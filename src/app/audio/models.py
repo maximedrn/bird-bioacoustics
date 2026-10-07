@@ -6,7 +6,11 @@ from importlib import import_module
 from typing import Protocol, TypedDict, cast
 
 from app.audio.backend import load_model
-from app.audio.runtime import validate_inference, verify_model_device
+from app.audio.runtime import (
+    configure_inference,
+    validate_inference,
+    verify_model_device,
+)
 from app.domain.constants import InferenceDevice, RuntimeModule
 from app.domain.protocols import BirdNetModelProtocol
 from app.domain.settings import InferenceSettings, ModelSettings
@@ -55,6 +59,7 @@ def inference_model(
     """
     if settings.device == InferenceDevice.CPU:
         return model
+    configure_inference(settings)
     factory: CudaModelFactory = cast(
         CudaModelFactory, import_module(RuntimeModule.CUDA_BACKEND)
     )

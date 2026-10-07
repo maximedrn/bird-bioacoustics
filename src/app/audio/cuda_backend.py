@@ -8,9 +8,8 @@ from birdnet.acoustic.models.v3_0.model import AcousticModelV3_0
 from birdnet.acoustic.models.v3_0.onnx import AcousticOnnxBackendFP32V3_0
 from ordered_set import OrderedSet
 
-from app.audio.runtime import OnnxSession
-from app.domain.constants import ExecutionProvider
-from app.domain.messages import ErrorMessage
+from app.audio.onnx import CudaSession
+from app.domain.constants import OnnxOption
 from app.domain.protocols import BirdNetModelProtocol
 
 
@@ -18,23 +17,16 @@ class RequiredCudaBackend(AcousticOnnxBackendFP32V3_0):
     """Keep FP32 inference while checking each worker's provider."""
 
     def load(self) -> None:
-        """Reject a failed CUDA initialization before accepting any audio.
+        """Configure recoverable cuDNN engines before accepting any audio.
 
         :return: None.
         :rtype: None
         """
-        super().load()
+        session: CudaSession = CudaSession(self._model_path)
         # BirdNET exposes no public session accessor in its pinned version.
-        session: OnnxSession | None = cast(
-            OnnxSession | None, getattr(self, "_session", None)
-        )
-        if (
-            session is None
-            or ExecutionProvider.CUDA not in session.get_providers()
-        ):
-            self.unload()
-            raise ValueError(ErrorMessage.CUDA_UNAVAILABLE)
-        session.disable_fallback()
+        setattr(self, OnnxOption.SESSION_ATTRIBUTE, session)
+        self._input_name = session.get_inputs()[0].name
+        self._output_names = [output.name for output in session.get_outputs()]
 
 
 def require_cuda(model: BirdNetModelProtocol) -> BirdNetModelProtocol:

@@ -217,6 +217,26 @@ class OnnxOption:
 
     DEVICE_ID: Final[str] = "device_id"
     FIRST_GPU: Final[str] = "0"
+    CONVOLUTION_SEARCH: Final[str] = "cudnn_conv_algo_search"
+    SESSION_ATTRIBUTE: Final[str] = "_session"
+    LOG_ERROR: Final[int] = 3
+    PROBE_PARTIAL_BATCH: Final[int] = 4
+
+
+class ConvolutionSearch(StrEnum):
+    """Select cuDNN engines while retaining CUDA execution and FP32 weights."""
+
+    HEURISTIC = "HEURISTIC"
+    COMPATIBILITY = "DEFAULT"
+
+
+class CudaEngineFailure(StrEnum):
+    """Identify engine selection failures eligible for one GPU retry."""
+
+    HEURISTIC_QUERY = "HEURISTIC_QUERY_FAILED"
+    UNSUPPORTED = "CUDNN_STATUS_NOT_SUPPORTED"
+    FRONTEND = "CUDNN FRONTEND"
+    NO_CONFIGURATIONS = "NO VALID ENGINE CONFIGS"
 
 
 class InferenceRuntime:

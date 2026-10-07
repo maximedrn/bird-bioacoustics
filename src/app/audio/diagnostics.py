@@ -1,4 +1,4 @@
-"""Silence native decoder diagnostics while preserving application errors."""
+"""Silence synchronous native diagnostics while preserving exceptions."""
 
 from __future__ import annotations
 
@@ -9,8 +9,8 @@ from threading import RLock
 from typing import BinaryIO, Final, Literal
 
 
-class DecoderStream:
-    """Centralize native stderr redirection and serialize decoder contexts."""
+class NativeStream:
+    """Centralize native stderr redirection and serialize library contexts."""
 
     STDERR: Final[int] = 2
     SINK_MODE: Final[Literal["wb"]] = "wb"
@@ -18,24 +18,24 @@ class DecoderStream:
 
 
 @contextmanager
-def silent_decoder_diagnostics() -> Generator[None, None, None]:
-    """Hide native printouts during a synchronous decoding operation.
+def silent_native_diagnostics() -> Generator[None, None, None]:
+    """Hide native printouts during a synchronous library operation.
 
     Process stderr is restored before batch logging resumes, including after
-    an exception or interruption. Decoder errors propagate unchanged.
+    an exception or interruption. Python exceptions propagate unchanged.
 
-    :return: Context with native decoder diagnostics redirected to devnull.
+    :return: Context with native stderr redirected to devnull.
     :rtype: Generator[None, None, None]
     """
-    with DecoderStream.LOCK, ExitStack() as resources:
+    with NativeStream.LOCK, ExitStack() as resources:
         sink: BinaryIO = resources.enter_context(
-            open(devnull, DecoderStream.SINK_MODE)
+            open(devnull, NativeStream.SINK_MODE)
         )
-        inheritable: bool = get_inheritable(DecoderStream.STDERR)
-        original: int = dup(DecoderStream.STDERR)
+        inheritable: bool = get_inheritable(NativeStream.STDERR)
+        original: int = dup(NativeStream.STDERR)
         resources.callback(close, original)
         resources.callback(
-            dup2, original, DecoderStream.STDERR, inheritable=inheritable
+            dup2, original, NativeStream.STDERR, inheritable=inheritable
         )
-        dup2(sink.fileno(), DecoderStream.STDERR, inheritable=inheritable)
+        dup2(sink.fileno(), NativeStream.STDERR, inheritable=inheritable)
         yield

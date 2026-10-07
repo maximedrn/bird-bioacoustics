@@ -18,7 +18,7 @@ from app.audio.backend import load_model
 from app.audio.models import inference_model
 from app.audio.prediction import BirdNetPredictor
 from app.audio.processing import AudioProcessor
-from app.audio.runtime import validate_inference, verify_model_device
+from app.audio.runtime import validate_inference
 from app.catalogue.client import XenoCantoClient
 from app.catalogue.downloads import ExperimentRepository
 from app.domain.constants import (
@@ -224,7 +224,6 @@ class XenoCantoExperiment:
         :rtype: None
         """
         model: BirdNetModelProtocol = load_model(self._model_settings)
-        verify_model_device(model, self._inference)
         model = inference_model(model, self._inference)
         directory: str
         with TemporaryDirectory(

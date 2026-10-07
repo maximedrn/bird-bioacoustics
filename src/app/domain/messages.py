@@ -141,6 +141,13 @@ class ErrorMessage:
         "CUDA verification worker exited unexpectedly (exit code {code}). "
         "Restart the GPU runtime and retry model preparation."
     )
+    CUDA_SESSION_CLOSED: Final[str] = "The CUDA inference session is closed."
+    INVALID_CUDA_PROBE_INPUT: Final[str] = (
+        "CUDA verification requires one fixed-length audio input."
+    )
+    INVALID_CUDA_PROBE_OUTPUT: Final[str] = (
+        "CUDA verification produced invalid scores for {batch_size} windows."
+    )
     INVALID_PLOT_ARTIFACT: Final[str] = "{artifact} is not a plot artifact."
     INVALID_PROGRESS_INTERVAL: Final[str] = (
         "Progress interval must be positive."
@@ -234,6 +241,9 @@ class LogMessage:
 
     INFERENCE_RECOVERED: Final[str] = (
         "Requeued %s recordings after a cancelled session."
+    )
+    CUDA_CONVOLUTION_RECOVERED: Final[str] = (
+        "CUDA: using compatible cuDNN convolution algorithms."
     )
     RECORDING_FAILED: Final[str] = "Recording %s failed: %s"
     CATALOGUE_CACHED: Final[str] = "Catalogue: page {page}/{pages} cached"

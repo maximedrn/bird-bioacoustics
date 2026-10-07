@@ -1,46 +1,24 @@
-"""Validate inference resources and verify that CUDA can load the model."""
+"""Validate inference resources and verify CUDA in an isolated process."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
-from importlib import import_module
 from multiprocessing import get_context
 from multiprocessing.connection import Connection
 from multiprocessing.context import SpawnContext
 from multiprocessing.process import BaseProcess
 from os import cpu_count, environ
 from pathlib import Path
-from typing import Protocol, cast
 
+from app.audio.onnx import check_cuda_model
 from app.domain.constants import (
     ExecutionProvider,
     InferenceDevice,
     InferenceRuntime,
-    OnnxOption,
-    RuntimeModule,
 )
 from app.domain.messages import ErrorMessage
 from app.domain.protocols import BirdNetModelProtocol
 from app.domain.settings import InferenceSettings, ModelSettings
-
-
-class OnnxSession(Protocol):
-    """Expose the providers actually initialized by an ONNX session."""
-
-    def get_providers(self) -> list[str]:
-        """Read initialized providers rather than compiled capabilities.
-
-        :return: Active provider names.
-        :rtype: list[str]
-        """
-        raise NotImplementedError
-
-    def disable_fallback(self) -> None:
-        """Keep runtime failures from retrying the full session on CPU.
-
-        :return: None.
-        :rtype: None
-        """
 
 
 @dataclass(frozen=True, slots=True)
@@ -49,38 +27,6 @@ class CudaCheckResult:
 
     provider: str | None
     error: str | None
-
-
-class OnnxRuntime(Protocol):
-    """Type the lazy ONNX boundary without importing it during reports."""
-
-    def get_available_providers(self) -> list[str]:
-        """List providers advertised by the installed runtime.
-
-        :return: Available provider names.
-        :rtype: list[str]
-        """
-        raise NotImplementedError
-
-    def InferenceSession(
-        self,
-        path_or_bytes: str,
-        *,
-        providers: list[str],
-        provider_options: list[dict[str, str]],
-    ) -> OnnxSession:
-        """Load the model with the same provider request as BirdNET.
-
-        :param path_or_bytes: Local ONNX model path.
-        :type path_or_bytes: str
-        :param providers: Requested providers in priority order.
-        :type providers: list[str]
-        :param provider_options: Options paired with each provider.
-        :type provider_options: list[dict[str, str]]
-        :return: Initialized session.
-        :rtype: OnnxSession
-        """
-        raise NotImplementedError
 
 
 def validate_inference(
@@ -104,6 +50,20 @@ def validate_inference(
         raise ValueError(ErrorMessage.UNSUPPORTED_GPU_BACKEND)
 
 
+def configure_inference(settings: InferenceSettings) -> None:
+    """Select safe process creation without initializing CUDA in the parent.
+
+    :param settings: Requested inference hardware.
+    :type settings: InferenceSettings
+    :return: None.
+    :rtype: None
+    """
+    if settings.device == InferenceDevice.GPU:
+        environ[InferenceRuntime.START_METHOD_VARIABLE] = (
+            InferenceRuntime.START_METHOD
+        )
+
+
 def verify_model_device(
     model: BirdNetModelProtocol, settings: InferenceSettings
 ) -> str:
@@ -118,15 +78,14 @@ def verify_model_device(
     """
     if settings.device == InferenceDevice.CPU:
         return ExecutionProvider.CPU
-    environ[InferenceRuntime.START_METHOD_VARIABLE] = (
-        InferenceRuntime.START_METHOD
-    )
+    configure_inference(settings)
     context: SpawnContext = get_context(InferenceRuntime.START_METHOD)
     reader: Connection
     writer: Connection
     reader, writer = context.Pipe(duplex=False)
     worker: BaseProcess = context.Process(
-        target=check_cuda_worker, args=(model.model_path, writer)
+        target=check_cuda_worker,
+        args=(model.model_path, settings.batch_size, writer),
     )
     try:
         worker.start()
@@ -190,18 +149,22 @@ def stop_cuda_check(worker: BaseProcess) -> None:
     worker.close()
 
 
-def check_cuda_worker(model_path: Path, writer: Connection) -> None:
+def check_cuda_worker(
+    model_path: Path, batch_size: int, writer: Connection
+) -> None:
     """Load CUDA only inside the process that owns its temporary context.
 
     :param model_path: Already cached ONNX weights.
     :type model_path: Path
+    :param batch_size: Requested number of audio windows per inference.
+    :type batch_size: int
     :param writer: Child pipe endpoint for its completed result.
     :type writer: Connection
     :return: None.
     :rtype: None
     """
     try:
-        provider: str = check_cuda_model(model_path)
+        provider: str = check_cuda_model(model_path, batch_size)
         result: CudaCheckResult = CudaCheckResult(provider, None)
     except Exception as error:
         result = CudaCheckResult(None, str(error))
@@ -209,25 +172,3 @@ def check_cuda_worker(model_path: Path, writer: Connection) -> None:
         writer.send(result)
     finally:
         writer.close()
-
-
-def check_cuda_model(model_path: Path) -> str:
-    """Check initialized providers rather than accepting an ONNX CPU retry.
-
-    :param model_path: Cached FP32 ONNX model file.
-    :type model_path: Path
-    :return: Successfully initialized CUDA provider.
-    :rtype: str
-    """
-    runtime: OnnxRuntime = cast(OnnxRuntime, import_module(RuntimeModule.ONNX))
-    if ExecutionProvider.CUDA not in runtime.get_available_providers():
-        raise RuntimeError(ErrorMessage.CUDA_UNAVAILABLE)
-    session: OnnxSession = runtime.InferenceSession(
-        str(model_path),
-        providers=[ExecutionProvider.CUDA, ExecutionProvider.CPU],
-        provider_options=[{OnnxOption.DEVICE_ID: OnnxOption.FIRST_GPU}, {}],
-    )
-    if ExecutionProvider.CUDA not in session.get_providers():
-        raise RuntimeError(ErrorMessage.CUDA_UNAVAILABLE)
-    session.disable_fallback()
-    return ExecutionProvider.CUDA
