@@ -22,10 +22,9 @@ class NotebookReporter:
         :type results: DataFrame
         :param skipped: Recordings without a detectable baseline target.
         :type skipped: int
-        :return: French Markdown observation.
+        :return: English Markdown observation.
         :rtype: str
         """
-        row_value: Float64Array
         count: int = int(results[ResultColumn.RECORDINGS].max())
         original: Series[str | float | int] = results.loc[
             results[ResultColumn.CONDITION] == NoiseCondition.ORIGINAL
@@ -78,7 +77,7 @@ class NotebookReporter:
 
         :param results: Mixture confidence summaries.
         :type results: DataFrame
-        :return: French Markdown observation.
+        :return: English Markdown observation.
         :rtype: str
         """
         pair_count: int = int(results[ResultColumn.PAIRS].max())
@@ -102,7 +101,7 @@ class NotebookReporter:
         :param results: Detection counts and optional complete-reference
             metrics.
         :type results: DataFrame
-        :return: French Markdown observation.
+        :return: English Markdown observation.
         :rtype: str
         """
         first: Series[str | float | int] = results.iloc[0]

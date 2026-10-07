@@ -6,7 +6,6 @@ from dataclasses import dataclass
 from hashlib import file_digest
 from pathlib import Path
 from time import sleep
-from typing import BinaryIO
 
 from pandas import DataFrame
 from soundfile import info as audio_info
@@ -94,7 +93,6 @@ class RecordingAnalysisService:
         :return: Complete recording measurements ready to commit.
         :rtype: RecordingMeasurements
         """
-        stream: BinaryIO
         source: AudioSource = AudioSource.from_metadata(identifier, metadata)
         downloaded: Path | None = None
         decoded: Path = self._workspace / f"{identifier}.wav"
@@ -145,7 +143,6 @@ class RecordingAnalysisService:
         :return: Valid original retained until measurement completes.
         :rtype: Path
         """
-        attempt: int
         for attempt in range(self._settings.request_attempts):
             try:
                 return self._decode_attempt(source, decoded)

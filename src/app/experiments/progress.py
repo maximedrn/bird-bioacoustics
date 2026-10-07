@@ -29,7 +29,6 @@ class ProgressObserver(Protocol):
         :return: None.
         :rtype: None
         """
-        ...
 
     def update(
         self, cursor: int, identifier: str, status: ProcessingStatus
@@ -45,7 +44,6 @@ class ProgressObserver(Protocol):
         :return: None.
         :rtype: None
         """
-        ...
 
     def close(self) -> None:
         """Close progress output after completion or interruption.
@@ -53,7 +51,6 @@ class ProgressObserver(Protocol):
         :return: None.
         :rtype: None
         """
-        ...
 
 
 class TqdmBatchProgress:
@@ -86,7 +83,6 @@ class TqdmBatchProgress:
         :return: None.
         :rtype: None
         """
-
         self._start = batch.start_cursor
         self._counts = dict(counts)
         self._bar = create_progress(

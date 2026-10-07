@@ -16,7 +16,6 @@ def atomic_output(destination: Path) -> Generator[Path, None, None]:
     :return: Unique temporary path for the writer.
     :rtype: Generator[Path, None, None]
     """
-    stream: TemporaryOutput
     destination.parent.mkdir(parents=True, exist_ok=True)
     with NamedTemporaryFile(
         dir=destination.parent,
@@ -42,4 +41,4 @@ class TemporaryOutput(Protocol):
         :return: Temporary output filename.
         :rtype: str
         """
-        ...
+        raise NotImplementedError

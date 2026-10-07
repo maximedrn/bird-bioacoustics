@@ -4,11 +4,13 @@ from __future__ import annotations
 
 from collections.abc import Generator
 from contextlib import contextmanager
+from hashlib import sha256
+from json import JSONDecodeError, dumps, loads
 from pathlib import Path
 from sqlite3 import SQLITE_DBCONFIG_ENABLE_FKEY
 from sqlite3 import Connection as SqliteConnection
 from types import TracebackType
-from typing import Self
+from typing import Self, cast
 
 from filelock import FileLock
 from filelock import Timeout as FileLockTimeout
@@ -81,14 +83,48 @@ class ExperimentCheckpoint(ExperimentDatabase):
             if inspect(self.engine).has_table(MetadataRow.__tablename__)
             else None
         )
-        if existing is not None and existing != signature:
-            raise ValueError(ErrorMessage.INCOMPATIBLE_CHECKPOINT)
+        self._validate_signature(existing, signature)
         DatabaseSchema.metadata.create_all(self.connection)
         self.catalogue: CatalogueStore = CatalogueStore(self)
         self.batches: BatchStore = BatchStore(self, self.catalogue)
         self.measurements: MeasurementStore = MeasurementStore(self)
         self.set_metadata(MetadataKey.SIGNATURE, signature)
         self.connection.commit()
+
+    def _validate_signature(
+        self, existing: str | None, signature: str
+    ) -> None:
+        """Migrate a verified legacy signature without recording batch size.
+
+        :param existing: Saved signature, or None for a new checkpoint.
+        :type existing: str | None
+        :param signature: Requested scientific protocol fingerprint.
+        :type signature: str
+        :return: None.
+        :rtype: None
+        """
+        if existing is None or existing == signature:
+            return
+        saved: str | None = self.get_metadata(MetadataKey.CONFIGURATION)
+        if saved is None:
+            raise ValueError(ErrorMessage.INCOMPATIBLE_CHECKPOINT)
+        try:
+            payload: object = loads(saved)
+        except JSONDecodeError:
+            raise ValueError(ErrorMessage.INCOMPATIBLE_CHECKPOINT) from None
+        if not isinstance(payload, dict):
+            raise ValueError(ErrorMessage.INCOMPATIBLE_CHECKPOINT)
+        configuration: dict[str, object] = cast(dict[str, object], payload)
+        legacy_signature: str = sha256(
+            dumps(configuration, sort_keys=True).encode()
+        ).hexdigest()
+        if legacy_signature != existing:
+            raise ValueError(ErrorMessage.INCOMPATIBLE_CHECKPOINT)
+        configuration.pop(MetadataKey.BATCH_SIZE, None)
+        normalized: str = dumps(configuration, sort_keys=True)
+        if sha256(normalized.encode()).hexdigest() != signature:
+            raise ValueError(ErrorMessage.INCOMPATIBLE_CHECKPOINT)
+        self.set_metadata(MetadataKey.CONFIGURATION, normalized)
 
     @staticmethod
     def configure_connection(

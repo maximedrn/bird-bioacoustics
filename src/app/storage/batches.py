@@ -163,9 +163,6 @@ class BatchStore:
         :return: Pending recording identifiers and their metadata.
         :rtype: Iterator[tuple[str, dict[str, object]]]
         """
-        identifier: str
-        position: int | None
-        source: dict[str, object]
         last_position: int = (
             int(self._database.get_metadata(MetadataKey.CURSOR) or "0") - 1
         )

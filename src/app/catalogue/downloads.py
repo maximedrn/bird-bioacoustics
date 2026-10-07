@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
-from http.client import HTTPResponse, IncompleteRead
+from http.client import IncompleteRead
 from pathlib import Path
 from shutil import copyfileobj
 from time import sleep
-from typing import BinaryIO
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -48,8 +47,6 @@ class ExperimentRepository:
         :return: Complete local original audio.
         :rtype: Path
         """
-        attempt: int
-        error: HTTPError
         destination: Path = self._paths.data / source.filename
         if destination.is_file():
             return destination
@@ -90,8 +87,6 @@ class ExperimentRepository:
         :return: Completed original file.
         :rtype: Path
         """
-        response: HTTPResponse
-        stream: BinaryIO
         destination.parent.mkdir(parents=True, exist_ok=True)
         temporary: Path = destination.with_suffix(destination.suffix + ".part")
         request: Request = Request(

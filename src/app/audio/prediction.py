@@ -84,8 +84,6 @@ class BirdNetPredictor:
         :return: Cleaned predictions with portable input filenames.
         :rtype: DataFrame
         """
-        error: RuntimeError | ChildProcessError
-        path_value: Path
         if not audio_paths:
             raise ValueError(ErrorMessage.EMPTY_PREDICTION_INPUTS)
         if len({path_value.name for path_value in audio_paths}) != len(

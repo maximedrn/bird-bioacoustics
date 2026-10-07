@@ -15,7 +15,7 @@ from app.domain.models import (
     OverlapExperimentOutput,
     OverlapResult,
 )
-from app.domain.settings import ExperimentSettings, MixRatio, ProjectPaths
+from app.domain.settings import ExperimentSettings, ProjectPaths
 from app.domain.types import FloatArray
 
 
@@ -64,9 +64,6 @@ class OverlapExperiment:
         :return: Pair measurements and playback segments.
         :rtype: OverlapExperimentOutput
         """
-        mixed_path_value: Path
-        ratio_value: MixRatio
-        ratio: MixRatio
         if first.recording_id == second.recording_id:
             raise ValueError(ErrorMessage.SAME_OVERLAP_RECORDING)
         if first.target.species_name == second.target.species_name:

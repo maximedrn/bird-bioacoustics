@@ -43,6 +43,9 @@ class MetadataKey(StrEnum):
     CURSOR = "cursor"
     BATCH_SIZE = "batch_size"
     CURRENT_BATCH = "current_batch"
+    MODEL = "model"
+    EXPERIMENT = "experiment"
+    PROTOCOL_VERSION = "protocol_version"
 
 
 class CoverageKey(StrEnum):
@@ -98,6 +101,7 @@ class FileName(StrEnum):
     CHECKPOINT = "database.sqlite3"
     ENVIRONMENT = ".env"
     ANNOTATIONS = "annotations.csv"
+    NOTEBOOK = "notebook.ipynb"
 
 
 class Artifact(StrEnum):
@@ -110,6 +114,7 @@ class Artifact(StrEnum):
     STATUS = "corpus_status"
     SPECTROGRAM = "target_spectrogram"
     BASELINE = "baseline_predictions"
+    NOTEBOOK = "notebook"
 
     def filename(self, suffix: str) -> str:
         """Build one artifact filename.

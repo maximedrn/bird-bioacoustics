@@ -20,7 +20,7 @@ class CorpusSettings:
     per_page: int = 500
     request_interval_seconds: float = 1.0
     request_attempts: int = 4
-    batch_size: int = 1_000
+    batch_size: int = 100
     progress_interval: int = 100
 
     def __post_init__(self) -> None:

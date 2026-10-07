@@ -36,7 +36,6 @@ class AnnotationRepository:
         :return: Complete label sets, or None when the optional file is absent.
         :rtype: ReferenceLabels | None
         """
-        record_value: dict[str, object]
         if not path.exists():
             return None
         dataframe: DataFrame = read_csv(path, keep_default_na=False)

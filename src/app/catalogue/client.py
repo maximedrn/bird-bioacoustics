@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from http import HTTPStatus
-from http.client import HTTPResponse, IncompleteRead
+from http.client import IncompleteRead
 from json import loads
 from os import environ
 from pathlib import Path
@@ -45,7 +45,6 @@ class XenoCantoClient:
         :return: API key, without logging or persisting its value.
         :rtype: str
         """
-        line_value: str
         configured: str = environ.get(API_KEY_VARIABLE, "").strip()
         if configured:
             return configured
@@ -53,9 +52,6 @@ class XenoCantoClient:
         if path.exists():
             for line_value in path.read_text().splitlines():
                 line: str = line_value.strip()
-                name: str
-                separator: str
-                value: str
                 name, separator, value = line.partition("=")
                 if separator and name.strip() == API_KEY_VARIABLE:
                     configured = value.strip().strip("\"'")
@@ -73,9 +69,6 @@ class XenoCantoClient:
         :return: Decoded API response.
         :rtype: dict[str, object]
         """
-        attempt: int
-        error: HTTPError
-        response: HTTPResponse
         parameters: dict[str, object] = {
             MetadataKey.QUERY: query,
             "page": page,

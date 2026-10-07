@@ -73,17 +73,12 @@ class NoiseRobustnessExperiment:
         :return: Trial results, or None when no target segment can be selected.
         :rtype: NoiseExperimentOutput | None
         """
-        snr_index: int
-        snr_value: float
-        trial_index: int
         trial_value: tuple[float, int, int, Path]
         target: DetectionCandidate | None = (
             self._predictor.candidate_for_species(baseline, target_species)
         )
         if target is None:
             return None
-        target_segment: FloatArray
-        sample_rate: int
         target_segment, sample_rate = self._audio_processor.load_segment(
             audio_path, target.start_seconds, target.end_seconds
         )

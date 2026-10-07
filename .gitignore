@@ -13,6 +13,7 @@ data/*
 
 # PDF files.
 *.pdf
+!data/results/notebook.pdf
 
 # LaTeX intermediate files.
 *.aux

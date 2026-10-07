@@ -60,25 +60,23 @@ def protocol_configuration(
     experiment: ExperimentSettings,
     corpus: CorpusSettings,
 ) -> dict[str, object]:
-    """Build the same scientific fingerprint inputs used by the original
-    notebook.
+    """Build scientific fingerprint inputs independently of recording batches.
 
     :param model: Acoustic model settings.
     :type model: ModelSettings
     :param experiment: Scientific perturbation settings.
     :type experiment: ExperimentSettings
-    :param corpus: Catalogue scope and batch ordering.
+    :param corpus: Catalogue scope.
     :type corpus: CorpusSettings
-    :return: JSON-compatible existing checkpoint configuration.
+    :return: JSON-compatible scientific checkpoint configuration.
     :rtype: dict[str, object]
     """
     return {
-        "model": asdict(model),
-        "experiment": asdict(experiment),
+        MetadataKey.MODEL: asdict(model),
+        MetadataKey.EXPERIMENT: asdict(experiment),
         MetadataKey.QUERY: corpus.query,
         BIRDNET_DISTRIBUTION: version(BIRDNET_DISTRIBUTION),
-        "protocol_version": PROTOCOL_VERSION,
-        MetadataKey.BATCH_SIZE: corpus.batch_size,
+        MetadataKey.PROTOCOL_VERSION: PROTOCOL_VERSION,
     }
 
 
@@ -307,8 +305,6 @@ class XenoCantoExperiment:
         :return: None.
         :rtype: None
         """
-        identifier: str
-        metadata: dict[str, object]
         try:
             for (
                 identifier,
@@ -350,7 +346,6 @@ class XenoCantoExperiment:
         :return: Persisted successful or permanent-failure outcome.
         :rtype: ProcessingStatus
         """
-        error: BirdNetInferenceError | RecordingError
         try:
             measurements: RecordingMeasurements = analysis.analyze(
                 identifier, metadata
@@ -401,7 +396,6 @@ class XenoCantoExperiment:
         :return: None.
         :rtype: None
         """
-        temporary_value: Path
         for temporary_value in workspace.iterdir():
             temporary: Path = temporary_value
             if temporary.is_file():

@@ -68,7 +68,6 @@ class ExperimentPlotter:
         :return: None.
         :rtype: None
         """
-        temporary: Path
         try:
             with atomic_output(destination) as temporary:
                 cast(PlotFigure, figure).savefig(
@@ -89,7 +88,6 @@ class ExperimentPlotter:
         :return: None.
         :rtype: None
         """
-        axis: PlotAxis
         expected: int = int(status[MetadataKey.EXPECTED_RECORDINGS.value])
         cached: int = int(status[CoverageKey.CATALOGUED_RECORDINGS.value])
         figure: Figure = ExperimentPlotter._create_figure(figsize=(11.0, 4.2))
@@ -152,7 +150,6 @@ class ExperimentPlotter:
         :return: None.
         :rtype: None
         """
-        axis: PlotAxis
         numeric_snr: Series[float] = results[ResultColumn.SNR_DB].astype(float)
         finite_mask: NDArray[bool_] = isfinite(
             numeric_snr.to_numpy(dtype=float64)
@@ -263,8 +260,6 @@ class ExperimentPlotter:
         :return: None.
         :rtype: None
         """
-        axis_value: PlotAxis
-        metric_value: ResultColumn
         figure: Figure = ExperimentPlotter._create_figure(figsize=(11.0, 4.2))
         axes: tuple[PlotAxis, PlotAxis] = ExperimentPlotter._pair_axes(figure)
         count_axis: PlotAxis = axes[0]

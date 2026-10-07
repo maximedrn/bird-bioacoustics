@@ -47,7 +47,6 @@ class AudioFrameWriter:
         :return: None.
         :rtype: None
         """
-        converted_value: AudioFrame
         if self.damaged_tail:
             raise AudioDecodingError(ErrorMessage.DAMAGED_AUDIO_PACKETS)
         if self._outgoing is None:
@@ -109,9 +108,6 @@ def decode_with_ffmpeg(source: Path, destination: Path) -> Path:
     :return: Decoded path with unchanged sample rate and channel layout.
     :rtype: Path
     """
-    frame_value: AudioFrame
-    packet_value: Packet[AudioStream]
-    resources: ExitStack
     try:
         with ExitStack() as resources:
             container: InputContainer = resources.enter_context(

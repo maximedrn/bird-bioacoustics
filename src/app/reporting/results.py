@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from collections.abc import Hashable
 from json import dumps, loads
 from pathlib import Path
 from sqlite3 import SQLITE_CANTOPEN
@@ -107,7 +106,6 @@ class ExperimentResults(ExperimentDatabase):
         :return: Noise condition means, sample deviations and detection rates.
         :rtype: DataFrame
         """
-        row_value: RowMapping
         model: type[NoiseSummaryRow] = NoiseSummaryRow
         statement: Select[
             str, float, float, float, float, float, float, int, int
@@ -166,8 +164,6 @@ class ExperimentResults(ExperimentDatabase):
         :return: Confidence means and sample deviations for each mixture.
         :rtype: DataFrame
         """
-        role: str
-        row_value: RowMapping
         model: type[OverlapRow] = OverlapRow
         statement: Select[
             str, float, float, float, float, float, float, float, float, int
@@ -302,11 +298,6 @@ class ExperimentResults(ExperimentDatabase):
         :return: Micro precision, recall and F1 on the annotated subset.
         :rtype: DataFrame
         """
-        identifier: str
-        index: Hashable
-        labels: frozenset[str]
-        reference: frozenset[str]
-        threshold: float
         completed: ReferenceLabels = {}
         for identifier, labels in annotations.items():
             status: str | None = self.connection.scalar(
@@ -394,9 +385,6 @@ class ExperimentResults(ExperimentDatabase):
         :return: Consistent measurements and coverage for plotting.
         :rtype: ResultSnapshot
         """
-        dataframe: DataFrame
-        filename: str
-        temporary: Path
         directory.mkdir(parents=True, exist_ok=True)
         self.connection.rollback()
         # One explicit SQLite transaction fixes the snapshot for every summary.
@@ -439,7 +427,8 @@ class ExperimentResults(ExperimentDatabase):
             Artifact.STATUS.path(directory, "json")
         ) as temporary:
             temporary.write_text(
-                dumps(status, indent=2, ensure_ascii=False) + "\n"
+                dumps(status, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
             )
         return ResultSnapshot(
             noise, overlap, thresholds, status, skipped, preview

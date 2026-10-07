@@ -19,6 +19,11 @@ from app.domain.settings import CorpusSettings, ProjectPaths
 from app.domain.types import CorpusStatus
 from app.experiments.progress import TqdmBatchProgress
 from app.experiments.runner import run_batch
+from app.reporting.notebooks import NotebookPublisher
+from app.reporting.previews import (
+    NotebookPreviewExporter,
+    NotebookPreviewPaths,
+)
 from app.reporting.results import ExperimentResults
 from app.reporting.service import ExperimentReport, load_report
 
@@ -81,6 +86,10 @@ class ReportOutput(TypedDict):
 
     status: CorpusStatus
     figures: list[str]
+    notebook: str
+    html: str
+    pdf: str
+    svg: str
 
 
 class CommandParsers(Protocol):
@@ -185,19 +194,28 @@ def execute_batch(options: CliOptions, paths: ProjectPaths) -> CorpusStatus:
 
 
 def execute_report(paths: ProjectPaths) -> ReportOutput:
-    """Export cumulative charts using a non-interactive plotting backend.
+    """Refresh notebook results and publish the HTML, PDF and SVG preview.
 
     :param paths: Project directories.
     :type paths: ProjectPaths
-    :return: Coverage and saved figure paths.
+    :return: Coverage and paths to the figures, notebook and preview formats.
     :rtype: ReportOutput
     """
     environ.setdefault("MPLBACKEND", "Agg")
 
     report: ExperimentReport = load_report(paths)
     figures: tuple[Path, ...] = report.save_figures()
+    notebook: Path = NotebookPublisher(report, figures).refresh()
+    preview: NotebookPreviewPaths = NotebookPreviewExporter(paths).export(
+        notebook
+    )
     return ReportOutput(
-        status=report.snapshot.status, figures=[str(path) for path in figures]
+        status=report.snapshot.status,
+        figures=[str(path) for path in figures],
+        notebook=str(notebook),
+        html=str(preview.html),
+        pdf=str(preview.pdf),
+        svg=str(preview.svg),
     )
 
 

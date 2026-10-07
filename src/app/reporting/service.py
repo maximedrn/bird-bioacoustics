@@ -26,7 +26,7 @@ class ExperimentReport:
     snapshot: ResultSnapshot
 
     def coverage_text(self) -> str:
-        """Summarize the observed database coverage in French Markdown.
+        """Summarize the observed database coverage in English Markdown.
 
         :return: Counts and the committed cursor.
         :rtype: str
@@ -93,20 +93,30 @@ class ExperimentReport:
             display(Markdown(ReportMessage.MISSING_MEASUREMENTS))
             return
         display(Image(filename=str(destination)))
-        text: str | None = None
-        if artifact == Artifact.NOISE:
-            text = NotebookReporter.noise(
-                self.snapshot.noise, self.snapshot.skipped_noise
-            )
-        elif artifact == Artifact.OVERLAP:
-            text = NotebookReporter.overlap(self.snapshot.overlap)
-        elif artifact == Artifact.THRESHOLD:
-            text = NotebookReporter.threshold(self.snapshot.thresholds)
+        text: str | None = self.observation(artifact)
         if text is not None:
             display(Markdown(text))
 
+    def observation(self, artifact: Artifact) -> str | None:
+        """Describe measurements for inline and saved notebook presentation.
+
+        :param artifact: Experiment whose measurements should be described.
+        :type artifact: Artifact
+        :return: Current observation, or None for a figure without one.
+        :rtype: str | None
+        """
+        if artifact == Artifact.NOISE:
+            return NotebookReporter.noise(
+                self.snapshot.noise, self.snapshot.skipped_noise
+            )
+        if artifact == Artifact.OVERLAP:
+            return NotebookReporter.overlap(self.snapshot.overlap)
+        if artifact == Artifact.THRESHOLD:
+            return NotebookReporter.threshold(self.snapshot.thresholds)
+        return None
+
     def save_figures(self) -> tuple[Path, ...]:
-        """Save every available figure for README consumption.
+        """Save available figures for notebook publication and direct viewing.
 
         :return: Generated plot destinations.
         :rtype: tuple[Path, ...]
@@ -136,7 +146,6 @@ def load_report(paths: ProjectPaths | None = None) -> ExperimentReport:
     :return: Cumulative reporting snapshot detached from its database reader.
     :rtype: ExperimentReport
     """
-    reader: ExperimentResults
     selected: ProjectPaths = paths or ProjectPaths.from_working_directory()
     with ExperimentResults(selected.checkpoint) as reader:
         snapshot: ResultSnapshot = reader.export(

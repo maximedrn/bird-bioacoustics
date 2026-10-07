@@ -59,9 +59,6 @@ class AudioProcessor:
         :return: Decoded file path.
         :rtype: Path
         """
-        block: FloatArray
-        incoming: SoundFile
-        outgoing: SoundFile
         # RF64 supports long recordings beyond the usual WAV size limit.
         # Reading blocks bounds memory and preserves every decoded sample.
         with (
@@ -339,7 +336,6 @@ class AudioProcessor:
         :return: Mono samples and sample rate.
         :rtype: tuple[FloatArray, int]
         """
-        stream: SoundFile
         with SoundFile(path) as stream:
             sample_rate: int = stream.samplerate
             start_frame: int = max(

@@ -247,10 +247,14 @@ class CliMessage:
     )
     BATCH_HELP: Final[str] = "Process one recording batch with a progress bar."
     BATCH_SIZE_HELP: Final[str] = (
-        "Maximum recordings per batch; part of the checkpoint configuration."
+        "Maximum recordings in a new batch; unfinished batches keep their "
+        "original size."
     )
     NO_PROGRESS_HELP: Final[str] = "Disable progress output."
-    REPORT_HELP: Final[str] = "Save cumulative plots and CSV summaries."
+    REPORT_HELP: Final[str] = (
+        "Save cumulative results; refresh the notebook and HTML/PDF/SVG "
+        "previews."
+    )
     STATUS_HELP: Final[str] = "Read current coverage without writing results."
     INTERRUPTED: Final[str] = (
         "Batch interrupted; its next uncommitted recording remains pending."

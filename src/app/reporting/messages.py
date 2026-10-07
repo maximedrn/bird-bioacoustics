@@ -63,66 +63,63 @@ class ObservationMessage:
 
     HEADING: Final[str] = "### Observation"
     NOISE_BASELINE: Final[str] = (
-        "Les segments de **{count} enregistrements** ont été testés. La "
-        "confiance moyenne sans bruit ajouté est "
+        "Segments from **{count} recordings** were tested. Mean target "
+        "confidence without added noise is "
         "**{baseline_confidence:.3f}**."
     )
     NOISE_LEVEL: Final[str] = (
-        "- **{snr_db:g} dB** : confiance moyenne "
-        "**{confidence_mean:.3f}**, écart-type entre enregistrements "
-        "**{confidence_std:.3f}**, cible retrouvée dans "
-        "**{detection_rate:.1%}** des essais."
+        "- **{snr_db:g} dB**: mean confidence "
+        "**{confidence_mean:.3f}**, standard deviation across recordings "
+        "**{confidence_std:.3f}**, target detected in "
+        "**{detection_rate:.1%}** of trials."
     )
     NOISE_EXPLANATION: Final[str] = (
-        "Les barres montrent un écart-type des moyennes par "
-        "enregistrement. La variabilité entre réalisations de bruit est "
-        "exportée séparément dans la table `noise_summaries` du point de "
-        "reprise SQLite. Une valeur 0 indique une cible absente des "
-        "prédictions exportées au seuil minimal de 0,10."
+        "Error bars show one standard deviation of recording means. "
+        "A value of 0 means "
+        "the target is absent from predictions exported at the minimum "
+        "confidence threshold of 0.10."
     )
     NOISE_SKIPPED: Final[str] = (
-        "**{skipped} enregistrements** sans cible détectée au départ ont "
-        "été exclus de ce test et sont listés dans la colonne "
-        "`noise_skip_reason` du catalogue SQLite."
+        "**{skipped} recordings** without an initially detected target "
+        "were excluded from this test."
     )
     PARAGRAPH_BREAK: Final[str] = "\n\n"
     LINE_BREAK: Final[str] = "\n"
     THRESHOLD_COUNTS: Final[str] = (
-        "### Observation\n\nEntre les seuils **{first_threshold:.2f}** et "
-        "**{last_threshold:.2f}**, les détections conservées passent de "
-        "**{first_detections}** à **{last_detections}**, et les espèces "
-        "prédites de **{first_species}** à **{last_species}**.\n\n"
+        "### Observation\n\nBetween thresholds **{first_threshold:.2f}** "
+        "and **{last_threshold:.2f}**, retained detections change from "
+        "**{first_detections}** to **{last_detections}**, and predicted "
+        "species from **{first_species}** to **{last_species}**.\n\n"
     )
     TARGET_RECOVERY: Final[str] = (
-        "L'espèce principale indiquée sur Xeno-canto est retrouvée dans "
-        "**{first_rate:.1%}** puis **{last_rate:.1%}** des enregistrements "
-        "dont la cible est identifiée et couverte par BirdNET. Ce taux "
-        "décrit la récupération de la cible connue, pas le rappel de "
-        "toutes les espèces."
+        "Xeno-canto's primary species is recovered in "
+        "**{first_rate:.1%}** then **{last_rate:.1%}** of recordings whose "
+        "target is identified and supported by BirdNET. This rate "
+        "measures recovery of the known target; recall across all species "
+        "requires complete annotations."
     )
     NO_TARGET: Final[str] = (
-        "Aucune cible identifiée couverte par BirdNET n'est disponible "
-        "dans les enregistrements traités."
+        "No identified target supported by BirdNET is available in the "
+        "processed recordings."
     )
     COMPLETE_ANNOTATIONS: Final[str] = (
-        "\n\nLa précision, le rappel et le F1 micro portent uniquement sur "
-        "les **{recordings} enregistrements complètement annotés**, en "
-        "comptant chaque couple enregistrement/espèce une seule fois."
+        "\n\nPrecision, recall and micro F1 use only the "
+        "**{recordings} fully annotated recordings**, counting each "
+        "recording/species pair once."
     )
     NO_ANNOTATIONS: Final[str] = (
-        "\n\nSans annotations complètes, précision, rappel et F1 restent non "
-        "calculés."
+        "\n\nPrecision, recall and F1 are not calculated without complete "
+        "annotations."
     )
     OVERLAP: Final[str] = (
-        "### Observation\n\nLes moyennes portent sur **{pair_count} paires** "
-        "d'enregistrements distincts. Entre les mélanges {first_mix} et "
-        "{last_mix}, la confiance moyenne de la cible A passe de "
-        "**{first_a:.3f}** à **{last_a:.3f}**, et celle de la cible B de "
-        "**{first_b:.3f}** à **{last_b:.3f}**.\n\nA et B désignent les rôles "
-        "dans chaque paire ; les espèces exactes figurent dans la table "
-        "`overlap` du point de reprise SQLite. Les barres montrent un "
-        "écart-type entre paires. Les coefficients portent sur "
-        "l'amplitude, sans égalisation préalable des niveaux."
+        "### Observation\n\nMeans cover **{pair_count} pairs** of distinct "
+        "recordings. Between mixes {first_mix} and {last_mix}, mean target "
+        "A confidence changes from **{first_a:.3f}** to "
+        "**{last_a:.3f}**, and target B confidence from **{first_b:.3f}** "
+        "to **{last_b:.3f}**.\n\nA and B identify the roles within each "
+        "pair. Error bars show one standard deviation across "
+        "pairs. Coefficients apply to amplitude, without prior level "
+        "equalization."
     )
 
 
@@ -130,10 +127,18 @@ class ReportMessage:
     """Present saved corpus coverage and unavailable figures."""
 
     COVERAGE: Final[str] = (
-        "**{processed:,} audios analysés** · **{failed:,} échecs** · "
-        "**{batches} lots terminés** · **curseur {cursor:,}**"
+        "**{processed:,} recordings analysed** · **{failed:,} failures** · "
+        "**{batches} completed batches** · **cursor {cursor:,}**"
     )
     MISSING_MEASUREMENTS: Final[str] = (
-        "Les mesures disponibles ne permettent pas encore de tracer ce "
-        "graphique."
+        "There are not enough measurements to plot this chart yet."
+    )
+    INVALID_NOTEBOOK_SECTIONS: Final[str] = (
+        "The result notebook must contain one marked code cell for each "
+        "report section."
+    )
+    NOTEBOOK_PDF_FAILED: Final[str] = "Notebook PDF rendering failed: {error}"
+    EMPTY_NOTEBOOK_PDF: Final[str] = "The notebook PDF contains no pages."
+    NOTEBOOK_PREVIEW_TITLE: Final[str] = (
+        "Cumulative Xeno-canto experiment results"
     )

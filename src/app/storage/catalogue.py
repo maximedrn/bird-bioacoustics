@@ -45,7 +45,6 @@ class CatalogueStore:
         :return: Frozen catalogue query.
         :rtype: str
         """
-        page: int
         query: str | None = self._database.get_metadata(MetadataKey.QUERY)
         if query is not None:
             return query
@@ -91,7 +90,6 @@ class CatalogueStore:
         :return: None.
         :rtype: None
         """
-        item: dict[str, object]
         query: str = self.freeze_catalogue(client)
         next_page: int = int(
             self._database.get_metadata(MetadataKey.NEXT_PAGE) or "1"
