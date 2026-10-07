@@ -1,0 +1,101 @@
+target_species,condition,snr_db,detection_rate,recordings
+Basileuterus delattrii_Chestnut-capped Warbler,original,inf,1.0,80
+Basileuterus delattrii_Chestnut-capped Warbler,20 dB,20.0,0.9550000000000001,80
+Basileuterus delattrii_Chestnut-capped Warbler,10 dB,10.0,0.9125,80
+Basileuterus delattrii_Chestnut-capped Warbler,5 dB,5.0,0.8675,80
+Basileuterus delattrii_Chestnut-capped Warbler,0 dB,0.0,0.8225,80
+Chloropsis moluccensis_Blue-winged Leafbird,original,inf,0.9811320754716981,53
+Chloropsis moluccensis_Blue-winged Leafbird,20 dB,20.0,0.8188679245283018,53
+Chloropsis moluccensis_Blue-winged Leafbird,10 dB,10.0,0.5886792452830188,53
+Chloropsis moluccensis_Blue-winged Leafbird,5 dB,5.0,0.4490566037735849,53
+Chloropsis moluccensis_Blue-winged Leafbird,0 dB,0.0,0.25660377358490566,53
+Crypturellus cinereus_Cinereous Tinamou,original,inf,1.0,257
+Crypturellus cinereus_Cinereous Tinamou,20 dB,20.0,0.9968871595330739,257
+Crypturellus cinereus_Cinereous Tinamou,10 dB,10.0,0.9929961089494163,257
+Crypturellus cinereus_Cinereous Tinamou,5 dB,5.0,0.9867704280155641,257
+Crypturellus cinereus_Cinereous Tinamou,0 dB,0.0,0.9634241245136187,257
+Crypturellus soui_Little Tinamou,original,inf,1.0,125
+Crypturellus soui_Little Tinamou,20 dB,20.0,1.0,125
+Crypturellus soui_Little Tinamou,10 dB,10.0,0.9904,125
+Crypturellus soui_Little Tinamou,5 dB,5.0,0.968,125
+Crypturellus soui_Little Tinamou,0 dB,0.0,0.9648,125
+Grallaria saturata_Equatorial Antpitta,original,inf,1.0,72
+Grallaria saturata_Equatorial Antpitta,20 dB,20.0,1.0,72
+Grallaria saturata_Equatorial Antpitta,10 dB,10.0,0.9972222222222222,72
+Grallaria saturata_Equatorial Antpitta,5 dB,5.0,0.9888888888888889,72
+Grallaria saturata_Equatorial Antpitta,0 dB,0.0,0.9805555555555555,72
+Illadopsis distans_Tanzanian Illadopsis,original,inf,1.0,312
+Illadopsis distans_Tanzanian Illadopsis,20 dB,20.0,0.9871794871794872,312
+Illadopsis distans_Tanzanian Illadopsis,10 dB,10.0,0.9788461538461538,312
+Illadopsis distans_Tanzanian Illadopsis,5 dB,5.0,0.9762820512820514,312
+Illadopsis distans_Tanzanian Illadopsis,0 dB,0.0,0.9474358974358975,312
+Nothocercus bonapartei_Highland Tinamou,original,inf,1.0,43
+Nothocercus bonapartei_Highland Tinamou,20 dB,20.0,1.0,43
+Nothocercus bonapartei_Highland Tinamou,10 dB,10.0,0.9767441860465116,43
+Nothocercus bonapartei_Highland Tinamou,5 dB,5.0,0.9674418604651163,43
+Nothocercus bonapartei_Highland Tinamou,0 dB,0.0,0.9534883720930233,43
+Nothocercus julius_Tawny-breasted Tinamou,original,inf,1.0,50
+Nothocercus julius_Tawny-breasted Tinamou,20 dB,20.0,0.988,50
+Nothocercus julius_Tawny-breasted Tinamou,10 dB,10.0,0.98,50
+Nothocercus julius_Tawny-breasted Tinamou,5 dB,5.0,0.924,50
+Nothocercus julius_Tawny-breasted Tinamou,0 dB,0.0,0.8759999999999999,50
+Pellorneum nigrocapitatum_Malayan Black-capped Babbler,original,inf,1.0,54
+Pellorneum nigrocapitatum_Malayan Black-capped Babbler,20 dB,20.0,0.9851851851851853,54
+Pellorneum nigrocapitatum_Malayan Black-capped Babbler,10 dB,10.0,0.8333333333333334,54
+Pellorneum nigrocapitatum_Malayan Black-capped Babbler,5 dB,5.0,0.7333333333333334,54
+Pellorneum nigrocapitatum_Malayan Black-capped Babbler,0 dB,0.0,0.5851851851851853,54
+Platysmurus aterrimus_Bornean Black Magpie,original,inf,1.0,72
+Platysmurus aterrimus_Bornean Black Magpie,20 dB,20.0,0.8222222222222223,72
+Platysmurus aterrimus_Bornean Black Magpie,10 dB,10.0,0.7,72
+Platysmurus aterrimus_Bornean Black Magpie,5 dB,5.0,0.6111111111111112,72
+Platysmurus aterrimus_Bornean Black Magpie,0 dB,0.0,0.44166666666666665,72
+Polioptila bilineata_White-browed Gnatcatcher,original,inf,1.0,68
+Polioptila bilineata_White-browed Gnatcatcher,20 dB,20.0,0.9852941176470589,68
+Polioptila bilineata_White-browed Gnatcatcher,10 dB,10.0,0.9558823529411765,68
+Polioptila bilineata_White-browed Gnatcatcher,5 dB,5.0,0.9294117647058824,68
+Polioptila bilineata_White-browed Gnatcatcher,0 dB,0.0,0.8794117647058823,68
+Pomatorhinus bornensis_Sunda Scimitar Babbler,original,inf,1.0,53
+Pomatorhinus bornensis_Sunda Scimitar Babbler,20 dB,20.0,0.9962264150943396,53
+Pomatorhinus bornensis_Sunda Scimitar Babbler,10 dB,10.0,0.9773584905660376,53
+Pomatorhinus bornensis_Sunda Scimitar Babbler,5 dB,5.0,0.9169811320754717,53
+Pomatorhinus bornensis_Sunda Scimitar Babbler,0 dB,0.0,0.879245283018868,53
+Prinia lepida_Delicate Prinia,original,inf,1.0,95
+Prinia lepida_Delicate Prinia,20 dB,20.0,0.9536842105263157,95
+Prinia lepida_Delicate Prinia,10 dB,10.0,0.9242105263157895,95
+Prinia lepida_Delicate Prinia,5 dB,5.0,0.888421052631579,95
+Prinia lepida_Delicate Prinia,0 dB,0.0,0.8315789473684211,95
+Pyriglena maura_Western Fire-eye,original,inf,1.0,112
+Pyriglena maura_Western Fire-eye,20 dB,20.0,0.975,112
+Pyriglena maura_Western Fire-eye,10 dB,10.0,0.9589285714285715,112
+Pyriglena maura_Western Fire-eye,5 dB,5.0,0.9517857142857142,112
+Pyriglena maura_Western Fire-eye,0 dB,0.0,0.9089285714285714,112
+Saltator grandis_Cinnamon-bellied Saltator,original,inf,1.0,106
+Saltator grandis_Cinnamon-bellied Saltator,20 dB,20.0,0.9924528301886792,106
+Saltator grandis_Cinnamon-bellied Saltator,10 dB,10.0,0.9773584905660376,106
+Saltator grandis_Cinnamon-bellied Saltator,5 dB,5.0,0.9679245283018867,106
+Saltator grandis_Cinnamon-bellied Saltator,0 dB,0.0,0.9245283018867925,106
+Saltator olivascens_Olive-grey Saltator,original,inf,1.0,62
+Saltator olivascens_Olive-grey Saltator,20 dB,20.0,1.0,62
+Saltator olivascens_Olive-grey Saltator,10 dB,10.0,0.9806451612903225,62
+Saltator olivascens_Olive-grey Saltator,5 dB,5.0,0.967741935483871,62
+Saltator olivascens_Olive-grey Saltator,0 dB,0.0,0.8999999999999999,62
+Tinamus guttatus_White-throated Tinamou,original,inf,1.0,49
+Tinamus guttatus_White-throated Tinamou,20 dB,20.0,0.9877551020408163,49
+Tinamus guttatus_White-throated Tinamou,10 dB,10.0,0.9591836734693877,49
+Tinamus guttatus_White-throated Tinamou,5 dB,5.0,0.942857142857143,49
+Tinamus guttatus_White-throated Tinamou,0 dB,0.0,0.9020408163265307,49
+Tinamus major_Great Tinamou,original,inf,1.0,150
+Tinamus major_Great Tinamou,20 dB,20.0,0.9893333333333334,150
+Tinamus major_Great Tinamou,10 dB,10.0,0.9586666666666668,150
+Tinamus major_Great Tinamou,5 dB,5.0,0.9466666666666667,150
+Tinamus major_Great Tinamou,0 dB,0.0,0.92,150
+Tinamus solitarius_Solitary Tinamou,original,inf,1.0,65
+Tinamus solitarius_Solitary Tinamou,20 dB,20.0,0.916923076923077,65
+Tinamus solitarius_Solitary Tinamou,10 dB,10.0,0.8646153846153847,65
+Tinamus solitarius_Solitary Tinamou,5 dB,5.0,0.7969230769230768,65
+Tinamus solitarius_Solitary Tinamou,0 dB,0.0,0.68,65
+Tinamus tao_Grey Tinamou,original,inf,1.0,52
+Tinamus tao_Grey Tinamou,20 dB,20.0,0.9576923076923076,52
+Tinamus tao_Grey Tinamou,10 dB,10.0,0.8346153846153845,52
+Tinamus tao_Grey Tinamou,5 dB,5.0,0.7461538461538461,52
+Tinamus tao_Grey Tinamou,0 dB,0.0,0.6730769230769231,52

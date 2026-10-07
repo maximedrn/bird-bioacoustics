@@ -27,6 +27,7 @@ class NotebookKey(StrEnum):
     EXECUTION_COUNT = "execution_count"
     EXECUTION = "execution"
     REPORT_SECTION = "app_report"
+    ALTERNATIVE_TEXT = "alt"
 
 
 class NotebookContent:
@@ -48,6 +49,13 @@ class NotebookSection(StrEnum):
     OVERLAP = Artifact.OVERLAP.value
     THRESHOLD = Artifact.THRESHOLD.value
     SPECTROGRAM = Artifact.SPECTROGRAM.value
+    NOISE_DISTRIBUTION = Artifact.NOISE_DISTRIBUTION.value
+    SPECIES_NOISE = Artifact.SPECIES_NOISE.value
+    NOISE_PAIRS = Artifact.NOISE_PAIRS.value
+    OVERLAP_OUTCOMES = Artifact.OVERLAP_OUTCOMES.value
+    SPECIES_COVERAGE = Artifact.SPECIES_COVERAGE.value
+    DURATION_CONFIDENCE = Artifact.DURATION_CONFIDENCE.value
+    BATCH_HISTORY = Artifact.BATCH_HISTORY.value
 
 
 @dataclass(frozen=True, slots=True)
@@ -133,14 +141,20 @@ class NotebookPublisher:
         path: Path = artifact.path(self.report.paths.results)
         if path not in self.figures:
             return [self._markdown(ReportMessage.MISSING_MEASUREMENTS)]
-        outputs: list[NotebookNode] = [
-            new_output(
-                output_type=NotebookContent.DISPLAY_DATA,
-                data={
-                    NotebookContent.PNG: b64encode(path.read_bytes()).decode()
-                },
-            )
-        ]
+        output: NotebookNode = new_output(
+            output_type=NotebookContent.DISPLAY_DATA,
+            data={NotebookContent.PNG: b64encode(path.read_bytes()).decode()},
+        )
+        output[NotebookKey.METADATA] = {
+            NotebookContent.PNG: {
+                NotebookKey.ALTERNATIVE_TEXT: (
+                    ReportMessage.FIGURE_ALTERNATIVE_TEXT.format(
+                        section=artifact.value.replace("_", " ")
+                    )
+                )
+            }
+        }
+        outputs: list[NotebookNode] = [output]
         text: str | None = self.report.observation(artifact)
         if text is not None:
             outputs.append(self._markdown(text))

@@ -15,6 +15,7 @@ from typing import Literal, Protocol
 from matplotlib.collections import QuadMesh
 from matplotlib.colorbar import Colorbar
 from matplotlib.container import BarContainer, ErrorbarContainer
+from matplotlib.image import AxesImage
 from matplotlib.legend import Legend
 from matplotlib.lines import Line2D
 from matplotlib.text import Text
@@ -25,16 +26,26 @@ class PlotAxis(Protocol):
     """Declare the actual axis operations and named style options we use."""
 
     def bar(
-        self, x: Sequence[str], height: Sequence[int], *, color: Sequence[str]
+        self,
+        x: Sequence[str],
+        height: ArrayLike,
+        *,
+        color: Sequence[str] | str,
+        bottom: ArrayLike | None = None,
+        label: str | None = None,
     ) -> BarContainer:
         """Draw labelled counts.
 
         :param x: Category labels.
         :type x: Sequence[str]
         :param height: Category counts.
-        :type height: Sequence[int]
+        :type height: ArrayLike
         :param color: Category colors.
-        :type color: Sequence[str]
+        :type color: Sequence[str] | str
+        :param bottom: Optional stack offsets.
+        :type bottom: ArrayLike | None
+        :param label: Optional series name.
+        :type label: str | None
         :return: Bars available for annotation.
         :rtype: BarContainer
         """
@@ -57,7 +68,13 @@ class PlotAxis(Protocol):
         raise NotImplementedError
 
     def plot(
-        self, x: ArrayLike, y: ArrayLike, *, marker: str, label: str
+        self,
+        x: ArrayLike,
+        y: ArrayLike,
+        *,
+        marker: str = "",
+        label: str,
+        linestyle: str = "-",
     ) -> list[Line2D]:
         """Draw a named data series.
 
@@ -69,6 +86,8 @@ class PlotAxis(Protocol):
         :type marker: str
         :param label: Legend label.
         :type label: str
+        :param linestyle: Stroke style.
+        :type linestyle: str
         :return: Rendered lines.
         :rtype: list[Line2D]
         """
@@ -210,9 +229,24 @@ class PlotAxis(Protocol):
         """
         raise NotImplementedError
 
-    def legend(self) -> Legend:
+    def legend(
+        self,
+        *,
+        fontsize: float = 10,
+        loc: str = "best",
+        bbox_to_anchor: tuple[float, float] | None = None,
+        ncol: int = 1,
+    ) -> Legend:
         """Display named measurements.
 
+        :param fontsize: Legend text size.
+        :type fontsize: float
+        :param loc: Anchor location.
+        :type loc: str
+        :param bbox_to_anchor: Optional explicit anchor coordinates.
+        :type bbox_to_anchor: tuple[float, float] | None
+        :param ncol: Number of legend columns.
+        :type ncol: int
         :return: Legend artist.
         :rtype: Legend
         """
@@ -276,17 +310,27 @@ class PlotFigure(Protocol):
         raise NotImplementedError
 
     def colorbar(
-        self, mappable: QuadMesh, *, ax: PlotAxis, label: str
+        self, mappable: QuadMesh | AxesImage, *, ax: PlotAxis, label: str
     ) -> Colorbar:
         """Label the spectrogram's power scale.
 
         :param mappable: Spectrogram artist.
-        :type mappable: QuadMesh
+        :type mappable: QuadMesh | AxesImage
         :param ax: Spectrogram axis.
         :type ax: PlotAxis
         :param label: Power units.
         :type label: str
         :return: Color scale.
         :rtype: Colorbar
+        """
+        raise NotImplementedError
+
+    def suptitle(self, t: str) -> Text:
+        """Name a figure that contains several panels.
+
+        :param t: Shared figure title.
+        :type t: str
+        :return: Title artist.
+        :rtype: Text
         """
         raise NotImplementedError

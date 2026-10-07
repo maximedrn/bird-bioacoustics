@@ -115,6 +115,13 @@ class Artifact(StrEnum):
     SPECTROGRAM = "target_spectrogram"
     BASELINE = "baseline_predictions"
     NOTEBOOK = "notebook"
+    NOISE_DISTRIBUTION = "noise_distribution"
+    SPECIES_NOISE = "species_noise"
+    NOISE_PAIRS = "noise_pairs"
+    OVERLAP_OUTCOMES = "overlap_outcomes"
+    SPECIES_COVERAGE = "species_coverage"
+    DURATION_CONFIDENCE = "duration_confidence"
+    BATCH_HISTORY = "batch_history"
 
     def filename(self, suffix: str) -> str:
         """Build one artifact filename.

@@ -6,12 +6,14 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from IPython.display import Image, Markdown, display
+from pandas import DataFrame
 
 from app.domain.constants import Artifact, CoverageKey, MetadataKey
 from app.domain.messages import ErrorMessage
 from app.domain.models import NoiseExperimentOutput, ResultSnapshot
 from app.domain.settings import ProjectPaths
 from app.domain.types import CorpusStatus
+from app.reporting.diagnostics import DIAGNOSTIC_OBSERVATIONS, DIAGNOSTIC_PLOTS
 from app.reporting.messages import ReportMessage
 from app.reporting.observations import NotebookReporter
 from app.reporting.plots import ExperimentPlotter
@@ -51,6 +53,12 @@ class ExperimentReport:
 
         destination: Path = artifact.path(self.paths.results)
         snapshot: ResultSnapshot = self.snapshot
+        if artifact in DIAGNOSTIC_PLOTS:
+            table: DataFrame = snapshot.details.tables()[artifact]
+            if table.empty:
+                return None
+            DIAGNOSTIC_PLOTS[artifact](table, destination)
+            return destination
         if artifact == Artifact.PROGRESS:
             ExperimentPlotter.plot_progress(snapshot.status, destination)
         elif artifact == Artifact.NOISE and not snapshot.noise.empty:
@@ -113,7 +121,7 @@ class ExperimentReport:
             return NotebookReporter.overlap(self.snapshot.overlap)
         if artifact == Artifact.THRESHOLD:
             return NotebookReporter.threshold(self.snapshot.thresholds)
-        return None
+        return DIAGNOSTIC_OBSERVATIONS.get(artifact)
 
     def save_figures(self) -> tuple[Path, ...]:
         """Save available figures for notebook publication and direct viewing.
@@ -129,6 +137,7 @@ class ExperimentReport:
             Artifact.OVERLAP,
             Artifact.THRESHOLD,
             Artifact.SPECTROGRAM,
+            *DIAGNOSTIC_PLOTS,
         ):
             artifact: Artifact = artifact_value
             path: Path | None = self.figure(artifact)

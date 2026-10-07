@@ -23,9 +23,14 @@ from app.domain.constants import (
     ResultColumn,
 )
 from app.domain.messages import ErrorMessage
-from app.domain.models import NoiseExperimentOutput, ResultSnapshot
+from app.domain.models import (
+    NoiseExperimentOutput,
+    ResultDetails,
+    ResultSnapshot,
+)
 from app.domain.types import CorpusStatus, ReferenceLabels
 from app.experiments.annotations import AnnotationRepository
+from app.reporting.details import DiagnosticResults
 from app.reporting.writing import atomic_output
 from app.storage.connections import (
     SqliteAccess,
@@ -416,6 +421,9 @@ class ExperimentResults(ExperimentDatabase):
             preview: NoiseExperimentOutput | None = self.segment(
                 PreviewSegmentRow, self.path.parent
             )
+            details: ResultDetails = DiagnosticResults(self.connection).build(
+                min(values)
+            )
         for filename, dataframe in (
             (Artifact.NOISE.filename("csv"), noise),
             (Artifact.OVERLAP.filename("csv"), overlap),
@@ -423,6 +431,9 @@ class ExperimentResults(ExperimentDatabase):
         ):
             with atomic_output(directory / filename) as temporary:
                 dataframe.to_csv(temporary, index=False)
+        for artifact, table in details.tables().items():
+            with atomic_output(artifact.path(directory, "csv")) as temporary:
+                table.to_csv(temporary, index=False)
         with atomic_output(
             Artifact.STATUS.path(directory, "json")
         ) as temporary:
@@ -431,5 +442,5 @@ class ExperimentResults(ExperimentDatabase):
                 encoding="utf-8",
             )
         return ResultSnapshot(
-            noise, overlap, thresholds, status, skipped, preview
+            noise, overlap, thresholds, status, skipped, preview, details
         )

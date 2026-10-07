@@ -56,6 +56,42 @@ class PlotLabel:
     CONFIDENCE_THRESHOLD: Final[str] = "Confidence threshold"
     POWER_DB: Final[str] = "Power (dB)"
     CATALOGUE_COVERAGE: Final[str] = "Catalogue coverage ({ratio:.1%})"
+    NOISE_DISTRIBUTION: Final[str] = "Noise: distribution across recordings"
+    NOISE_BOX_RANGE: Final[str] = (
+        "Boxes: median and interquartile range; whiskers: minimum / maximum"
+    )
+    CONDITION_COUNT: Final[str] = "{condition}\nn={count:,}"
+    ORIGINAL: Final[str] = "Original"
+    SPECIES_NOISE: Final[str] = "Noise: target recovery by species"
+    SPECIES_RATE_COUNT: Final[str] = "{rate:.0%}\nn={count:,}"
+    RATE: Final[str] = "Mean target detection rate"
+    ORIGINAL_CONFIDENCE: Final[str] = "Original segment confidence"
+    NOISY_CONFIDENCE: Final[str] = "Noisy segment mean confidence"
+    PAIRED_NOISE: Final[str] = "Original vs noisy target confidence"
+    SAMPLE_COUNT: Final[str] = "{label} · showing {shown:,} / {total:,}"
+    UNCHANGED: Final[str] = "Unchanged confidence"
+    BOTH: Final[str] = "Both targets"
+    ONLY_A: Final[str] = "Only target A"
+    ONLY_B: Final[str] = "Only target B"
+    NEITHER: Final[str] = "Neither target"
+    OVERLAP_OUTCOMES: Final[str] = (
+        "Overlap: joint target recovery at confidence ≥ {threshold:g}"
+    )
+    PAIR_PROPORTION: Final[str] = "Proportion of recording pairs"
+    SPECIES_COVERAGE: Final[str] = (
+        "Species representation: top {shown} of {total:,} supported targets"
+    )
+    ANALYSED_RECORDINGS: Final[str] = "Successfully analysed recordings"
+    DURATION_CONFIDENCE: Final[str] = "Recording duration vs target confidence"
+    RECORDING_DURATION: Final[str] = (
+        "Original recording duration (s, log scale)"
+    )
+    TARGET_MAXIMUM: Final[str] = "Maximum full-file target confidence"
+    BATCH_HISTORY: Final[str] = "Cumulative estimates after each batch"
+    BATCH_NUMBER: Final[str] = "Batch number (last batch may be partial)"
+    CUMULATIVE_COUNT: Final[str] = "{condition} (latest n={count:,})"
+    CUMULATIVE_CONFIDENCE: Final[str] = "Cumulative mean target confidence"
+    CUMULATIVE_RATE: Final[str] = "Cumulative mean target detection rate"
 
 
 class ObservationMessage:
@@ -121,6 +157,50 @@ class ObservationMessage:
         "pairs. Coefficients apply to amplitude, without prior level "
         "equalization."
     )
+    NOISE_DISTRIBUTION: Final[str] = (
+        "Each observation is one recording's mean across noise trials. "
+        "Boxes show the median and middle 50%; whiskers span the observed "
+        "minimum and maximum. Only recordings with a selected target "
+        "segment enter these noise charts."
+    )
+    SPECIES_NOISE: Final[str] = (
+        "The chart shows up to 20 species with the most noise-eligible "
+        "recordings. Rates give each recording equal weight; n is the "
+        "number of recordings in that cell. Small groups are descriptive "
+        "and need more recordings for a stable estimate."
+    )
+    NOISE_PAIRS: Final[str] = (
+        "Each point pairs a recording's original segment with its mean "
+        "noisy confidence. Points below the diagonal indicate a decrease. "
+        "Up to 5,000 recordings per condition are selected deterministically "
+        "across processing order. Confidence is not a measure of accuracy."
+    )
+    OVERLAP_OUTCOMES: Final[str] = (
+        "The four outcomes use the minimum confidence threshold saved for "
+        "the experiment. Each mixture counts a pair once; n is its pair "
+        "count. A and B describe roles within each pair."
+    )
+    SPECIES_COVERAGE: Final[str] = (
+        "Counts cover successfully analysed recordings with an identified "
+        "primary species supported by BirdNET, including undetected targets. "
+        "The chart shows the 20 most represented species; the CSV includes "
+        "every supported target species."
+    )
+    DURATION_CONFIDENCE: Final[str] = (
+        "Each point relates the original recording's duration to the "
+        "maximum exported confidence for its supported primary species. "
+        "Zero indicates that the target was absent from exported predictions. "
+        "Up to 5,000 recordings are selected across processing order. "
+        "Longer recordings offer more windows for a maximum; this plot "
+        "describes an association rather than a causal effect."
+    )
+    BATCH_HISTORY: Final[str] = (
+        "Curves pool all measured recordings up to each batch, giving each "
+        "recording equal weight. The latest batch includes its committed "
+        "recordings even when it is incomplete. Counts refer to "
+        "noise-eligible recordings. Stability does not establish that the "
+        "processed subset represents the complete catalogue."
+    )
 
 
 class ReportMessage:
@@ -141,4 +221,7 @@ class ReportMessage:
     EMPTY_NOTEBOOK_PDF: Final[str] = "The notebook PDF contains no pages."
     NOTEBOOK_PREVIEW_TITLE: Final[str] = (
         "Cumulative Xeno-canto experiment results"
+    )
+    FIGURE_ALTERNATIVE_TEXT: Final[str] = (
+        "Cumulative Xeno-canto results: {section}."
     )

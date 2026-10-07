@@ -32,7 +32,7 @@ class ExperimentPlotter:
     """Render and save all experiment figures."""
 
     @staticmethod
-    def _create_figure(figsize: tuple[float, float]) -> Figure:
+    def create_figure(figsize: tuple[float, float]) -> Figure:
         """Attach a typed Agg canvas for standalone PNG generation.
 
         :param figsize: Image dimensions in inches.
@@ -90,7 +90,7 @@ class ExperimentPlotter:
         """
         expected: int = int(status[MetadataKey.EXPECTED_RECORDINGS.value])
         cached: int = int(status[CoverageKey.CATALOGUED_RECORDINGS.value])
-        figure: Figure = ExperimentPlotter._create_figure(figsize=(11.0, 4.2))
+        figure: Figure = ExperimentPlotter.create_figure(figsize=(11.0, 4.2))
         axes: tuple[PlotAxis, PlotAxis] = ExperimentPlotter._pair_axes(figure)
         catalogue_axis: PlotAxis = axes[0]
         processing_axis: PlotAxis = axes[1]
@@ -163,7 +163,7 @@ class ExperimentPlotter:
         ]
         original_confidence: float = float(original_values.iloc[0])
 
-        figure: Figure = ExperimentPlotter._create_figure(figsize=(12.0, 4.2))
+        figure: Figure = ExperimentPlotter.create_figure(figsize=(12.0, 4.2))
         axes: tuple[PlotAxis, PlotAxis] = ExperimentPlotter._pair_axes(figure)
         confidence_axis: PlotAxis = axes[0]
         rate_axis: PlotAxis = axes[1]
@@ -222,7 +222,7 @@ class ExperimentPlotter:
         :return: None.
         :rtype: None
         """
-        figure: Figure = ExperimentPlotter._create_figure(figsize=(7.2, 4.2))
+        figure: Figure = ExperimentPlotter.create_figure(figsize=(7.2, 4.2))
         axis: PlotAxis = cast(PlotFigure, figure).add_subplot(1, 1, 1)
         axis.errorbar(
             results[ResultColumn.MIX],
@@ -260,7 +260,7 @@ class ExperimentPlotter:
         :return: None.
         :rtype: None
         """
-        figure: Figure = ExperimentPlotter._create_figure(figsize=(11.0, 4.2))
+        figure: Figure = ExperimentPlotter.create_figure(figsize=(11.0, 4.2))
         axes: tuple[PlotAxis, PlotAxis] = ExperimentPlotter._pair_axes(figure)
         count_axis: PlotAxis = axes[0]
         rate_axis: PlotAxis = axes[1]
@@ -345,7 +345,7 @@ class ExperimentPlotter:
         safe_power: Float64Array = maximum(power, 1e-12)
         power_db: Float64Array = 10.0 * log10(safe_power)
 
-        figure: Figure = ExperimentPlotter._create_figure(figsize=(8.0, 4.0))
+        figure: Figure = ExperimentPlotter.create_figure(figsize=(8.0, 4.0))
         axis: PlotAxis = cast(PlotFigure, figure).add_subplot(1, 1, 1)
         mesh: QuadMesh = axis.pcolormesh(
             times,

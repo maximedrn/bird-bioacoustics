@@ -15,6 +15,7 @@ from pydantic import (
     model_validator,
 )
 
+from app.domain.constants import Artifact
 from app.domain.errors import AudioUnavailableError, RecordingError
 from app.domain.messages import ErrorMessage
 from app.domain.types import CorpusStatus, FloatArray
@@ -262,6 +263,35 @@ class RecordingBatch:
 
 
 @dataclass(frozen=True, slots=True)
+class ResultDetails:
+    """Keep compact diagnostic tables from the same cumulative snapshot."""
+
+    noise_distribution: DataFrame
+    species_noise: DataFrame
+    noise_pairs: DataFrame
+    overlap_outcomes: DataFrame
+    species_coverage: DataFrame
+    duration_confidence: DataFrame
+    batch_history: DataFrame
+
+    def tables(self) -> dict[Artifact, DataFrame]:
+        """Map diagnostic figures to their exported measurements.
+
+        :return: Stable artifact names and their corresponding tables.
+        :rtype: dict[Artifact, DataFrame]
+        """
+        return {
+            Artifact.NOISE_DISTRIBUTION: self.noise_distribution,
+            Artifact.SPECIES_NOISE: self.species_noise,
+            Artifact.NOISE_PAIRS: self.noise_pairs,
+            Artifact.OVERLAP_OUTCOMES: self.overlap_outcomes,
+            Artifact.SPECIES_COVERAGE: self.species_coverage,
+            Artifact.DURATION_CONFIDENCE: self.duration_confidence,
+            Artifact.BATCH_HISTORY: self.batch_history,
+        }
+
+
+@dataclass(frozen=True, slots=True)
 class ResultSnapshot:
     """Keep summaries, coverage and preview from one consistent database
     snapshot.
@@ -273,3 +303,4 @@ class ResultSnapshot:
     status: CorpusStatus
     skipped_noise: int
     preview: NoiseExperimentOutput | None
+    details: ResultDetails

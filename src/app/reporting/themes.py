@@ -36,6 +36,9 @@ class ThemePalette:
             "legend.edgecolor": self.grid,
             "savefig.facecolor": self.background,
             "savefig.edgecolor": self.background,
+            "boxplot.boxprops.color": self.foreground,
+            "boxplot.whiskerprops.color": self.foreground,
+            "boxplot.capprops.color": self.foreground,
         }
 
 
