@@ -6,17 +6,23 @@ from dataclasses import dataclass
 from importlib.resources import files
 from importlib.resources.abc import Traversable
 from pathlib import Path
+from shutil import copy2
 from string import Template
+from tempfile import TemporaryDirectory
 from typing import Final, Literal
 
+from matplotlib.style import context as plot_style_context
 from nbconvert.exporters import HTMLExporter
 from playwright.sync_api import Browser, Page, sync_playwright
 from playwright.sync_api import Error as BrowserError
 
-from app.domain.constants import Artifact
+from app.domain.constants import Artifact, FileName
 from app.domain.settings import ProjectPaths
 from app.reporting.messages import ReportMessage
+from app.reporting.notebooks import NotebookPublisher
+from app.reporting.service import ExperimentReport
 from app.reporting.svg import PdfSvgExporter
+from app.reporting.themes import ReportTheme, ThemePalette
 from app.reporting.writing import atomic_output
 
 
@@ -31,6 +37,8 @@ class PreviewSetting:
     CSS_PIXEL_UNIT: Final[str] = "px"
     LOAD_TIMEOUT_MS: Final[int] = 30_000
     HEIGHT_PADDING_PX: Final[int] = 1
+    TEMPORARY_PREFIX: Final[str] = "notebook_preview_"
+    ENCODING: Final[str] = "utf-8"
     RESOURCES_READY: Final[str] = (
         "document.fonts.status === 'loaded' && "
         "Array.from(document.images).every(image => "
@@ -57,25 +65,37 @@ class NotebookPreviewExporter:
 
     paths: ProjectPaths
 
-    def export(self, notebook: Path) -> NotebookPreviewPaths:
-        """Convert the notebook to HTML, a single-page PDF, then SVG.
+    def export(
+        self, notebook: Path, report: ExperimentReport
+    ) -> NotebookPreviewPaths:
+        """Convert saved results to HTML, a single-page PDF and adaptive SVG.
 
         :param notebook: Notebook whose outputs were just refreshed.
         :type notebook: Path
+        :param report: Same cumulative snapshot as the saved notebook outputs.
+        :type report: ExperimentReport
         :return: HTML, PDF and SVG artifacts in the results directory.
         :rtype: NotebookPreviewPaths
         """
         html: Path = self._html(notebook)
         pdf: Path = self._pdf(html)
         svg: Path = Artifact.NOTEBOOK.path(self.paths.results, "svg")
-        PdfSvgExporter.export(pdf, svg)
+        with TemporaryDirectory(
+            prefix=PreviewSetting.TEMPORARY_PREFIX
+        ) as directory:
+            dark_pdf: Path = self._dark_pdf(notebook, report, Path(directory))
+            PdfSvgExporter.export(pdf, svg, dark_pdf=dark_pdf)
         return NotebookPreviewPaths(html, pdf, svg)
 
-    def _html(self, notebook: Path) -> Path:
+    def _html(
+        self, notebook: Path, theme: ReportTheme = ReportTheme.LIGHT
+    ) -> Path:
         """Render the notebook's Markdown and outputs into standalone HTML.
 
         :param notebook: Saved presentation notebook.
         :type notebook: Path
+        :param theme: Colors used by this document variant.
+        :type theme: ReportTheme
         :return: Standalone HTML with embedded figures and print styles.
         :rtype: Path
         """
@@ -91,13 +111,46 @@ class NotebookPreviewExporter:
             PreviewSetting.TEMPLATE
         )
         template: Template = Template(resource.read_text())
+        palette: ThemePalette = theme.palette
         destination: Path = Artifact.NOTEBOOK.path(self.paths.results, "html")
-        temporary: Path
         with atomic_output(destination) as temporary:
             temporary.write_text(
-                template.substitute(body=body), encoding="utf-8"
+                template.substitute(
+                    body=body,
+                    background=palette.background,
+                    foreground=palette.foreground,
+                    link=palette.link,
+                ),
+                encoding=PreviewSetting.ENCODING,
             )
         return destination
+
+    @staticmethod
+    def _dark_pdf(
+        notebook: Path, report: ExperimentReport, root: Path
+    ) -> Path:
+        """Render dark plots and a PDF from the existing cumulative snapshot.
+
+        :param notebook: Refreshed notebook whose source cells are preserved.
+        :type notebook: Path
+        :param report: Measurements shared by both preview variants.
+        :type report: ExperimentReport
+        :param root: Temporary directory removed after SVG publication.
+        :type root: Path
+        :return: Dark single-page PDF for the adaptive SVG layer.
+        :rtype: Path
+        """
+        paths: ProjectPaths = ProjectPaths.from_root(root)
+        copy2(notebook, paths.root / FileName.NOTEBOOK)
+        dark_report: ExperimentReport = ExperimentReport(
+            paths, report.snapshot
+        )
+        with plot_style_context(ReportTheme.DARK.palette.plot_settings()):
+            figures = dark_report.save_figures()
+        dark_notebook: Path = NotebookPublisher(dark_report, figures).refresh()
+        exporter: NotebookPreviewExporter = NotebookPreviewExporter(paths)
+        html: Path = exporter._html(dark_notebook, ReportTheme.DARK)
+        return exporter._pdf(html)
 
     def _pdf(self, html: Path) -> Path:
         """Print the saved HTML after its embedded images and fonts are ready.
@@ -123,8 +176,6 @@ class NotebookPreviewExporter:
                         PreviewSetting.RESOURCES_READY,
                         timeout=PreviewSetting.LOAD_TIMEOUT_MS,
                     )
-                    width: int
-                    height: int
                     width, height = page.evaluate(
                         PreviewSetting.PAGE_DIMENSIONS
                     )

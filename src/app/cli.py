@@ -207,7 +207,7 @@ def execute_report(paths: ProjectPaths) -> ReportOutput:
     figures: tuple[Path, ...] = report.save_figures()
     notebook: Path = NotebookPublisher(report, figures).refresh()
     preview: NotebookPreviewPaths = NotebookPreviewExporter(paths).export(
-        notebook
+        notebook, report
     )
     return ReportOutput(
         status=report.snapshot.status,

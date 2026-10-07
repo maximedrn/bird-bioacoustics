@@ -7,8 +7,8 @@
   <style>
     @page { size: auto; margin: 0; }
     body {
-      color: #24292f;
-      background: #ffffff;
+      color: $foreground;
+      background: $background;
       font-family: Arial, sans-serif;
       font-size: 10pt;
       line-height: 1.5;
@@ -24,7 +24,7 @@
     img { display: block; max-width: 100%; height: auto; }
     pre { white-space: pre-wrap; }
     code { font-family: monospace; }
-    a { color: #0969da; }
+    a { color: $link; }
     @media print {
       body { box-sizing: border-box; width: 210mm; padding: 12mm; }
     }
