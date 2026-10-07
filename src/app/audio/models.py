@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
-from typing import TypedDict
+from importlib import import_module
+from typing import Protocol, TypedDict, cast
 
 from app.audio.backend import load_model
 from app.audio.runtime import validate_inference, verify_model_device
+from app.domain.constants import InferenceDevice, RuntimeModule
 from app.domain.protocols import BirdNetModelProtocol
 from app.domain.settings import InferenceSettings, ModelSettings
 
@@ -21,6 +23,42 @@ class ModelPreparation(TypedDict):
     workers: int
     producers: int
     inference_batch_size: int
+
+
+class CudaModelFactory(Protocol):
+    """Resolve the guarded backend only when GPU processing is requested."""
+
+    def require_cuda(
+        self, model: BirdNetModelProtocol
+    ) -> BirdNetModelProtocol:
+        """Retain the cached model and guard every inference worker.
+
+        :param model: Existing FP32 acoustic model.
+        :type model: BirdNetModelProtocol
+        :return: Model that rejects a whole-session CPU fallback.
+        :rtype: BirdNetModelProtocol
+        """
+        raise NotImplementedError
+
+
+def inference_model(
+    model: BirdNetModelProtocol, settings: InferenceSettings
+) -> BirdNetModelProtocol:
+    """Require CUDA in workers without importing BirdNET for CPU reports.
+
+    :param model: Cached acoustic model.
+    :type model: BirdNetModelProtocol
+    :param settings: Selected hardware.
+    :type settings: InferenceSettings
+    :return: Existing CPU model or guarded GPU model.
+    :rtype: BirdNetModelProtocol
+    """
+    if settings.device == InferenceDevice.CPU:
+        return model
+    factory: CudaModelFactory = cast(
+        CudaModelFactory, import_module(RuntimeModule.CUDA_BACKEND)
+    )
+    return factory.require_cuda(model)
 
 
 def prepare_model(

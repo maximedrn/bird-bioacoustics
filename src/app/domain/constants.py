@@ -2,7 +2,7 @@
 
 from enum import StrEnum
 from pathlib import Path
-from typing import Final
+from typing import Final, Literal
 
 API_KEY_VARIABLE: Final[str] = "XENO_CANTO_API_KEY"
 XENO_CANTO_API_URL: Final[str] = "https://xeno-canto.org/api/3/recordings"
@@ -194,6 +194,7 @@ class RuntimeModule(StrEnum):
 
     BIRDNET = "birdnet"
     ONNX = "onnxruntime"
+    CUDA_BACKEND = "app.audio.cuda_backend"
     SYSTEM = "sys"
 
 
@@ -216,3 +217,12 @@ class OnnxOption:
 
     DEVICE_ID: Final[str] = "device_id"
     FIRST_GPU: Final[str] = "0"
+
+
+class InferenceRuntime:
+    """Keep CUDA process creation and verification limits consistent."""
+
+    START_METHOD_VARIABLE: Final[str] = "BIRDNET_START_METHOD"
+    START_METHOD: Final[Literal["spawn"]] = "spawn"
+    CUDA_CHECK_TIMEOUT: Final[float] = 180.0
+    PROCESS_EXIT_TIMEOUT: Final[float] = 5.0

@@ -132,6 +132,15 @@ class ErrorMessage:
         "install onnxruntime-gpu with compatible CUDA/cuDNN libraries, "
         "then rerun model preparation, or choose CPU."
     )
+    CUDA_CHECK_TIMEOUT: Final[str] = (
+        "CUDA verification timed out before audio processing started. "
+        "Restart the GPU runtime and retry model preparation."
+    )
+    CUDA_CHECK_FAILED: Final[str] = "CUDA verification failed: {error}"
+    CUDA_CHECK_CRASHED: Final[str] = (
+        "CUDA verification worker exited unexpectedly (exit code {code}). "
+        "Restart the GPU runtime and retry model preparation."
+    )
     INVALID_PLOT_ARTIFACT: Final[str] = "{artifact} is not a plot artifact."
     INVALID_PROGRESS_INTERVAL: Final[str] = (
         "Progress interval must be positive."
