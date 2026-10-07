@@ -143,7 +143,11 @@ class ErrorMessage:
     )
     CUDA_SESSION_CLOSED: Final[str] = "The CUDA inference session is closed."
     INVALID_CUDA_PROBE_INPUT: Final[str] = (
-        "CUDA verification requires one fixed-length audio input."
+        "CUDA verification requires one audio input with two dimensions."
+    )
+    INVALID_CUDA_PROBE_LENGTH: Final[str] = (
+        "CUDA verification requires a positive audio window length. "
+        "A dynamic ONNX input uses BirdNET's segment size."
     )
     INVALID_CUDA_PROBE_OUTPUT: Final[str] = (
         "CUDA verification produced invalid scores for {batch_size} windows."

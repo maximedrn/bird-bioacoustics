@@ -249,7 +249,10 @@ class CudaSession:
 
 
 def check_cuda_model(
-    model_path: Path, batch_size: int = OnnxOption.PROBE_PARTIAL_BATCH
+    model_path: Path,
+    batch_size: int = OnnxOption.PROBE_PARTIAL_BATCH,
+    *,
+    input_size_samples: int | None = None,
 ) -> str:
     """Run real convolutions for small, partial and full inference batches.
 
@@ -257,6 +260,8 @@ def check_cuda_model(
     :type model_path: Path
     :param batch_size: Requested maximum number of audio windows.
     :type batch_size: int
+    :param input_size_samples: BirdNET window length for dynamic ONNX inputs.
+    :type input_size_samples: int | None
     :return: Verified CUDA execution provider.
     :rtype: str
     """
@@ -264,9 +269,14 @@ def check_cuda_model(
     inputs: list[OnnxValue] = session.get_inputs()
     if len(inputs) != 1 or len(inputs[0].shape) != 2:
         raise ValueError(ErrorMessage.INVALID_CUDA_PROBE_INPUT)
-    samples: int | str | None = inputs[0].shape[1]
-    if not isinstance(samples, int) or samples <= 0:
-        raise ValueError(ErrorMessage.INVALID_CUDA_PROBE_INPUT)
+    sample_dimension: int | str | None = inputs[0].shape[1]
+    samples: int | None = (
+        sample_dimension
+        if isinstance(sample_dimension, int)
+        else input_size_samples
+    )
+    if samples is None or isinstance(samples, bool) or samples <= 0:
+        raise ValueError(ErrorMessage.INVALID_CUDA_PROBE_LENGTH)
     output_name: str = session.get_outputs()[0].name
     sizes: list[int] = sorted(
         {1, min(OnnxOption.PROBE_PARTIAL_BATCH, batch_size), batch_size}

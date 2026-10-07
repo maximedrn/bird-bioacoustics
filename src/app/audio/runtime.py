@@ -79,13 +79,14 @@ def verify_model_device(
     if settings.device == InferenceDevice.CPU:
         return ExecutionProvider.CPU
     configure_inference(settings)
+    window_samples: int = model.get_segment_size_samples()
     context: SpawnContext = get_context(InferenceRuntime.START_METHOD)
     reader: Connection
     writer: Connection
     reader, writer = context.Pipe(duplex=False)
     worker: BaseProcess = context.Process(
         target=check_cuda_worker,
-        args=(model.model_path, settings.batch_size, writer),
+        args=(model.model_path, settings.batch_size, window_samples, writer),
     )
     try:
         worker.start()
@@ -150,7 +151,10 @@ def stop_cuda_check(worker: BaseProcess) -> None:
 
 
 def check_cuda_worker(
-    model_path: Path, batch_size: int, writer: Connection
+    model_path: Path,
+    batch_size: int,
+    window_samples: int,
+    writer: Connection,
 ) -> None:
     """Load CUDA only inside the process that owns its temporary context.
 
@@ -158,13 +162,17 @@ def check_cuda_worker(
     :type model_path: Path
     :param batch_size: Requested number of audio windows per inference.
     :type batch_size: int
+    :param window_samples: Audio window length supplied by BirdNET.
+    :type window_samples: int
     :param writer: Child pipe endpoint for its completed result.
     :type writer: Connection
     :return: None.
     :rtype: None
     """
     try:
-        provider: str = check_cuda_model(model_path, batch_size)
+        provider: str = check_cuda_model(
+            model_path, batch_size, input_size_samples=window_samples
+        )
         result: CudaCheckResult = CudaCheckResult(provider, None)
     except Exception as error:
         result = CudaCheckResult(None, str(error))

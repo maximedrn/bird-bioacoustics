@@ -118,6 +118,15 @@ class BirdNetModelProtocol(Protocol):
         """
         raise NotImplementedError
 
+    @classmethod
+    def get_segment_size_samples(cls) -> int:
+        """Read the model's default audio window length from BirdNET.
+
+        :return: Samples in one inference window.
+        :rtype: int
+        """
+        raise NotImplementedError
+
     def predict(
         self,
         audio_paths: str | tuple[str, ...],

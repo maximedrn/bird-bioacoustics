@@ -39,10 +39,6 @@ uv run app status
 - `report` regenerates cumulative summaries and plots, refreshes the saved notebook outputs, and exports the notebook as SVG.
 - `status` displays the current progress.
 
-GPU inference requires a CUDA runtime and `onnxruntime-gpu` in place of the CPU ONNX package. Use `uv run --no-sync app models --device GPU:0` to verify real inference, then `uv run --no-sync app batch --device GPU:0 --workers 1 --producers 2`. Each batch loads one model in its inference worker. Unsupported cuDNN engine searches are retried once with compatibility algorithms on CUDA.
-
-The progress bar measures the complete recording workflow, including downloads, decoding, noise generation, and saved measurements. These stages still use CPU resources. Compare CPU and GPU on the same recordings after startup; larger inference batches can help when GPU memory allows. The model retains FP32 precision when resuming.
-
 ## Results
 
 _From [`notebook.ipynb`](notebook.ipynb)_
