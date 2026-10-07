@@ -12,10 +12,16 @@ from pathlib import Path
 from sys import modules
 from typing import Final, Protocol, TextIO, TypedDict, cast
 
-from app.domain.constants import RuntimeModule
+from app.audio.models import ModelPreparation, prepare_model
+from app.domain.constants import InferenceDevice, RuntimeModule
 from app.domain.errors import ExperimentAlreadyRunningError
 from app.domain.messages import CliMessage, LogMessage
-from app.domain.settings import CorpusSettings, ProjectPaths
+from app.domain.settings import (
+    CorpusSettings,
+    InferenceSettings,
+    ModelSettings,
+    ProjectPaths,
+)
 from app.domain.types import CorpusStatus
 from app.experiments.progress import TqdmBatchProgress
 from app.experiments.runner import run_batch
@@ -49,6 +55,7 @@ class Command(StrEnum):
     """Name independently executable application workflows."""
 
     BATCH = "batch"
+    MODELS = "models"
     REPORT = "report"
     STATUS = "status"
 
@@ -69,6 +76,10 @@ class CliNamespace(Namespace):
     command: str
     batch_size: int = CorpusSettings().batch_size
     no_progress: bool = False
+    device: InferenceDevice = InferenceDevice.CPU
+    workers: int = InferenceSettings().n_workers
+    producers: int = InferenceSettings().n_producers
+    inference_batch_size: int = InferenceSettings().batch_size
 
 
 @dataclass(frozen=True, slots=True)
@@ -79,6 +90,7 @@ class CliOptions:
     command: Command
     batch_size: int
     no_progress: bool
+    inference: InferenceSettings
 
 
 class ReportOutput(TypedDict):
@@ -133,9 +145,50 @@ def parser() -> ArgumentParser:
     batch.add_argument(
         "--no-progress", action="store_true", help=CliMessage.NO_PROGRESS_HELP
     )
+    add_inference_options(batch)
+    models: ArgumentParser = commands.add_parser(
+        Command.MODELS, help=CliMessage.MODELS_HELP
+    )
+    add_inference_options(models)
     commands.add_parser(Command.REPORT, help=CliMessage.REPORT_HELP)
     commands.add_parser(Command.STATUS, help=CliMessage.STATUS_HELP)
     return result
+
+
+def add_inference_options(command: ArgumentParser) -> None:
+    """Share hardware controls between model preparation and batch execution.
+
+    :param command: Subcommand accepting inference resource options.
+    :type command: ArgumentParser
+    :return: None.
+    :rtype: None
+    """
+    defaults: InferenceSettings = InferenceSettings()
+    command.add_argument(
+        "--device",
+        type=InferenceDevice,
+        choices=tuple(InferenceDevice),
+        default=defaults.device,
+        help=CliMessage.DEVICE_HELP,
+    )
+    command.add_argument(
+        "--workers",
+        type=int,
+        default=defaults.n_workers,
+        help=CliMessage.WORKERS_HELP,
+    )
+    command.add_argument(
+        "--producers",
+        type=int,
+        default=defaults.n_producers,
+        help=CliMessage.PRODUCERS_HELP,
+    )
+    command.add_argument(
+        "--inference-batch-size",
+        type=int,
+        default=defaults.batch_size,
+        help=CliMessage.INFERENCE_BATCH_SIZE_HELP,
+    )
 
 
 def parse_options(argv: list[str] | None) -> CliOptions:
@@ -153,12 +206,18 @@ def parse_options(argv: list[str] | None) -> CliOptions:
         Command(namespace.command),
         namespace.batch_size,
         namespace.no_progress,
+        InferenceSettings(
+            device=namespace.device,
+            n_workers=namespace.workers,
+            n_producers=namespace.producers,
+            batch_size=namespace.inference_batch_size,
+        ),
     )
 
 
 def execute_command(
     options: CliOptions, paths: ProjectPaths
-) -> CorpusStatus | ReportOutput:
+) -> CorpusStatus | ReportOutput | ModelPreparation:
     """Dispatch a command without starting unrelated business workflows.
 
     :param options: Validated CLI configuration.
@@ -166,12 +225,14 @@ def execute_command(
     :param paths: Immutable project directories.
     :type paths: ProjectPaths
     :return: JSON-compatible command output.
-    :rtype: CorpusStatus | ReportOutput
+    :rtype: CorpusStatus | ReportOutput | ModelPreparation
     """
     if options.command == Command.BATCH:
         return execute_batch(options, paths)
     if options.command == Command.REPORT:
         return execute_report(paths)
+    if options.command == Command.MODELS:
+        return prepare_model(ModelSettings(), options.inference)
     return read_status(paths)
 
 
@@ -190,6 +251,7 @@ def execute_batch(options: CliOptions, paths: ProjectPaths) -> CorpusStatus:
         paths,
         corpus=CorpusSettings(batch_size=options.batch_size),
         progress=TqdmBatchProgress(enabled=not options.no_progress),
+        inference=options.inference,
     )
 
 
@@ -254,15 +316,17 @@ def main(argv: list[str] | None = None) -> int:
     :rtype: int
     """
     error: OSError | ValueError | RuntimeError
-    options: CliOptions = parse_options(argv)
     basicConfig(level=INFO, format=LogMessage.FORMAT)
     try:
+        options: CliOptions = parse_options(argv)
         paths: ProjectPaths = (
             ProjectPaths.from_root(options.root)
             if options.root
             else ProjectPaths.from_working_directory()
         )
-        result: CorpusStatus | ReportOutput = execute_command(options, paths)
+        result: CorpusStatus | ReportOutput | ModelPreparation = (
+            execute_command(options, paths)
+        )
         print(dumps(result, indent=2, ensure_ascii=False))
     except ExperimentAlreadyRunningError as error:
         print_error(str(error))

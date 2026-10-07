@@ -112,6 +112,26 @@ class ErrorMessage:
     INVALID_MODEL_BACKEND: Final[str] = (
         "Unsupported {version} acoustic backend: {backend}."
     )
+    INVALID_INFERENCE_SETTINGS: Final[str] = (
+        "Inference workers, audio producers and window batch size must be "
+        "positive integers."
+    )
+    INVALID_INFERENCE_DEVICE: Final[str] = "Choose CPU or GPU:0."
+    INVALID_GPU_WORKERS: Final[str] = (
+        "Use one inference worker for GPU:0; increase audio producers instead."
+    )
+    EXCESSIVE_INFERENCE_WORKERS: Final[str] = (
+        "Worker and producer counts must not exceed the {cores} CPU cores "
+        "available to this runtime."
+    )
+    UNSUPPORTED_GPU_BACKEND: Final[str] = (
+        "GPU execution requires the ONNX backend in this application."
+    )
+    CUDA_UNAVAILABLE: Final[str] = (
+        "CUDA inference is unavailable. Select a Colab GPU runtime and "
+        "install onnxruntime-gpu with compatible CUDA/cuDNN libraries, "
+        "then rerun model preparation, or choose CPU."
+    )
     INVALID_PLOT_ARTIFACT: Final[str] = "{artifact} is not a plot artifact."
     INVALID_PROGRESS_INTERVAL: Final[str] = (
         "Progress interval must be positive."
@@ -251,6 +271,17 @@ class CliMessage:
         "original size."
     )
     NO_PROGRESS_HELP: Final[str] = "Disable progress output."
+    MODELS_HELP: Final[str] = (
+        "Download and cache the configured model without processing audio."
+    )
+    DEVICE_HELP: Final[str] = "Inference target: CPU or the first CUDA GPU."
+    WORKERS_HELP: Final[str] = (
+        "Inference worker processes; use one on a single GPU."
+    )
+    PRODUCERS_HELP: Final[str] = "Processes preparing audio window batches."
+    INFERENCE_BATCH_SIZE_HELP: Final[str] = (
+        "Audio windows per inference call; independent of recording batches."
+    )
     REPORT_HELP: Final[str] = (
         "Save cumulative results; refresh the notebook and HTML/PDF/SVG "
         "previews."

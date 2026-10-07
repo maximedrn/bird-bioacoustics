@@ -17,6 +17,7 @@ from sqlalchemy.sql.functions import count as sql_count
 from app.audio.backend import load_model
 from app.audio.prediction import BirdNetPredictor
 from app.audio.processing import AudioProcessor
+from app.audio.runtime import validate_inference, verify_model_device
 from app.catalogue.client import XenoCantoClient
 from app.catalogue.downloads import ExperimentRepository
 from app.domain.constants import (
@@ -34,6 +35,7 @@ from app.domain.protocols import BirdNetModelProtocol, PredictionSession
 from app.domain.settings import (
     CorpusSettings,
     ExperimentSettings,
+    InferenceSettings,
     ModelSettings,
     ProjectPaths,
 )
@@ -89,6 +91,7 @@ class XenoCantoExperiment:
         model_settings: ModelSettings,
         settings: ExperimentSettings,
         corpus_settings: CorpusSettings,
+        inference_settings: InferenceSettings | None = None,
     ) -> None:
         """Open compatible writable storage without loading the inference
         model.
@@ -101,6 +104,8 @@ class XenoCantoExperiment:
         :type settings: ExperimentSettings
         :param corpus_settings: Catalogue and batch settings.
         :type corpus_settings: CorpusSettings
+        :param inference_settings: Hardware controls outside the fingerprint.
+        :type inference_settings: InferenceSettings | None
         :return: None.
         :rtype: None
         """
@@ -108,6 +113,15 @@ class XenoCantoExperiment:
         self._model_settings: ModelSettings = model_settings
         self._settings: ExperimentSettings = settings
         self._corpus_settings: CorpusSettings = corpus_settings
+        self._inference: InferenceSettings = (
+            inference_settings
+            if inference_settings is not None
+            else InferenceSettings(
+                n_workers=model_settings.n_workers,
+                batch_size=model_settings.batch_size,
+            )
+        )
+        validate_inference(self._inference, model_settings)
         paths.create_directories()
         configuration: dict[str, object] = protocol_configuration(
             model_settings, settings, corpus_settings
@@ -209,6 +223,7 @@ class XenoCantoExperiment:
         :rtype: None
         """
         model: BirdNetModelProtocol = load_model(self._model_settings)
+        verify_model_device(model, self._inference)
         directory: str
         with TemporaryDirectory(
             prefix="worker_", dir=self._paths.generated_audio
@@ -249,8 +264,10 @@ class XenoCantoExperiment:
         session: PredictionSession
         with model.predict_session(
             top_k=None,
-            n_workers=self._model_settings.n_workers,
-            batch_size=self._model_settings.batch_size,
+            n_workers=self._inference.n_workers,
+            n_producers=self._inference.n_producers,
+            device=self._inference.device,
+            batch_size=self._inference.batch_size,
             max_n_files=max(
                 1
                 + len(self._settings.snr_values_db)
@@ -452,6 +469,7 @@ def run_batch(
     model: ModelSettings | None = None,
     experiment: ExperimentSettings | None = None,
     progress: ProgressObserver | None = None,
+    inference: InferenceSettings | None = None,
 ) -> CorpusStatus:
     """Run one batch and always release its database connection and worker
     lock.
@@ -467,6 +485,8 @@ def run_batch(
     :type experiment: ExperimentSettings | None
     :param progress: Optional progress observer.
     :type progress: ProgressObserver | None
+    :param inference: Hardware and process counts outside the protocol.
+    :type inference: InferenceSettings | None
     :return: Cumulative processing status after one batch.
     :rtype: CorpusStatus
     """
@@ -475,6 +495,7 @@ def run_batch(
         model or ModelSettings(),
         experiment or ExperimentSettings(),
         corpus or CorpusSettings(),
+        inference,
     )
     try:
         return worker.run(progress)

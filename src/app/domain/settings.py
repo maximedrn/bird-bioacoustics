@@ -8,7 +8,7 @@ from typing import Literal, Self
 
 from numpy import isfinite
 
-from app.domain.constants import FileName
+from app.domain.constants import FileName, InferenceDevice
 from app.domain.messages import ErrorMessage
 
 
@@ -117,7 +117,10 @@ class ProjectPaths:
 
 @dataclass(frozen=True, slots=True)
 class ModelSettings:
-    """Store immutable BirdNET model parameters."""
+    """Preserve the historical fingerprint of the BirdNET model.
+
+    Override hardware controls through InferenceSettings when resuming.
+    """
 
     family: Literal["acoustic"] = "acoustic"
     version: Literal["2.4", "3.0"] = "3.0"
@@ -125,6 +128,49 @@ class ModelSettings:
     minimum_confidence: float = 0.1
     n_workers: int = 1
     batch_size: int = 16
+
+
+@dataclass(frozen=True, slots=True)
+class InferenceSettings:
+    """Configure hardware independently of the saved scientific protocol."""
+
+    device: InferenceDevice = InferenceDevice.CPU
+    n_workers: int = 1
+    n_producers: int = 1
+    batch_size: int = 16
+
+    def __post_init__(self) -> None:
+        """Reject invalid worker counts and unsupported execution targets.
+
+        :return: None.
+        :rtype: None
+        """
+        counts: tuple[int, ...] = (
+            self.n_workers,
+            self.n_producers,
+            self.batch_size,
+        )
+        if any(not self._positive_integer(count) for count in counts):
+            raise ValueError(ErrorMessage.INVALID_INFERENCE_SETTINGS)
+        if self.device not in InferenceDevice:
+            raise ValueError(ErrorMessage.INVALID_INFERENCE_DEVICE)
+        if self.device == InferenceDevice.GPU and self.n_workers != 1:
+            raise ValueError(ErrorMessage.INVALID_GPU_WORKERS)
+
+    @staticmethod
+    def _positive_integer(value: object) -> bool:
+        """Validate integer counts at the untyped CLI or notebook boundary.
+
+        :param value: Requested resource count.
+        :type value: object
+        :return: Whether the value is a positive integer other than a bool.
+        :rtype: bool
+        """
+        return (
+            isinstance(value, int)
+            and not isinstance(value, bool)
+            and value > 0
+        )
 
 
 @dataclass(frozen=True, slots=True)

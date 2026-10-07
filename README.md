@@ -29,11 +29,13 @@ uv run jupyter lab
 Copy `.env.example` to `.env` and set `XENO_CANTO_API_KEY` before running a batch. Each execution processes one batch and resumes from the saved cursor.
 
 ```bash
+uv run app models
 uv run app batch --batch-size [BATCH_SIZE]
 uv run app report
 uv run app status
 ```
 
+- `models` downloads and caches the configured model without processing recordings.
 - `report` regenerates cumulative summaries and plots, refreshes the saved notebook outputs, and exports the notebook as SVG.
 - `status` displays the current progress.
 

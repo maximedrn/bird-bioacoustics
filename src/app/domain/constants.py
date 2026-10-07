@@ -193,4 +193,26 @@ class RuntimeModule(StrEnum):
     """Identify runtime boundaries without scattering module-name strings."""
 
     BIRDNET = "birdnet"
+    ONNX = "onnxruntime"
     SYSTEM = "sys"
+
+
+class InferenceDevice(StrEnum):
+    """Name supported CPU and single-GPU execution targets."""
+
+    CPU = "CPU"
+    GPU = "GPU:0"
+
+
+class ExecutionProvider(StrEnum):
+    """Name ONNX providers used to verify the requested hardware."""
+
+    CPU = "CPUExecutionProvider"
+    CUDA = "CUDAExecutionProvider"
+
+
+class OnnxOption:
+    """Share the CUDA provider configuration with preparation checks."""
+
+    DEVICE_ID: Final[str] = "device_id"
+    FIRST_GPU: Final[str] = "0"

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from collections.abc import Collection
+from pathlib import Path
 from types import TracebackType
 from typing import Protocol, Self
 
@@ -99,11 +101,20 @@ class BirdNetModelProtocol(Protocol):
     """Describe the BirdNET model methods used by this notebook."""
 
     @property
-    def species_list(self) -> list[str]:
+    def species_list(self) -> Collection[str]:
         """Read the model's supported species labels.
 
         :return: Model species labels.
-        :rtype: list[str]
+        :rtype: Collection[str]
+        """
+        raise NotImplementedError
+
+    @property
+    def model_path(self) -> Path:
+        """Locate the cached model weights downloaded by BirdNET.
+
+        :return: Local model file.
+        :rtype: Path
         """
         raise NotImplementedError
 
@@ -135,6 +146,8 @@ class BirdNetModelProtocol(Protocol):
         *,
         top_k: int | None,
         n_workers: int,
+        n_producers: int,
+        device: str,
         batch_size: int,
         max_n_files: int,
         default_confidence_threshold: float,
@@ -145,6 +158,10 @@ class BirdNetModelProtocol(Protocol):
         :type top_k: int | None
         :param n_workers: Inference worker count.
         :type n_workers: int
+        :param n_producers: Audio preparation process count.
+        :type n_producers: int
+        :param device: CPU or GPU execution target.
+        :type device: str
         :param batch_size: Audio windows per inference batch.
         :type batch_size: int
         :param max_n_files: Largest temporary file batch.
