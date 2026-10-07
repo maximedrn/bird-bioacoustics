@@ -132,7 +132,11 @@ class ModelSettings:
 
 @dataclass(frozen=True, slots=True)
 class InferenceSettings:
-    """Configure hardware independently of the saved scientific protocol."""
+    """Configure concurrent recordings outside the saved scientific protocol.
+
+    Each recording owns one inference process and n_producers audio
+    preparation processes. The batch size counts windows per model call.
+    """
 
     device: InferenceDevice = InferenceDevice.CPU
     n_workers: int = 1
@@ -154,8 +158,6 @@ class InferenceSettings:
             raise ValueError(ErrorMessage.INVALID_INFERENCE_SETTINGS)
         if self.device not in InferenceDevice:
             raise ValueError(ErrorMessage.INVALID_INFERENCE_DEVICE)
-        if self.device == InferenceDevice.GPU and self.n_workers != 1:
-            raise ValueError(ErrorMessage.INVALID_GPU_WORKERS)
 
     @staticmethod
     def _positive_integer(value: object) -> bool:

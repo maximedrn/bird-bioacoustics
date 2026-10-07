@@ -113,13 +113,10 @@ class ErrorMessage:
         "Unsupported {version} acoustic backend: {backend}."
     )
     INVALID_INFERENCE_SETTINGS: Final[str] = (
-        "Inference workers, audio producers and window batch size must be "
+        "Recording workers, audio producers and window batch size must be "
         "positive integers."
     )
     INVALID_INFERENCE_DEVICE: Final[str] = "Choose CPU or GPU:0."
-    INVALID_GPU_WORKERS: Final[str] = (
-        "Use one inference worker for GPU:0; increase audio producers instead."
-    )
     EXCESSIVE_INFERENCE_WORKERS: Final[str] = (
         "Worker and producer counts must not exceed the {cores} CPU cores "
         "available to this runtime."
@@ -300,9 +297,12 @@ class CliMessage:
     )
     DEVICE_HELP: Final[str] = "Inference target: CPU or the first CUDA GPU."
     WORKERS_HELP: Final[str] = (
-        "Inference worker processes; use one on a single GPU."
+        "Concurrent recordings, each with one inference process and its "
+        "own model copy; use one to minimize GPU memory."
     )
-    PRODUCERS_HELP: Final[str] = "Processes preparing audio window batches."
+    PRODUCERS_HELP: Final[str] = (
+        "Audio preparation processes per concurrent recording."
+    )
     INFERENCE_BATCH_SIZE_HELP: Final[str] = (
         "Audio windows per inference call; independent of recording batches."
     )

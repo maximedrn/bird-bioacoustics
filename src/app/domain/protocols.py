@@ -161,7 +161,7 @@ class BirdNetModelProtocol(Protocol):
         max_n_files: int,
         default_confidence_threshold: float,
     ) -> PredictionSession:
-        """Create reusable inference workers for the sequential corpus.
+        """Create a reusable inference session for one recording slot.
 
         :param top_k: Species limit per window, or None.
         :type top_k: int | None

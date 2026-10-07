@@ -2,25 +2,23 @@
 
 from __future__ import annotations
 
-from dataclasses import asdict, replace
+from collections.abc import Generator, Iterator
+from contextlib import ExitStack, closing
+from dataclasses import asdict
 from hashlib import sha256
 from importlib.metadata import version
+from itertools import chain, islice
 from json import dumps
 from logging import Logger, getLogger
 from pathlib import Path
-from tempfile import TemporaryDirectory
-from time import sleep
 
 from sqlalchemy import select
 from sqlalchemy.sql.functions import count as sql_count
 
 from app.audio.backend import load_model
 from app.audio.models import inference_model
-from app.audio.prediction import BirdNetPredictor
-from app.audio.processing import AudioProcessor
 from app.audio.runtime import validate_inference
 from app.catalogue.client import XenoCantoClient
-from app.catalogue.downloads import ExperimentRepository
 from app.domain.constants import (
     BIRDNET_DISTRIBUTION,
     PROTOCOL_VERSION,
@@ -32,7 +30,7 @@ from app.domain.constants import (
 from app.domain.errors import BirdNetInferenceError, RecordingError
 from app.domain.messages import ErrorMessage, LogMessage
 from app.domain.models import NoiseExperimentOutput, RecordingBatch
-from app.domain.protocols import BirdNetModelProtocol, PredictionSession
+from app.domain.protocols import BirdNetModelProtocol
 from app.domain.settings import (
     CorpusSettings,
     ExperimentSettings,
@@ -41,13 +39,11 @@ from app.domain.settings import (
     ProjectPaths,
 )
 from app.domain.types import CorpusStatus
-from app.experiments.noise import NoiseRobustnessExperiment
 from app.experiments.overlap import OverlapExperiment
+from app.experiments.parallel import RecordingPool, RecordingTask
 from app.experiments.progress import ProgressObserver, TqdmBatchProgress
-from app.experiments.recording import (
-    RecordingAnalysisService,
-    RecordingMeasurements,
-)
+from app.experiments.recording import RecordingMeasurements
+from app.experiments.workers import RecordingWorker, RecordingWorkerFactory
 from app.storage.checkpoint import ExperimentCheckpoint
 from app.storage.schema import (
     PendingSegmentRow,
@@ -214,160 +210,85 @@ class XenoCantoExperiment:
     def _process_batch(
         self, batch: RecordingBatch, progress: ProgressObserver
     ) -> None:
-        """Own temporary workspace and load the model for exactly one batch.
+        """Open one independent recording slot per requested worker.
 
         :param batch: Durable recording interval.
         :type batch: RecordingBatch
-        :param progress: Progress observer receiving committed outcomes.
+        :param progress: Observer receiving committed outcomes.
         :type progress: ProgressObserver
         :return: None.
         :rtype: None
         """
+        sources: Iterator[tuple[str, dict[str, object]]] = (
+            self.checkpoint.batches.pending_sources(batch.batch_id)
+        )
+        initial: list[tuple[str, dict[str, object]]] = list(
+            islice(sources, self._inference.n_workers)
+        )
+        if not initial:
+            return
         model: BirdNetModelProtocol = load_model(self._model_settings)
         model = inference_model(model, self._inference)
-        directory: str
-        with TemporaryDirectory(
-            prefix="worker_", dir=self._paths.generated_audio
-        ) as directory:
-            self._process_session(batch, progress, model, Path(directory))
-
-    def _process_session(
-        self,
-        batch: RecordingBatch,
-        progress: ProgressObserver,
-        model: BirdNetModelProtocol,
-        workspace: Path,
-    ) -> None:
-        """Reuse one healthy session and release it after completion or
-        interruption.
-
-        :param batch: Durable recording interval.
-        :type batch: RecordingBatch
-        :param progress: Committed progress observer.
-        :type progress: ProgressObserver
-        :param model: Loaded acoustic model.
-        :type model: BirdNetModelProtocol
-        :param workspace: Managed scratch directory.
-        :type workspace: Path
-        :return: None.
-        :rtype: None
-        """
-        species: dict[str, str] = {
-            label.split("_", 1)[0]: label for label in model.species_list
-        }
-        repository: ExperimentRepository = ExperimentRepository(
-            self._paths, self._corpus_settings
+        factory: RecordingWorkerFactory = RecordingWorkerFactory(
+            self._paths,
+            model,
+            self._model_settings,
+            self._settings,
+            self._corpus_settings,
+            self._inference,
         )
-        processor: AudioProcessor = AudioProcessor()
-        scratch_paths: ProjectPaths = replace(
-            self._paths, results=workspace, generated_audio=workspace
-        )
-        session: PredictionSession
-        with model.predict_session(
-            top_k=None,
-            n_workers=self._inference.n_workers,
-            n_producers=self._inference.n_producers,
-            device=self._inference.device,
-            batch_size=self._inference.batch_size,
-            max_n_files=max(
-                1
-                + len(self._settings.snr_values_db)
-                * self._settings.noise_repetitions,
-                len(self._settings.mix_ratios),
-            ),
-            default_confidence_threshold=self._model_settings.minimum_confidence,
-        ) as session:
-            predictor: BirdNetPredictor = BirdNetPredictor(
-                model, scratch_paths, self._model_settings, session
-            )
-            noise: NoiseRobustnessExperiment = NoiseRobustnessExperiment(
-                predictor, processor, scratch_paths, self._settings
-            )
-            overlap: OverlapExperiment = OverlapExperiment(
-                predictor, processor, scratch_paths, self._settings
-            )
-            analysis: RecordingAnalysisService = RecordingAnalysisService(
-                repository,
-                processor,
-                predictor,
-                noise,
-                species,
-                workspace,
-                self._corpus_settings,
-            )
+        with ExitStack() as resources:
+            workers: list[RecordingWorker] = []
+            for _index in range(len(initial)):
+                workers.append(factory.create(resources))
             self._process_records(
-                batch, progress, analysis, overlap, workspace
+                chain(initial, sources), progress, tuple(workers)
             )
 
     def _process_records(
         self,
-        batch: RecordingBatch,
+        sources: Iterator[tuple[str, dict[str, object]]],
         progress: ProgressObserver,
-        analysis: RecordingAnalysisService,
-        overlap: OverlapExperiment,
-        workspace: Path,
+        workers: tuple[RecordingWorker, ...],
     ) -> None:
-        """Advance progress after committed outcomes and roll back unfinished
-        work.
+        """Commit concurrent analyses in order without sharing the connection.
 
-        :param batch: Durable processing interval.
-        :type batch: RecordingBatch
-        :param progress: Progress observer.
+        :param sources: Pending recordings in their durable batch order.
+        :type sources: Iterator[tuple[str, dict[str, object]]]
+        :param progress: Observer updated only after committed outcomes.
         :type progress: ProgressObserver
-        :param analysis: Single-recording measurement service.
-        :type analysis: RecordingAnalysisService
-        :param overlap: Scientific mixture service.
-        :type overlap: OverlapExperiment
-        :param workspace: Temporary working directory.
-        :type workspace: Path
+        :param workers: Independent recording analysis slots.
+        :type workers: tuple[RecordingWorker, ...]
         :return: None.
         :rtype: None
         """
+        pool: RecordingPool = RecordingPool(
+            workers, self._corpus_settings.request_interval_seconds
+        )
+        tasks: Generator[RecordingTask, None, None]
         try:
-            for (
-                identifier,
-                metadata,
-            ) in self.checkpoint.batches.pending_sources(batch.batch_id):
-                status: ProcessingStatus = self._process_recording(
-                    identifier, metadata, analysis, overlap, workspace
-                )
-                cursor: int = int(
-                    self.checkpoint.get_metadata(MetadataKey.CURSOR) or "0"
-                )
-                self.checkpoint.connection.commit()
-                progress.update(cursor, identifier, status)
-                sleep(self._corpus_settings.request_interval_seconds)
+            with closing(pool.tasks(sources)) as tasks:
+                for task in tasks:
+                    status: ProcessingStatus = self._process_recording(task)
+                    cursor: int = int(
+                        self.checkpoint.get_metadata(MetadataKey.CURSOR) or "0"
+                    )
+                    self.checkpoint.connection.commit()
+                    progress.update(cursor, task.identifier, status)
         finally:
             self.checkpoint.connection.rollback()
 
-    def _process_recording(
-        self,
-        identifier: str,
-        metadata: dict[str, object],
-        analysis: RecordingAnalysisService,
-        overlap: OverlapExperiment,
-        workspace: Path,
-    ) -> ProcessingStatus:
-        """Commit scientific measures and cursor together, leaving
-        interruptions pending.
+    def _process_recording(self, task: RecordingTask) -> ProcessingStatus:
+        """Store one recording and its ordered pair before reusing its slot.
 
-        :param identifier: Current XC recording identifier.
-        :type identifier: str
-        :param metadata: Cached catalogue metadata.
-        :type metadata: dict[str, object]
-        :param analysis: Single-recording measurement service.
-        :type analysis: RecordingAnalysisService
-        :param overlap: Scientific mixture service.
-        :type overlap: OverlapExperiment
-        :param workspace: Managed temporary directory.
-        :type workspace: Path
+        :param task: Concurrent analysis whose predecessors were committed.
+        :type task: RecordingTask
         :return: Persisted successful or permanent-failure outcome.
         :rtype: ProcessingStatus
         """
+        identifier: str = task.identifier
         try:
-            measurements: RecordingMeasurements = analysis.analyze(
-                identifier, metadata
-            )
+            measurements: RecordingMeasurements = task.measurements.result()
             self.checkpoint.measurements.store(
                 identifier,
                 measurements.baseline,
@@ -380,7 +301,10 @@ class XenoCantoExperiment:
                 self._settings,
             )
             self._store_overlap(
-                identifier, measurements.noise, overlap, workspace
+                identifier,
+                measurements.noise,
+                task.worker.overlap,
+                task.worker.workspace,
             )
             self.checkpoint.batches.advance_cursor(identifier)
             self.checkpoint.connection.commit()
@@ -403,21 +327,8 @@ class XenoCantoExperiment:
             logger.debug(LogMessage.RECORDING_FAILED, identifier, error)
             return ProcessingStatus.FAILED
         finally:
-            self._clean_workspace(workspace)
-
-    @staticmethod
-    def _clean_workspace(workspace: Path) -> None:
-        """Remove generated files before processing another recording.
-
-        :param workspace: Temporary batch directory.
-        :type workspace: Path
-        :return: None.
-        :rtype: None
-        """
-        for temporary_value in workspace.iterdir():
-            temporary: Path = temporary_value
-            if temporary.is_file():
-                temporary.unlink()
+            if task.measurements.done():
+                task.worker.clean()
 
     def _store_overlap(
         self,

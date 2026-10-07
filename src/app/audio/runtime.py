@@ -58,7 +58,7 @@ def configure_inference(settings: InferenceSettings) -> None:
     :return: None.
     :rtype: None
     """
-    if settings.device == InferenceDevice.GPU:
+    if settings.device == InferenceDevice.GPU or settings.n_workers > 1:
         environ[InferenceRuntime.START_METHOD_VARIABLE] = (
             InferenceRuntime.START_METHOD
         )

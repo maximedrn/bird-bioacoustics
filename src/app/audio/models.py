@@ -57,9 +57,9 @@ def inference_model(
     :return: Existing CPU model or guarded GPU model.
     :rtype: BirdNetModelProtocol
     """
+    configure_inference(settings)
     if settings.device == InferenceDevice.CPU:
         return model
-    configure_inference(settings)
     factory: CudaModelFactory = cast(
         CudaModelFactory, import_module(RuntimeModule.CUDA_BACKEND)
     )

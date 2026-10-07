@@ -248,3 +248,12 @@ class InferenceRuntime:
     START_METHOD: Final[Literal["spawn"]] = "spawn"
     CUDA_CHECK_TIMEOUT: Final[float] = 180.0
     PROCESS_EXIT_TIMEOUT: Final[float] = 5.0
+
+
+class RecordingRuntime:
+    """Bound per-recording inference processes and isolate scratch files."""
+
+    INFERENCE_WORKERS: Final[int] = 1
+    WORKSPACE_PREFIX: Final[str] = "recording_"
+    THREAD_PREFIX: Final[str] = "recording"
+    DOWNLOAD_DIRECTORY: Final[str] = "downloads"

@@ -30,7 +30,11 @@ Copy `.env.example` to `.env` and set `XENO_CANTO_API_KEY` before running a batc
 
 ```bash
 uv run app models
-uv run app batch --batch-size [BATCH_SIZE]
+uv run app batch \
+    --batch-size [integer] \
+    --workers [integer] \
+    --producers [integer] \
+    --inference-batch-size [integer]
 uv run app report
 uv run app status
 ```
