@@ -21,6 +21,7 @@ from scipy.signal import resample_poly
 from soundfile import SoundFile, SoundFileError, read, write
 
 from app.audio.decoding import decode_with_ffmpeg
+from app.audio.diagnostics import silent_decoder_diagnostics
 from app.domain.errors import AudioDecodingError
 from app.domain.messages import ErrorMessage
 from app.domain.settings import MixRatio
@@ -31,6 +32,7 @@ class AudioProcessor:
     """Provide typed audio processing operations used by the experiments."""
 
     @staticmethod
+    @silent_decoder_diagnostics()
     def decode_for_inference(source: Path, destination: Path) -> Path:
         """Decode continuously to avoid unreliable seeking in compressed audio.
 
