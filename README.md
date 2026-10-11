@@ -47,7 +47,14 @@ uv run app status
 
 _From [`notebook.ipynb`](notebook.ipynb)_
 
-![Results notebook preview](data/results/notebook.svg)
+![Results notebook preview](data/results/notebook/notebook.svg)
+
+## Report
+
+```bash
+uv run app report
+latexmk -cd -pdf -interaction=nonstopmode -halt-on-error latex/report.tex
+```
 
 ## Development
 

@@ -104,6 +104,17 @@ class FileName(StrEnum):
     NOTEBOOK = "notebook.ipynb"
 
 
+class ResultDirectory(StrEnum):
+    """Group published artifacts by experiment and shared corpus context."""
+
+    CORPUS = "corpus"
+    NOISE = "noise"
+    OVERLAP = "overlap"
+    THRESHOLD = "threshold"
+    BENCHMARK = "benchmark"
+    NOTEBOOK = "notebook"
+
+
 class Artifact(StrEnum):
     """Name public result artifacts consistently across exports and plots."""
 
@@ -134,16 +145,35 @@ class Artifact(StrEnum):
         return f"{self.value}.{suffix}"
 
     def path(self, directory: Path, suffix: str = "png") -> Path:
-        """Locate an artifact in an explicitly supplied results directory.
+        """Locate an artifact in its experiment under the results root.
 
-        :param directory: Output directory.
+        :param directory: Root directory of all published experiment results.
         :type directory: Path
         :param suffix: File extension without a leading dot.
         :type suffix: str
         :return: Artifact destination.
         :rtype: Path
         """
-        return directory / self.filename(suffix)
+        return directory / ARTIFACT_DIRECTORIES[self] / self.filename(suffix)
+
+
+ARTIFACT_DIRECTORIES: Final[dict[Artifact, ResultDirectory]] = {
+    Artifact.NOISE: ResultDirectory.NOISE,
+    Artifact.OVERLAP: ResultDirectory.OVERLAP,
+    Artifact.THRESHOLD: ResultDirectory.THRESHOLD,
+    Artifact.PROGRESS: ResultDirectory.CORPUS,
+    Artifact.STATUS: ResultDirectory.CORPUS,
+    Artifact.SPECTROGRAM: ResultDirectory.CORPUS,
+    Artifact.BASELINE: ResultDirectory.CORPUS,
+    Artifact.NOTEBOOK: ResultDirectory.NOTEBOOK,
+    Artifact.NOISE_DISTRIBUTION: ResultDirectory.NOISE,
+    Artifact.SPECIES_NOISE: ResultDirectory.NOISE,
+    Artifact.NOISE_PAIRS: ResultDirectory.NOISE,
+    Artifact.OVERLAP_OUTCOMES: ResultDirectory.OVERLAP,
+    Artifact.SPECIES_COVERAGE: ResultDirectory.CORPUS,
+    Artifact.DURATION_CONFIDENCE: ResultDirectory.CORPUS,
+    Artifact.BATCH_HISTORY: ResultDirectory.CORPUS,
+}
 
 
 class ResultColumn(StrEnum):

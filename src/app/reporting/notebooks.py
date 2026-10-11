@@ -6,38 +6,21 @@ from base64 import b64encode
 from dataclasses import dataclass
 from enum import StrEnum
 from pathlib import Path
-from typing import Final, cast
+from typing import cast
 
 from nbformat import NotebookNode, read, validate, write
 from nbformat.v4 import new_output
 
 from app.domain.constants import Artifact, FileName
+from app.reporting.constants import (
+    ExperimentSection,
+    NotebookContent,
+    NotebookKey,
+)
 from app.reporting.messages import ReportMessage
+from app.reporting.publication import EXPERIMENT_SECTIONS, experiment_outputs
 from app.reporting.service import ExperimentReport
 from app.reporting.writing import atomic_output
-
-
-class NotebookKey(StrEnum):
-    """Name notebook fields and the presentation section marker."""
-
-    CELLS = "cells"
-    CELL_TYPE = "cell_type"
-    METADATA = "metadata"
-    OUTPUTS = "outputs"
-    EXECUTION_COUNT = "execution_count"
-    EXECUTION = "execution"
-    REPORT_SECTION = "app_report"
-    ALTERNATIVE_TEXT = "alt"
-
-
-class NotebookContent:
-    """Declare cell, output and MIME types supported by the report."""
-
-    CODE: Final[str] = "code"
-    DISPLAY_DATA: Final[str] = "display_data"
-    PNG: Final[str] = "image/png"
-    MARKDOWN: Final[str] = "text/markdown"
-    TEXT: Final[str] = "text/plain"
 
 
 class NotebookSection(StrEnum):
@@ -56,6 +39,22 @@ class NotebookSection(StrEnum):
     SPECIES_COVERAGE = Artifact.SPECIES_COVERAGE.value
     DURATION_CONFIDENCE = Artifact.DURATION_CONFIDENCE.value
     BATCH_HISTORY = Artifact.BATCH_HISTORY.value
+    NOISE_INTERVALS = ExperimentSection.NOISE_INTERVALS.value
+    NOISE_INTERVAL_FIGURE = ExperimentSection.NOISE_INTERVAL_FIGURE.value
+    THRESHOLD_INTERVALS = ExperimentSection.THRESHOLD_INTERVALS.value
+    SOUNDSCAPE_METRICS = ExperimentSection.SOUNDSCAPE_METRICS.value
+    COMMON_SPECIES_METRICS = ExperimentSection.COMMON_SPECIES_METRICS.value
+    SOUNDSCAPE_COMPARISON = ExperimentSection.SOUNDSCAPE_COMPARISON.value
+    PAIRED_MODELS = ExperimentSection.PAIRED_MODELS.value
+    COUNTRIES = ExperimentSection.COUNTRIES.value
+    QUALITY = ExperimentSection.QUALITY.value
+    SOURCE_VALIDATION = ExperimentSection.SOURCE_VALIDATION.value
+    CONTROLLED_NOISE = ExperimentSection.CONTROLLED_NOISE.value
+    CONTROLLED_NOISE_FIGURE = ExperimentSection.CONTROLLED_NOISE_FIGURE.value
+    CONTROLLED_OVERLAP = ExperimentSection.CONTROLLED_OVERLAP.value
+    CONTROLLED_OVERLAP_FIGURE = (
+        ExperimentSection.CONTROLLED_OVERLAP_FIGURE.value
+    )
 
 
 @dataclass(frozen=True, slots=True)
@@ -64,6 +63,7 @@ class NotebookPublisher:
 
     report: ExperimentReport
     figures: tuple[Path, ...]
+    experiment_results: Path | None = None
 
     def refresh(self) -> Path:
         """Replace saved outputs while preserving cells and their source code.
@@ -83,6 +83,11 @@ class NotebookPublisher:
                 dict[str, object], cell[NotebookKey.METADATA]
             )
             metadata.pop(NotebookKey.EXECUTION, None)
+            metadata[NotebookKey.SCROLLED] = False
+            jupyter: dict[str, object] = cast(
+                dict[str, object], metadata.setdefault(NotebookKey.JUPYTER, {})
+            )
+            jupyter[NotebookKey.OUTPUTS_HIDDEN] = False
         validate(notebook)
         with atomic_output(destination) as temporary:
             write(notebook, str(temporary))
@@ -137,6 +142,9 @@ class NotebookPublisher:
         """
         if section == NotebookSection.COVERAGE:
             return [self._markdown(self.report.coverage_text())]
+        if section.value in EXPERIMENT_SECTIONS:
+            root: Path = self.experiment_results or self.report.paths.results
+            return experiment_outputs(section.value, root)
         artifact: Artifact = Artifact(section.value)
         path: Path = artifact.path(self.report.paths.results)
         if path not in self.figures:

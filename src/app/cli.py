@@ -23,8 +23,11 @@ from app.domain.settings import (
     ProjectPaths,
 )
 from app.domain.types import CorpusStatus
+from app.experiments.controlled import run_controls
 from app.experiments.progress import TqdmBatchProgress
 from app.experiments.runner import run_batch
+from app.experiments.soundscapes import run_soundscapes
+from app.experiments.validation import run_validation
 from app.reporting.notebooks import NotebookPublisher
 from app.reporting.previews import (
     NotebookPreviewExporter,
@@ -58,6 +61,7 @@ class Command(StrEnum):
     MODELS = "models"
     REPORT = "report"
     STATUS = "status"
+    SOUNDSCAPES = "soundscapes"
 
 
 class ExitCode(IntEnum):
@@ -152,6 +156,10 @@ def parser() -> ArgumentParser:
     add_inference_options(models)
     commands.add_parser(Command.REPORT, help=CliMessage.REPORT_HELP)
     commands.add_parser(Command.STATUS, help=CliMessage.STATUS_HELP)
+    commands.add_parser(
+        Command.SOUNDSCAPES,
+        help=CliMessage.SOUNDSCAPES_HELP,
+    )
     return result
 
 
@@ -230,6 +238,11 @@ def execute_command(
     if options.command == Command.BATCH:
         return execute_batch(options, paths)
     if options.command == Command.REPORT:
+        return execute_report(paths)
+    if options.command == Command.SOUNDSCAPES:
+        run_soundscapes(paths)
+        run_validation(paths)
+        run_controls(paths)
         return execute_report(paths)
     if options.command == Command.MODELS:
         return prepare_model(ModelSettings(), options.inference)
@@ -315,7 +328,6 @@ def main(argv: list[str] | None = None) -> int:
     :return: Process exit code.
     :rtype: int
     """
-    error: OSError | ValueError | RuntimeError
     basicConfig(level=INFO, format=LogMessage.FORMAT)
     try:
         options: CliOptions = parse_options(argv)

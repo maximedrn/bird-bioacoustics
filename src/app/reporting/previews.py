@@ -146,8 +146,10 @@ class NotebookPreviewExporter:
             paths, report.snapshot
         )
         with plot_style_context(ReportTheme.DARK.palette.plot_settings()):
-            figures = dark_report.save_figures()
-        dark_notebook: Path = NotebookPublisher(dark_report, figures).refresh()
+            figures: tuple[Path, ...] = dark_report.save_figures()
+        dark_notebook: Path = NotebookPublisher(
+            dark_report, figures, experiment_results=report.paths.results
+        ).refresh()
         exporter: NotebookPreviewExporter = NotebookPreviewExporter(paths)
         html: Path = exporter._html(dark_notebook, ReportTheme.DARK)
         return exporter._pdf(html)

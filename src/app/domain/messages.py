@@ -241,9 +241,6 @@ class LogMessage:
 
     FORMAT: Final[str] = "%(message)s"
 
-    INFERENCE_RECOVERED: Final[str] = (
-        "Requeued %s recordings after a cancelled session."
-    )
     CUDA_CONVOLUTION_RECOVERED: Final[str] = (
         "CUDA: using compatible cuDNN convolution algorithms."
     )
@@ -260,10 +257,6 @@ class ExperimentMessage:
     )
     UNDETECTED_TARGET: Final[str] = (
         "Metadata target absent from exported baseline predictions"
-    )
-    LEGACY_ERROR_PREFIX: Final[str] = "RuntimeError:"
-    LEGACY_SESSION_CANCELLED: Final[str] = (
-        "Analysis was cancelled. Please check the logs:"
     )
 
 
@@ -311,6 +304,9 @@ class CliMessage:
         "previews."
     )
     STATUS_HELP: Final[str] = "Read current coverage without writing results."
+    SOUNDSCAPES_HELP: Final[str] = (
+        "Run the annotated BirdSet comparison and refresh experiment results."
+    )
     INTERRUPTED: Final[str] = (
         "Batch interrupted; its next uncommitted recording remains pending."
     )

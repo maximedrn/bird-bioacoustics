@@ -55,7 +55,6 @@ class ProjectPaths:
         :return: Project path configuration.
         :rtype: ProjectPaths
         """
-        candidate: Path
         root: Path = Path.cwd().resolve()
         for candidate in (root, *root.parents):
             if (candidate / "pyproject.toml").is_file():
@@ -98,6 +97,15 @@ class ProjectPaths:
         """
         return self.root / "data" / FileName.ANNOTATIONS
 
+    @property
+    def report_tables(self) -> Path:
+        """Locate generated LaTeX tables beside the document sources.
+
+        :return: Root directory of report fragments grouped by experiment.
+        :rtype: Path
+        """
+        return self.root / "latex" / "tables"
+
     def create_directories(self) -> None:
         """Create all writable project directories.
 
@@ -117,7 +125,7 @@ class ProjectPaths:
 
 @dataclass(frozen=True, slots=True)
 class ModelSettings:
-    """Preserve the historical fingerprint of the BirdNET model.
+    """Identify the saved Xeno-canto model and inference settings.
 
     Override hardware controls through InferenceSettings when resuming.
     """

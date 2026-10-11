@@ -101,7 +101,7 @@ class PlotAxis(Protocol):
         yerr: ArrayLike,
         marker: str,
         capsize: float,
-        label: str,
+        label: str | None = None,
     ) -> ErrorbarContainer:
         """Draw means and dispersion.
 
@@ -116,9 +116,17 @@ class PlotAxis(Protocol):
         :param capsize: Error-bar cap length.
         :type capsize: float
         :param label: Legend label.
-        :type label: str
+        :type label: str | None
         :return: Rendered mean and deviation artists.
         :rtype: ErrorbarContainer
+        """
+        raise NotImplementedError
+
+    def invert_xaxis(self) -> None:
+        """Display decreasing signal-to-noise ratios from left to right.
+
+        :return: None.
+        :rtype: None
         """
         raise NotImplementedError
 
@@ -279,6 +287,16 @@ class PlotAxis(Protocol):
 class PlotFigure(Protocol):
     """Declare the figure calls with explicit supported keyword types."""
 
+    def set_layout_engine(self, layout: Literal["constrained"]) -> None:
+        """Fit experiment panels while retaining their original layout.
+
+        :param layout: Supported automatic layout engine.
+        :type layout: Literal["constrained"]
+        :return: None.
+        :rtype: None
+        """
+        raise NotImplementedError
+
     def add_subplot(self, nrows: int, ncols: int, index: int) -> PlotAxis:
         """Create one panel.
 
@@ -294,16 +312,20 @@ class PlotFigure(Protocol):
         raise NotImplementedError
 
     def savefig(
-        self, fname: Path, *, dpi: float, format: Literal["png"]
+        self,
+        fname: Path,
+        *,
+        dpi: float = 180,
+        format: Literal["png", "pdf"] | None = None,
     ) -> None:
-        """Write an explicitly configured PNG.
+        """Write a figure in its explicit or filename-derived format.
 
         :param fname: Destination.
         :type fname: Path
         :param dpi: Image resolution.
         :type dpi: float
         :param format: Image format.
-        :type format: Literal["png"]
+        :type format: Literal["png", "pdf"] | None
         :return: None.
         :rtype: None
         """

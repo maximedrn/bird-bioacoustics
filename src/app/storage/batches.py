@@ -14,7 +14,7 @@ from app.domain.constants import (
     MetadataKey,
     ProcessingStatus,
 )
-from app.domain.messages import ErrorMessage, ExperimentMessage
+from app.domain.messages import ErrorMessage
 from app.domain.models import RecordingBatch
 from app.domain.protocols import CatalogueClient
 from app.storage.catalogue import CatalogueStore
@@ -191,51 +191,6 @@ class BatchStore:
                     raise ValueError(ErrorMessage.MISSING_RECORDING_POSITION)
                 last_position = position
                 yield identifier, source
-
-    def recover_interrupted_inference(self) -> int:
-        """Requeue legacy worker failures while preserving completed
-        measurements.
-
-        :return: Number of recordings incorrectly failed by a cancelled
-            session.
-        :rtype: int
-        """
-        batch: RecordingBatch | None = self.active_batch()
-        if batch is None:
-            return 0
-        rows: Sequence[Row[str, int | None]] = (
-            self._database.connection.execute(
-                select(RecordingRow.recording_id, RecordingRow.position).where(
-                    RecordingRow.batch_id == batch.batch_id,
-                    RecordingRow.status == ProcessingStatus.FAILED,
-                    RecordingRow.error.startswith(
-                        ExperimentMessage.LEGACY_ERROR_PREFIX
-                    ),
-                    RecordingRow.error.contains(
-                        ExperimentMessage.LEGACY_SESSION_CANCELLED
-                    ),
-                    RecordingRow.download_bytes.is_(None),
-                    RecordingRow.sha256.is_(None),
-                )
-            ).all()
-        )
-        if not rows:
-            return 0
-        identifiers: tuple[str, ...] = tuple(row.recording_id for row in rows)
-        self._database.connection.execute(
-            update(RecordingRow)
-            .where(RecordingRow.recording_id.in_(identifiers))
-            .values(status=ProcessingStatus.PENDING, error=None)
-        )
-        cursor: int = int(
-            self._database.get_metadata(MetadataKey.CURSOR) or "0"
-        )
-        self._database.set_metadata(
-            MetadataKey.CURSOR,
-            str(min(cursor, min(row.position for row in rows))),
-        )
-        self._database.connection.commit()
-        return len(rows)
 
     def advance_cursor(self, identifier: str) -> None:
         """Stage cursor advancement atomically with a successful or failed

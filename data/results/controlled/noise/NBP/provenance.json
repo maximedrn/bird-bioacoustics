@@ -1,0 +1,456 @@
+{
+  "created_at": "2026-10-09T18:18:04.272854+00:00",
+  "binding": {
+    "protocol": 2,
+    "seed": 20261008,
+    "split_sha256": "8c14c03fcbf720ff7e1435fb30f4c454ee806d8fb78fa7abe86c279852395902",
+    "model": {
+      "file": "model-fp32-999bb627e895.onnx",
+      "sha256": "999bb627e8954516d6a222eb76438b896fafc3791c2d10e72f02147ccd562c05",
+      "classes": 11560,
+      "backend": "ONNX"
+    },
+    "environment": {
+      "python": "3.13.13",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "packages": {
+        "birdnet": "1.1.1",
+        "onnxruntime": "1.30.0",
+        "ai-edge-litert": "2.2.0",
+        "numpy": "2.5.3",
+        "pandas": "3.0.6",
+        "soundfile": "0.14.0",
+        "pyarrow": "25.0.1"
+      }
+    },
+    "mapping": {
+      "NBP": {
+        "barswa": [
+          "Hirundo rustica_Barn Swallow"
+        ],
+        "blackc1": [
+          "Sylvia atricapilla_Eurasian Blackcap"
+        ],
+        "blutit": [
+          "Cyanistes caeruleus_Eurasian Blue Tit"
+        ],
+        "carcro1": [
+          "Corvus corone_Carrion Crow"
+        ],
+        "cetwar1": [
+          "Cettia cetti_Cetti's Warbler"
+        ],
+        "cirbun1": [
+          "Emberiza cirlus_Cirl Bunting"
+        ],
+        "coatit2": [
+          "Periparus ater_Coal Tit"
+        ],
+        "combuz1": [
+          "Buteo buteo_Common Buzzard"
+        ],
+        "comcha": [
+          "Fringilla coelebs_Eurasian Chaffinch",
+          "Fringilla canariensis_Canary Islands Chaffinch",
+          "Fringilla maderensis_Madeira Chaffinch",
+          "Fringilla moreletti_Azores Chaffinch",
+          "Fringilla spodiogenys_African Chaffinch"
+        ],
+        "comchi1": [
+          "Phylloscopus collybita_Common Chiffchaff"
+        ],
+        "comnig1": [
+          "Luscinia megarhynchos_Common Nightingale"
+        ],
+        "cowpig1": [
+          "Columba palumbus_Common Wood Pigeon"
+        ],
+        "crelar1": [
+          "Galerida cristata_Crested Lark"
+        ],
+        "cretit2": [
+          "Lophophanes cristatus_Crested Tit"
+        ],
+        "darwar1": [
+          "Curruca undata_Dartford Warbler"
+        ],
+        "dunnoc1": [
+          "Prunella modularis_Dunnock"
+        ],
+        "easwar1": [
+          "Curruca cantillans_Eastern Subalpine Warbler"
+        ],
+        "eucdov": [
+          "Streptopelia decaocto_Eurasian Collared Dove"
+        ],
+        "eugori2": [
+          "Oriolus oriolus_Eurasian Golden Oriole"
+        ],
+        "eurbla": [
+          "Turdus merula_Common Blackbird"
+        ],
+        "eurbul": [
+          "Pyrrhula pyrrhula_Eurasian Bullfinch"
+        ],
+        "eurgol": [
+          "Carduelis carduelis_European Goldfinch",
+          "Carduelis caniceps_Grey-crowned Goldfinch"
+        ],
+        "eurgre1": [
+          "Chloris chloris_European Greenfinch"
+        ],
+        "eurjay1": [
+          "Garrulus glandarius_Eurasian Jay"
+        ],
+        "eurlin1": [
+          "Linaria cannabina_Common Linnet"
+        ],
+        "eurmag1": [
+          "Pica pica_Eurasian Magpie"
+        ],
+        "eurnut2": [
+          "Sitta europaea_Eurasian Nuthatch",
+          "Sitta arctica_Siberian Nuthatch"
+        ],
+        "eurrob1": [
+          "Erithacus rubecula_European Robin"
+        ],
+        "eurser1": [
+          "Serinus serinus_European Serin"
+        ],
+        "eursta": [
+          "Sturnus vulgaris_Common Starling"
+        ],
+        "eurwry": [
+          "Jynx torquilla_Eurasian Wryneck"
+        ],
+        "eutdov": [
+          "Streptopelia turtur_European Turtle Dove"
+        ],
+        "firecr1": [
+          "Regulus ignicapilla_Common Firecrest"
+        ],
+        "gretit1": [
+          "Parus major_Great Tit"
+        ],
+        "grswoo": [
+          "Dendrocopos major_Great Spotted Woodpecker"
+        ],
+        "grywag": [
+          "Motacilla cinerea_Grey Wagtail"
+        ],
+        "houspa": [
+          "Passer domesticus_House Sparrow"
+        ],
+        "lottit1": [
+          "Aegithalos caudatus_Long-tailed Tit"
+        ],
+        "martit2": [
+          "Poecile palustris_Marsh Tit"
+        ],
+        "redcro": [
+          "Loxia curvirostra_Red Crossbill"
+        ],
+        "rocpet1": [
+          "Petronia petronia_Rock Sparrow"
+        ],
+        "sarwar1": [
+          "Curruca melanocephala_Sardinian Warbler"
+        ],
+        "shttre1": [
+          "Certhia brachydactyla_Short-toed Treecreeper"
+        ],
+        "skylar": [
+          "Alauda arvensis_Eurasian Skylark"
+        ],
+        "sonthr1": [
+          "Turdus philomelos_Song Thrush"
+        ],
+        "spofly1": [
+          "Muscicapa striata_Spotted Flycatcher",
+          "Muscicapa tyrrhenica_Mediterranean Flycatcher"
+        ],
+        "thelar1": [
+          "Galerida theklae_Thekla's Lark"
+        ],
+        "trepip": [
+          "Anthus trivialis_Tree Pipit"
+        ],
+        "winwre4": [
+          "Troglodytes troglodytes_Eurasian Wren"
+        ],
+        "woolar1": [
+          "Lullula arborea_Woodlark"
+        ],
+        "zitcis1": [
+          "Cisticola juncidis_Zitting Cisticola"
+        ]
+      },
+      "HSN": {
+        "amepip": [
+          "Anthus rubescens_American Pipit",
+          "Anthus japonicus_Siberian Pipit"
+        ],
+        "amerob": [
+          "Turdus migratorius_American Robin"
+        ],
+        "brebla": [
+          "Euphagus cyanocephalus_Brewer's Blackbird"
+        ],
+        "casfin": [
+          "Haemorhous cassinii_Cassin's Finch"
+        ],
+        "clanut": [
+          "Nucifraga columbiana_Clark's Nutcracker"
+        ],
+        "daejun": [
+          "Junco hyemalis_Dark-eyed Junco"
+        ],
+        "dusfly": [
+          "Empidonax oberholseri_American Dusky Flycatcher"
+        ],
+        "foxspa": [
+          "Passerella iliaca_Fox Sparrow",
+          "Passerella unalaschcensis_Sooty Fox Sparrow",
+          "Passerella megarhyncha_Thick-billed Fox Sparrow",
+          "Passerella schistacea_Slate-colored Fox Sparrow"
+        ],
+        "gcrfin": [
+          "Leucosticte tephrocotis_Grey-crowned Rosy Finch"
+        ],
+        "herthr": [
+          "Catharus guttatus_Hermit Thrush"
+        ],
+        "mallar3": [
+          "Anas platyrhynchos_Mallard"
+        ],
+        "moublu": [
+          "Sialia currucoides_Mountain Bluebird"
+        ],
+        "mouchi": [
+          "Poecile gambeli_Mountain Chickadee"
+        ],
+        "norfli": [
+          "Colaptes auratus_Northern Flicker",
+          "Colaptes mexicanoides_Guatemalan Flicker"
+        ],
+        "orcwar": [
+          "Leiothlypis celata_Orange-crowned Warbler"
+        ],
+        "rocwre": [
+          "Salpinctes obsoletus_Rock Wren"
+        ],
+        "sposan": [
+          "Actitis macularius_Spotted Sandpiper"
+        ],
+        "warvir": [
+          "Vireo gilvus_Warbling Vireo"
+        ],
+        "whcspa": [
+          "Zonotrichia leucophrys_White-crowned Sparrow"
+        ],
+        "yelwar": [
+          "Setophaga petechia_Mangrove Yellow Warbler",
+          "Setophaga aestiva_American Yellow Warbler"
+        ],
+        "yerwar": [
+          "Setophaga coronata_Yellow-rumped Warbler",
+          "Setophaga auduboni_Audubon's Warbler"
+        ]
+      }
+    },
+    "thresholds": {
+      "NBP": 0.05,
+      "HSN": 0.05
+    },
+    "snr_values": [
+      20.0,
+      10.0,
+      5.0,
+      0.0
+    ],
+    "repetitions": 5,
+    "mix_ratios": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.75,
+        0.25
+      ],
+      [
+        0.9,
+        0.1
+      ]
+    ],
+    "rms": 0.1,
+    "sample_rate": 48000,
+    "minimum_seconds": 3.0,
+    "audio_sha256": {
+      "HSN_002_20150708_065805_195_200.ogg": "2e15ffc93bbe8c91841c0d6221781e735fa15df459badedf368f897f1c4a1468",
+      "HSN_005_20150709_063105_160_165.ogg": "9cfcabb1304d775a1dfa912af3fe561be83d894acbb6ee3ecbd9b2ad09be729f",
+      "HSN_006_20150709_063805_000_005.ogg": "1d15aac36f6872deca5701ded29f626717af8721cc9f3aed771eab7d26271085",
+      "HSN_006_20150709_063805_005_010.ogg": "02da45f1280cf36ffef56d60e83120d2d61d2e466d018c2c2f16d7ee2087ec45",
+      "HSN_006_20150709_063805_230_235.ogg": "07b7d1fcdf55dea44a98d41cb33b21921cf341c50a0c4749cd63c4db6b1d16d8",
+      "HSN_006_20150709_063805_415_420.ogg": "8e06e1306a35739761955af9d3a9fee1d07369a2d84f2fabf6036a55b8730d35",
+      "HSN_006_20150709_063805_445_450.ogg": "fa44148e92ea4ffda00142b2f2e27793b2aeb1ecc18076601db5da9aadf9879a",
+      "HSN_006_20150709_063805_580_585.ogg": "3deba1ce5058f6be3632906bbe45f62b908b259f405fd05ddb9ca18829659245",
+      "HSN_007_20150709_064805_410_415.ogg": "a5d1adca23569bafec45e4c8756d83a5de60119440ab30ca0492468961036528",
+      "HSN_008_20150709_064805_395_400.ogg": "103e7013c0dbf18e07a8ac4dd63a02a85b3f5c3661619cf6ff31af78406633c7",
+      "HSN_009_20150709_073805_200_205.ogg": "18a47e5df0f338a49f4dae9d58098a3d8b8fa4584c5dcc1ee242d936e9b6f6ab",
+      "HSN_009_20150709_073805_440_445.ogg": "b4c21e2dd306f1c94830e55f4886472a864417d95cdfd01a2dd246c5795fc3d2",
+      "HSN_009_20150709_073805_525_530.ogg": "c903743008fc8897a1865e35356720afca2d8ec827ed4345e4c33358e11554bc",
+      "HSN_009_20150709_073805_580_585.ogg": "f155bb90c824724e991908a37db5044251ab1b9fd34d7c8f1199741f495896d2",
+      "HSN_015_20150709_081805_595_600.ogg": "701cef60f52c9db5f877742c0d0fd16e0467179fc0cb87f410f2b42e366645e4",
+      "HSN_019_20150709_083105_010_015.ogg": "0ef87c751ac7ac3588c9a3c5701f3467074fa2e3a7f455061017750b7a18d948",
+      "HSN_020_20150709_084105_165_170.ogg": "0a91003735931c66acd2de6357c01c94ec6733b1b46d560b665c018b9a18d9d0",
+      "HSN_021_20150709_084805_190_195.ogg": "c91cddc3c02d099f00d9de4954f0a056d28efdeca350afbd0cb4336a84fa6e74",
+      "HSN_021_20150709_084805_450_455.ogg": "47a840d53b9e8472046aad45dd5ada3cad9f5e08373ea3b0da3da4f5eecb59a4",
+      "HSN_021_20150709_084805_525_530.ogg": "fab9ba65487efd5e0e294497d6f569ee5afc8a60f89ebf9f16db3a017c276744",
+      "HSN_021_20150709_084805_545_550.ogg": "63f426e15b099b08236931f2e8b7b4d15811fc6a604a577ccee630c0759ce3e9",
+      "HSN_021_20150709_084805_570_575.ogg": "0669cc84a4890f50a6b62d28b509404e475afe3527aa4d86afe7386bddfaea32",
+      "HSN_022_20150709_084805_410_415.ogg": "d2b8779f1b9eef56c1a2f8ddb2a5e6188f72b00236e3c6eb49cf1bc184a98e4a",
+      "HSN_023_20150709_091105_090_095.ogg": "433f80650ee9a844410124a4ddab39b255e27a46df03dc798a1a143fb141ce4c",
+      "HSN_024_20150709_091105_540_545.ogg": "445d8084be0b24ab9737d64df9ef44cd7c32dc0eb3b84a1660603e3ad08dc716",
+      "HSN_026_20150710_062805_240_245.ogg": "4fb3ebab9ce811f55d1f29f06f834741595e635051efc2165180140f9541e182",
+      "HSN_028_20150710_064105_470_475.ogg": "485b7a40936a913ce2bfa53deb3670e658dedf008dd7e07c5b90201d0145a23f",
+      "HSN_029_20150710_064806_185_190.ogg": "6ba5952141f03ecec23e8ee993399797100ede3802df6f7a5e70ca7f61118d48",
+      "HSN_030_20150710_065105_500_505.ogg": "56ef651d10dbd95ffd7eb86790f6b718f15894b7d5d3f8b72d5e5f9107217431",
+      "HSN_031_20150710_065105_420_425.ogg": "2621afb861b19b92e765b731521c9dc98945262b3f36b3cea3887641811ed14c",
+      "HSN_032_20150710_071105_035_040.ogg": "11f817b50e90f93fcac39c398270dc1a4024847c12c81250c5982dab7e30d1eb",
+      "HSN_033_20150710_072105_015_020.ogg": "9107a3367be008f79f1253354feff26fc3eb0442e76bb40969587068dc15cbdc",
+      "HSN_033_20150710_072105_085_090.ogg": "c0db9909d73fb1da7fa35c0337e82026f43a821498cea348bad24a9447ce66b7",
+      "HSN_033_20150710_072105_170_175.ogg": "435c2d49c6916f82ffa5d8a478f9677fb1089d4ea8b08f81778009daeba1c933",
+      "HSN_033_20150710_072105_385_390.ogg": "c8e361536935b5ba1cd6c7be8bfcb3b3d98de51c5df04bba794408e24c6f71f3",
+      "HSN_033_20150710_072105_395_400.ogg": "fa5b84ff1f35bfaf885f05bd3175e178ec0efb86bbdf42b54ce7d3bb72087b7a",
+      "HSN_033_20150710_072105_550_555.ogg": "566d9add9cbcd53f3b8e564f1a64a26f95cd8e23a85fddb8fe2c194053912b32",
+      "HSN_034_20150710_075105_120_125.ogg": "99d3e5e5c9ede58b62a9df2903b2bec5e54ce5b6456ed7f696fdce3f85c63c7e",
+      "HSN_036_20150710_080105_055_060.ogg": "c78a80e7031137a10f637172b59bbb5856d703819a80cede069466c15aff5ddc",
+      "HSN_037_20150710_081805_320_325.ogg": "df4ba73cc68067e07f82a3cad72a620828ea17d82946a0d5090941a0c3550890",
+      "HSN_038_20150710_082105_175_180.ogg": "b3524f619394c5c3181211dc3780fcb8e9ee7ec63dad34b39ce2162522cf58eb",
+      "HSN_041_20150710_085105_340_345.ogg": "4f4a820ebfac6ab6cf80024759c9d0d01e277e28c03bea4c6f9ffef267e79bb6",
+      "HSN_044_20150710_091105_075_080.ogg": "9b988fea2c1f4378fbcb1f97e2fd48255beef8e25fd44c3d6e8b0178d00919e4",
+      "HSN_051_20150711_063105_230_235.ogg": "e110b3524caf0ab22f1b90471e49a5de16f0c3cc428400704d65ed1fd291399d",
+      "HSN_052_20150711_064105_195_200.ogg": "d79435f6b04c06476bd210390ea9b6e47d2d453e96bd484e53457c6b414f6861",
+      "HSN_052_20150711_064105_220_225.ogg": "7946ca80e824e42a3f7bb5560626f23a8b713205abd54e95d8d2d96942dbc928",
+      "HSN_052_20150711_064105_395_400.ogg": "4e4a45b35ce39b3b8aa94fcb33fe84d58e2fe927f9bad453927878ddbf63f9a2",
+      "HSN_052_20150711_064105_410_415.ogg": "657ae6528a4ab7fa7c4d41dfbe1511b066db3a18b8681ed615b22aeb46eb9926",
+      "HSN_052_20150711_064105_415_420.ogg": "ff2f813e78b70f3970e0059872f7308b78ed46360e138a48b2096102ce1e2aed",
+      "HSN_053_20150711_065105_135_140.ogg": "25dd5fe0bf2d86acbfe960b14f4c44618798e8d864e45c33bf489acd8407a4ea",
+      "HSN_055_20150711_065805_085_090.ogg": "869b45e7062972d95821379ed2328c1f80458bee953971e32c664c1b7c7e85db",
+      "HSN_056_20150711_070105_510_515.ogg": "719d06c79e0e5319c87c80f64363560bdf89df1b0e2bb53f763590688920a0eb",
+      "HSN_057_20150711_070105_015_020.ogg": "84eb98a4e7235570278a6fcfea48f7a4b2a04a2fabf9a73990ee827ace9a6080",
+      "HSN_059_20150711_070805_570_575.ogg": "839463ec641efb851479d79f594e2a89f20a72243177b3a3d65337c0141c91fc",
+      "HSN_061_20150711_071805_120_125.ogg": "a890bf9968a683b93e1117b3556f4ee5b4b38ab03141865b730549883ad7b6bf",
+      "HSN_062_20150711_072105_025_030.ogg": "adc74e8152d023fdf84df0a3ba14d73ac41678e9b4c4ba67ee33a4319d62f29e",
+      "HSN_062_20150711_072105_325_330.ogg": "a57301569f9ee5e5bf4277e0eb19f5399d0106b36f1b322ecc4fbad24a1dbe7a",
+      "HSN_064_20150711_074105_570_575.ogg": "079cb9e811c25092d459f23418df1824f03e7e6ae96cd9e4a66c030ae92a912b",
+      "HSN_065_20150711_074805_140_145.ogg": "168e9e1aa40fba2840cc552346362250998a7b1b3d49e5943281f914b5f85c26",
+      "HSN_065_20150711_074805_225_230.ogg": "202e887daf52de707997b8b5d7ee74283123121d9e78cb83c01806da4e78baa5",
+      "HSN_065_20150711_074805_270_275.ogg": "e9948df1dc92d86f62a2746722294a720cb38e696ff7806cc7cce2afad7b291c",
+      "HSN_065_20150711_074805_290_295.ogg": "a22c78907e28cd3fad4f38e9fbc4b430126ef1ce321edb72e88870d64451de7f",
+      "HSN_066_20150711_075105_490_495.ogg": "e53667b2a9a71df473bf78efa34cd3fedf25d03806b48539e8a691e181b2068f",
+      "HSN_068_20150711_080805_360_365.ogg": "910cac8f06bab52de7cf8dba1329ce5c6d16e2dea38400b74459706d5b5e13b9",
+      "HSN_069_20150711_082805_335_340.ogg": "1ce2854b3b7aa9675a202b3758536286aefb4a799936ab000b8ba06bf6d82a07",
+      "HSN_069_20150711_082805_490_495.ogg": "378382f49406a6fa91a69a52dec5d00b4ac70d0cabda5f1ab798bc90315359c2",
+      "HSN_069_20150711_082805_535_540.ogg": "876a5a2b5cf3c6a5133eaa208d390cdc69602020b04edf85655a8310159e2dac",
+      "HSN_070_20150711_082805_450_455.ogg": "628f959baba9a3fc051561ba31b198bb56136f90b226c20a807da8cafdf1c73c",
+      "HSN_072_20150711_083805_135_140.ogg": "6c5f3b79131be631762a81fb37e2878358f03d52d6ef6986da00ced05e6b831a",
+      "HSN_072_20150711_083805_140_145.ogg": "c0e4b5beefba7111c216f242ca7a369a0e8dffe6dcd94b6d7b069945c27f989f",
+      "HSN_072_20150711_083805_440_445.ogg": "765410d2952344026338e19ed97a30c385f900a855bb90ef5b2c48a00a5cab2e",
+      "HSN_073_20150711_085105_050_055.ogg": "625ff7346214536dd01d689629bdc966bfd75c5869b11bd186bbe54c99f1043d",
+      "HSN_073_20150711_085105_245_250.ogg": "594fdf63ac515991d94d63f42afc15d93c93ada836f6ceda220a284822df76c1",
+      "HSN_073_20150711_085105_360_365.ogg": "bde220a5d350ea8eda9a247bddb6819f6120cd1a64cd1089cd5c1b592a447201",
+      "HSN_073_20150711_085105_485_490.ogg": "a585699dccdba0dc55df3dd07eac56c9942ac64a12c2c7d5883cf8c48e5c0ab5",
+      "HSN_073_20150711_085105_530_535.ogg": "5e9d30bb9bd46e106ee172f68322642cc9b94f946d8d07d7ed37b53c7192a896",
+      "HSN_074_20150711_090105_235_240.ogg": "6310c26fbefc268b640d6ff761d5b5b2039685973c86f5e2d275e8c8dc9fda7a",
+      "HSN_074_20150711_090105_440_445.ogg": "5756cd72c99c1fdbda0bb79381023c2d2116e2b14b99f156130fb95e8742a5e5",
+      "HSN_074_20150711_090105_460_465.ogg": "80f3b02a3220e1092294ae60cddc3ad211a9cb42b4dfb142fe41a13cd15c9c35",
+      "HSN_074_20150711_090105_535_540.ogg": "aa367eab832e15aee6a424f09817b177d6eaadd3c327db59ec75863da7a0c54f",
+      "HSN_075_20150712_060805_115_120.ogg": "9ae6ebd1aa08e4d1cb85e8dd5a5b32fe2409fd9526c15286f7a0f8132bbd724e",
+      "HSN_077_20150712_062105_135_140.ogg": "d11c814dd9ddefbc80ce52016dce7f5f47ba57f00e64d4b15b77b0806ed0b518",
+      "HSN_077_20150712_062105_145_150.ogg": "1446c7c21c26d690ed67dae137b4ff1bf764445c747c5853fe72c11259868584",
+      "HSN_077_20150712_062105_230_235.ogg": "6742e066b9d3dc14b89e839a1e773083b6636b547543026c564940405562b462",
+      "HSN_077_20150712_062105_455_460.ogg": "8fd27827a4c98d46b3b0cfce1275a015345c6ebc653de94911318efefbaaef0f",
+      "HSN_078_20150712_063805_140_145.ogg": "4cd3a3e9e86f9b7895da426b01f24a70309e4f8b571749eb6f369e098f151055",
+      "HSN_080_20150712_070105_395_400.ogg": "1e59bf571308f1225b38a6889f684ff04b1921ac26011d939c02b256a1f09e93",
+      "HSN_081_20150712_070805_060_065.ogg": "bc5dc3eff15bddfb1797498d5d92dda4f584d3c5ddbac9d49405fee33acd3036",
+      "HSN_081_20150712_070805_210_215.ogg": "13751a6822b9f34b13a9baac682901e5a78ea1b56c9370b6ef70f631d9da17d0",
+      "HSN_081_20150712_070805_345_350.ogg": "91a244ae199983bca393e6ba046c4628cce9f1bf058b4e85a465a24a353566ea",
+      "HSN_081_20150712_070805_365_370.ogg": "de7202e25fd30c25cffd321ac02f184247e0397ca72f19db0c65a6a60ba5f6e6",
+      "HSN_081_20150712_070805_500_505.ogg": "6d7b7177cdcb597532202497292e739e23c8a707319123e23a6bbafb5c398fcb",
+      "HSN_082_20150712_071105_150_155.ogg": "de6cce610b0411de86216dc21fe83d3b00d606a7fae7f269eb80f92ec2c95662",
+      "HSN_083_20150712_072105_055_060.ogg": "d03020601ae849b19efde1b3871979e71de231b07024a2db9c4ddd8587e42e78",
+      "HSN_086_20150712_073105_450_455.ogg": "c92d51cb4cfaf16c5c7a0195db0fb623bf67259fb045a503b4ddaacb861f68a2",
+      "HSN_087_20150712_073805_200_205.ogg": "3ce88ce25083c6bf73bf7ea7f0153747ed8ed9de36cc273133fecac635f296f3",
+      "HSN_087_20150712_073805_240_245.ogg": "18a27e8b64a304945319814e68e4087dac03f4b51ade7c0dc879af58809b3038",
+      "HSN_087_20150712_073805_255_260.ogg": "8008787449f9b5df5d8789a4800b48506c79acbfe0287ae876e2c98cb5439bc9",
+      "HSN_087_20150712_073805_325_330.ogg": "ee18759f441455f332a2c78d0bf3046c9a2ee43ee1c29d6d9bdf03f37ed83c68",
+      "HSN_087_20150712_073805_330_335.ogg": "733bac4b756e8b0dc148be428c62e3ad0464742282f87905742d517d524127c1",
+      "HSN_087_20150712_073805_400_405.ogg": "ffcecbbfd57cdf5c62c73ead5e08ba91b416b9b31dbf955d52e77b0e3794d84d",
+      "HSN_088_20150712_075105_370_375.ogg": "a42ea0b0c915fad84c8efa33586815ed6b81d799be1c71db24aba2a602eddc5c",
+      "HSN_088_20150712_075105_440_445.ogg": "cdcc6852f5a0fa793cdf0b213e93ef5bca2081af0e464fb2e61aa40e59915e8a",
+      "HSN_089_20150712_075805_045_050.ogg": "c39bda36f1f118f6c44e421a10a99d08a19145bc06d03dd5c6bfa5fa855e990f",
+      "HSN_089_20150712_075805_195_200.ogg": "361cc98edd430611e19001fb66f3b2ff569f19be7e10def5722c640d145e63ba",
+      "HSN_089_20150712_075805_555_560.ogg": "6d4637ae17c5bf8191754b086b2d39b631e9c6af2829a2daf8eac80de9f933d8",
+      "HSN_093_20150712_085105_025_030.ogg": "13f0658916a3d540a93c833c2001ad1f355359407e576120c01c541de0ff4af9",
+      "HSN_093_20150712_085105_160_165.ogg": "28538a46d2a360a0040be73e646489f722a4707e44e7dc0d5ed94887174dd849",
+      "HSN_093_20150712_085105_190_195.ogg": "ed0ba6e3c6db1f3b60b495cd1faeae902cf0d9aea67cd745677cfb893414c9c0",
+      "HSN_093_20150712_085105_205_210.ogg": "6a5f92f4e70fe710dee6e6d72111f5c9df8b1be8936eaaaef346d5aa1dc38725",
+      "HSN_093_20150712_085105_335_340.ogg": "a533d8e368bb8969ca2850f62aa46f585fe10d818e29d8c52b700d4e7afc27d9",
+      "HSN_094_20150712_085805_040_045.ogg": "18f0e680c2b79585cd3bdc537f4f9b0bcbf8c0eb4f49744209989af0fa9373c4",
+      "HSN_094_20150712_085805_195_200.ogg": "3eddeb5c624b09eb0ae04f720242ceecb665d849ce960c412f8d705ca2de4ecf",
+      "HSN_094_20150712_085805_215_220.ogg": "7f6fcc4d250853ba97d86035d426305e43b7fe0c2206f56f8a2232237207304b",
+      "HSN_094_20150712_085805_570_575.ogg": "31c9f4ef9857a7003f8d74036f4fbb2e5d0cb8bf6c6b55b21795a0b9ffd535e2",
+      "HSN_095_20150712_090105_190_195.ogg": "0c1f2bdf0382e93b5879435b28524141240cd0f6e3e8429f7901ebab3d8e3f4b",
+      "HSN_096_20150712_090105_470_475.ogg": "b2f8f5939114c600519e78604ff027c8c88f14f62acd5593de5aad2834e0e0aa",
+      "HSN_098_20150712_090805_540_545.ogg": "63c841f4723e9bf783d6e5c02880e2c0d2b6259b15cf513fa93f35bd47e3c9af",
+      "nips4b_birds_trainfile035_000_005.ogg": "05b03599c473a795c8bd1e78c821b0f86d879425eaf4dabaf6f4ca720890248e",
+      "nips4b_birds_trainfile038_000_003.ogg": "64d17904cd8d84d121ad952f15cbc3d718493b66518bdbe521675239575e9a88",
+      "nips4b_birds_trainfile047_000_005.ogg": "cbbc5976fe7287720e511af198d1cdaf244fba0074ca66fac35888b2e8dd864a",
+      "nips4b_birds_trainfile051_000_005.ogg": "58a6cf4f1d6918d7cf6b1b678bafd11509c97cd685516d25ddfd141bec9c799a",
+      "nips4b_birds_trainfile063_000_005.ogg": "72ecdfe528569bdfee198631a525cf46699774ad9530b457202b32b8bae50045",
+      "nips4b_birds_trainfile070_000_005.ogg": "1642aebcaba73b566f42e09b48cd0476af03617a393d56f8e60c422814ab2570",
+      "nips4b_birds_trainfile071_000_005.ogg": "f9be5768da8b047c473a411f7e9f3048d4873074afa1af9d9a51e3150a97f720",
+      "nips4b_birds_trainfile078_000_005.ogg": "eac436e3dce056de403ad81582b750b9cfe1a9b1d64f0992bb83b8f0eb6e19cd",
+      "nips4b_birds_trainfile107_000_005.ogg": "3d3bc9dbb78afaa20c77d37dfe3972b7fa71e287051822f1b95eff66965a9457",
+      "nips4b_birds_trainfile115_000_003.ogg": "19fdbba74df099ee825a2df4476151693f7068a8c412cee73c2cb6e63cd9f596",
+      "nips4b_birds_trainfile138_000_005.ogg": "9199e73276aaada4f46475dc00db3b772a3dccd0dfa347d922801adc3c68f589",
+      "nips4b_birds_trainfile151_000_005.ogg": "c9cc64a27eb0932a0f79470aff44057ccf8d7a7e0026cb525d1e1e1ca36c3ee6",
+      "nips4b_birds_trainfile180_000_005.ogg": "ece13e73def6daf3223dd94bb884f6981baa90f82c0c37b63ea2081b283f9d30",
+      "nips4b_birds_trainfile190_000_005.ogg": "97f3bccc360aecae03281f124a79224fc81142d411d27a02ebfca5fd574daa42",
+      "nips4b_birds_trainfile226_000_005.ogg": "bfc5b8186bf3410b94b40821f4260ceca27c143dd06fbe519896016957b8dfe0",
+      "nips4b_birds_trainfile228_000_005.ogg": "b0f79cc8a14ce10eba9ba69d7303e74dcf72d9941b2c287fe2c48b3bb665289f",
+      "nips4b_birds_trainfile236_000_005.ogg": "ca7e0f2821a566f22ca31fb64cf5f11a531bf0a45c4a6bc7f6acf4f00bb8f2ce",
+      "nips4b_birds_trainfile241_000_005.ogg": "3b8e146a58c08d1596af8324c7599f98b8adc2f17367f9139be54720edc2ff3a",
+      "nips4b_birds_trainfile296_000_005.ogg": "d092df4ea92990dc854f9699f78eec09c6a23bd6a4423b36a9ea204020a77b8e",
+      "nips4b_birds_trainfile323_000_005.ogg": "02b184ee078c6e77876ad7150b62b921a5253c4b7b1466ed463ad4d56ca2630e",
+      "nips4b_birds_trainfile326_000_005.ogg": "1e5d316dd6c6a4e7b411e4cf78980e2aadf4b5cb9f34a9c4071f67b99602ec07",
+      "nips4b_birds_trainfile345_000_005.ogg": "7f390e6e4e20f19f8a930eadf45d897aa4635a2a583184a99bbece83b313aae0",
+      "nips4b_birds_trainfile411_000_005.ogg": "1246f5cd214d7a7ddfbdeb375b7a9fb99491bf84e0bcc8dbd6aef89a0538a990",
+      "nips4b_birds_trainfile455_000_005.ogg": "62a4c114933cd2d97eaa92a7405968e191f0e3ffb03eb3125b5dba65cf51cc17",
+      "nips4b_birds_trainfile462_000_005.ogg": "2a58c83c39d259bd9cbfe7df315c9c50c14a2c49da8ab6d1e76c2f9a244f69c9",
+      "nips4b_birds_trainfile467_000_003.ogg": "f976881957f8cb2daa98b304f13a3c81e93b669d356615fdfec4b38d673c8c93",
+      "nips4b_birds_trainfile474_000_005.ogg": "a12ec78c8945d86402ae39f63b55d8964cf4f4610d20197a6d9ac19cc93a1eec",
+      "nips4b_birds_trainfile481_000_005.ogg": "d86f1f5eeb469aed5f805006ed42b629b7b739ed415262eb2471f65836163a6e",
+      "nips4b_birds_trainfile488_000_005.ogg": "8582d395f89790ed05cc3aa8bd8369c6f72799f10fb3d8a6570e65ddb0f0e7db",
+      "nips4b_birds_trainfile503_000_005.ogg": "a6fe36843940de393056be6d0d0083a9a7fe9bc00de7228098c7c25f489b8de1",
+      "nips4b_birds_trainfile519_000_005.ogg": "4a55ff7bdba0d77f6b7cfee4191c947ed26657e8433b373aa785c709192625d1",
+      "nips4b_birds_trainfile525_000_005.ogg": "46f018dae6a5ae59bfba560862bdc4e4a143fda82a95b18c7832e467c0151328",
+      "nips4b_birds_trainfile538_000_005.ogg": "1aeb621e817bdd35bce2d63aa7cffd9ac6f5776e3a96c7626c444cdad47ea96a",
+      "nips4b_birds_trainfile608_000_005.ogg": "7cc442e59b165aeae036f5fe67ad5b8263f9b4c64b46f5f9fe01ccda5b14a5ad",
+      "nips4b_birds_trainfile618_000_005.ogg": "15beb52aa522aac165b222deb94a875d37166e0ead9e66c87c4c0f742a87fb2e",
+      "nips4b_birds_trainfile626_000_005.ogg": "9756087022f880fb6a04ea701897a8d7f1239c090e0b67d719820e8df841376f",
+      "nips4b_birds_trainfile634_000_005.ogg": "67682092c3a248d35ce94bef98b408dfe44d31d1af94270e19dfcf6cb43011e2",
+      "nips4b_birds_trainfile635_000_005.ogg": "7b6907cc6e234c23eb24f7b825465540d90938ee9427a34a52116c48ac974e46",
+      "nips4b_birds_trainfile656_000_005.ogg": "d457632b365a743891338f846a94a2f7673acfbef1ce59bc9cd2c62dfe5038b5",
+      "nips4b_birds_trainfile681_000_005.ogg": "6756a976265e4dc53009cd099c5ac645d83615a207d6c2ad7afde9867cca3858"
+    },
+    "selection": "annotation-positive test sources, no confidence filtering; annotation-negative calibration background sources",
+    "dataset": "NBP",
+    "kind": "noise"
+  },
+  "manifest.csv": "0f8638d157069b71a18b914fff240544c4a1e70248a2a3a1fe66c96379d6065b",
+  "scores.csv": "3b25b94bf38ca18c119c23ad608b8cba859d2f1d49b16492b37f097d3c37cd57"
+}

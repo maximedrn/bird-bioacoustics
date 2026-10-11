@@ -81,9 +81,9 @@ def verify_model_device(
     configure_inference(settings)
     window_samples: int = model.get_segment_size_samples()
     context: SpawnContext = get_context(InferenceRuntime.START_METHOD)
-    reader: Connection
-    writer: Connection
-    reader, writer = context.Pipe(duplex=False)
+    connections: tuple[Connection, Connection] = context.Pipe(duplex=False)
+    reader: Connection = connections[0]
+    writer: Connection = connections[1]
     worker: BaseProcess = context.Process(
         target=check_cuda_worker,
         args=(model.model_path, settings.batch_size, window_samples, writer),

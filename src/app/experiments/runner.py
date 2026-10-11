@@ -144,11 +144,6 @@ class XenoCantoExperiment:
         :rtype: CorpusStatus
         """
         with self.checkpoint.exclusive_run():
-            recovered: int = (
-                self.checkpoint.batches.recover_interrupted_inference()
-            )
-            if recovered:
-                logger.info(LogMessage.INFERENCE_RECOVERED, recovered)
             batch: RecordingBatch | None = (
                 self.checkpoint.batches.active_batch()
             )

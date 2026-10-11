@@ -291,7 +291,6 @@ def check_cuda_model(
         high=OnnxOption.PROBE_AMPLITUDE,
         size=(batch_size, samples),
     ).astype(float32)
-    size: int
     for size in sizes:
         scores: FloatArray = session.run(
             [output_name], {inputs[0].name: audio[:size]}

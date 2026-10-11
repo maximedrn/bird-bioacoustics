@@ -1,0 +1,68 @@
+{
+  "analysis_at": "2026-10-09T18:25:24.376945+00:00",
+  "configuration": {
+    "birdnet": "1.1.1",
+    "experiment": {
+      "confidence_thresholds": [
+        0.1,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "mix_ratios": [
+        {
+          "first": 0.5,
+          "second": 0.5
+        },
+        {
+          "first": 0.75,
+          "second": 0.25
+        },
+        {
+          "first": 0.9,
+          "second": 0.1
+        }
+      ],
+      "noise_repetitions": 5,
+      "random_seed": 42,
+      "snr_values_db": [
+        20.0,
+        10.0,
+        5.0,
+        0.0
+      ]
+    },
+    "model": {
+      "backend": "onnx",
+      "batch_size": 16,
+      "family": "acoustic",
+      "minimum_confidence": 0.1,
+      "n_workers": 1,
+      "version": "3.0"
+    },
+    "protocol_version": 4,
+    "query": "grp:birds"
+  },
+  "processed_recordings": 3591,
+  "failed_recordings": 108,
+  "supported_recordings": 3492,
+  "supported_species": 296,
+  "noise_eligible": 2937,
+  "noise_species": 244,
+  "undetected_supported": 555,
+  "unsupported_or_unidentified": 99,
+  "countries": 96,
+  "recordists": 647,
+  "audio_hours": 51.15567248090671,
+  "species_singleton": 148,
+  "species_lt5": 209,
+  "overlap_pairs": 1416,
+  "bootstrap_repetitions": 2000,
+  "bootstrap_seed": 42,
+  "integrity_checks": "passed",
+  "exclusions": {
+    "Metadata target absent from exported baseline predictions": 555,
+    "Unidentified/questioned metadata or species absent from BirdNET": 99,
+    "nan": 2937
+  }
+}

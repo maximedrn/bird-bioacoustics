@@ -1,19 +1,38 @@
-# Project related.
+# Durable experiment state and optional reference labels.
 data/*
 !data/database.sqlite3
-!data/results
-!data/results/*
+!data/annotations.csv
+
+# Pinned benchmark metadata and source fingerprints; exclude downloaded audio.
+!data/benchmark/
+data/benchmark/*
+!data/benchmark/ebird_2021.csv
+!data/benchmark/NBP/
+!data/benchmark/HSN/
+data/benchmark/*/*
+!data/benchmark/*/metadata.parquet
+!data/benchmark/*/audio.tar.gz.sha256
+
+# Measured results, provenance and readable exports grouped by experiment.
+!data/results/
+data/results/**
+!data/results/**/
+!data/results/**/*.csv
+!data/results/**/*.json
+!data/results/**/*.png
+!data/results/**/*.svg
+!data/results/**/*.html
+
+# Local credentials.
 .env
 .env.*
 !.env.example
 
-# LaTeX files.
-*.tex
-*.cls
-
-# PDF files.
+# Keep the compiled report and experiment figures; ignore other PDFs.
 *.pdf
-!data/results/notebook.pdf
+!latex/report.pdf
+!data/results/**/*.pdf
+data/results/**/.*
 
 # LaTeX intermediate files.
 *.aux

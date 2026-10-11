@@ -1,0 +1,1140 @@
+filepath,source_recording,start_time,end_time,reference_ebird_codes,partition,dataset
+nips4b_birds_trainfile001_000_005.ogg,nips4b_birds_trainfile001,0,5.0,"[""combuz1"", ""eurrob1"", ""coatit2""]",test,NBP
+nips4b_birds_trainfile002_000_005.ogg,nips4b_birds_trainfile002,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile003_000_005.ogg,nips4b_birds_trainfile003,0,5.0,"[""easwar1"", ""rocpet1""]",calibration,NBP
+nips4b_birds_trainfile004_000_005.ogg,nips4b_birds_trainfile004,0,5.0,"[""eurrob1"", ""eurbla"", ""dunnoc1""]",test,NBP
+nips4b_birds_trainfile005_000_005.ogg,nips4b_birds_trainfile005,0,5.0,"[""eurbla"", ""eurrob1"", ""dunnoc1""]",test,NBP
+nips4b_birds_trainfile007_000_005.ogg,nips4b_birds_trainfile007,0,5.0,"[""coatit2"", ""eurjay1"", ""comcha"", ""eurbla"", ""eurnut2""]",test,NBP
+nips4b_birds_trainfile008_000_005.ogg,nips4b_birds_trainfile008,0,5.0,"[""thelar1""]",calibration,NBP
+nips4b_birds_trainfile010_000_004.ogg,nips4b_birds_trainfile010,0,4.911020408163266,"[""eurlin1""]",calibration,NBP
+nips4b_birds_trainfile011_000_003.ogg,nips4b_birds_trainfile011,0,3.436553287981859,"[""shttre1"", ""houspa""]",test,NBP
+nips4b_birds_trainfile012_000_005.ogg,nips4b_birds_trainfile012,0,5.0,"[""eurbla"", ""eurjay1"", ""coatit2"", ""eurnut2"", ""cirbun1""]",test,NBP
+nips4b_birds_trainfile013_000_005.ogg,nips4b_birds_trainfile013,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile014_000_005.ogg,nips4b_birds_trainfile014,0,5.0,"[""eurlin1"", ""lottit1""]",calibration,NBP
+nips4b_birds_trainfile015_000_003.ogg,nips4b_birds_trainfile015,0,3.790657596371882,"[""houspa"", ""blutit"", ""carcro1""]",test,NBP
+nips4b_birds_trainfile016_000_005.ogg,nips4b_birds_trainfile016,0,5.0,"[""cetwar1""]",test,NBP
+nips4b_birds_trainfile017_000_004.ogg,nips4b_birds_trainfile017,0,4.702040816326531,"[""gretit1"", ""barswa""]",test,NBP
+nips4b_birds_trainfile020_000_002.ogg,nips4b_birds_trainfile020,0,2.8676643990929707,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile021_000_005.ogg,nips4b_birds_trainfile021,0,5.0,"[""comcha""]",test,NBP
+nips4b_birds_trainfile022_000_003.ogg,nips4b_birds_trainfile022,0,3.030204081632653,"[""eugori2"", ""eurgol""]",calibration,NBP
+nips4b_birds_trainfile023_000_005.ogg,nips4b_birds_trainfile023,0,5.0,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile024_000_005.ogg,nips4b_birds_trainfile024,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile025_000_002.ogg,nips4b_birds_trainfile025,0,2.6644897959183673,"[""eurbla""]",calibration,NBP
+nips4b_birds_trainfile026_000_004.ogg,nips4b_birds_trainfile026,0,4.881995464852608,"[""eurmag1"", ""eurser1"", ""eurbla"", ""sonthr1""]",test,NBP
+nips4b_birds_trainfile027_000_005.ogg,nips4b_birds_trainfile027,0,5.0,"[""comnig1"", ""cetwar1""]",test,NBP
+nips4b_birds_trainfile028_000_002.ogg,nips4b_birds_trainfile028,0,2.594829931972789,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile029_000_005.ogg,nips4b_birds_trainfile029,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile031_000_005.ogg,nips4b_birds_trainfile031,0,5.0,"[""sonthr1"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile033_000_005.ogg,nips4b_birds_trainfile033,0,5.0,"[""thelar1""]",calibration,NBP
+nips4b_birds_trainfile034_000_005.ogg,nips4b_birds_trainfile034,0,5.0,"[""easwar1"", ""rocpet1""]",test,NBP
+nips4b_birds_trainfile035_000_005.ogg,nips4b_birds_trainfile035,0,5.0,"[""firecr1""]",test,NBP
+nips4b_birds_trainfile037_000_005.ogg,nips4b_birds_trainfile037,0,5.0,"[""darwar1""]",calibration,NBP
+nips4b_birds_trainfile038_000_003.ogg,nips4b_birds_trainfile038,0,3.5874829931972787,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile039_000_005.ogg,nips4b_birds_trainfile039,0,5.0,"[""sonthr1"", ""eurser1"", ""gretit1""]",calibration,NBP
+nips4b_birds_trainfile040_000_005.ogg,nips4b_birds_trainfile040,0,5.0,"[""cretit2"", ""cirbun1"", ""eurnut2""]",calibration,NBP
+nips4b_birds_trainfile041_000_005.ogg,nips4b_birds_trainfile041,0,5.0,"[""comchi1""]",test,NBP
+nips4b_birds_trainfile042_000_003.ogg,nips4b_birds_trainfile042,0,3.482993197278911,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile043_000_005.ogg,nips4b_birds_trainfile043,0,5.0,"[""blutit"", ""trepip""]",test,NBP
+nips4b_birds_trainfile045_000_005.ogg,nips4b_birds_trainfile045,0,5.0,"[""rocpet1"", ""easwar1""]",calibration,NBP
+nips4b_birds_trainfile046_000_005.ogg,nips4b_birds_trainfile046,0,5.0,"[""blackc1""]",test,NBP
+nips4b_birds_trainfile047_000_005.ogg,nips4b_birds_trainfile047,0,5.0,"[""comcha"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile048_000_005.ogg,nips4b_birds_trainfile048,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile049_000_005.ogg,nips4b_birds_trainfile049,0,5.0,"[""houspa""]",calibration,NBP
+nips4b_birds_trainfile050_000_005.ogg,nips4b_birds_trainfile050,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile051_000_005.ogg,nips4b_birds_trainfile051,0,5.0,"[""comnig1""]",test,NBP
+nips4b_birds_trainfile052_000_002.ogg,nips4b_birds_trainfile052,0,2.7457596371882085,"[""skylar"", ""combuz1""]",test,NBP
+nips4b_birds_trainfile053_000_005.ogg,nips4b_birds_trainfile053,0,5.0,"[""eurnut2"", ""coatit2"", ""eurjay1"", ""eurbla""]",test,NBP
+nips4b_birds_trainfile054_000_002.ogg,nips4b_birds_trainfile054,0,2.9373242630385485,"[""eugori2""]",calibration,NBP
+nips4b_birds_trainfile058_000_005.ogg,nips4b_birds_trainfile058,0,5.0,"[""sonthr1"", ""winwre4"", ""shttre1"", ""firecr1"", ""coatit2"", ""eurbul""]",calibration,NBP
+nips4b_birds_trainfile060_000_002.ogg,nips4b_birds_trainfile060,0,2.103401360544218,"[""rocpet1""]",test,NBP
+nips4b_birds_trainfile062_000_005.ogg,nips4b_birds_trainfile062,0,5.0,"[""eurnut2"", ""firecr1""]",test,NBP
+nips4b_birds_trainfile063_000_005.ogg,nips4b_birds_trainfile063,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile064_000_001.ogg,nips4b_birds_trainfile064,0,1.3583673469387756,"[""eugori2""]",calibration,NBP
+nips4b_birds_trainfile066_000_003.ogg,nips4b_birds_trainfile066,0,3.0418140589569163,"[""eucdov""]",calibration,NBP
+nips4b_birds_trainfile067_000_005.ogg,nips4b_birds_trainfile067,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile068_000_005.ogg,nips4b_birds_trainfile068,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile069_000_005.ogg,nips4b_birds_trainfile069,0,5.0,"[""crelar1""]",calibration,NBP
+nips4b_birds_trainfile070_000_005.ogg,nips4b_birds_trainfile070,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile071_000_005.ogg,nips4b_birds_trainfile071,0,5.0,"[""woolar1"", ""comnig1""]",test,NBP
+nips4b_birds_trainfile073_000_005.ogg,nips4b_birds_trainfile073,0,5.0,"[""easwar1"", ""rocpet1""]",calibration,NBP
+nips4b_birds_trainfile074_000_002.ogg,nips4b_birds_trainfile074,0,2.8908843537414968,"[""eugori2""]",calibration,NBP
+nips4b_birds_trainfile075_000_005.ogg,nips4b_birds_trainfile075,0,5.0,"[""cretit2"", ""sonthr1""]",test,NBP
+nips4b_birds_trainfile076_000_005.ogg,nips4b_birds_trainfile076,0,5.0,"[""trepip"", ""comchi1""]",test,NBP
+nips4b_birds_trainfile077_000_005.ogg,nips4b_birds_trainfile077,0,5.0,"[""eurlin1"", ""sarwar1"", ""eurbul""]",test,NBP
+nips4b_birds_trainfile078_000_005.ogg,nips4b_birds_trainfile078,0,5.0,"[""trepip"", ""firecr1""]",test,NBP
+nips4b_birds_trainfile080_000_002.ogg,nips4b_birds_trainfile080,0,2.3510204081632655,"[""rocpet1""]",test,NBP
+nips4b_birds_trainfile081_000_005.ogg,nips4b_birds_trainfile081,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile082_000_005.ogg,nips4b_birds_trainfile082,0,5.0,"[""eurrob1"", ""blutit""]",test,NBP
+nips4b_birds_trainfile083_000_001.ogg,nips4b_birds_trainfile083,0,1.7008616780045351,"[""comnig1"", ""sarwar1""]",test,NBP
+nips4b_birds_trainfile084_000_002.ogg,nips4b_birds_trainfile084,0,2.589024943310658,"[""skylar""]",test,NBP
+nips4b_birds_trainfile085_000_005.ogg,nips4b_birds_trainfile085,0,5.0,"[""eurrob1"", ""cowpig1"", ""comchi1"", ""eurbul""]",test,NBP
+nips4b_birds_trainfile086_000_005.ogg,nips4b_birds_trainfile086,0,5.0,"[""sonthr1"", ""shttre1"", ""coatit2"", ""eurnut2""]",test,NBP
+nips4b_birds_trainfile087_000_002.ogg,nips4b_birds_trainfile087,0,2.728344671201814,"[""zitcis1""]",test,NBP
+nips4b_birds_trainfile088_000_004.ogg,nips4b_birds_trainfile088,0,4.911020408163266,"[""eurmag1""]",test,NBP
+nips4b_birds_trainfile089_000_005.ogg,nips4b_birds_trainfile089,0,5.0,"[""crelar1""]",calibration,NBP
+nips4b_birds_trainfile091_000_002.ogg,nips4b_birds_trainfile091,0,2.9895691609977324,"[""lottit1""]",test,NBP
+nips4b_birds_trainfile093_000_002.ogg,nips4b_birds_trainfile093,0,2.919909297052154,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile094_000_002.ogg,nips4b_birds_trainfile094,0,2.681904761904762,"[""cirbun1""]",calibration,NBP
+nips4b_birds_trainfile095_000_005.ogg,nips4b_birds_trainfile095,0,5.0,"[""comnig1"", ""gretit1""]",test,NBP
+nips4b_birds_trainfile096_000_005.ogg,nips4b_birds_trainfile096,0,5.0,"[""grswoo"", ""redcro""]",test,NBP
+nips4b_birds_trainfile097_000_002.ogg,nips4b_birds_trainfile097,0,2.0259410430839004,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile098_000_005.ogg,nips4b_birds_trainfile098,0,5.0,"[""rocpet1"", ""easwar1""]",test,NBP
+nips4b_birds_trainfile099_000_004.ogg,nips4b_birds_trainfile099,0,4.266666666666667,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile100_000_005.ogg,nips4b_birds_trainfile100,0,5.0,"[""cirbun1""]",calibration,NBP
+nips4b_birds_trainfile101_000_005.ogg,nips4b_birds_trainfile101,0,5.0,"[""gretit1"", ""blutit""]",calibration,NBP
+nips4b_birds_trainfile103_000_004.ogg,nips4b_birds_trainfile103,0,4.220226757369614,"[""comnig1"", ""barswa""]",test,NBP
+nips4b_birds_trainfile104_000_005.ogg,nips4b_birds_trainfile104,0,5.0,"[""dunnoc1"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile105_000_005.ogg,nips4b_birds_trainfile105,0,5.0,"[""eurrob1"", ""combuz1"", ""coatit2""]",calibration,NBP
+nips4b_birds_trainfile106_000_004.ogg,nips4b_birds_trainfile106,0,4.069297052154195,"[""comcha""]",test,NBP
+nips4b_birds_trainfile107_000_005.ogg,nips4b_birds_trainfile107,0,5.0,"[""sonthr1""]",test,NBP
+nips4b_birds_trainfile108_000_005.ogg,nips4b_birds_trainfile108,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile110_000_005.ogg,nips4b_birds_trainfile110,0,5.0,"[""eurbla"", ""eurwry""]",test,NBP
+nips4b_birds_trainfile111_000_003.ogg,nips4b_birds_trainfile111,0,3.599092970521542,"[""rocpet1""]",test,NBP
+nips4b_birds_trainfile113_000_005.ogg,nips4b_birds_trainfile113,0,5.0,"[""eugori2""]",test,NBP
+nips4b_birds_trainfile114_000_005.ogg,nips4b_birds_trainfile114,0,5.0,"[""houspa"", ""shttre1""]",test,NBP
+nips4b_birds_trainfile115_000_003.ogg,nips4b_birds_trainfile115,0,3.308843537414966,"[""blackc1""]",test,NBP
+nips4b_birds_trainfile118_000_003.ogg,nips4b_birds_trainfile118,0,3.947392290249433,"[""eugori2""]",test,NBP
+nips4b_birds_trainfile119_000_005.ogg,nips4b_birds_trainfile119,0,5.0,"[""cetwar1"", ""eurser1""]",test,NBP
+nips4b_birds_trainfile120_000_005.ogg,nips4b_birds_trainfile120,0,5.0,"[""darwar1""]",calibration,NBP
+nips4b_birds_trainfile121_000_005.ogg,nips4b_birds_trainfile121,0,5.0,"[""gretit1"", ""blutit""]",test,NBP
+nips4b_birds_trainfile122_000_002.ogg,nips4b_birds_trainfile122,0,2.5774149659863945,"[""sonthr1""]",calibration,NBP
+nips4b_birds_trainfile123_000_004.ogg,nips4b_birds_trainfile123,0,4.6033560090702945,"[""comcha""]",test,NBP
+nips4b_birds_trainfile125_000_005.ogg,nips4b_birds_trainfile125,0,5.0,"[""eugori2""]",calibration,NBP
+nips4b_birds_trainfile126_000_002.ogg,nips4b_birds_trainfile126,0,2.536780045351474,"[""comnig1""]",test,NBP
+nips4b_birds_trainfile127_000_005.ogg,nips4b_birds_trainfile127,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile128_000_002.ogg,nips4b_birds_trainfile128,0,2.501950113378685,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile130_000_005.ogg,nips4b_birds_trainfile130,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile131_000_002.ogg,nips4b_birds_trainfile131,0,2.728344671201814,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile133_000_005.ogg,nips4b_birds_trainfile133,0,5.0,"[""comnig1"", ""woolar1""]",calibration,NBP
+nips4b_birds_trainfile134_000_002.ogg,nips4b_birds_trainfile134,0,2.589024943310658,"[""zitcis1"", ""crelar1""]",test,NBP
+nips4b_birds_trainfile135_000_005.ogg,nips4b_birds_trainfile135,0,5.0,"[""eurnut2"", ""winwre4""]",test,NBP
+nips4b_birds_trainfile136_000_005.ogg,nips4b_birds_trainfile136,0,5.0,"[""dunnoc1"", ""eurbla"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile137_000_003.ogg,nips4b_birds_trainfile137,0,3.9996371882086166,"[""eurgol""]",test,NBP
+nips4b_birds_trainfile138_000_005.ogg,nips4b_birds_trainfile138,0,5.0,"[""eurwry"", ""eurser1""]",test,NBP
+nips4b_birds_trainfile139_000_005.ogg,nips4b_birds_trainfile139,0,5.0,"[""spofly1""]",calibration,NBP
+nips4b_birds_trainfile141_000_002.ogg,nips4b_birds_trainfile141,0,2.5658049886621317,"[""gretit1"", ""carcro1""]",test,NBP
+nips4b_birds_trainfile142_000_005.ogg,nips4b_birds_trainfile142,0,5.0,"[""eurrob1"", ""eurbul""]",test,NBP
+nips4b_birds_trainfile143_000_002.ogg,nips4b_birds_trainfile143,0,2.5309750566893423,"[""cirbun1""]",test,NBP
+nips4b_birds_trainfile144_000_005.ogg,nips4b_birds_trainfile144,0,5.0,"[""eurbul"", ""firecr1"", ""comchi1""]",test,NBP
+nips4b_birds_trainfile145_000_005.ogg,nips4b_birds_trainfile145,0,5.0,"[""easwar1"", ""rocpet1""]",test,NBP
+nips4b_birds_trainfile147_000_002.ogg,nips4b_birds_trainfile147,0,2.838639455782313,"[""sarwar1"", ""houspa""]",calibration,NBP
+nips4b_birds_trainfile148_000_005.ogg,nips4b_birds_trainfile148,0,5.0,"[""comnig1"", ""eutdov""]",test,NBP
+nips4b_birds_trainfile149_000_005.ogg,nips4b_birds_trainfile149,0,5.0,"[""eutdov"", ""comnig1""]",test,NBP
+nips4b_birds_trainfile150_000_005.ogg,nips4b_birds_trainfile150,0,5.0,"[""gretit1"", ""blutit""]",test,NBP
+nips4b_birds_trainfile151_000_005.ogg,nips4b_birds_trainfile151,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile152_000_005.ogg,nips4b_birds_trainfile152,0,5.0,"[""martit2"", ""grswoo"", ""coatit2""]",test,NBP
+nips4b_birds_trainfile153_000_005.ogg,nips4b_birds_trainfile153,0,5.0,"[""winwre4"", ""eurnut2"", ""comcha"", ""firecr1"", ""grswoo"", ""comchi1""]",test,NBP
+nips4b_birds_trainfile154_000_005.ogg,nips4b_birds_trainfile154,0,5.0,"[""cirbun1"", ""eurser1""]",calibration,NBP
+nips4b_birds_trainfile155_000_005.ogg,nips4b_birds_trainfile155,0,5.0,"[""cetwar1"", ""eurgol""]",calibration,NBP
+nips4b_birds_trainfile156_000_005.ogg,nips4b_birds_trainfile156,0,5.0,"[""cretit2""]",test,NBP
+nips4b_birds_trainfile157_000_005.ogg,nips4b_birds_trainfile157,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile158_000_005.ogg,nips4b_birds_trainfile158,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile159_000_002.ogg,nips4b_birds_trainfile159,0,2.82702947845805,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile160_000_005.ogg,nips4b_birds_trainfile160,0,5.0,"[""skylar"", ""gretit1"", ""martit2""]",test,NBP
+nips4b_birds_trainfile161_000_004.ogg,nips4b_birds_trainfile161,0,4.429206349206349,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile162_000_005.ogg,nips4b_birds_trainfile162,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile164_000_003.ogg,nips4b_birds_trainfile164,0,3.303038548752834,"[""eurlin1""]",calibration,NBP
+nips4b_birds_trainfile165_000_005.ogg,nips4b_birds_trainfile165,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile166_000_005.ogg,nips4b_birds_trainfile166,0,5.0,"[""cirbun1""]",test,NBP
+nips4b_birds_trainfile167_000_005.ogg,nips4b_birds_trainfile167,0,5.0,"[""zitcis1"", ""houspa""]",test,NBP
+nips4b_birds_trainfile168_000_005.ogg,nips4b_birds_trainfile168,0,5.0,"[""eutdov""]",test,NBP
+nips4b_birds_trainfile169_000_002.ogg,nips4b_birds_trainfile169,0,2.5251700680272107,"[""skylar""]",test,NBP
+nips4b_birds_trainfile170_000_005.ogg,nips4b_birds_trainfile170,0,5.0,"[""woolar1"", ""cirbun1""]",calibration,NBP
+nips4b_birds_trainfile171_000_005.ogg,nips4b_birds_trainfile171,0,5.0,"[""eurjay1"", ""eurnut2"", ""sonthr1"", ""coatit2"", ""shttre1""]",test,NBP
+nips4b_birds_trainfile172_000_005.ogg,nips4b_birds_trainfile172,0,5.0,"[""sonthr1""]",test,NBP
+nips4b_birds_trainfile173_000_001.ogg,nips4b_birds_trainfile173,0,1.0158730158730158,"[""eurwry""]",test,NBP
+nips4b_birds_trainfile174_000_005.ogg,nips4b_birds_trainfile174,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile175_000_003.ogg,nips4b_birds_trainfile175,0,3.8951473922902498,"[""zitcis1"", ""sarwar1"", ""eurmag1""]",test,NBP
+nips4b_birds_trainfile176_000_005.ogg,nips4b_birds_trainfile176,0,5.0,"[""sonthr1""]",test,NBP
+nips4b_birds_trainfile177_000_005.ogg,nips4b_birds_trainfile177,0,5.0,"[""eurser1"", ""cirbun1""]",test,NBP
+nips4b_birds_trainfile179_000_004.ogg,nips4b_birds_trainfile179,0,4.475646258503401,"[""eurlin1"", ""lottit1""]",calibration,NBP
+nips4b_birds_trainfile180_000_005.ogg,nips4b_birds_trainfile180,0,5.0,"[""comnig1"", ""gretit1""]",test,NBP
+nips4b_birds_trainfile181_000_005.ogg,nips4b_birds_trainfile181,0,5.0,"[""grywag"", ""shttre1""]",test,NBP
+nips4b_birds_trainfile182_000_005.ogg,nips4b_birds_trainfile182,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile183_000_005.ogg,nips4b_birds_trainfile183,0,5.0,"[""firecr1"", ""comchi1"", ""martit2"", ""comcha""]",calibration,NBP
+nips4b_birds_trainfile185_000_005.ogg,nips4b_birds_trainfile185,0,5.0,"[""eurlin1""]",calibration,NBP
+nips4b_birds_trainfile187_000_001.ogg,nips4b_birds_trainfile187,0,1.619591836734694,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile188_000_005.ogg,nips4b_birds_trainfile188,0,5.0,"[""cetwar1""]",calibration,NBP
+nips4b_birds_trainfile189_000_002.ogg,nips4b_birds_trainfile189,0,2.9082993197278912,"[""blutit"", ""grywag""]",test,NBP
+nips4b_birds_trainfile190_000_005.ogg,nips4b_birds_trainfile190,0,5.0,"[""sonthr1""]",test,NBP
+nips4b_birds_trainfile191_000_005.ogg,nips4b_birds_trainfile191,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile192_000_005.ogg,nips4b_birds_trainfile192,0,5.0,"[""coatit2"", ""martit2""]",calibration,NBP
+nips4b_birds_trainfile195_000_002.ogg,nips4b_birds_trainfile195,0,2.571609977324263,"[""skylar""]",test,NBP
+nips4b_birds_trainfile196_000_002.ogg,nips4b_birds_trainfile196,0,2.56,"[""woolar1"", ""cirbun1""]",test,NBP
+nips4b_birds_trainfile197_000_005.ogg,nips4b_birds_trainfile197,0,5.0,"[""grywag"", ""eurgol""]",calibration,NBP
+nips4b_birds_trainfile198_000_002.ogg,nips4b_birds_trainfile198,0,2.618049886621315,"[""eursta"", ""skylar""]",calibration,NBP
+nips4b_birds_trainfile199_000_002.ogg,nips4b_birds_trainfile199,0,2.583219954648526,"[""gretit1""]",test,NBP
+nips4b_birds_trainfile200_000_005.ogg,nips4b_birds_trainfile200,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile201_000_005.ogg,nips4b_birds_trainfile201,0,5.0,"[""comnig1"", ""cetwar1""]",test,NBP
+nips4b_birds_trainfile202_000_005.ogg,nips4b_birds_trainfile202,0,5.0,"[""darwar1""]",calibration,NBP
+nips4b_birds_trainfile204_000_005.ogg,nips4b_birds_trainfile204,0,5.0,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile205_000_005.ogg,nips4b_birds_trainfile205,0,5.0,"[""eurlin1""]",calibration,NBP
+nips4b_birds_trainfile207_000_005.ogg,nips4b_birds_trainfile207,0,5.0,"[""comnig1""]",test,NBP
+nips4b_birds_trainfile208_000_005.ogg,nips4b_birds_trainfile208,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile212_000_002.ogg,nips4b_birds_trainfile212,0,2.5309750566893423,"[""woolar1"", ""comnig1""]",test,NBP
+nips4b_birds_trainfile213_000_005.ogg,nips4b_birds_trainfile213,0,5.0,"[""comnig1""]",test,NBP
+nips4b_birds_trainfile216_000_002.ogg,nips4b_birds_trainfile216,0,2.786394557823129,"[""gretit1"", ""eurlin1""]",test,NBP
+nips4b_birds_trainfile217_000_002.ogg,nips4b_birds_trainfile217,0,2.8560544217687074,"[""eurgol""]",test,NBP
+nips4b_birds_trainfile219_000_004.ogg,nips4b_birds_trainfile219,0,4.9458503401360545,"[""comnig1""]",test,NBP
+nips4b_birds_trainfile220_000_005.ogg,nips4b_birds_trainfile220,0,5.0,"[""easwar1"", ""rocpet1""]",test,NBP
+nips4b_birds_trainfile221_000_005.ogg,nips4b_birds_trainfile221,0,5.0,"[""blutit""]",test,NBP
+nips4b_birds_trainfile222_000_005.ogg,nips4b_birds_trainfile222,0,5.0,"[""easwar1"", ""rocpet1""]",calibration,NBP
+nips4b_birds_trainfile223_000_002.ogg,nips4b_birds_trainfile223,0,2.896689342403628,"[""eugori2""]",test,NBP
+nips4b_birds_trainfile225_000_002.ogg,nips4b_birds_trainfile225,0,2.5251700680272107,"[""eugori2"", ""woolar1"", ""sarwar1""]",test,NBP
+nips4b_birds_trainfile226_000_005.ogg,nips4b_birds_trainfile226,0,5.0,"[""redcro"", ""carcro1"", ""blutit""]",test,NBP
+nips4b_birds_trainfile227_000_003.ogg,nips4b_birds_trainfile227,0,3.0940589569160997,"[""eugori2""]",calibration,NBP
+nips4b_birds_trainfile228_000_005.ogg,nips4b_birds_trainfile228,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile229_000_001.ogg,nips4b_birds_trainfile229,0,1.0332879818594105,"[""sarwar1"", ""zitcis1""]",test,NBP
+nips4b_birds_trainfile230_000_001.ogg,nips4b_birds_trainfile230,0,1.555736961451247,"[""blutit""]",test,NBP
+nips4b_birds_trainfile231_000_005.ogg,nips4b_birds_trainfile231,0,5.0,"[""eugori2""]",test,NBP
+nips4b_birds_trainfile233_000_005.ogg,nips4b_birds_trainfile233,0,5.0,"[""grywag""]",test,NBP
+nips4b_birds_trainfile234_000_002.ogg,nips4b_birds_trainfile234,0,2.9257142857142857,"[""eurmag1"", ""eucdov""]",test,NBP
+nips4b_birds_trainfile236_000_005.ogg,nips4b_birds_trainfile236,0,5.0,"[""eutdov""]",test,NBP
+nips4b_birds_trainfile238_000_002.ogg,nips4b_birds_trainfile238,0,2.9373242630385485,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile240_000_005.ogg,nips4b_birds_trainfile240,0,5.0,"[""blutit""]",test,NBP
+nips4b_birds_trainfile241_000_005.ogg,nips4b_birds_trainfile241,0,5.0,"[""cowpig1"", ""eurrob1"", ""cretit2""]",test,NBP
+nips4b_birds_trainfile243_000_005.ogg,nips4b_birds_trainfile243,0,5.0,"[""coatit2"", ""shttre1""]",test,NBP
+nips4b_birds_trainfile244_000_005.ogg,nips4b_birds_trainfile244,0,5.0,"[""winwre4"", ""firecr1"", ""grswoo"", ""comchi1""]",test,NBP
+nips4b_birds_trainfile245_000_004.ogg,nips4b_birds_trainfile245,0,4.823945578231292,"[""eurser1"", ""crelar1""]",test,NBP
+nips4b_birds_trainfile249_000_005.ogg,nips4b_birds_trainfile249,0,5.0,"[""easwar1"", ""rocpet1""]",test,NBP
+nips4b_birds_trainfile250_000_005.ogg,nips4b_birds_trainfile250,0,5.0,"[""grswoo"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile251_000_005.ogg,nips4b_birds_trainfile251,0,5.0,"[""darwar1""]",calibration,NBP
+nips4b_birds_trainfile252_000_005.ogg,nips4b_birds_trainfile252,0,5.0,"[""grywag"", ""eurgol""]",test,NBP
+nips4b_birds_trainfile253_000_005.ogg,nips4b_birds_trainfile253,0,5.0,"[""sonthr1"", ""lottit1""]",test,NBP
+nips4b_birds_trainfile254_000_004.ogg,nips4b_birds_trainfile254,0,4.388571428571429,"[""cetwar1"", ""comnig1""]",calibration,NBP
+nips4b_birds_trainfile255_000_004.ogg,nips4b_birds_trainfile255,0,4.046077097505669,"[""shttre1"", ""grywag"", ""blutit""]",calibration,NBP
+nips4b_birds_trainfile256_000_005.ogg,nips4b_birds_trainfile256,0,5.0,"[""eursta""]",test,NBP
+nips4b_birds_trainfile257_000_002.ogg,nips4b_birds_trainfile257,0,2.3626303854875284,"[""blackc1""]",test,NBP
+nips4b_birds_trainfile258_000_004.ogg,nips4b_birds_trainfile258,0,4.028662131519274,"[""eucdov"", ""eurser1""]",test,NBP
+nips4b_birds_trainfile259_000_005.ogg,nips4b_birds_trainfile259,0,5.0,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile261_000_005.ogg,nips4b_birds_trainfile261,0,5.0,"[""sonthr1"", ""eurrob1"", ""grswoo""]",calibration,NBP
+nips4b_birds_trainfile262_000_005.ogg,nips4b_birds_trainfile262,0,5.0,"[""redcro"", ""comchi1""]",calibration,NBP
+nips4b_birds_trainfile263_000_005.ogg,nips4b_birds_trainfile263,0,5.0,"[""comnig1""]",test,NBP
+nips4b_birds_trainfile264_000_005.ogg,nips4b_birds_trainfile264,0,5.0,"[""sonthr1""]",test,NBP
+nips4b_birds_trainfile265_000_005.ogg,nips4b_birds_trainfile265,0,5.0,"[""blutit"", ""eurbla""]",test,NBP
+nips4b_birds_trainfile266_000_005.ogg,nips4b_birds_trainfile266,0,5.0,"[""grswoo"", ""eurrob1""]",calibration,NBP
+nips4b_birds_trainfile267_000_002.ogg,nips4b_birds_trainfile267,0,2.7225396825396824,"[""eurbla""]",test,NBP
+nips4b_birds_trainfile269_000_002.ogg,nips4b_birds_trainfile269,0,2.536780045351474,"[""eurmag1"", ""eurser1"", ""cowpig1""]",test,NBP
+nips4b_birds_trainfile270_000_005.ogg,nips4b_birds_trainfile270,0,5.0,"[""carcro1"", ""houspa"", ""blackc1""]",test,NBP
+nips4b_birds_trainfile272_000_005.ogg,nips4b_birds_trainfile272,0,5.0,"[""blutit"", ""comnig1"", ""gretit1""]",calibration,NBP
+nips4b_birds_trainfile273_000_003.ogg,nips4b_birds_trainfile273,0,3.0360090702947846,"[""cirbun1"", ""crelar1""]",test,NBP
+nips4b_birds_trainfile274_000_005.ogg,nips4b_birds_trainfile274,0,5.0,"[""eurser1"", ""cirbun1""]",test,NBP
+nips4b_birds_trainfile275_000_001.ogg,nips4b_birds_trainfile275,0,1.085532879818594,"[""blutit""]",calibration,NBP
+nips4b_birds_trainfile276_000_005.ogg,nips4b_birds_trainfile276,0,5.0,"[""lottit1""]",test,NBP
+nips4b_birds_trainfile277_000_003.ogg,nips4b_birds_trainfile277,0,3.5584580498866214,"[""woolar1""]",test,NBP
+nips4b_birds_trainfile278_000_002.ogg,nips4b_birds_trainfile278,0,2.589024943310658,"[""comnig1"", ""blutit""]",calibration,NBP
+nips4b_birds_trainfile279_000_005.ogg,nips4b_birds_trainfile279,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile281_000_005.ogg,nips4b_birds_trainfile281,0,5.0,"[""cetwar1"", ""eurser1""]",test,NBP
+nips4b_birds_trainfile282_000_002.ogg,nips4b_birds_trainfile282,0,2.571609977324263,"[""eugori2"", ""eurbla""]",calibration,NBP
+nips4b_birds_trainfile284_000_005.ogg,nips4b_birds_trainfile284,0,5.0,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile285_000_002.ogg,nips4b_birds_trainfile285,0,2.7689795918367346,"[""eurbla""]",test,NBP
+nips4b_birds_trainfile286_000_005.ogg,nips4b_birds_trainfile286,0,5.0,"[""eurrob1"", ""cretit2""]",test,NBP
+nips4b_birds_trainfile287_000_005.ogg,nips4b_birds_trainfile287,0,5.0,"[""rocpet1"", ""easwar1""]",test,NBP
+nips4b_birds_trainfile288_000_001.ogg,nips4b_birds_trainfile288,0,1.3351473922902497,"[""rocpet1""]",test,NBP
+nips4b_birds_trainfile291_000_005.ogg,nips4b_birds_trainfile291,0,5.0,"[""grswoo"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile292_000_005.ogg,nips4b_birds_trainfile292,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile296_000_005.ogg,nips4b_birds_trainfile296,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile297_000_005.ogg,nips4b_birds_trainfile297,0,5.0,"[""coatit2"", ""combuz1"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile299_000_005.ogg,nips4b_birds_trainfile299,0,5.0,"[""eurlin1""]",calibration,NBP
+nips4b_birds_trainfile300_000_005.ogg,nips4b_birds_trainfile300,0,5.0,"[""redcro"", ""skylar""]",test,NBP
+nips4b_birds_trainfile301_000_005.ogg,nips4b_birds_trainfile301,0,5.0,"[""coatit2"", ""eurbul""]",test,NBP
+nips4b_birds_trainfile302_000_005.ogg,nips4b_birds_trainfile302,0,5.0,"[""sonthr1"", ""eurgre1"", ""houspa""]",test,NBP
+nips4b_birds_trainfile304_000_002.ogg,nips4b_birds_trainfile304,0,2.5251700680272107,"[""skylar"", ""crelar1""]",test,NBP
+nips4b_birds_trainfile307_000_005.ogg,nips4b_birds_trainfile307,0,5.0,"[""eurbla"", ""eurjay1"", ""coatit2"", ""comcha""]",test,NBP
+nips4b_birds_trainfile309_000_002.ogg,nips4b_birds_trainfile309,0,2.7980045351473923,"[""eugori2""]",test,NBP
+nips4b_birds_trainfile312_000_005.ogg,nips4b_birds_trainfile312,0,5.0,"[""skylar""]",test,NBP
+nips4b_birds_trainfile313_000_002.ogg,nips4b_birds_trainfile313,0,2.9373242630385485,"[""eugori2"", ""eurgol""]",test,NBP
+nips4b_birds_trainfile314_000_005.ogg,nips4b_birds_trainfile314,0,5.0,"[""spofly1""]",test,NBP
+nips4b_birds_trainfile315_000_003.ogg,nips4b_birds_trainfile315,0,3.877732426303855,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile316_000_005.ogg,nips4b_birds_trainfile316,0,5.0,"[""eurbla"", ""dunnoc1"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile317_000_005.ogg,nips4b_birds_trainfile317,0,5.0,"[""comchi1"", ""trepip"", ""comcha"", ""firecr1""]",calibration,NBP
+nips4b_birds_trainfile318_000_005.ogg,nips4b_birds_trainfile318,0,5.0,"[""cetwar1"", ""eugori2""]",test,NBP
+nips4b_birds_trainfile319_000_005.ogg,nips4b_birds_trainfile319,0,5.0,"[""grswoo"", ""coatit2"", ""comchi1""]",test,NBP
+nips4b_birds_trainfile320_000_003.ogg,nips4b_birds_trainfile320,0,3.0940589569160997,"[""sarwar1""]",calibration,NBP
+nips4b_birds_trainfile321_000_005.ogg,nips4b_birds_trainfile321,0,5.0,"[""firecr1"", ""eurrob1"", ""combuz1"", ""eurbul""]",test,NBP
+nips4b_birds_trainfile322_000_003.ogg,nips4b_birds_trainfile322,0,3.871927437641723,"[""houspa""]",test,NBP
+nips4b_birds_trainfile323_000_005.ogg,nips4b_birds_trainfile323,0,5.0,"[""gretit1"", ""grswoo""]",test,NBP
+nips4b_birds_trainfile324_000_002.ogg,nips4b_birds_trainfile324,0,2.5483900226757368,"[""eugori2"", ""eurgol""]",test,NBP
+nips4b_birds_trainfile325_000_005.ogg,nips4b_birds_trainfile325,0,5.0,"[""carcro1"", ""coatit2""]",test,NBP
+nips4b_birds_trainfile326_000_005.ogg,nips4b_birds_trainfile326,0,5.0,"[""firecr1"", ""eurrob1"", ""eurbul"", ""carcro1"", ""cowpig1""]",test,NBP
+nips4b_birds_trainfile328_000_002.ogg,nips4b_birds_trainfile328,0,2.5483900226757368,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile329_000_002.ogg,nips4b_birds_trainfile329,0,2.6993197278911563,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile331_000_003.ogg,nips4b_birds_trainfile331,0,3.9938321995464854,"[""firecr1"", ""eurgre1""]",test,NBP
+nips4b_birds_trainfile332_000_001.ogg,nips4b_birds_trainfile332,0,1.619591836734694,"[""eurgol""]",test,NBP
+nips4b_birds_trainfile333_000_003.ogg,nips4b_birds_trainfile333,0,3.4133333333333336,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile334_000_005.ogg,nips4b_birds_trainfile334,0,5.0,"[""eutdov""]",test,NBP
+nips4b_birds_trainfile335_000_005.ogg,nips4b_birds_trainfile335,0,5.0,"[""trepip"", ""eurnut2"", ""eurbul""]",calibration,NBP
+nips4b_birds_trainfile336_000_002.ogg,nips4b_birds_trainfile336,0,2.7109297052154195,"[""eugori2""]",test,NBP
+nips4b_birds_trainfile338_000_005.ogg,nips4b_birds_trainfile338,0,5.0,"[""comnig1""]",test,NBP
+nips4b_birds_trainfile339_000_003.ogg,nips4b_birds_trainfile339,0,3.384308390022676,"[""blackc1""]",calibration,NBP
+nips4b_birds_trainfile342_000_005.ogg,nips4b_birds_trainfile342,0,5.0,"[""woolar1""]",calibration,NBP
+nips4b_birds_trainfile344_000_002.ogg,nips4b_birds_trainfile344,0,2.1710657596371883,"[""spofly1""]",calibration,NBP
+nips4b_birds_trainfile345_000_005.ogg,nips4b_birds_trainfile345,0,5.0,"[""cirbun1""]",test,NBP
+nips4b_birds_trainfile346_000_005.ogg,nips4b_birds_trainfile346,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile347_000_003.ogg,nips4b_birds_trainfile347,0,3.657142857142857,"[""eugori2"", ""eursta""]",test,NBP
+nips4b_birds_trainfile348_000_002.ogg,nips4b_birds_trainfile348,0,2.8676643990929707,"[""eugori2""]",test,NBP
+nips4b_birds_trainfile350_000_005.ogg,nips4b_birds_trainfile350,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile351_000_002.ogg,nips4b_birds_trainfile351,0,2.594829931972789,"[""eurgol""]",test,NBP
+nips4b_birds_trainfile353_000_003.ogg,nips4b_birds_trainfile353,0,3.0011791383219957,"[""sonthr1""]",calibration,NBP
+nips4b_birds_trainfile356_000_005.ogg,nips4b_birds_trainfile356,0,5.0,"[""winwre4"", ""eurnut2""]",test,NBP
+nips4b_birds_trainfile358_000_005.ogg,nips4b_birds_trainfile358,0,5.0,"[""cowpig1"", ""combuz1"", ""firecr1""]",calibration,NBP
+nips4b_birds_trainfile359_000_004.ogg,nips4b_birds_trainfile359,0,4.9458503401360545,"[""eursta""]",test,NBP
+nips4b_birds_trainfile362_000_005.ogg,nips4b_birds_trainfile362,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile363_000_005.ogg,nips4b_birds_trainfile363,0,5.0,"[""eucdov""]",calibration,NBP
+nips4b_birds_trainfile364_000_005.ogg,nips4b_birds_trainfile364,0,5.0,"[""shttre1"", ""blackc1"", ""blutit""]",test,NBP
+nips4b_birds_trainfile365_000_002.ogg,nips4b_birds_trainfile365,0,2.5483900226757368,"[""barswa"", ""gretit1""]",calibration,NBP
+nips4b_birds_trainfile367_000_005.ogg,nips4b_birds_trainfile367,0,5.0,"[""shttre1"", ""gretit1""]",test,NBP
+nips4b_birds_trainfile368_000_002.ogg,nips4b_birds_trainfile368,0,2.618049886621315,"[""skylar""]",test,NBP
+nips4b_birds_trainfile370_000_005.ogg,nips4b_birds_trainfile370,0,5.0,"[""comchi1"", ""martit2"", ""firecr1"", ""comcha""]",test,NBP
+nips4b_birds_trainfile372_000_005.ogg,nips4b_birds_trainfile372,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile373_000_005.ogg,nips4b_birds_trainfile373,0,5.0,"[""comcha""]",test,NBP
+nips4b_birds_trainfile376_000_005.ogg,nips4b_birds_trainfile376,0,5.0,"[""easwar1"", ""rocpet1""]",calibration,NBP
+nips4b_birds_trainfile377_000_005.ogg,nips4b_birds_trainfile377,0,5.0,"[""eurgol"", ""eurmag1""]",test,NBP
+nips4b_birds_trainfile378_000_005.ogg,nips4b_birds_trainfile378,0,5.0,"[""martit2""]",test,NBP
+nips4b_birds_trainfile379_000_005.ogg,nips4b_birds_trainfile379,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile380_000_005.ogg,nips4b_birds_trainfile380,0,5.0,"[""eurgol"", ""eugori2""]",test,NBP
+nips4b_birds_trainfile381_000_003.ogg,nips4b_birds_trainfile381,0,3.0011791383219957,"[""eugori2""]",calibration,NBP
+nips4b_birds_trainfile382_000_005.ogg,nips4b_birds_trainfile382,0,5.0,"[""eursta"", ""cirbun1""]",test,NBP
+nips4b_birds_trainfile383_000_005.ogg,nips4b_birds_trainfile383,0,5.0,"[""firecr1"", ""grswoo"", ""eurrob1""]",calibration,NBP
+nips4b_birds_trainfile384_000_005.ogg,nips4b_birds_trainfile384,0,5.0,"[""firecr1"", ""eurbul"", ""eurrob1"", ""cowpig1""]",test,NBP
+nips4b_birds_trainfile385_000_005.ogg,nips4b_birds_trainfile385,0,5.0,"[""cetwar1"", ""eurser1""]",calibration,NBP
+nips4b_birds_trainfile386_000_005.ogg,nips4b_birds_trainfile386,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile387_000_005.ogg,nips4b_birds_trainfile387,0,5.0,"[""sonthr1""]",test,NBP
+nips4b_birds_trainfile388_000_005.ogg,nips4b_birds_trainfile388,0,5.0,"[""eurbla"", ""martit2""]",test,NBP
+nips4b_birds_trainfile391_000_005.ogg,nips4b_birds_trainfile391,0,5.0,"[""eurrob1"", ""comcha"", ""firecr1"", ""dunnoc1""]",test,NBP
+nips4b_birds_trainfile392_000_002.ogg,nips4b_birds_trainfile392,0,2.6006349206349206,"[""blutit""]",calibration,NBP
+nips4b_birds_trainfile393_000_005.ogg,nips4b_birds_trainfile393,0,5.0,"[""sarwar1""]",calibration,NBP
+nips4b_birds_trainfile394_000_002.ogg,nips4b_birds_trainfile394,0,2.5483900226757368,"[""eurgre1""]",test,NBP
+nips4b_birds_trainfile395_000_005.ogg,nips4b_birds_trainfile395,0,5.0,"[""blutit"", ""gretit1""]",calibration,NBP
+nips4b_birds_trainfile396_000_005.ogg,nips4b_birds_trainfile396,0,5.0,"[""sarwar1"", ""rocpet1""]",test,NBP
+nips4b_birds_trainfile398_000_003.ogg,nips4b_birds_trainfile398,0,3.912562358276644,"[""houspa"", ""sonthr1"", ""eurgre1""]",test,NBP
+nips4b_birds_trainfile399_000_002.ogg,nips4b_birds_trainfile399,0,2.583219954648526,"[""grywag"", ""eurgol""]",test,NBP
+nips4b_birds_trainfile400_000_005.ogg,nips4b_birds_trainfile400,0,5.0,"[""eurgol"", ""eurser1""]",calibration,NBP
+nips4b_birds_trainfile401_000_005.ogg,nips4b_birds_trainfile401,0,5.0,"[""rocpet1""]",test,NBP
+nips4b_birds_trainfile404_000_002.ogg,nips4b_birds_trainfile404,0,2.583219954648526,"[""woolar1""]",calibration,NBP
+nips4b_birds_trainfile405_000_002.ogg,nips4b_birds_trainfile405,0,2.6064399092970523,"[""blutit""]",calibration,NBP
+nips4b_birds_trainfile406_000_005.ogg,nips4b_birds_trainfile406,0,5.0,"[""cetwar1"", ""eugori2""]",test,NBP
+nips4b_birds_trainfile407_000_002.ogg,nips4b_birds_trainfile407,0,2.501950113378685,"[""eucdov"", ""gretit1""]",calibration,NBP
+nips4b_birds_trainfile408_000_004.ogg,nips4b_birds_trainfile408,0,4.92843537414966,"[""cetwar1""]",calibration,NBP
+nips4b_birds_trainfile409_000_005.ogg,nips4b_birds_trainfile409,0,5.0,"[""martit2"", ""eurnut2"", ""winwre4""]",test,NBP
+nips4b_birds_trainfile410_000_004.ogg,nips4b_birds_trainfile410,0,4.27827664399093,"[""woolar1""]",calibration,NBP
+nips4b_birds_trainfile411_000_005.ogg,nips4b_birds_trainfile411,0,5.0,"[""blackc1"", ""eutdov""]",test,NBP
+nips4b_birds_trainfile412_000_005.ogg,nips4b_birds_trainfile412,0,5.0,"[""houspa"", ""eurgre1"", ""firecr1""]",test,NBP
+nips4b_birds_trainfile413_000_005.ogg,nips4b_birds_trainfile413,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile414_000_005.ogg,nips4b_birds_trainfile414,0,5.0,"[""sonthr1""]",calibration,NBP
+nips4b_birds_trainfile415_000_001.ogg,nips4b_birds_trainfile415,0,1.933061224489796,"[""cirbun1""]",calibration,NBP
+nips4b_birds_trainfile416_000_005.ogg,nips4b_birds_trainfile416,0,5.0,"[""blackc1""]",calibration,NBP
+nips4b_birds_trainfile417_000_005.ogg,nips4b_birds_trainfile417,0,5.0,"[""eurgre1"", ""houspa"", ""firecr1""]",test,NBP
+nips4b_birds_trainfile418_000_005.ogg,nips4b_birds_trainfile418,0,5.0,"[""cretit2""]",calibration,NBP
+nips4b_birds_trainfile419_000_005.ogg,nips4b_birds_trainfile419,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile420_000_002.ogg,nips4b_birds_trainfile420,0,2.6760997732426306,"[""shttre1""]",test,NBP
+nips4b_birds_trainfile422_000_004.ogg,nips4b_birds_trainfile422,0,4.684625850340136,"[""eurgol"", ""eugori2""]",test,NBP
+nips4b_birds_trainfile423_000_004.ogg,nips4b_birds_trainfile423,0,4.794920634920635,"[""zitcis1"", ""houspa""]",calibration,NBP
+nips4b_birds_trainfile424_000_002.ogg,nips4b_birds_trainfile424,0,2.571609977324263,"[""gretit1"", ""eucdov""]",calibration,NBP
+nips4b_birds_trainfile425_000_005.ogg,nips4b_birds_trainfile425,0,5.0,"[""comchi1"", ""comcha""]",test,NBP
+nips4b_birds_trainfile427_000_002.ogg,nips4b_birds_trainfile427,0,2.589024943310658,"[""barswa""]",test,NBP
+nips4b_birds_trainfile428_000_005.ogg,nips4b_birds_trainfile428,0,5.0,"[""coatit2"", ""eurbla"", ""sonthr1"", ""shttre1"", ""eurjay1"", ""eurnut2""]",calibration,NBP
+nips4b_birds_trainfile429_000_005.ogg,nips4b_birds_trainfile429,0,5.0,"[""eurser1"", ""carcro1""]",calibration,NBP
+nips4b_birds_trainfile430_000_005.ogg,nips4b_birds_trainfile430,0,5.0,"[""eurwry"", ""gretit1"", ""eurser1""]",calibration,NBP
+nips4b_birds_trainfile433_000_005.ogg,nips4b_birds_trainfile433,0,5.0,"[""easwar1"", ""rocpet1"", ""houspa""]",calibration,NBP
+nips4b_birds_trainfile434_000_001.ogg,nips4b_birds_trainfile434,0,1.787936507936508,"[""spofly1""]",test,NBP
+nips4b_birds_trainfile435_000_005.ogg,nips4b_birds_trainfile435,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile438_000_005.ogg,nips4b_birds_trainfile438,0,5.0,"[""firecr1""]",test,NBP
+nips4b_birds_trainfile440_000_005.ogg,nips4b_birds_trainfile440,0,5.0,"[""dunnoc1"", ""coatit2"", ""shttre1"", ""eurbla""]",test,NBP
+nips4b_birds_trainfile441_000_005.ogg,nips4b_birds_trainfile441,0,5.0,"[""skylar""]",test,NBP
+nips4b_birds_trainfile442_000_005.ogg,nips4b_birds_trainfile442,0,5.0,"[""eurrob1"", ""carcro1"", ""eurbul""]",test,NBP
+nips4b_birds_trainfile443_000_001.ogg,nips4b_birds_trainfile443,0,1.230657596371882,"[""gretit1""]",calibration,NBP
+nips4b_birds_trainfile444_000_005.ogg,nips4b_birds_trainfile444,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile445_000_005.ogg,nips4b_birds_trainfile445,0,5.0,"[""comcha""]",test,NBP
+nips4b_birds_trainfile447_000_005.ogg,nips4b_birds_trainfile447,0,5.0,"[""redcro"", ""grswoo"", ""eurnut2"", ""martit2""]",test,NBP
+nips4b_birds_trainfile448_000_005.ogg,nips4b_birds_trainfile448,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile449_000_005.ogg,nips4b_birds_trainfile449,0,5.0,"[""firecr1"", ""trepip""]",test,NBP
+nips4b_birds_trainfile450_000_001.ogg,nips4b_birds_trainfile450,0,1.9969160997732427,"[""cirbun1"", ""gretit1""]",test,NBP
+nips4b_birds_trainfile451_000_005.ogg,nips4b_birds_trainfile451,0,5.0,"[""blackc1""]",test,NBP
+nips4b_birds_trainfile452_000_005.ogg,nips4b_birds_trainfile452,0,5.0,"[""comnig1"", ""cetwar1""]",calibration,NBP
+nips4b_birds_trainfile455_000_005.ogg,nips4b_birds_trainfile455,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile456_000_002.ogg,nips4b_birds_trainfile456,0,2.5774149659863945,"[""gretit1"", ""comnig1"", ""eucdov""]",test,NBP
+nips4b_birds_trainfile458_000_002.ogg,nips4b_birds_trainfile458,0,2.5774149659863945,"[""eugori2""]",test,NBP
+nips4b_birds_trainfile459_000_005.ogg,nips4b_birds_trainfile459,0,5.0,"[""shttre1"", ""coatit2""]",calibration,NBP
+nips4b_birds_trainfile460_000_003.ogg,nips4b_birds_trainfile460,0,3.5062131519274375,"[""lottit1""]",test,NBP
+nips4b_birds_trainfile461_000_005.ogg,nips4b_birds_trainfile461,0,5.0,"[""eurbla"", ""coatit2"", ""grswoo""]",test,NBP
+nips4b_birds_trainfile462_000_005.ogg,nips4b_birds_trainfile462,0,5.0,"[""comnig1"", ""cetwar1""]",test,NBP
+nips4b_birds_trainfile464_000_005.ogg,nips4b_birds_trainfile464,0,5.0,"[""eurser1"", ""cirbun1""]",test,NBP
+nips4b_birds_trainfile465_000_005.ogg,nips4b_birds_trainfile465,0,5.0,"[""eurnut2"", ""coatit2"", ""trepip""]",calibration,NBP
+nips4b_birds_trainfile466_000_005.ogg,nips4b_birds_trainfile466,0,5.0,"[""eurbla"", ""eurjay1""]",test,NBP
+nips4b_birds_trainfile467_000_003.ogg,nips4b_birds_trainfile467,0,3.244988662131519,"[""blutit"", ""blackc1""]",test,NBP
+nips4b_birds_trainfile468_000_005.ogg,nips4b_birds_trainfile468,0,5.0,"[""sonthr1"", ""dunnoc1""]",test,NBP
+nips4b_birds_trainfile469_000_005.ogg,nips4b_birds_trainfile469,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile470_000_003.ogg,nips4b_birds_trainfile470,0,3.813877551020408,"[""comnig1"", ""cirbun1""]",calibration,NBP
+nips4b_birds_trainfile472_000_003.ogg,nips4b_birds_trainfile472,0,3.4946031746031747,"[""cetwar1"", ""eugori2""]",test,NBP
+nips4b_birds_trainfile473_000_005.ogg,nips4b_birds_trainfile473,0,5.0,"[""blackc1"", ""blutit""]",test,NBP
+nips4b_birds_trainfile474_000_005.ogg,nips4b_birds_trainfile474,0,5.0,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile475_000_005.ogg,nips4b_birds_trainfile475,0,5.0,"[""eurbla"", ""dunnoc1"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile476_000_003.ogg,nips4b_birds_trainfile476,0,3.900952380952381,"[""grywag""]",calibration,NBP
+nips4b_birds_trainfile478_000_003.ogg,nips4b_birds_trainfile478,0,3.303038548752834,"[""eurmag1"", ""shttre1""]",test,NBP
+nips4b_birds_trainfile479_000_005.ogg,nips4b_birds_trainfile479,0,5.0,"[""redcro"", ""grswoo"", ""martit2""]",test,NBP
+nips4b_birds_trainfile480_000_004.ogg,nips4b_birds_trainfile480,0,4.289886621315193,"[""eurwry"", ""eurser1""]",calibration,NBP
+nips4b_birds_trainfile481_000_005.ogg,nips4b_birds_trainfile481,0,5.0,"[""eurnut2"", ""cretit2""]",test,NBP
+nips4b_birds_trainfile482_000_003.ogg,nips4b_birds_trainfile482,0,3.813877551020408,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile483_000_002.ogg,nips4b_birds_trainfile483,0,2.513560090702948,"[""eurgol""]",test,NBP
+nips4b_birds_trainfile484_000_005.ogg,nips4b_birds_trainfile484,0,5.0,"[""eurbla"", ""dunnoc1"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile485_000_005.ogg,nips4b_birds_trainfile485,0,5.0,"[""comcha"", ""comchi1"", ""trepip""]",test,NBP
+nips4b_birds_trainfile488_000_005.ogg,nips4b_birds_trainfile488,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile489_000_004.ogg,nips4b_birds_trainfile489,0,4.098321995464852,"[""comcha"", ""blutit""]",calibration,NBP
+nips4b_birds_trainfile491_000_005.ogg,nips4b_birds_trainfile491,0,5.0,"[""coatit2"", ""eurbul"", ""eurnut2""]",test,NBP
+nips4b_birds_trainfile493_000_005.ogg,nips4b_birds_trainfile493,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile494_000_003.ogg,nips4b_birds_trainfile494,0,3.140498866213152,"[""eurgol"", ""eurmag1""]",calibration,NBP
+nips4b_birds_trainfile495_000_005.ogg,nips4b_birds_trainfile495,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile496_000_005.ogg,nips4b_birds_trainfile496,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile497_000_005.ogg,nips4b_birds_trainfile497,0,5.0,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile500_000_005.ogg,nips4b_birds_trainfile500,0,5.0,"[""grswoo"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile502_000_005.ogg,nips4b_birds_trainfile502,0,5.0,"[""sonthr1"", ""martit2""]",test,NBP
+nips4b_birds_trainfile503_000_005.ogg,nips4b_birds_trainfile503,0,5.0,"[""cirbun1"", ""eursta""]",test,NBP
+nips4b_birds_trainfile504_000_005.ogg,nips4b_birds_trainfile504,0,5.0,"[""combuz1"", ""sonthr1"", ""firecr1""]",test,NBP
+nips4b_birds_trainfile506_000_005.ogg,nips4b_birds_trainfile506,0,5.0,"[""shttre1"", ""eurnut2"", ""cirbun1""]",test,NBP
+nips4b_birds_trainfile507_000_005.ogg,nips4b_birds_trainfile507,0,5.0,"[""eurgre1""]",test,NBP
+nips4b_birds_trainfile508_000_003.ogg,nips4b_birds_trainfile508,0,3.848707482993197,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile509_000_005.ogg,nips4b_birds_trainfile509,0,5.0,"[""eurrob1"", ""cowpig1"", ""firecr1"", ""eurbul""]",calibration,NBP
+nips4b_birds_trainfile510_000_005.ogg,nips4b_birds_trainfile510,0,5.0,"[""sonthr1""]",calibration,NBP
+nips4b_birds_trainfile512_000_003.ogg,nips4b_birds_trainfile512,0,3.848707482993197,"[""barswa""]",test,NBP
+nips4b_birds_trainfile514_000_001.ogg,nips4b_birds_trainfile514,0,1.207437641723356,"[""spofly1""]",calibration,NBP
+nips4b_birds_trainfile515_000_002.ogg,nips4b_birds_trainfile515,0,2.896689342403628,"[""eurser1""]",test,NBP
+nips4b_birds_trainfile517_000_005.ogg,nips4b_birds_trainfile517,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile518_000_002.ogg,nips4b_birds_trainfile518,0,2.5425850340136056,"[""sarwar1"", ""zitcis1""]",test,NBP
+nips4b_birds_trainfile519_000_005.ogg,nips4b_birds_trainfile519,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile520_000_004.ogg,nips4b_birds_trainfile520,0,4.957460317460318,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile521_000_005.ogg,nips4b_birds_trainfile521,0,5.0,"[""eurlin1""]",calibration,NBP
+nips4b_birds_trainfile523_000_005.ogg,nips4b_birds_trainfile523,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile524_000_002.ogg,nips4b_birds_trainfile524,0,2.647074829931973,"[""grywag""]",calibration,NBP
+nips4b_birds_trainfile525_000_005.ogg,nips4b_birds_trainfile525,0,5.0,"[""comchi1""]",test,NBP
+nips4b_birds_trainfile527_000_005.ogg,nips4b_birds_trainfile527,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile528_000_002.ogg,nips4b_birds_trainfile528,0,2.5193650793650795,"[""comnig1""]",test,NBP
+nips4b_birds_trainfile529_000_004.ogg,nips4b_birds_trainfile529,0,4.934240362811791,"[""darwar1""]",calibration,NBP
+nips4b_birds_trainfile530_000_004.ogg,nips4b_birds_trainfile530,0,4.423401360544218,"[""woolar1""]",test,NBP
+nips4b_birds_trainfile532_000_002.ogg,nips4b_birds_trainfile532,0,2.5251700680272107,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile533_000_005.ogg,nips4b_birds_trainfile533,0,5.0,"[""dunnoc1"", ""eurbla"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile534_000_002.ogg,nips4b_birds_trainfile534,0,2.5658049886621317,"[""eurser1""]",test,NBP
+nips4b_birds_trainfile535_000_005.ogg,nips4b_birds_trainfile535,0,5.0,"[""coatit2"", ""dunnoc1"", ""eurrob1""]",calibration,NBP
+nips4b_birds_trainfile536_000_005.ogg,nips4b_birds_trainfile536,0,5.0,"[""dunnoc1"", ""blutit""]",test,NBP
+nips4b_birds_trainfile537_000_004.ogg,nips4b_birds_trainfile537,0,4.806530612244898,"[""eursta""]",test,NBP
+nips4b_birds_trainfile538_000_005.ogg,nips4b_birds_trainfile538,0,5.0,"[""spofly1""]",test,NBP
+nips4b_birds_trainfile539_000_005.ogg,nips4b_birds_trainfile539,0,5.0,"[""woolar1"", ""eutdov""]",test,NBP
+nips4b_birds_trainfile540_000_002.ogg,nips4b_birds_trainfile540,0,2.5774149659863945,"[""houspa"", ""lottit1""]",test,NBP
+nips4b_birds_trainfile541_000_002.ogg,nips4b_birds_trainfile541,0,2.7921995464852607,"[""blackc1""]",test,NBP
+nips4b_birds_trainfile542_000_005.ogg,nips4b_birds_trainfile542,0,5.0,"[""comcha"", ""woolar1"", ""cirbun1""]",test,NBP
+nips4b_birds_trainfile544_000_002.ogg,nips4b_birds_trainfile544,0,2.8212244897959184,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile545_000_002.ogg,nips4b_birds_trainfile545,0,2.7921995464852607,"[""lottit1""]",test,NBP
+nips4b_birds_trainfile547_000_002.ogg,nips4b_birds_trainfile547,0,2.5483900226757368,"[""eurbla"", ""eurwry""]",test,NBP
+nips4b_birds_trainfile548_000_002.ogg,nips4b_birds_trainfile548,0,2.9547392290249435,"[""eugori2"", ""eurgol""]",test,NBP
+nips4b_birds_trainfile549_000_005.ogg,nips4b_birds_trainfile549,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile550_000_005.ogg,nips4b_birds_trainfile550,0,5.0,"[""grywag""]",test,NBP
+nips4b_birds_trainfile551_000_002.ogg,nips4b_birds_trainfile551,0,2.020136054421769,"[""rocpet1""]",calibration,NBP
+nips4b_birds_trainfile554_000_003.ogg,nips4b_birds_trainfile554,0,3.9938321995464854,"[""thelar1""]",calibration,NBP
+nips4b_birds_trainfile555_000_002.ogg,nips4b_birds_trainfile555,0,2.5774149659863945,"[""carcro1"", ""shttre1"", ""houspa""]",test,NBP
+nips4b_birds_trainfile556_000_005.ogg,nips4b_birds_trainfile556,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile557_000_005.ogg,nips4b_birds_trainfile557,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile558_000_005.ogg,nips4b_birds_trainfile558,0,5.0,"[""crelar1"", ""cirbun1""]",test,NBP
+nips4b_birds_trainfile560_000_005.ogg,nips4b_birds_trainfile560,0,5.0,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile561_000_001.ogg,nips4b_birds_trainfile561,0,1.4918820861678004,"[""blackc1""]",calibration,NBP
+nips4b_birds_trainfile562_000_005.ogg,nips4b_birds_trainfile562,0,5.0,"[""woolar1""]",test,NBP
+nips4b_birds_trainfile563_000_002.ogg,nips4b_birds_trainfile563,0,2.803809523809524,"[""eurbla""]",calibration,NBP
+nips4b_birds_trainfile564_000_005.ogg,nips4b_birds_trainfile564,0,5.0,"[""thelar1""]",calibration,NBP
+nips4b_birds_trainfile566_000_002.ogg,nips4b_birds_trainfile566,0,2.873469387755102,"[""eugori2""]",test,NBP
+nips4b_birds_trainfile567_000_003.ogg,nips4b_birds_trainfile567,0,3.163718820861678,"[""eurbla"", ""comnig1"", ""blackc1""]",test,NBP
+nips4b_birds_trainfile570_000_005.ogg,nips4b_birds_trainfile570,0,5.0,"[""comchi1"", ""grswoo"", ""eurnut2"", ""coatit2""]",test,NBP
+nips4b_birds_trainfile573_000_005.ogg,nips4b_birds_trainfile573,0,5.0,"[""eurbla"", ""shttre1""]",calibration,NBP
+nips4b_birds_trainfile576_000_002.ogg,nips4b_birds_trainfile576,0,2.9663492063492063,"[""lottit1""]",test,NBP
+nips4b_birds_trainfile577_000_005.ogg,nips4b_birds_trainfile577,0,5.0,"[""rocpet1"", ""easwar1""]",test,NBP
+nips4b_birds_trainfile579_000_005.ogg,nips4b_birds_trainfile579,0,5.0,"[""eurser1"", ""sonthr1""]",test,NBP
+nips4b_birds_trainfile580_000_003.ogg,nips4b_birds_trainfile580,0,3.2798185941043085,"[""eurlin1"", ""eurmag1""]",calibration,NBP
+nips4b_birds_trainfile581_000_004.ogg,nips4b_birds_trainfile581,0,4.069297052154195,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile583_000_005.ogg,nips4b_birds_trainfile583,0,5.0,"[""skylar""]",test,NBP
+nips4b_birds_trainfile584_000_005.ogg,nips4b_birds_trainfile584,0,5.0,"[""crelar1""]",calibration,NBP
+nips4b_birds_trainfile585_000_002.ogg,nips4b_birds_trainfile585,0,2.5541950113378684,"[""darwar1""]",calibration,NBP
+nips4b_birds_trainfile586_000_003.ogg,nips4b_birds_trainfile586,0,3.308843537414966,"[""eurgol""]",test,NBP
+nips4b_birds_trainfile587_000_005.ogg,nips4b_birds_trainfile587,0,5.0,"[""combuz1"", ""firecr1""]",calibration,NBP
+nips4b_birds_trainfile589_000_002.ogg,nips4b_birds_trainfile589,0,2.594829931972789,"[""eurgol""]",test,NBP
+nips4b_birds_trainfile591_000_005.ogg,nips4b_birds_trainfile591,0,5.0,"[""blutit"", ""gretit1""]",calibration,NBP
+nips4b_birds_trainfile592_000_002.ogg,nips4b_birds_trainfile592,0,2.7689795918367346,"[""eursta""]",test,NBP
+nips4b_birds_trainfile593_000_005.ogg,nips4b_birds_trainfile593,0,5.0,"[""grswoo"", ""gretit1"", ""winwre4""]",calibration,NBP
+nips4b_birds_trainfile596_000_005.ogg,nips4b_birds_trainfile596,0,5.0,"[""sonthr1""]",calibration,NBP
+nips4b_birds_trainfile597_000_005.ogg,nips4b_birds_trainfile597,0,5.0,"[""eutdov""]",test,NBP
+nips4b_birds_trainfile598_000_005.ogg,nips4b_birds_trainfile598,0,5.0,"[""eurbla"", ""dunnoc1"", ""eurrob1""]",test,NBP
+nips4b_birds_trainfile599_000_002.ogg,nips4b_birds_trainfile599,0,2.56,"[""comnig1"", ""woolar1""]",test,NBP
+nips4b_birds_trainfile600_000_004.ogg,nips4b_birds_trainfile600,0,4.800725623582767,"[""blackc1"", ""eursta""]",test,NBP
+nips4b_birds_trainfile601_000_001.ogg,nips4b_birds_trainfile601,0,1.3873922902494331,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile602_000_002.ogg,nips4b_birds_trainfile602,0,2.6354648526077096,"[""spofly1""]",calibration,NBP
+nips4b_birds_trainfile603_000_003.ogg,nips4b_birds_trainfile603,0,3.152108843537415,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile604_000_002.ogg,nips4b_birds_trainfile604,0,2.56,"[""skylar""]",test,NBP
+nips4b_birds_trainfile605_000_004.ogg,nips4b_birds_trainfile605,0,4.040272108843538,"[""easwar1""]",test,NBP
+nips4b_birds_trainfile606_000_002.ogg,nips4b_birds_trainfile606,0,2.5658049886621317,"[""zitcis1"", ""houspa""]",test,NBP
+nips4b_birds_trainfile607_000_002.ogg,nips4b_birds_trainfile607,0,2.536780045351474,"[""grywag""]",test,NBP
+nips4b_birds_trainfile608_000_005.ogg,nips4b_birds_trainfile608,0,5.0,"[""rocpet1""]",test,NBP
+nips4b_birds_trainfile609_000_005.ogg,nips4b_birds_trainfile609,0,5.0,"[""cretit2"", ""comcha"", ""eurrob1""]",calibration,NBP
+nips4b_birds_trainfile610_000_005.ogg,nips4b_birds_trainfile610,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile612_000_005.ogg,nips4b_birds_trainfile612,0,5.0,"[""easwar1"", ""rocpet1""]",test,NBP
+nips4b_birds_trainfile613_000_002.ogg,nips4b_birds_trainfile613,0,2.6586848072562357,"[""grywag"", ""comchi1"", ""eurlin1""]",test,NBP
+nips4b_birds_trainfile614_000_005.ogg,nips4b_birds_trainfile614,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile615_000_005.ogg,nips4b_birds_trainfile615,0,5.0,"[""comcha"", ""cowpig1"", ""blackc1""]",calibration,NBP
+nips4b_birds_trainfile618_000_005.ogg,nips4b_birds_trainfile618,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile619_000_002.ogg,nips4b_birds_trainfile619,0,2.861859410430839,"[""eugori2""]",calibration,NBP
+nips4b_birds_trainfile620_000_004.ogg,nips4b_birds_trainfile620,0,4.440816326530612,"[""rocpet1""]",test,NBP
+nips4b_birds_trainfile621_000_004.ogg,nips4b_birds_trainfile621,0,4.0344671201814055,"[""eurmag1""]",calibration,NBP
+nips4b_birds_trainfile622_000_002.ogg,nips4b_birds_trainfile622,0,2.9373242630385485,"[""eugori2""]",calibration,NBP
+nips4b_birds_trainfile623_000_004.ogg,nips4b_birds_trainfile623,0,4.748480725623582,"[""eurser1"", ""eurgol""]",calibration,NBP
+nips4b_birds_trainfile624_000_003.ogg,nips4b_birds_trainfile624,0,3.848707482993197,"[""eurgre1""]",test,NBP
+nips4b_birds_trainfile625_000_005.ogg,nips4b_birds_trainfile625,0,5.0,"[""eurlin1"", ""sarwar1""]",test,NBP
+nips4b_birds_trainfile626_000_005.ogg,nips4b_birds_trainfile626,0,5.0,"[""comnig1"", ""gretit1""]",test,NBP
+nips4b_birds_trainfile628_000_005.ogg,nips4b_birds_trainfile628,0,5.0,"[""winwre4"", ""firecr1"", ""sonthr1""]",test,NBP
+nips4b_birds_trainfile629_000_002.ogg,nips4b_birds_trainfile629,0,2.513560090702948,"[""comnig1""]",test,NBP
+nips4b_birds_trainfile630_000_005.ogg,nips4b_birds_trainfile630,0,5.0,"[""rocpet1""]",calibration,NBP
+nips4b_birds_trainfile631_000_005.ogg,nips4b_birds_trainfile631,0,5.0,"[""combuz1"", ""barswa""]",test,NBP
+nips4b_birds_trainfile633_000_005.ogg,nips4b_birds_trainfile633,0,5.0,"[""comchi1"", ""coatit2""]",test,NBP
+nips4b_birds_trainfile634_000_005.ogg,nips4b_birds_trainfile634,0,5.0,"[""eurlin1""]",test,NBP
+nips4b_birds_trainfile635_000_005.ogg,nips4b_birds_trainfile635,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile636_000_005.ogg,nips4b_birds_trainfile636,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile637_000_005.ogg,nips4b_birds_trainfile637,0,5.0,"[""sarwar1""]",test,NBP
+nips4b_birds_trainfile638_000_005.ogg,nips4b_birds_trainfile638,0,5.0,"[""thelar1""]",test,NBP
+nips4b_birds_trainfile639_000_001.ogg,nips4b_birds_trainfile639,0,1.248072562358277,"[""eucdov"", ""gretit1""]",test,NBP
+nips4b_birds_trainfile640_000_002.ogg,nips4b_birds_trainfile640,0,2.5193650793650795,"[""comcha""]",test,NBP
+nips4b_birds_trainfile642_000_005.ogg,nips4b_birds_trainfile642,0,5.0,"[""rocpet1"", ""easwar1""]",test,NBP
+nips4b_birds_trainfile643_000_001.ogg,nips4b_birds_trainfile643,0,1.1377777777777778,"[""zitcis1"", ""houspa""]",test,NBP
+nips4b_birds_trainfile644_000_005.ogg,nips4b_birds_trainfile644,0,5.0,"[""skylar""]",calibration,NBP
+nips4b_birds_trainfile645_000_005.ogg,nips4b_birds_trainfile645,0,5.0,"[""crelar1""]",test,NBP
+nips4b_birds_trainfile646_000_002.ogg,nips4b_birds_trainfile646,0,2.589024943310658,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile647_000_005.ogg,nips4b_birds_trainfile647,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile648_000_005.ogg,nips4b_birds_trainfile648,0,5.0,"[""easwar1"", ""rocpet1""]",test,NBP
+nips4b_birds_trainfile649_000_003.ogg,nips4b_birds_trainfile649,0,3.790657596371882,"[""cetwar1""]",calibration,NBP
+nips4b_birds_trainfile651_000_005.ogg,nips4b_birds_trainfile651,0,5.0,"[""woolar1""]",test,NBP
+nips4b_birds_trainfile652_000_005.ogg,nips4b_birds_trainfile652,0,5.0,"[""easwar1""]",calibration,NBP
+nips4b_birds_trainfile653_000_005.ogg,nips4b_birds_trainfile653,0,5.0,"[""comchi1"", ""sonthr1""]",test,NBP
+nips4b_birds_trainfile654_000_005.ogg,nips4b_birds_trainfile654,0,5.0,"[""easwar1"", ""rocpet1""]",test,NBP
+nips4b_birds_trainfile655_000_005.ogg,nips4b_birds_trainfile655,0,5.0,"[""eurgol"", ""grywag""]",calibration,NBP
+nips4b_birds_trainfile656_000_005.ogg,nips4b_birds_trainfile656,0,5.0,"[""eurgol""]",test,NBP
+nips4b_birds_trainfile657_000_005.ogg,nips4b_birds_trainfile657,0,5.0,"[""eugori2""]",test,NBP
+nips4b_birds_trainfile658_000_005.ogg,nips4b_birds_trainfile658,0,5.0,"[""easwar1"", ""rocpet1""]",test,NBP
+nips4b_birds_trainfile659_000_005.ogg,nips4b_birds_trainfile659,0,5.0,"[""rocpet1""]",test,NBP
+nips4b_birds_trainfile660_000_005.ogg,nips4b_birds_trainfile660,0,5.0,"[""winwre4"", ""eurnut2""]",test,NBP
+nips4b_birds_trainfile662_000_003.ogg,nips4b_birds_trainfile662,0,3.1172789115646258,"[""crelar1"", ""skylar""]",calibration,NBP
+nips4b_birds_trainfile663_000_002.ogg,nips4b_birds_trainfile663,0,2.5541950113378684,"[""eugori2"", ""comnig1""]",calibration,NBP
+nips4b_birds_trainfile664_000_005.ogg,nips4b_birds_trainfile664,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile665_000_005.ogg,nips4b_birds_trainfile665,0,5.0,"[""eurbla"", ""coatit2"", ""cirbun1"", ""martit2""]",calibration,NBP
+nips4b_birds_trainfile667_000_004.ogg,nips4b_birds_trainfile667,0,4.3769614512471655,"[""cetwar1"", ""comnig1""]",test,NBP
+nips4b_birds_trainfile668_000_005.ogg,nips4b_birds_trainfile668,0,5.0,"[""lottit1""]",test,NBP
+nips4b_birds_trainfile671_000_005.ogg,nips4b_birds_trainfile671,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile672_000_005.ogg,nips4b_birds_trainfile672,0,5.0,"[""eurbul""]",test,NBP
+nips4b_birds_trainfile673_000_004.ogg,nips4b_birds_trainfile673,0,4.104126984126984,"[""woolar1"", ""eurmag1""]",test,NBP
+nips4b_birds_trainfile674_000_005.ogg,nips4b_birds_trainfile674,0,5.0,"[""cirbun1"", ""eurser1""]",test,NBP
+nips4b_birds_trainfile675_000_005.ogg,nips4b_birds_trainfile675,0,5.0,"[""trepip"", ""gretit1""]",calibration,NBP
+nips4b_birds_trainfile676_000_005.ogg,nips4b_birds_trainfile676,0,5.0,"[""eurbul"", ""combuz1"", ""firecr1""]",test,NBP
+nips4b_birds_trainfile677_000_005.ogg,nips4b_birds_trainfile677,0,5.0,"[""houspa"", ""lottit1""]",test,NBP
+nips4b_birds_trainfile678_000_005.ogg,nips4b_birds_trainfile678,0,5.0,"[""gretit1"", ""coatit2"", ""martit2"", ""comchi1"", ""grswoo""]",test,NBP
+nips4b_birds_trainfile679_000_002.ogg,nips4b_birds_trainfile679,0,2.5251700680272107,"[""grywag"", ""eurgre1"", ""firecr1"", ""shttre1""]",test,NBP
+nips4b_birds_trainfile680_000_002.ogg,nips4b_birds_trainfile680,0,2.6586848072562357,"[""eutdov"", ""woolar1""]",test,NBP
+nips4b_birds_trainfile681_000_005.ogg,nips4b_birds_trainfile681,0,5.0,"[""eurbla"", ""eurjay1"", ""blackc1"", ""eurnut2""]",test,NBP
+nips4b_birds_trainfile682_000_005.ogg,nips4b_birds_trainfile682,0,5.0,"[""darwar1""]",test,NBP
+nips4b_birds_trainfile683_000_005.ogg,nips4b_birds_trainfile683,0,5.0,"[""comchi1"", ""trepip"", ""gretit1""]",calibration,NBP
+nips4b_birds_trainfile684_000_003.ogg,nips4b_birds_trainfile684,0,3.1230839002267574,"[""blutit""]",test,NBP
+nips4b_birds_trainfile685_000_004.ogg,nips4b_birds_trainfile685,0,4.237641723356009,"[""comnig1"", ""eurbla""]",test,NBP
+nips4b_birds_trainfile686_000_005.ogg,nips4b_birds_trainfile686,0,5.0,"[""eurser1"", ""eurwry"", ""houspa""]",test,NBP
+nips4b_birds_trainfile687_000_005.ogg,nips4b_birds_trainfile687,0,5.0,"[""martit2"", ""comchi1""]",test,NBP
+HSN_001_20150708_061805_040_045.ogg,HSN_001_20150708_061805,0,5.0,[],test,HSN
+HSN_001_20150708_061805_070_075.ogg,HSN_001_20150708_061805,0,5.0,"[""amepip""]",test,HSN
+HSN_001_20150708_061805_080_085.ogg,HSN_001_20150708_061805,0,5.0,[],test,HSN
+HSN_001_20150708_061805_120_125.ogg,HSN_001_20150708_061805,0,5.0,"[""amepip"", ""whcspa""]",test,HSN
+HSN_001_20150708_061805_570_575.ogg,HSN_001_20150708_061805,0,5.0,[],test,HSN
+HSN_001_20150708_061805_590_595.ogg,HSN_001_20150708_061805,0,5.0,[],test,HSN
+HSN_002_20150708_065805_060_065.ogg,HSN_002_20150708_065805,0,5.0,"[""whcspa""]",test,HSN
+HSN_002_20150708_065805_105_110.ogg,HSN_002_20150708_065805,0,5.0,"[""whcspa""]",test,HSN
+HSN_002_20150708_065805_135_140.ogg,HSN_002_20150708_065805,0,5.0,"[""amepip"", ""whcspa""]",test,HSN
+HSN_002_20150708_065805_195_200.ogg,HSN_002_20150708_065805,0,5.0,"[""whcspa"", ""amepip""]",test,HSN
+HSN_002_20150708_065805_475_480.ogg,HSN_002_20150708_065805,0,5.0,[],test,HSN
+HSN_002_20150708_065805_575_580.ogg,HSN_002_20150708_065805,0,5.0,"[""amepip"", ""rocwre""]",test,HSN
+HSN_003_20150708_085105_045_050.ogg,HSN_003_20150708_085105,0,5.0,[],test,HSN
+HSN_003_20150708_085105_055_060.ogg,HSN_003_20150708_085105,0,5.0,[],test,HSN
+HSN_003_20150708_085105_065_070.ogg,HSN_003_20150708_085105,0,5.0,[],test,HSN
+HSN_003_20150708_085105_220_225.ogg,HSN_003_20150708_085105,0,5.0,[],test,HSN
+HSN_003_20150708_085105_300_305.ogg,HSN_003_20150708_085105,0,5.0,[],test,HSN
+HSN_003_20150708_085105_430_435.ogg,HSN_003_20150708_085105,0,5.0,[],test,HSN
+HSN_004_20150709_061805_035_040.ogg,HSN_004_20150709_061805,0,5.0,"[""amepip""]",test,HSN
+HSN_004_20150709_061805_200_205.ogg,HSN_004_20150709_061805,0,5.0,[],test,HSN
+HSN_004_20150709_061805_285_290.ogg,HSN_004_20150709_061805,0,5.0,[],test,HSN
+HSN_004_20150709_061805_300_305.ogg,HSN_004_20150709_061805,0,5.0,[],test,HSN
+HSN_004_20150709_061805_395_400.ogg,HSN_004_20150709_061805,0,5.0,[],test,HSN
+HSN_004_20150709_061805_590_595.ogg,HSN_004_20150709_061805,0,5.0,[],test,HSN
+HSN_005_20150709_063105_005_010.ogg,HSN_005_20150709_063105,0,5.0,[],test,HSN
+HSN_005_20150709_063105_055_060.ogg,HSN_005_20150709_063105,0,5.0,[],test,HSN
+HSN_005_20150709_063105_110_115.ogg,HSN_005_20150709_063105,0,5.0,"[""amepip""]",test,HSN
+HSN_005_20150709_063105_160_165.ogg,HSN_005_20150709_063105,0,5.0,"[""amepip""]",test,HSN
+HSN_005_20150709_063105_205_210.ogg,HSN_005_20150709_063105,0,5.0,"[""amepip"", ""rocwre""]",test,HSN
+HSN_005_20150709_063105_325_330.ogg,HSN_005_20150709_063105,0,5.0,[],test,HSN
+HSN_006_20150709_063805_000_005.ogg,HSN_006_20150709_063805,0,5.0,[],calibration,HSN
+HSN_006_20150709_063805_005_010.ogg,HSN_006_20150709_063805,0,5.0,[],calibration,HSN
+HSN_006_20150709_063805_230_235.ogg,HSN_006_20150709_063805,0,5.0,[],calibration,HSN
+HSN_006_20150709_063805_415_420.ogg,HSN_006_20150709_063805,0,5.0,[],calibration,HSN
+HSN_006_20150709_063805_445_450.ogg,HSN_006_20150709_063805,0,5.0,[],calibration,HSN
+HSN_006_20150709_063805_580_585.ogg,HSN_006_20150709_063805,0,5.0,[],calibration,HSN
+HSN_007_20150709_064805_085_090.ogg,HSN_007_20150709_064805,0,5.0,[],test,HSN
+HSN_007_20150709_064805_410_415.ogg,HSN_007_20150709_064805,0,5.0,"[""amepip""]",test,HSN
+HSN_007_20150709_064805_455_460.ogg,HSN_007_20150709_064805,0,5.0,"[""whcspa""]",test,HSN
+HSN_007_20150709_064805_560_565.ogg,HSN_007_20150709_064805,0,5.0,[],test,HSN
+HSN_007_20150709_064805_580_585.ogg,HSN_007_20150709_064805,0,5.0,[],test,HSN
+HSN_007_20150709_064805_595_597.ogg,HSN_007_20150709_064805,0,2.002687499999979,[],test,HSN
+HSN_008_20150709_064805_300_305.ogg,HSN_008_20150709_064805,0,5.0,"[""rocwre""]",test,HSN
+HSN_008_20150709_064805_325_330.ogg,HSN_008_20150709_064805,0,5.0,[],test,HSN
+HSN_008_20150709_064805_395_400.ogg,HSN_008_20150709_064805,0,5.0,"[""rocwre""]",test,HSN
+HSN_008_20150709_064805_400_405.ogg,HSN_008_20150709_064805,0,5.0,"[""gcrfin""]",test,HSN
+HSN_008_20150709_064805_405_410.ogg,HSN_008_20150709_064805,0,5.0,[],test,HSN
+HSN_008_20150709_064805_425_430.ogg,HSN_008_20150709_064805,0,5.0,[],test,HSN
+HSN_009_20150709_073805_135_140.ogg,HSN_009_20150709_073805,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_009_20150709_073805_200_205.ogg,HSN_009_20150709_073805,0,5.0,[],calibration,HSN
+HSN_009_20150709_073805_335_340.ogg,HSN_009_20150709_073805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_009_20150709_073805_440_445.ogg,HSN_009_20150709_073805,0,5.0,[],calibration,HSN
+HSN_009_20150709_073805_525_530.ogg,HSN_009_20150709_073805,0,5.0,[],calibration,HSN
+HSN_009_20150709_073805_580_585.ogg,HSN_009_20150709_073805,0,5.0,[],calibration,HSN
+HSN_010_20150709_074105_055_060.ogg,HSN_010_20150709_074105,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_010_20150709_074105_165_170.ogg,HSN_010_20150709_074105,0,5.0,"[""clanut"", ""rocwre""]",calibration,HSN
+HSN_010_20150709_074105_175_180.ogg,HSN_010_20150709_074105,0,5.0,[],calibration,HSN
+HSN_010_20150709_074105_190_195.ogg,HSN_010_20150709_074105,0,5.0,[],calibration,HSN
+HSN_010_20150709_074105_245_250.ogg,HSN_010_20150709_074105,0,5.0,[],calibration,HSN
+HSN_010_20150709_074105_380_385.ogg,HSN_010_20150709_074105,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_011_20150709_075805_045_050.ogg,HSN_011_20150709_075805,0,5.0,[],test,HSN
+HSN_011_20150709_075805_235_240.ogg,HSN_011_20150709_075805,0,5.0,[],test,HSN
+HSN_011_20150709_075805_245_250.ogg,HSN_011_20150709_075805,0,5.0,[],test,HSN
+HSN_011_20150709_075805_385_390.ogg,HSN_011_20150709_075805,0,5.0,[],test,HSN
+HSN_011_20150709_075805_465_470.ogg,HSN_011_20150709_075805,0,5.0,[],test,HSN
+HSN_011_20150709_075805_490_495.ogg,HSN_011_20150709_075805,0,5.0,[],test,HSN
+HSN_012_20150709_080105_085_090.ogg,HSN_012_20150709_080105,0,5.0,[],calibration,HSN
+HSN_012_20150709_080105_305_310.ogg,HSN_012_20150709_080105,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_012_20150709_080105_345_350.ogg,HSN_012_20150709_080105,0,5.0,[],calibration,HSN
+HSN_012_20150709_080105_425_430.ogg,HSN_012_20150709_080105,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_012_20150709_080105_520_525.ogg,HSN_012_20150709_080105,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_012_20150709_080105_590_595.ogg,HSN_012_20150709_080105,0,5.0,"[""amepip""]",calibration,HSN
+HSN_013_20150709_080105_215_220.ogg,HSN_013_20150709_080105,0,5.0,"[""whcspa""]",test,HSN
+HSN_013_20150709_080105_265_270.ogg,HSN_013_20150709_080105,0,5.0,[],test,HSN
+HSN_013_20150709_080105_285_290.ogg,HSN_013_20150709_080105,0,5.0,"[""whcspa""]",test,HSN
+HSN_013_20150709_080105_325_330.ogg,HSN_013_20150709_080105,0,5.0,"[""whcspa""]",test,HSN
+HSN_013_20150709_080105_350_355.ogg,HSN_013_20150709_080105,0,5.0,"[""amepip""]",test,HSN
+HSN_013_20150709_080105_590_595.ogg,HSN_013_20150709_080105,0,5.0,[],test,HSN
+HSN_014_20150709_081105_035_040.ogg,HSN_014_20150709_081105,0,5.0,"[""amepip"", ""whcspa""]",test,HSN
+HSN_014_20150709_081105_155_160.ogg,HSN_014_20150709_081105,0,5.0,"[""whcspa""]",test,HSN
+HSN_014_20150709_081105_165_170.ogg,HSN_014_20150709_081105,0,5.0,"[""whcspa"", ""amepip""]",test,HSN
+HSN_014_20150709_081105_180_185.ogg,HSN_014_20150709_081105,0,5.0,"[""whcspa""]",test,HSN
+HSN_014_20150709_081105_345_350.ogg,HSN_014_20150709_081105,0,5.0,[],test,HSN
+HSN_014_20150709_081105_470_475.ogg,HSN_014_20150709_081105,0,5.0,[],test,HSN
+HSN_015_20150709_081805_020_025.ogg,HSN_015_20150709_081805,0,5.0,"[""amepip""]",test,HSN
+HSN_015_20150709_081805_155_160.ogg,HSN_015_20150709_081805,0,5.0,"[""amepip""]",test,HSN
+HSN_015_20150709_081805_495_500.ogg,HSN_015_20150709_081805,0,5.0,[],test,HSN
+HSN_015_20150709_081805_520_525.ogg,HSN_015_20150709_081805,0,5.0,"[""whcspa""]",test,HSN
+HSN_015_20150709_081805_575_580.ogg,HSN_015_20150709_081805,0,5.0,"[""amepip""]",test,HSN
+HSN_015_20150709_081805_595_600.ogg,HSN_015_20150709_081805,0,5.0,"[""whcspa""]",test,HSN
+HSN_016_20150709_081805_090_095.ogg,HSN_016_20150709_081805,0,5.0,"[""gcrfin"", ""rocwre""]",test,HSN
+HSN_016_20150709_081805_125_130.ogg,HSN_016_20150709_081805,0,5.0,"[""rocwre""]",test,HSN
+HSN_016_20150709_081805_330_335.ogg,HSN_016_20150709_081805,0,5.0,[],test,HSN
+HSN_016_20150709_081805_350_355.ogg,HSN_016_20150709_081805,0,5.0,[],test,HSN
+HSN_016_20150709_081805_385_390.ogg,HSN_016_20150709_081805,0,5.0,[],test,HSN
+HSN_016_20150709_081805_475_480.ogg,HSN_016_20150709_081805,0,5.0,[],test,HSN
+HSN_017_20150709_082805_010_015.ogg,HSN_017_20150709_082805,0,5.0,"[""whcspa"", ""rocwre""]",calibration,HSN
+HSN_017_20150709_082805_035_040.ogg,HSN_017_20150709_082805,0,5.0,"[""rocwre"", ""whcspa""]",calibration,HSN
+HSN_017_20150709_082805_250_255.ogg,HSN_017_20150709_082805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_017_20150709_082805_440_445.ogg,HSN_017_20150709_082805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_017_20150709_082805_450_455.ogg,HSN_017_20150709_082805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_017_20150709_082805_575_580.ogg,HSN_017_20150709_082805,0,5.0,"[""mallar3"", ""whcspa""]",calibration,HSN
+HSN_018_20150709_083105_145_150.ogg,HSN_018_20150709_083105,0,5.0,"[""amepip""]",test,HSN
+HSN_018_20150709_083105_240_245.ogg,HSN_018_20150709_083105,0,5.0,[],test,HSN
+HSN_018_20150709_083105_290_295.ogg,HSN_018_20150709_083105,0,5.0,[],test,HSN
+HSN_018_20150709_083105_445_450.ogg,HSN_018_20150709_083105,0,5.0,[],test,HSN
+HSN_018_20150709_083105_465_470.ogg,HSN_018_20150709_083105,0,5.0,"[""daejun""]",test,HSN
+HSN_018_20150709_083105_525_530.ogg,HSN_018_20150709_083105,0,5.0,"[""amepip""]",test,HSN
+HSN_019_20150709_083105_010_015.ogg,HSN_019_20150709_083105,0,5.0,"[""whcspa""]",test,HSN
+HSN_019_20150709_083105_210_215.ogg,HSN_019_20150709_083105,0,5.0,"[""whcspa""]",test,HSN
+HSN_019_20150709_083105_285_290.ogg,HSN_019_20150709_083105,0,5.0,[],test,HSN
+HSN_019_20150709_083105_345_350.ogg,HSN_019_20150709_083105,0,5.0,[],test,HSN
+HSN_019_20150709_083105_560_565.ogg,HSN_019_20150709_083105,0,5.0,[],test,HSN
+HSN_019_20150709_083105_585_590.ogg,HSN_019_20150709_083105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_020_20150709_084105_020_025.ogg,HSN_020_20150709_084105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_020_20150709_084105_165_170.ogg,HSN_020_20150709_084105,0,5.0,"[""amepip""]",test,HSN
+HSN_020_20150709_084105_245_250.ogg,HSN_020_20150709_084105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_020_20150709_084105_285_290.ogg,HSN_020_20150709_084105,0,5.0,[],test,HSN
+HSN_020_20150709_084105_295_300.ogg,HSN_020_20150709_084105,0,5.0,[],test,HSN
+HSN_020_20150709_084105_475_480.ogg,HSN_020_20150709_084105,0,5.0,[],test,HSN
+HSN_021_20150709_084805_190_195.ogg,HSN_021_20150709_084805,0,5.0,[],calibration,HSN
+HSN_021_20150709_084805_260_265.ogg,HSN_021_20150709_084805,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_021_20150709_084805_450_455.ogg,HSN_021_20150709_084805,0,5.0,[],calibration,HSN
+HSN_021_20150709_084805_525_530.ogg,HSN_021_20150709_084805,0,5.0,[],calibration,HSN
+HSN_021_20150709_084805_545_550.ogg,HSN_021_20150709_084805,0,5.0,[],calibration,HSN
+HSN_021_20150709_084805_570_575.ogg,HSN_021_20150709_084805,0,5.0,[],calibration,HSN
+HSN_022_20150709_084805_030_035.ogg,HSN_022_20150709_084805,0,5.0,"[""whcspa""]",test,HSN
+HSN_022_20150709_084805_050_055.ogg,HSN_022_20150709_084805,0,5.0,"[""whcspa""]",test,HSN
+HSN_022_20150709_084805_095_100.ogg,HSN_022_20150709_084805,0,5.0,"[""whcspa""]",test,HSN
+HSN_022_20150709_084805_125_130.ogg,HSN_022_20150709_084805,0,5.0,"[""whcspa""]",test,HSN
+HSN_022_20150709_084805_145_150.ogg,HSN_022_20150709_084805,0,5.0,"[""whcspa"", ""rocwre"", ""gcrfin""]",test,HSN
+HSN_022_20150709_084805_410_415.ogg,HSN_022_20150709_084805,0,5.0,"[""whcspa""]",test,HSN
+HSN_023_20150709_091105_055_060.ogg,HSN_023_20150709_091105,0,5.0,"[""whcspa""]",test,HSN
+HSN_023_20150709_091105_075_080.ogg,HSN_023_20150709_091105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_023_20150709_091105_090_095.ogg,HSN_023_20150709_091105,0,5.0,"[""clanut""]",test,HSN
+HSN_023_20150709_091105_195_200.ogg,HSN_023_20150709_091105,0,5.0,[],test,HSN
+HSN_023_20150709_091105_325_330.ogg,HSN_023_20150709_091105,0,5.0,[],test,HSN
+HSN_023_20150709_091105_505_510.ogg,HSN_023_20150709_091105,0,5.0,[],test,HSN
+HSN_024_20150709_091105_040_045.ogg,HSN_024_20150709_091105,0,5.0,[],test,HSN
+HSN_024_20150709_091105_070_075.ogg,HSN_024_20150709_091105,0,5.0,[],test,HSN
+HSN_024_20150709_091105_190_195.ogg,HSN_024_20150709_091105,0,5.0,[],test,HSN
+HSN_024_20150709_091105_315_320.ogg,HSN_024_20150709_091105,0,5.0,[],test,HSN
+HSN_024_20150709_091105_335_340.ogg,HSN_024_20150709_091105,0,5.0,[],test,HSN
+HSN_024_20150709_091105_540_545.ogg,HSN_024_20150709_091105,0,5.0,"[""amepip""]",test,HSN
+HSN_025_20150710_061806_185_190.ogg,HSN_025_20150710_061806,0,5.0,"[""whcspa""]",test,HSN
+HSN_025_20150710_061806_195_200.ogg,HSN_025_20150710_061806,0,5.0,"[""whcspa""]",test,HSN
+HSN_025_20150710_061806_400_405.ogg,HSN_025_20150710_061806,0,5.0,[],test,HSN
+HSN_025_20150710_061806_420_425.ogg,HSN_025_20150710_061806,0,5.0,[],test,HSN
+HSN_025_20150710_061806_435_440.ogg,HSN_025_20150710_061806,0,5.0,[],test,HSN
+HSN_025_20150710_061806_515_520.ogg,HSN_025_20150710_061806,0,5.0,"[""rocwre""]",test,HSN
+HSN_026_20150710_062805_100_105.ogg,HSN_026_20150710_062805,0,5.0,"[""whcspa""]",test,HSN
+HSN_026_20150710_062805_240_245.ogg,HSN_026_20150710_062805,0,5.0,"[""whcspa""]",test,HSN
+HSN_026_20150710_062805_280_285.ogg,HSN_026_20150710_062805,0,5.0,[],test,HSN
+HSN_026_20150710_062805_405_410.ogg,HSN_026_20150710_062805,0,5.0,[],test,HSN
+HSN_026_20150710_062805_410_415.ogg,HSN_026_20150710_062805,0,5.0,[],test,HSN
+HSN_026_20150710_062805_565_570.ogg,HSN_026_20150710_062805,0,5.0,"[""whcspa""]",test,HSN
+HSN_027_20150710_063805_030_035.ogg,HSN_027_20150710_063805,0,5.0,[],test,HSN
+HSN_027_20150710_063805_075_080.ogg,HSN_027_20150710_063805,0,5.0,[],test,HSN
+HSN_027_20150710_063805_105_110.ogg,HSN_027_20150710_063805,0,5.0,[],test,HSN
+HSN_027_20150710_063805_250_255.ogg,HSN_027_20150710_063805,0,5.0,[],test,HSN
+HSN_027_20150710_063805_320_325.ogg,HSN_027_20150710_063805,0,5.0,[],test,HSN
+HSN_027_20150710_063805_375_380.ogg,HSN_027_20150710_063805,0,5.0,[],test,HSN
+HSN_028_20150710_064105_140_145.ogg,HSN_028_20150710_064105,0,5.0,[],test,HSN
+HSN_028_20150710_064105_150_155.ogg,HSN_028_20150710_064105,0,5.0,[],test,HSN
+HSN_028_20150710_064105_260_265.ogg,HSN_028_20150710_064105,0,5.0,[],test,HSN
+HSN_028_20150710_064105_295_300.ogg,HSN_028_20150710_064105,0,5.0,[],test,HSN
+HSN_028_20150710_064105_440_445.ogg,HSN_028_20150710_064105,0,5.0,[],test,HSN
+HSN_028_20150710_064105_470_475.ogg,HSN_028_20150710_064105,0,5.0,"[""rocwre""]",test,HSN
+HSN_029_20150710_064806_120_125.ogg,HSN_029_20150710_064806,0,5.0,[],test,HSN
+HSN_029_20150710_064806_185_190.ogg,HSN_029_20150710_064806,0,5.0,"[""amepip""]",test,HSN
+HSN_029_20150710_064806_210_215.ogg,HSN_029_20150710_064806,0,5.0,"[""whcspa"", ""amepip""]",test,HSN
+HSN_029_20150710_064806_380_385.ogg,HSN_029_20150710_064806,0,5.0,"[""amepip""]",test,HSN
+HSN_029_20150710_064806_425_430.ogg,HSN_029_20150710_064806,0,5.0,[],test,HSN
+HSN_029_20150710_064806_580_585.ogg,HSN_029_20150710_064806,0,5.0,[],test,HSN
+HSN_030_20150710_065105_065_070.ogg,HSN_030_20150710_065105,0,5.0,"[""amepip""]",calibration,HSN
+HSN_030_20150710_065105_400_405.ogg,HSN_030_20150710_065105,0,5.0,"[""gcrfin"", ""amepip""]",calibration,HSN
+HSN_030_20150710_065105_435_440.ogg,HSN_030_20150710_065105,0,5.0,"[""amepip""]",calibration,HSN
+HSN_030_20150710_065105_500_505.ogg,HSN_030_20150710_065105,0,5.0,[],calibration,HSN
+HSN_030_20150710_065105_525_530.ogg,HSN_030_20150710_065105,0,5.0,"[""amepip""]",calibration,HSN
+HSN_030_20150710_065105_595_597.ogg,HSN_030_20150710_065105,0,2.002687499999979,[],calibration,HSN
+HSN_031_20150710_065105_030_035.ogg,HSN_031_20150710_065105,0,5.0,[],test,HSN
+HSN_031_20150710_065105_085_090.ogg,HSN_031_20150710_065105,0,5.0,"[""rocwre""]",test,HSN
+HSN_031_20150710_065105_255_260.ogg,HSN_031_20150710_065105,0,5.0,[],test,HSN
+HSN_031_20150710_065105_275_280.ogg,HSN_031_20150710_065105,0,5.0,"[""clanut""]",test,HSN
+HSN_031_20150710_065105_375_380.ogg,HSN_031_20150710_065105,0,5.0,"[""clanut""]",test,HSN
+HSN_031_20150710_065105_420_425.ogg,HSN_031_20150710_065105,0,5.0,"[""clanut""]",test,HSN
+HSN_032_20150710_071105_005_010.ogg,HSN_032_20150710_071105,0,5.0,[],test,HSN
+HSN_032_20150710_071105_035_040.ogg,HSN_032_20150710_071105,0,5.0,"[""daejun"", ""casfin""]",test,HSN
+HSN_032_20150710_071105_120_125.ogg,HSN_032_20150710_071105,0,5.0,"[""daejun""]",test,HSN
+HSN_032_20150710_071105_235_240.ogg,HSN_032_20150710_071105,0,5.0,[],test,HSN
+HSN_032_20150710_071105_400_405.ogg,HSN_032_20150710_071105,0,5.0,[],test,HSN
+HSN_032_20150710_071105_475_480.ogg,HSN_032_20150710_071105,0,5.0,[],test,HSN
+HSN_033_20150710_072105_015_020.ogg,HSN_033_20150710_072105,0,5.0,[],calibration,HSN
+HSN_033_20150710_072105_085_090.ogg,HSN_033_20150710_072105,0,5.0,[],calibration,HSN
+HSN_033_20150710_072105_170_175.ogg,HSN_033_20150710_072105,0,5.0,[],calibration,HSN
+HSN_033_20150710_072105_385_390.ogg,HSN_033_20150710_072105,0,5.0,[],calibration,HSN
+HSN_033_20150710_072105_395_400.ogg,HSN_033_20150710_072105,0,5.0,[],calibration,HSN
+HSN_033_20150710_072105_550_555.ogg,HSN_033_20150710_072105,0,5.0,[],calibration,HSN
+HSN_034_20150710_075105_105_110.ogg,HSN_034_20150710_075105,0,5.0,"[""whcspa""]",test,HSN
+HSN_034_20150710_075105_120_125.ogg,HSN_034_20150710_075105,0,5.0,"[""whcspa""]",test,HSN
+HSN_034_20150710_075105_145_150.ogg,HSN_034_20150710_075105,0,5.0,[],test,HSN
+HSN_034_20150710_075105_355_360.ogg,HSN_034_20150710_075105,0,5.0,"[""whcspa""]",test,HSN
+HSN_034_20150710_075105_380_385.ogg,HSN_034_20150710_075105,0,5.0,"[""whcspa""]",test,HSN
+HSN_034_20150710_075105_535_540.ogg,HSN_034_20150710_075105,0,5.0,[],test,HSN
+HSN_035_20150710_075805_200_205.ogg,HSN_035_20150710_075805,0,5.0,"[""amepip""]",test,HSN
+HSN_035_20150710_075805_230_235.ogg,HSN_035_20150710_075805,0,5.0,[],test,HSN
+HSN_035_20150710_075805_265_270.ogg,HSN_035_20150710_075805,0,5.0,"[""amepip""]",test,HSN
+HSN_035_20150710_075805_395_400.ogg,HSN_035_20150710_075805,0,5.0,[],test,HSN
+HSN_035_20150710_075805_500_505.ogg,HSN_035_20150710_075805,0,5.0,[],test,HSN
+HSN_035_20150710_075805_530_535.ogg,HSN_035_20150710_075805,0,5.0,[],test,HSN
+HSN_036_20150710_080105_055_060.ogg,HSN_036_20150710_080105,0,5.0,"[""clanut""]",test,HSN
+HSN_036_20150710_080105_100_105.ogg,HSN_036_20150710_080105,0,5.0,[],test,HSN
+HSN_036_20150710_080105_225_230.ogg,HSN_036_20150710_080105,0,5.0,[],test,HSN
+HSN_036_20150710_080105_295_300.ogg,HSN_036_20150710_080105,0,5.0,"[""whcspa""]",test,HSN
+HSN_036_20150710_080105_470_475.ogg,HSN_036_20150710_080105,0,5.0,[],test,HSN
+HSN_036_20150710_080105_565_570.ogg,HSN_036_20150710_080105,0,5.0,[],test,HSN
+HSN_037_20150710_081805_320_325.ogg,HSN_037_20150710_081805,0,5.0,"[""rocwre""]",test,HSN
+HSN_037_20150710_081805_355_360.ogg,HSN_037_20150710_081805,0,5.0,[],test,HSN
+HSN_037_20150710_081805_385_390.ogg,HSN_037_20150710_081805,0,5.0,"[""rocwre""]",test,HSN
+HSN_037_20150710_081805_415_420.ogg,HSN_037_20150710_081805,0,5.0,"[""rocwre""]",test,HSN
+HSN_037_20150710_081805_475_480.ogg,HSN_037_20150710_081805,0,5.0,"[""rocwre""]",test,HSN
+HSN_037_20150710_081805_520_525.ogg,HSN_037_20150710_081805,0,5.0,[],test,HSN
+HSN_038_20150710_082105_100_105.ogg,HSN_038_20150710_082105,0,5.0,[],test,HSN
+HSN_038_20150710_082105_175_180.ogg,HSN_038_20150710_082105,0,5.0,"[""amerob""]",test,HSN
+HSN_038_20150710_082105_190_195.ogg,HSN_038_20150710_082105,0,5.0,[],test,HSN
+HSN_038_20150710_082105_230_235.ogg,HSN_038_20150710_082105,0,5.0,[],test,HSN
+HSN_038_20150710_082105_370_375.ogg,HSN_038_20150710_082105,0,5.0,[],test,HSN
+HSN_038_20150710_082105_585_590.ogg,HSN_038_20150710_082105,0,5.0,[],test,HSN
+HSN_039_20150710_084105_035_040.ogg,HSN_039_20150710_084105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_039_20150710_084105_040_045.ogg,HSN_039_20150710_084105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_039_20150710_084105_085_090.ogg,HSN_039_20150710_084105,0,5.0,"[""gcrfin"", ""daejun""]",test,HSN
+HSN_039_20150710_084105_095_100.ogg,HSN_039_20150710_084105,0,5.0,"[""whcspa""]",test,HSN
+HSN_039_20150710_084105_170_175.ogg,HSN_039_20150710_084105,0,5.0,"[""gcrfin"", ""amepip"", ""dusfly""]",test,HSN
+HSN_039_20150710_084105_455_460.ogg,HSN_039_20150710_084105,0,5.0,[],test,HSN
+HSN_040_20150710_085105_030_035.ogg,HSN_040_20150710_085105,0,5.0,"[""rocwre""]",test,HSN
+HSN_040_20150710_085105_285_290.ogg,HSN_040_20150710_085105,0,5.0,[],test,HSN
+HSN_040_20150710_085105_290_295.ogg,HSN_040_20150710_085105,0,5.0,"[""whcspa""]",test,HSN
+HSN_040_20150710_085105_305_310.ogg,HSN_040_20150710_085105,0,5.0,"[""whcspa""]",test,HSN
+HSN_040_20150710_085105_375_380.ogg,HSN_040_20150710_085105,0,5.0,[],test,HSN
+HSN_040_20150710_085105_415_420.ogg,HSN_040_20150710_085105,0,5.0,[],test,HSN
+HSN_041_20150710_085105_010_015.ogg,HSN_041_20150710_085105,0,5.0,"[""clanut""]",test,HSN
+HSN_041_20150710_085105_035_040.ogg,HSN_041_20150710_085105,0,5.0,[],test,HSN
+HSN_041_20150710_085105_060_065.ogg,HSN_041_20150710_085105,0,5.0,[],test,HSN
+HSN_041_20150710_085105_340_345.ogg,HSN_041_20150710_085105,0,5.0,"[""mouchi""]",test,HSN
+HSN_041_20150710_085105_415_420.ogg,HSN_041_20150710_085105,0,5.0,"[""whcspa""]",test,HSN
+HSN_041_20150710_085105_580_585.ogg,HSN_041_20150710_085105,0,5.0,[],test,HSN
+HSN_042_20150710_085805_075_080.ogg,HSN_042_20150710_085805,0,5.0,[],test,HSN
+HSN_042_20150710_085805_270_275.ogg,HSN_042_20150710_085805,0,5.0,[],test,HSN
+HSN_042_20150710_085805_370_375.ogg,HSN_042_20150710_085805,0,5.0,[],test,HSN
+HSN_042_20150710_085805_455_460.ogg,HSN_042_20150710_085805,0,5.0,[],test,HSN
+HSN_042_20150710_085805_485_490.ogg,HSN_042_20150710_085805,0,5.0,[],test,HSN
+HSN_042_20150710_085805_500_505.ogg,HSN_042_20150710_085805,0,5.0,[],test,HSN
+HSN_043_20150710_090805_085_090.ogg,HSN_043_20150710_090805,0,5.0,[],test,HSN
+HSN_043_20150710_090805_290_295.ogg,HSN_043_20150710_090805,0,5.0,[],test,HSN
+HSN_043_20150710_090805_445_450.ogg,HSN_043_20150710_090805,0,5.0,[],test,HSN
+HSN_043_20150710_090805_450_455.ogg,HSN_043_20150710_090805,0,5.0,[],test,HSN
+HSN_043_20150710_090805_505_510.ogg,HSN_043_20150710_090805,0,5.0,[],test,HSN
+HSN_043_20150710_090805_590_595.ogg,HSN_043_20150710_090805,0,5.0,[],test,HSN
+HSN_044_20150710_091105_040_045.ogg,HSN_044_20150710_091105,0,5.0,[],test,HSN
+HSN_044_20150710_091105_075_080.ogg,HSN_044_20150710_091105,0,5.0,"[""amepip""]",test,HSN
+HSN_044_20150710_091105_310_315.ogg,HSN_044_20150710_091105,0,5.0,[],test,HSN
+HSN_044_20150710_091105_460_465.ogg,HSN_044_20150710_091105,0,5.0,[],test,HSN
+HSN_044_20150710_091105_545_550.ogg,HSN_044_20150710_091105,0,5.0,[],test,HSN
+HSN_044_20150710_091105_595_600.ogg,HSN_044_20150710_091105,0,5.0,[],test,HSN
+HSN_045_20150711_061105_235_240.ogg,HSN_045_20150711_061105,0,5.0,[],test,HSN
+HSN_045_20150711_061105_265_270.ogg,HSN_045_20150711_061105,0,5.0,[],test,HSN
+HSN_045_20150711_061105_310_315.ogg,HSN_045_20150711_061105,0,5.0,[],test,HSN
+HSN_045_20150711_061105_430_435.ogg,HSN_045_20150711_061105,0,5.0,[],test,HSN
+HSN_045_20150711_061105_435_440.ogg,HSN_045_20150711_061105,0,5.0,[],test,HSN
+HSN_045_20150711_061105_475_480.ogg,HSN_045_20150711_061105,0,5.0,[],test,HSN
+HSN_046_20150711_061805_315_320.ogg,HSN_046_20150711_061805,0,5.0,[],test,HSN
+HSN_046_20150711_061805_335_340.ogg,HSN_046_20150711_061805,0,5.0,"[""rocwre""]",test,HSN
+HSN_046_20150711_061805_340_345.ogg,HSN_046_20150711_061805,0,5.0,[],test,HSN
+HSN_046_20150711_061805_375_380.ogg,HSN_046_20150711_061805,0,5.0,[],test,HSN
+HSN_046_20150711_061805_440_445.ogg,HSN_046_20150711_061805,0,5.0,"[""rocwre""]",test,HSN
+HSN_046_20150711_061805_545_550.ogg,HSN_046_20150711_061805,0,5.0,"[""gcrfin""]",test,HSN
+HSN_047_20150711_062105_000_005.ogg,HSN_047_20150711_062105,0,5.0,[],test,HSN
+HSN_047_20150711_062105_065_070.ogg,HSN_047_20150711_062105,0,5.0,[],test,HSN
+HSN_047_20150711_062105_160_165.ogg,HSN_047_20150711_062105,0,5.0,[],test,HSN
+HSN_047_20150711_062105_435_440.ogg,HSN_047_20150711_062105,0,5.0,[],test,HSN
+HSN_047_20150711_062105_570_575.ogg,HSN_047_20150711_062105,0,5.0,[],test,HSN
+HSN_047_20150711_062105_595_600.ogg,HSN_047_20150711_062105,0,5.0,[],test,HSN
+HSN_048_20150711_062105_075_080.ogg,HSN_048_20150711_062105,0,5.0,"[""whcspa""]",test,HSN
+HSN_048_20150711_062105_110_115.ogg,HSN_048_20150711_062105,0,5.0,"[""whcspa""]",test,HSN
+HSN_048_20150711_062105_195_200.ogg,HSN_048_20150711_062105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_048_20150711_062105_365_370.ogg,HSN_048_20150711_062105,0,5.0,"[""daejun""]",test,HSN
+HSN_048_20150711_062105_440_445.ogg,HSN_048_20150711_062105,0,5.0,[],test,HSN
+HSN_048_20150711_062105_470_475.ogg,HSN_048_20150711_062105,0,5.0,"[""amepip""]",test,HSN
+HSN_049_20150711_062805_035_040.ogg,HSN_049_20150711_062805,0,5.0,"[""amepip""]",test,HSN
+HSN_049_20150711_062805_215_220.ogg,HSN_049_20150711_062805,0,5.0,"[""amepip""]",test,HSN
+HSN_049_20150711_062805_240_245.ogg,HSN_049_20150711_062805,0,5.0,"[""amepip""]",test,HSN
+HSN_049_20150711_062805_320_325.ogg,HSN_049_20150711_062805,0,5.0,"[""amepip""]",test,HSN
+HSN_049_20150711_062805_545_550.ogg,HSN_049_20150711_062805,0,5.0,"[""amepip"", ""whcspa""]",test,HSN
+HSN_049_20150711_062805_550_555.ogg,HSN_049_20150711_062805,0,5.0,"[""whcspa"", ""amepip""]",test,HSN
+HSN_050_20150711_063105_005_010.ogg,HSN_050_20150711_063105,0,5.0,"[""clanut""]",test,HSN
+HSN_050_20150711_063105_255_260.ogg,HSN_050_20150711_063105,0,5.0,[],test,HSN
+HSN_050_20150711_063105_310_315.ogg,HSN_050_20150711_063105,0,5.0,"[""whcspa""]",test,HSN
+HSN_050_20150711_063105_345_350.ogg,HSN_050_20150711_063105,0,5.0,"[""whcspa""]",test,HSN
+HSN_050_20150711_063105_540_545.ogg,HSN_050_20150711_063105,0,5.0,"[""clanut""]",test,HSN
+HSN_050_20150711_063105_545_550.ogg,HSN_050_20150711_063105,0,5.0,[],test,HSN
+HSN_051_20150711_063105_230_235.ogg,HSN_051_20150711_063105,0,5.0,"[""amerob""]",test,HSN
+HSN_051_20150711_063105_380_385.ogg,HSN_051_20150711_063105,0,5.0,"[""whcspa""]",test,HSN
+HSN_051_20150711_063105_415_420.ogg,HSN_051_20150711_063105,0,5.0,[],test,HSN
+HSN_051_20150711_063105_430_435.ogg,HSN_051_20150711_063105,0,5.0,[],test,HSN
+HSN_051_20150711_063105_560_565.ogg,HSN_051_20150711_063105,0,5.0,"[""amerob""]",test,HSN
+HSN_051_20150711_063105_590_595.ogg,HSN_051_20150711_063105,0,5.0,"[""mouchi"", ""whcspa""]",test,HSN
+HSN_052_20150711_064105_195_200.ogg,HSN_052_20150711_064105,0,5.0,[],calibration,HSN
+HSN_052_20150711_064105_220_225.ogg,HSN_052_20150711_064105,0,5.0,[],calibration,HSN
+HSN_052_20150711_064105_395_400.ogg,HSN_052_20150711_064105,0,5.0,[],calibration,HSN
+HSN_052_20150711_064105_410_415.ogg,HSN_052_20150711_064105,0,5.0,[],calibration,HSN
+HSN_052_20150711_064105_415_420.ogg,HSN_052_20150711_064105,0,5.0,[],calibration,HSN
+HSN_052_20150711_064105_450_455.ogg,HSN_052_20150711_064105,0,5.0,"[""daejun""]",calibration,HSN
+HSN_053_20150711_065105_065_070.ogg,HSN_053_20150711_065105,0,5.0,[],test,HSN
+HSN_053_20150711_065105_135_140.ogg,HSN_053_20150711_065105,0,5.0,"[""amerob"", ""herthr""]",test,HSN
+HSN_053_20150711_065105_155_160.ogg,HSN_053_20150711_065105,0,5.0,"[""amerob"", ""herthr""]",test,HSN
+HSN_053_20150711_065105_175_180.ogg,HSN_053_20150711_065105,0,5.0,"[""amerob"", ""herthr"", ""mouchi""]",test,HSN
+HSN_053_20150711_065105_535_540.ogg,HSN_053_20150711_065105,0,5.0,"[""herthr"", ""whcspa""]",test,HSN
+HSN_053_20150711_065105_575_580.ogg,HSN_053_20150711_065105,0,5.0,"[""whcspa"", ""herthr""]",test,HSN
+HSN_054_20150711_065805_030_035.ogg,HSN_054_20150711_065805,0,5.0,[],test,HSN
+HSN_054_20150711_065805_085_090.ogg,HSN_054_20150711_065805,0,5.0,[],test,HSN
+HSN_054_20150711_065805_220_225.ogg,HSN_054_20150711_065805,0,5.0,[],test,HSN
+HSN_054_20150711_065805_280_285.ogg,HSN_054_20150711_065805,0,5.0,[],test,HSN
+HSN_054_20150711_065805_375_380.ogg,HSN_054_20150711_065805,0,5.0,[],test,HSN
+HSN_054_20150711_065805_450_455.ogg,HSN_054_20150711_065805,0,5.0,[],test,HSN
+HSN_055_20150711_065805_085_090.ogg,HSN_055_20150711_065805,0,5.0,"[""whcspa""]",test,HSN
+HSN_055_20150711_065805_205_210.ogg,HSN_055_20150711_065805,0,5.0,"[""whcspa""]",test,HSN
+HSN_055_20150711_065805_420_425.ogg,HSN_055_20150711_065805,0,5.0,"[""whcspa""]",test,HSN
+HSN_055_20150711_065805_530_535.ogg,HSN_055_20150711_065805,0,5.0,"[""whcspa""]",test,HSN
+HSN_055_20150711_065805_535_540.ogg,HSN_055_20150711_065805,0,5.0,"[""whcspa""]",test,HSN
+HSN_055_20150711_065805_595_600.ogg,HSN_055_20150711_065805,0,5.0,"[""whcspa""]",test,HSN
+HSN_056_20150711_070105_030_035.ogg,HSN_056_20150711_070105,0,5.0,"[""rocwre""]",test,HSN
+HSN_056_20150711_070105_035_040.ogg,HSN_056_20150711_070105,0,5.0,[],test,HSN
+HSN_056_20150711_070105_090_095.ogg,HSN_056_20150711_070105,0,5.0,[],test,HSN
+HSN_056_20150711_070105_100_105.ogg,HSN_056_20150711_070105,0,5.0,[],test,HSN
+HSN_056_20150711_070105_265_270.ogg,HSN_056_20150711_070105,0,5.0,"[""whcspa"", ""rocwre""]",test,HSN
+HSN_056_20150711_070105_510_515.ogg,HSN_056_20150711_070105,0,5.0,"[""clanut"", ""whcspa""]",test,HSN
+HSN_057_20150711_070105_015_020.ogg,HSN_057_20150711_070105,0,5.0,"[""whcspa""]",test,HSN
+HSN_057_20150711_070105_065_070.ogg,HSN_057_20150711_070105,0,5.0,"[""whcspa""]",test,HSN
+HSN_057_20150711_070105_285_290.ogg,HSN_057_20150711_070105,0,5.0,[],test,HSN
+HSN_057_20150711_070105_300_305.ogg,HSN_057_20150711_070105,0,5.0,[],test,HSN
+HSN_057_20150711_070105_530_535.ogg,HSN_057_20150711_070105,0,5.0,"[""whcspa""]",test,HSN
+HSN_057_20150711_070105_575_580.ogg,HSN_057_20150711_070105,0,5.0,"[""whcspa""]",test,HSN
+HSN_058_20150711_070105_050_055.ogg,HSN_058_20150711_070105,0,5.0,"[""herthr""]",test,HSN
+HSN_058_20150711_070105_135_140.ogg,HSN_058_20150711_070105,0,5.0,"[""amerob"", ""daejun"", ""whcspa""]",test,HSN
+HSN_058_20150711_070105_370_375.ogg,HSN_058_20150711_070105,0,5.0,"[""herthr""]",test,HSN
+HSN_058_20150711_070105_435_440.ogg,HSN_058_20150711_070105,0,5.0,"[""herthr""]",test,HSN
+HSN_058_20150711_070105_530_535.ogg,HSN_058_20150711_070105,0,5.0,"[""herthr""]",test,HSN
+HSN_058_20150711_070105_545_550.ogg,HSN_058_20150711_070105,0,5.0,"[""herthr""]",test,HSN
+HSN_059_20150711_070805_075_080.ogg,HSN_059_20150711_070805,0,5.0,"[""whcspa""]",test,HSN
+HSN_059_20150711_070805_420_425.ogg,HSN_059_20150711_070805,0,5.0,[],test,HSN
+HSN_059_20150711_070805_475_480.ogg,HSN_059_20150711_070805,0,5.0,"[""rocwre""]",test,HSN
+HSN_059_20150711_070805_540_545.ogg,HSN_059_20150711_070805,0,5.0,"[""clanut""]",test,HSN
+HSN_059_20150711_070805_545_550.ogg,HSN_059_20150711_070805,0,5.0,"[""clanut"", ""whcspa""]",test,HSN
+HSN_059_20150711_070805_570_575.ogg,HSN_059_20150711_070805,0,5.0,"[""rocwre"", ""clanut""]",test,HSN
+HSN_060_20150711_071105_030_035.ogg,HSN_060_20150711_071105,0,5.0,[],test,HSN
+HSN_060_20150711_071105_040_045.ogg,HSN_060_20150711_071105,0,5.0,[],test,HSN
+HSN_060_20150711_071105_325_330.ogg,HSN_060_20150711_071105,0,5.0,[],test,HSN
+HSN_060_20150711_071105_330_335.ogg,HSN_060_20150711_071105,0,5.0,[],test,HSN
+HSN_060_20150711_071105_445_450.ogg,HSN_060_20150711_071105,0,5.0,[],test,HSN
+HSN_060_20150711_071105_455_460.ogg,HSN_060_20150711_071105,0,5.0,"[""rocwre"", ""clanut""]",test,HSN
+HSN_061_20150711_071805_120_125.ogg,HSN_061_20150711_071805,0,5.0,"[""whcspa""]",test,HSN
+HSN_061_20150711_071805_180_185.ogg,HSN_061_20150711_071805,0,5.0,"[""whcspa""]",test,HSN
+HSN_061_20150711_071805_225_230.ogg,HSN_061_20150711_071805,0,5.0,"[""whcspa""]",test,HSN
+HSN_061_20150711_071805_440_445.ogg,HSN_061_20150711_071805,0,5.0,"[""amepip""]",test,HSN
+HSN_061_20150711_071805_500_505.ogg,HSN_061_20150711_071805,0,5.0,[],test,HSN
+HSN_061_20150711_071805_570_575.ogg,HSN_061_20150711_071805,0,5.0,[],test,HSN
+HSN_062_20150711_072105_020_025.ogg,HSN_062_20150711_072105,0,5.0,"[""clanut""]",calibration,HSN
+HSN_062_20150711_072105_025_030.ogg,HSN_062_20150711_072105,0,5.0,[],calibration,HSN
+HSN_062_20150711_072105_090_095.ogg,HSN_062_20150711_072105,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_062_20150711_072105_260_265.ogg,HSN_062_20150711_072105,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_062_20150711_072105_325_330.ogg,HSN_062_20150711_072105,0,5.0,[],calibration,HSN
+HSN_062_20150711_072105_565_570.ogg,HSN_062_20150711_072105,0,5.0,"[""clanut""]",calibration,HSN
+HSN_063_20150711_073105_190_195.ogg,HSN_063_20150711_073105,0,5.0,"[""herthr""]",test,HSN
+HSN_063_20150711_073105_295_300.ogg,HSN_063_20150711_073105,0,5.0,[],test,HSN
+HSN_063_20150711_073105_435_440.ogg,HSN_063_20150711_073105,0,5.0,"[""whcspa"", ""herthr""]",test,HSN
+HSN_063_20150711_073105_475_480.ogg,HSN_063_20150711_073105,0,5.0,"[""whcspa""]",test,HSN
+HSN_063_20150711_073105_525_530.ogg,HSN_063_20150711_073105,0,5.0,"[""herthr""]",test,HSN
+HSN_063_20150711_073105_535_540.ogg,HSN_063_20150711_073105,0,5.0,"[""herthr""]",test,HSN
+HSN_064_20150711_074105_065_070.ogg,HSN_064_20150711_074105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_064_20150711_074105_345_350.ogg,HSN_064_20150711_074105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_064_20150711_074105_535_540.ogg,HSN_064_20150711_074105,0,5.0,[],test,HSN
+HSN_064_20150711_074105_570_575.ogg,HSN_064_20150711_074105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_064_20150711_074105_575_580.ogg,HSN_064_20150711_074105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_064_20150711_074105_595_600.ogg,HSN_064_20150711_074105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_065_20150711_074805_140_145.ogg,HSN_065_20150711_074805,0,5.0,[],calibration,HSN
+HSN_065_20150711_074805_225_230.ogg,HSN_065_20150711_074805,0,5.0,[],calibration,HSN
+HSN_065_20150711_074805_270_275.ogg,HSN_065_20150711_074805,0,5.0,[],calibration,HSN
+HSN_065_20150711_074805_290_295.ogg,HSN_065_20150711_074805,0,5.0,[],calibration,HSN
+HSN_065_20150711_074805_385_390.ogg,HSN_065_20150711_074805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_065_20150711_074805_480_485.ogg,HSN_065_20150711_074805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_066_20150711_075105_100_105.ogg,HSN_066_20150711_075105,0,5.0,"[""amepip""]",test,HSN
+HSN_066_20150711_075105_135_140.ogg,HSN_066_20150711_075105,0,5.0,[],test,HSN
+HSN_066_20150711_075105_235_240.ogg,HSN_066_20150711_075105,0,5.0,"[""amepip""]",test,HSN
+HSN_066_20150711_075105_295_300.ogg,HSN_066_20150711_075105,0,5.0,"[""amepip""]",test,HSN
+HSN_066_20150711_075105_385_390.ogg,HSN_066_20150711_075105,0,5.0,[],test,HSN
+HSN_066_20150711_075105_490_495.ogg,HSN_066_20150711_075105,0,5.0,"[""amepip""]",test,HSN
+HSN_067_20150711_080105_075_080.ogg,HSN_067_20150711_080105,0,5.0,"[""mouchi""]",test,HSN
+HSN_067_20150711_080105_130_135.ogg,HSN_067_20150711_080105,0,5.0,[],test,HSN
+HSN_067_20150711_080105_340_345.ogg,HSN_067_20150711_080105,0,5.0,[],test,HSN
+HSN_067_20150711_080105_390_395.ogg,HSN_067_20150711_080105,0,5.0,"[""rocwre""]",test,HSN
+HSN_067_20150711_080105_415_420.ogg,HSN_067_20150711_080105,0,5.0,"[""rocwre""]",test,HSN
+HSN_067_20150711_080105_440_445.ogg,HSN_067_20150711_080105,0,5.0,[],test,HSN
+HSN_068_20150711_080805_115_120.ogg,HSN_068_20150711_080805,0,5.0,"[""whcspa""]",test,HSN
+HSN_068_20150711_080805_140_145.ogg,HSN_068_20150711_080805,0,5.0,[],test,HSN
+HSN_068_20150711_080805_180_185.ogg,HSN_068_20150711_080805,0,5.0,[],test,HSN
+HSN_068_20150711_080805_300_305.ogg,HSN_068_20150711_080805,0,5.0,"[""whcspa""]",test,HSN
+HSN_068_20150711_080805_305_310.ogg,HSN_068_20150711_080805,0,5.0,"[""whcspa""]",test,HSN
+HSN_068_20150711_080805_360_365.ogg,HSN_068_20150711_080805,0,5.0,"[""whcspa""]",test,HSN
+HSN_069_20150711_082805_095_100.ogg,HSN_069_20150711_082805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_069_20150711_082805_240_245.ogg,HSN_069_20150711_082805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_069_20150711_082805_335_340.ogg,HSN_069_20150711_082805,0,5.0,[],calibration,HSN
+HSN_069_20150711_082805_445_450.ogg,HSN_069_20150711_082805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_069_20150711_082805_490_495.ogg,HSN_069_20150711_082805,0,5.0,[],calibration,HSN
+HSN_069_20150711_082805_535_540.ogg,HSN_069_20150711_082805,0,5.0,[],calibration,HSN
+HSN_070_20150711_082805_130_135.ogg,HSN_070_20150711_082805,0,5.0,[],test,HSN
+HSN_070_20150711_082805_195_200.ogg,HSN_070_20150711_082805,0,5.0,[],test,HSN
+HSN_070_20150711_082805_270_275.ogg,HSN_070_20150711_082805,0,5.0,"[""whcspa""]",test,HSN
+HSN_070_20150711_082805_365_370.ogg,HSN_070_20150711_082805,0,5.0,[],test,HSN
+HSN_070_20150711_082805_425_430.ogg,HSN_070_20150711_082805,0,5.0,[],test,HSN
+HSN_070_20150711_082805_450_455.ogg,HSN_070_20150711_082805,0,5.0,"[""whcspa""]",test,HSN
+HSN_071_20150711_083805_065_070.ogg,HSN_071_20150711_083805,0,5.0,"[""amepip""]",test,HSN
+HSN_071_20150711_083805_080_085.ogg,HSN_071_20150711_083805,0,5.0,[],test,HSN
+HSN_071_20150711_083805_120_125.ogg,HSN_071_20150711_083805,0,5.0,"[""whcspa""]",test,HSN
+HSN_071_20150711_083805_440_445.ogg,HSN_071_20150711_083805,0,5.0,"[""whcspa""]",test,HSN
+HSN_071_20150711_083805_460_465.ogg,HSN_071_20150711_083805,0,5.0,"[""whcspa""]",test,HSN
+HSN_071_20150711_083805_520_525.ogg,HSN_071_20150711_083805,0,5.0,[],test,HSN
+HSN_072_20150711_083805_010_015.ogg,HSN_072_20150711_083805,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_072_20150711_083805_135_140.ogg,HSN_072_20150711_083805,0,5.0,[],calibration,HSN
+HSN_072_20150711_083805_140_145.ogg,HSN_072_20150711_083805,0,5.0,[],calibration,HSN
+HSN_072_20150711_083805_225_230.ogg,HSN_072_20150711_083805,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_072_20150711_083805_235_240.ogg,HSN_072_20150711_083805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_072_20150711_083805_440_445.ogg,HSN_072_20150711_083805,0,5.0,[],calibration,HSN
+HSN_073_20150711_085105_050_055.ogg,HSN_073_20150711_085105,0,5.0,[],calibration,HSN
+HSN_073_20150711_085105_245_250.ogg,HSN_073_20150711_085105,0,5.0,[],calibration,HSN
+HSN_073_20150711_085105_315_320.ogg,HSN_073_20150711_085105,0,5.0,"[""daejun""]",calibration,HSN
+HSN_073_20150711_085105_360_365.ogg,HSN_073_20150711_085105,0,5.0,[],calibration,HSN
+HSN_073_20150711_085105_485_490.ogg,HSN_073_20150711_085105,0,5.0,[],calibration,HSN
+HSN_073_20150711_085105_530_535.ogg,HSN_073_20150711_085105,0,5.0,[],calibration,HSN
+HSN_074_20150711_090105_070_075.ogg,HSN_074_20150711_090105,0,5.0,"[""gcrfin""]",calibration,HSN
+HSN_074_20150711_090105_120_125.ogg,HSN_074_20150711_090105,0,5.0,"[""gcrfin""]",calibration,HSN
+HSN_074_20150711_090105_235_240.ogg,HSN_074_20150711_090105,0,5.0,[],calibration,HSN
+HSN_074_20150711_090105_440_445.ogg,HSN_074_20150711_090105,0,5.0,[],calibration,HSN
+HSN_074_20150711_090105_460_465.ogg,HSN_074_20150711_090105,0,5.0,[],calibration,HSN
+HSN_074_20150711_090105_535_540.ogg,HSN_074_20150711_090105,0,5.0,[],calibration,HSN
+HSN_075_20150712_060805_100_105.ogg,HSN_075_20150712_060805,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_075_20150712_060805_115_120.ogg,HSN_075_20150712_060805,0,5.0,[],calibration,HSN
+HSN_075_20150712_060805_125_130.ogg,HSN_075_20150712_060805,0,5.0,"[""gcrfin""]",calibration,HSN
+HSN_075_20150712_060805_275_280.ogg,HSN_075_20150712_060805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_075_20150712_060805_325_330.ogg,HSN_075_20150712_060805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_075_20150712_060805_475_480.ogg,HSN_075_20150712_060805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_076_20150712_061805_070_075.ogg,HSN_076_20150712_061805,0,5.0,[],test,HSN
+HSN_076_20150712_061805_125_130.ogg,HSN_076_20150712_061805,0,5.0,[],test,HSN
+HSN_076_20150712_061805_420_425.ogg,HSN_076_20150712_061805,0,5.0,[],test,HSN
+HSN_076_20150712_061805_425_430.ogg,HSN_076_20150712_061805,0,5.0,[],test,HSN
+HSN_076_20150712_061805_480_485.ogg,HSN_076_20150712_061805,0,5.0,[],test,HSN
+HSN_076_20150712_061805_530_535.ogg,HSN_076_20150712_061805,0,5.0,[],test,HSN
+HSN_077_20150712_062105_105_110.ogg,HSN_077_20150712_062105,0,5.0,"[""foxspa""]",calibration,HSN
+HSN_077_20150712_062105_135_140.ogg,HSN_077_20150712_062105,0,5.0,[],calibration,HSN
+HSN_077_20150712_062105_145_150.ogg,HSN_077_20150712_062105,0,5.0,[],calibration,HSN
+HSN_077_20150712_062105_230_235.ogg,HSN_077_20150712_062105,0,5.0,[],calibration,HSN
+HSN_077_20150712_062105_290_295.ogg,HSN_077_20150712_062105,0,5.0,"[""daejun""]",calibration,HSN
+HSN_077_20150712_062105_455_460.ogg,HSN_077_20150712_062105,0,5.0,[],calibration,HSN
+HSN_078_20150712_063805_140_145.ogg,HSN_078_20150712_063805,0,5.0,"[""clanut""]",test,HSN
+HSN_078_20150712_063805_260_265.ogg,HSN_078_20150712_063805,0,5.0,[],test,HSN
+HSN_078_20150712_063805_410_415.ogg,HSN_078_20150712_063805,0,5.0,"[""rocwre""]",test,HSN
+HSN_078_20150712_063805_445_450.ogg,HSN_078_20150712_063805,0,5.0,[],test,HSN
+HSN_078_20150712_063805_455_460.ogg,HSN_078_20150712_063805,0,5.0,[],test,HSN
+HSN_078_20150712_063805_495_500.ogg,HSN_078_20150712_063805,0,5.0,[],test,HSN
+HSN_079_20150712_065105_155_160.ogg,HSN_079_20150712_065105,0,5.0,[],test,HSN
+HSN_079_20150712_065105_490_495.ogg,HSN_079_20150712_065105,0,5.0,"[""whcspa""]",test,HSN
+HSN_079_20150712_065105_550_555.ogg,HSN_079_20150712_065105,0,5.0,"[""whcspa""]",test,HSN
+HSN_079_20150712_065105_565_570.ogg,HSN_079_20150712_065105,0,5.0,"[""whcspa"", ""gcrfin""]",test,HSN
+HSN_079_20150712_065105_570_575.ogg,HSN_079_20150712_065105,0,5.0,"[""gcrfin"", ""whcspa""]",test,HSN
+HSN_079_20150712_065105_590_595.ogg,HSN_079_20150712_065105,0,5.0,"[""whcspa""]",test,HSN
+HSN_080_20150712_070105_045_050.ogg,HSN_080_20150712_070105,0,5.0,[],test,HSN
+HSN_080_20150712_070105_245_250.ogg,HSN_080_20150712_070105,0,5.0,[],test,HSN
+HSN_080_20150712_070105_315_320.ogg,HSN_080_20150712_070105,0,5.0,[],test,HSN
+HSN_080_20150712_070105_395_400.ogg,HSN_080_20150712_070105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_080_20150712_070105_480_485.ogg,HSN_080_20150712_070105,0,5.0,[],test,HSN
+HSN_080_20150712_070105_515_520.ogg,HSN_080_20150712_070105,0,5.0,[],test,HSN
+HSN_081_20150712_070805_060_065.ogg,HSN_081_20150712_070805,0,5.0,[],calibration,HSN
+HSN_081_20150712_070805_210_215.ogg,HSN_081_20150712_070805,0,5.0,[],calibration,HSN
+HSN_081_20150712_070805_215_220.ogg,HSN_081_20150712_070805,0,5.0,"[""amepip""]",calibration,HSN
+HSN_081_20150712_070805_345_350.ogg,HSN_081_20150712_070805,0,5.0,[],calibration,HSN
+HSN_081_20150712_070805_365_370.ogg,HSN_081_20150712_070805,0,5.0,[],calibration,HSN
+HSN_081_20150712_070805_500_505.ogg,HSN_081_20150712_070805,0,5.0,[],calibration,HSN
+HSN_082_20150712_071105_090_095.ogg,HSN_082_20150712_071105,0,5.0,"[""whcspa""]",test,HSN
+HSN_082_20150712_071105_110_115.ogg,HSN_082_20150712_071105,0,5.0,"[""whcspa""]",test,HSN
+HSN_082_20150712_071105_150_155.ogg,HSN_082_20150712_071105,0,5.0,"[""whcspa"", ""gcrfin""]",test,HSN
+HSN_082_20150712_071105_170_175.ogg,HSN_082_20150712_071105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_082_20150712_071105_225_230.ogg,HSN_082_20150712_071105,0,5.0,"[""whcspa"", ""gcrfin""]",test,HSN
+HSN_082_20150712_071105_400_405.ogg,HSN_082_20150712_071105,0,5.0,[],test,HSN
+HSN_083_20150712_072105_055_060.ogg,HSN_083_20150712_072105,0,5.0,"[""rocwre""]",test,HSN
+HSN_083_20150712_072105_075_080.ogg,HSN_083_20150712_072105,0,5.0,[],test,HSN
+HSN_083_20150712_072105_305_310.ogg,HSN_083_20150712_072105,0,5.0,[],test,HSN
+HSN_083_20150712_072105_470_475.ogg,HSN_083_20150712_072105,0,5.0,[],test,HSN
+HSN_083_20150712_072105_480_485.ogg,HSN_083_20150712_072105,0,5.0,[],test,HSN
+HSN_083_20150712_072105_515_520.ogg,HSN_083_20150712_072105,0,5.0,[],test,HSN
+HSN_084_20150712_072805_000_005.ogg,HSN_084_20150712_072805,0,5.0,[],test,HSN
+HSN_084_20150712_072805_230_235.ogg,HSN_084_20150712_072805,0,5.0,[],test,HSN
+HSN_084_20150712_072805_270_275.ogg,HSN_084_20150712_072805,0,5.0,[],test,HSN
+HSN_084_20150712_072805_355_360.ogg,HSN_084_20150712_072805,0,5.0,[],test,HSN
+HSN_084_20150712_072805_580_585.ogg,HSN_084_20150712_072805,0,5.0,[],test,HSN
+HSN_084_20150712_072805_585_590.ogg,HSN_084_20150712_072805,0,5.0,"[""amepip""]",test,HSN
+HSN_085_20150712_073105_160_165.ogg,HSN_085_20150712_073105,0,5.0,[],test,HSN
+HSN_085_20150712_073105_190_195.ogg,HSN_085_20150712_073105,0,5.0,[],test,HSN
+HSN_085_20150712_073105_220_225.ogg,HSN_085_20150712_073105,0,5.0,[],test,HSN
+HSN_085_20150712_073105_295_300.ogg,HSN_085_20150712_073105,0,5.0,[],test,HSN
+HSN_085_20150712_073105_315_320.ogg,HSN_085_20150712_073105,0,5.0,[],test,HSN
+HSN_085_20150712_073105_345_350.ogg,HSN_085_20150712_073105,0,5.0,[],test,HSN
+HSN_086_20150712_073105_095_100.ogg,HSN_086_20150712_073105,0,5.0,"[""herthr""]",test,HSN
+HSN_086_20150712_073105_395_400.ogg,HSN_086_20150712_073105,0,5.0,[],test,HSN
+HSN_086_20150712_073105_400_405.ogg,HSN_086_20150712_073105,0,5.0,[],test,HSN
+HSN_086_20150712_073105_450_455.ogg,HSN_086_20150712_073105,0,5.0,"[""herthr""]",test,HSN
+HSN_086_20150712_073105_455_460.ogg,HSN_086_20150712_073105,0,5.0,[],test,HSN
+HSN_086_20150712_073105_550_555.ogg,HSN_086_20150712_073105,0,5.0,"[""herthr""]",test,HSN
+HSN_087_20150712_073805_200_205.ogg,HSN_087_20150712_073805,0,5.0,[],calibration,HSN
+HSN_087_20150712_073805_240_245.ogg,HSN_087_20150712_073805,0,5.0,[],calibration,HSN
+HSN_087_20150712_073805_255_260.ogg,HSN_087_20150712_073805,0,5.0,[],calibration,HSN
+HSN_087_20150712_073805_325_330.ogg,HSN_087_20150712_073805,0,5.0,[],calibration,HSN
+HSN_087_20150712_073805_330_335.ogg,HSN_087_20150712_073805,0,5.0,[],calibration,HSN
+HSN_087_20150712_073805_400_405.ogg,HSN_087_20150712_073805,0,5.0,[],calibration,HSN
+HSN_088_20150712_075105_165_170.ogg,HSN_088_20150712_075105,0,5.0,"[""clanut""]",calibration,HSN
+HSN_088_20150712_075105_235_240.ogg,HSN_088_20150712_075105,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_088_20150712_075105_255_260.ogg,HSN_088_20150712_075105,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_088_20150712_075105_340_345.ogg,HSN_088_20150712_075105,0,5.0,"[""rocwre""]",calibration,HSN
+HSN_088_20150712_075105_370_375.ogg,HSN_088_20150712_075105,0,5.0,[],calibration,HSN
+HSN_088_20150712_075105_440_445.ogg,HSN_088_20150712_075105,0,5.0,[],calibration,HSN
+HSN_089_20150712_075805_045_050.ogg,HSN_089_20150712_075805,0,5.0,[],calibration,HSN
+HSN_089_20150712_075805_165_170.ogg,HSN_089_20150712_075805,0,5.0,"[""amepip""]",calibration,HSN
+HSN_089_20150712_075805_195_200.ogg,HSN_089_20150712_075805,0,5.0,[],calibration,HSN
+HSN_089_20150712_075805_245_250.ogg,HSN_089_20150712_075805,0,5.0,"[""amepip""]",calibration,HSN
+HSN_089_20150712_075805_490_495.ogg,HSN_089_20150712_075805,0,5.0,"[""amepip""]",calibration,HSN
+HSN_089_20150712_075805_555_560.ogg,HSN_089_20150712_075805,0,5.0,[],calibration,HSN
+HSN_090_20150712_080105_095_100.ogg,HSN_090_20150712_080105,0,5.0,[],test,HSN
+HSN_090_20150712_080105_270_275.ogg,HSN_090_20150712_080105,0,5.0,[],test,HSN
+HSN_090_20150712_080105_390_395.ogg,HSN_090_20150712_080105,0,5.0,[],test,HSN
+HSN_090_20150712_080105_475_480.ogg,HSN_090_20150712_080105,0,5.0,[],test,HSN
+HSN_090_20150712_080105_545_550.ogg,HSN_090_20150712_080105,0,5.0,[],test,HSN
+HSN_090_20150712_080105_590_595.ogg,HSN_090_20150712_080105,0,5.0,[],test,HSN
+HSN_091_20150712_081105_220_225.ogg,HSN_091_20150712_081105,0,5.0,[],calibration,HSN
+HSN_091_20150712_081105_230_235.ogg,HSN_091_20150712_081105,0,5.0,[],calibration,HSN
+HSN_091_20150712_081105_400_405.ogg,HSN_091_20150712_081105,0,5.0,[],calibration,HSN
+HSN_091_20150712_081105_410_415.ogg,HSN_091_20150712_081105,0,5.0,"[""gcrfin""]",calibration,HSN
+HSN_091_20150712_081105_515_520.ogg,HSN_091_20150712_081105,0,5.0,[],calibration,HSN
+HSN_091_20150712_081105_525_530.ogg,HSN_091_20150712_081105,0,5.0,[],calibration,HSN
+HSN_092_20150712_084105_160_165.ogg,HSN_092_20150712_084105,0,5.0,[],test,HSN
+HSN_092_20150712_084105_220_225.ogg,HSN_092_20150712_084105,0,5.0,[],test,HSN
+HSN_092_20150712_084105_270_275.ogg,HSN_092_20150712_084105,0,5.0,[],test,HSN
+HSN_092_20150712_084105_275_280.ogg,HSN_092_20150712_084105,0,5.0,[],test,HSN
+HSN_092_20150712_084105_325_330.ogg,HSN_092_20150712_084105,0,5.0,[],test,HSN
+HSN_092_20150712_084105_400_405.ogg,HSN_092_20150712_084105,0,5.0,[],test,HSN
+HSN_093_20150712_085105_025_030.ogg,HSN_093_20150712_085105,0,5.0,[],calibration,HSN
+HSN_093_20150712_085105_055_060.ogg,HSN_093_20150712_085105,0,5.0,"[""gcrfin""]",calibration,HSN
+HSN_093_20150712_085105_160_165.ogg,HSN_093_20150712_085105,0,5.0,[],calibration,HSN
+HSN_093_20150712_085105_190_195.ogg,HSN_093_20150712_085105,0,5.0,[],calibration,HSN
+HSN_093_20150712_085105_205_210.ogg,HSN_093_20150712_085105,0,5.0,[],calibration,HSN
+HSN_093_20150712_085105_335_340.ogg,HSN_093_20150712_085105,0,5.0,[],calibration,HSN
+HSN_094_20150712_085805_040_045.ogg,HSN_094_20150712_085805,0,5.0,[],calibration,HSN
+HSN_094_20150712_085805_195_200.ogg,HSN_094_20150712_085805,0,5.0,[],calibration,HSN
+HSN_094_20150712_085805_215_220.ogg,HSN_094_20150712_085805,0,5.0,[],calibration,HSN
+HSN_094_20150712_085805_490_495.ogg,HSN_094_20150712_085805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_094_20150712_085805_495_500.ogg,HSN_094_20150712_085805,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_094_20150712_085805_570_575.ogg,HSN_094_20150712_085805,0,5.0,[],calibration,HSN
+HSN_095_20150712_090105_005_010.ogg,HSN_095_20150712_090105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_095_20150712_090105_035_040.ogg,HSN_095_20150712_090105,0,5.0,[],test,HSN
+HSN_095_20150712_090105_135_140.ogg,HSN_095_20150712_090105,0,5.0,[],test,HSN
+HSN_095_20150712_090105_170_175.ogg,HSN_095_20150712_090105,0,5.0,"[""amepip""]",test,HSN
+HSN_095_20150712_090105_190_195.ogg,HSN_095_20150712_090105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_095_20150712_090105_375_380.ogg,HSN_095_20150712_090105,0,5.0,[],test,HSN
+HSN_096_20150712_090105_110_115.ogg,HSN_096_20150712_090105,0,5.0,"[""whcspa""]",test,HSN
+HSN_096_20150712_090105_120_125.ogg,HSN_096_20150712_090105,0,5.0,"[""whcspa""]",test,HSN
+HSN_096_20150712_090105_135_140.ogg,HSN_096_20150712_090105,0,5.0,"[""whcspa""]",test,HSN
+HSN_096_20150712_090105_295_300.ogg,HSN_096_20150712_090105,0,5.0,[],test,HSN
+HSN_096_20150712_090105_460_465.ogg,HSN_096_20150712_090105,0,5.0,"[""whcspa""]",test,HSN
+HSN_096_20150712_090105_470_475.ogg,HSN_096_20150712_090105,0,5.0,"[""whcspa""]",test,HSN
+HSN_097_20150712_090805_045_050.ogg,HSN_097_20150712_090805,0,5.0,[],test,HSN
+HSN_097_20150712_090805_095_100.ogg,HSN_097_20150712_090805,0,5.0,[],test,HSN
+HSN_097_20150712_090805_125_130.ogg,HSN_097_20150712_090805,0,5.0,[],test,HSN
+HSN_097_20150712_090805_345_350.ogg,HSN_097_20150712_090805,0,5.0,"[""gcrfin""]",test,HSN
+HSN_097_20150712_090805_530_535.ogg,HSN_097_20150712_090805,0,5.0,[],test,HSN
+HSN_097_20150712_090805_590_595.ogg,HSN_097_20150712_090805,0,5.0,[],test,HSN
+HSN_098_20150712_090805_015_020.ogg,HSN_098_20150712_090805,0,5.0,[],test,HSN
+HSN_098_20150712_090805_065_070.ogg,HSN_098_20150712_090805,0,5.0,[],test,HSN
+HSN_098_20150712_090805_175_180.ogg,HSN_098_20150712_090805,0,5.0,[],test,HSN
+HSN_098_20150712_090805_455_460.ogg,HSN_098_20150712_090805,0,5.0,[],test,HSN
+HSN_098_20150712_090805_505_510.ogg,HSN_098_20150712_090805,0,5.0,[],test,HSN
+HSN_098_20150712_090805_540_545.ogg,HSN_098_20150712_090805,0,5.0,"[""rocwre""]",test,HSN
+HSN_099_20150712_091105_025_030.ogg,HSN_099_20150712_091105,0,5.0,"[""amepip""]",test,HSN
+HSN_099_20150712_091105_250_255.ogg,HSN_099_20150712_091105,0,5.0,[],test,HSN
+HSN_099_20150712_091105_355_360.ogg,HSN_099_20150712_091105,0,5.0,[],test,HSN
+HSN_099_20150712_091105_375_380.ogg,HSN_099_20150712_091105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_099_20150712_091105_495_500.ogg,HSN_099_20150712_091105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_099_20150712_091105_545_550.ogg,HSN_099_20150712_091105,0,5.0,"[""gcrfin""]",test,HSN
+HSN_100_20150712_091105_175_180.ogg,HSN_100_20150712_091105,0,5.0,"[""rocwre"", ""whcspa""]",calibration,HSN
+HSN_100_20150712_091105_265_270.ogg,HSN_100_20150712_091105,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_100_20150712_091105_280_285.ogg,HSN_100_20150712_091105,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_100_20150712_091105_360_365.ogg,HSN_100_20150712_091105,0,5.0,"[""daejun""]",calibration,HSN
+HSN_100_20150712_091105_380_385.ogg,HSN_100_20150712_091105,0,5.0,"[""whcspa""]",calibration,HSN
+HSN_100_20150712_091105_500_505.ogg,HSN_100_20150712_091105,0,5.0,"[""whcspa""]",calibration,HSN

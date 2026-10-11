@@ -6,6 +6,26 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 from typing import Protocol
 
+from pandas import DataFrame
+
+
+def write_table(
+    frame: DataFrame, destination: Path, *, index: bool = False
+) -> None:
+    """Publish a complete measured table after its CSV write succeeds.
+
+    :param frame: Complete measured table in its existing row order.
+    :type frame: DataFrame
+    :param destination: Public CSV artifact path.
+    :type destination: Path
+    :param index: Include the named index when it identifies measured clips.
+    :type index: bool
+    :return: None.
+    :rtype: None
+    """
+    with atomic_output(destination) as temporary:
+        frame.to_csv(temporary, index=index)
+
 
 @contextmanager
 def atomic_output(destination: Path) -> Generator[Path, None, None]:

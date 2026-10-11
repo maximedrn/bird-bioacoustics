@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import cast
+from typing import Literal, cast
 
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 from matplotlib.collections import QuadMesh
@@ -73,6 +73,32 @@ class ExperimentPlotter:
                 cast(PlotFigure, figure).savefig(
                     temporary, dpi=180, format="png"
                 )
+        finally:
+            close(figure)
+
+    @staticmethod
+    def save_figure_formats(
+        figure: Figure, destinations: tuple[Path, ...]
+    ) -> None:
+        """Write matching PNG and PDF figures and release their shared canvas.
+
+        :param figure: Completed experiment panels on an Agg canvas.
+        :type figure: Figure
+        :param destinations: PNG or PDF destinations in publication order.
+        :type destinations: tuple[Path, ...]
+        :return: None.
+        :rtype: None
+        """
+        destination: Path
+        try:
+            for destination in destinations:
+                format_name: Literal["png", "pdf"] = cast(
+                    Literal["png", "pdf"], destination.suffix[1:]
+                )
+                with atomic_output(destination) as temporary:
+                    cast(PlotFigure, figure).savefig(
+                        temporary, dpi=180, format=format_name
+                    )
         finally:
             close(figure)
 

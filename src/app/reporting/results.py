@@ -424,12 +424,12 @@ class ExperimentResults(ExperimentDatabase):
             details: ResultDetails = DiagnosticResults(self.connection).build(
                 min(values)
             )
-        for filename, dataframe in (
-            (Artifact.NOISE.filename("csv"), noise),
-            (Artifact.OVERLAP.filename("csv"), overlap),
-            (Artifact.THRESHOLD.filename("csv"), thresholds),
+        for artifact, dataframe in (
+            (Artifact.NOISE, noise),
+            (Artifact.OVERLAP, overlap),
+            (Artifact.THRESHOLD, thresholds),
         ):
-            with atomic_output(directory / filename) as temporary:
+            with atomic_output(artifact.path(directory, "csv")) as temporary:
                 dataframe.to_csv(temporary, index=False)
         for artifact, table in details.tables().items():
             with atomic_output(artifact.path(directory, "csv")) as temporary:

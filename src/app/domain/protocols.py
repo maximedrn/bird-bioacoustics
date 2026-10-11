@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Collection
 from pathlib import Path
 from types import TracebackType
-from typing import Protocol, Self
+from typing import Literal, Protocol, Self
 
 from app.domain.settings import CorpusSettings
 
@@ -179,5 +179,89 @@ class BirdNetModelProtocol(Protocol):
         :type default_confidence_threshold: float
         :return: Context-managed reusable BirdNET session.
         :rtype: PredictionSession
+        """
+        raise NotImplementedError
+
+
+class SoundscapeModel(Protocol):
+    """Describe full-vocabulary prediction for the annotated experiment."""
+
+    @property
+    def species_list(self) -> Collection[str]:
+        """Read the model's complete taxonomic vocabulary.
+
+        :return: Scientific and common names of all supported classes.
+        :rtype: Collection[str]
+        """
+        raise NotImplementedError
+
+    @property
+    def model_path(self) -> Path:
+        """Locate the exact cached model weights used for inference.
+
+        :return: Local model artifact whose SHA-256 binds the predictions.
+        :rtype: Path
+        """
+        raise NotImplementedError
+
+    def predict(
+        self,
+        audio_paths: list[Path],
+        *,
+        top_k: int | None,
+        n_workers: int,
+        n_producers: int,
+        batch_size: int,
+        default_confidence_threshold: float,
+        custom_species_list: list[str],
+        show_stats: str,
+    ) -> CsvWritable:
+        """Predict all selected reference concepts without top-k truncation.
+
+        :param audio_paths: Selected clip files in manifest order.
+        :type audio_paths: list[Path]
+        :param top_k: Optional maximum exported labels per model window.
+        :type top_k: int | None
+        :param n_workers: Number of inference processes.
+        :type n_workers: int
+        :param n_producers: Number of audio preparation processes.
+        :type n_producers: int
+        :param batch_size: Model windows per inference batch.
+        :type batch_size: int
+        :param default_confidence_threshold: Minimum exported score.
+        :type default_confidence_threshold: float
+        :param custom_species_list: Model labels covering reference concepts.
+        :type custom_species_list: list[str]
+        :param show_stats: Backend's progress display mode.
+        :type show_stats: str
+        :return: Raw window predictions exposing CSV export.
+        :rtype: CsvWritable
+        """
+        raise NotImplementedError
+
+
+class SoundscapeLibrary(Protocol):
+    """Type the external factory for both benchmark inference backends."""
+
+    def load(
+        self,
+        family: Literal["acoustic"],
+        version: Literal["2.4", "3.0"],
+        backend: Literal["tf", "onnx"],
+        *,
+        library: Literal["litert"] | None = None,
+    ) -> SoundscapeModel:
+        """Load a supported model using the experiment's fixed backend pair.
+
+        :param family: Acoustic model family.
+        :type family: Literal["acoustic"]
+        :param version: Compared model version.
+        :type version: Literal["2.4", "3.0"]
+        :param backend: TFLite or ONNX engine paired with the version.
+        :type backend: Literal["tf", "onnx"]
+        :param library: LiteRT implementation for BirdNET 2.4.
+        :type library: Literal["litert"] | None
+        :return: Full-vocabulary prediction interface.
+        :rtype: SoundscapeModel
         """
         raise NotImplementedError

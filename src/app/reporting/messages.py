@@ -95,111 +95,69 @@ class PlotLabel:
 
 
 class ObservationMessage:
-    """Describe cumulative results using explicit template fields."""
+    """State a short observation for each diagnostic result."""
 
-    HEADING: Final[str] = "### Observation"
-    NOISE_BASELINE: Final[str] = (
-        "Segments from **{count} recordings** were tested. Mean target "
-        "confidence without added noise is "
-        "**{baseline_confidence:.3f}**."
+    PARTIAL_COVERAGE: Final[str] = (
+        "\n\n**Observation.** Collection is still partial; the results"
+        " describe recordings already processed."
     )
-    NOISE_LEVEL: Final[str] = (
-        "- **{snr_db:g} dB**: mean confidence "
-        "**{confidence_mean:.3f}**, standard deviation across recordings "
-        "**{confidence_std:.3f}**, target detected in "
-        "**{detection_rate:.1%}** of trials."
+    COMPLETE_COVERAGE: Final[str] = (
+        "\n\n**Observation.** Every recording in the catalogue has been"
+        " attempted."
     )
-    NOISE_EXPLANATION: Final[str] = (
-        "Error bars show one standard deviation of recording means. "
-        "A value of 0 means "
-        "the target is absent from predictions exported at the minimum "
-        "confidence threshold of 0.10."
+    PROGRESS: Final[str] = (
+        "**Observation.** Much of the catalogue remains to be processed;"
+        " the analysed corpus does not yet cover all collected recordings."
     )
-    NOISE_SKIPPED: Final[str] = (
-        "**{skipped} recordings** without an initially detected target "
-        "were excluded from this test."
+    SPECTROGRAM: Final[str] = (
+        "**Observation.** The spectrogram shows the time-frequency"
+        " distribution of a segment; it does not validate its species."
     )
-    PARAGRAPH_BREAK: Final[str] = "\n\n"
-    LINE_BREAK: Final[str] = "\n"
-    THRESHOLD_COUNTS: Final[str] = (
-        "### Observation\n\nBetween thresholds **{first_threshold:.2f}** "
-        "and **{last_threshold:.2f}**, retained detections change from "
-        "**{first_detections}** to **{last_detections}**, and predicted "
-        "species from **{first_species}** to **{last_species}**.\n\n"
-    )
-    TARGET_RECOVERY: Final[str] = (
-        "Xeno-canto's primary species is recovered in "
-        "**{first_rate:.1%}** then **{last_rate:.1%}** of recordings whose "
-        "target is identified and supported by BirdNET. This rate "
-        "measures recovery of the known target; recall across all species "
-        "requires complete annotations."
-    )
-    NO_TARGET: Final[str] = (
-        "No identified target supported by BirdNET is available in the "
-        "processed recordings."
-    )
-    COMPLETE_ANNOTATIONS: Final[str] = (
-        "\n\nPrecision, recall and micro F1 use only the "
-        "**{recordings} fully annotated recordings**, counting each "
-        "recording/species pair once."
-    )
-    NO_ANNOTATIONS: Final[str] = (
-        "\n\nPrecision, recall and F1 are not calculated without complete "
-        "annotations."
+    NOISE: Final[str] = (
+        "**Observation.** Mean confidence decreases from {original:.3f} to"
+        " {noisy:.3f} under the strongest noise. This measurement covers"
+        " initially recognised targets; {skipped} recordings are excluded"
+        " from the noise experiment."
     )
     OVERLAP: Final[str] = (
-        "### Observation\n\nMeans cover **{pair_count} pairs** of distinct "
-        "recordings. Between mixes {first_mix} and {last_mix}, mean target "
-        "A confidence changes from **{first_a:.3f}** to "
-        "**{last_a:.3f}**, and target B confidence from **{first_b:.3f}** "
-        "to **{last_b:.3f}**.\n\nA and B identify the roles within each "
-        "pair. Error bars show one standard deviation across "
-        "pairs. Coefficients apply to amplitude, without prior level "
-        "equalization."
+        "**Observation.** As the contribution of B decreases from 50 to"
+        " 10%, its mean confidence changes from {first:.3f} to {last:.3f}."
+        " The weaker target is more strongly masked."
     )
+    THRESHOLD: Final[str] = (
+        "**Observation.** Raising the threshold from {first_threshold:.2f}"
+        " to {last_threshold:.2f} reduces retained predictions from"
+        " {first_detections:,} to {last_detections:,}. These predictions"
+        " are not a validated species inventory."
+    )
+
     NOISE_DISTRIBUTION: Final[str] = (
-        "Each observation is one recording's mean across noise trials. "
-        "Boxes show the median and middle 50%; whiskers span the observed "
-        "minimum and maximum. Only recordings with a selected target "
-        "segment enter these noise charts."
+        "**Observation.** Noise shifts scores towards lower values, with"
+        " substantial differences between recordings."
     )
     SPECIES_NOISE: Final[str] = (
-        "The chart shows up to 20 species with the most noise-eligible "
-        "recordings. Rates give each recording equal weight; n is the "
-        "number of recordings in that cell. Small groups are descriptive "
-        "and need more recordings for a stable estimate."
+        "**Observation.** The represented species respond differently to"
+        " noise; their recording counts also differ."
     )
     NOISE_PAIRS: Final[str] = (
-        "Each point pairs a recording's original segment with its mean "
-        "noisy confidence. Points below the diagonal indicate a decrease. "
-        "Up to 5,000 recordings per condition are selected deterministically "
-        "across processing order. Confidence is not a measure of accuracy."
+        "**Observation.** Many points fall below the diagonal as noise"
+        " increases: their score becomes lower than the original."
     )
     OVERLAP_OUTCOMES: Final[str] = (
-        "The four outcomes use the minimum confidence threshold saved for "
-        "the experiment. Each mixture counts a pair once; n is its pair "
-        "count. A and B describe roles within each pair."
+        "**Observation.** In unbalanced mixtures, recovering only A"
+        " becomes more frequent than recovering both targets."
     )
     SPECIES_COVERAGE: Final[str] = (
-        "Counts cover successfully analysed recordings with an identified "
-        "primary species supported by BirdNET, including undetected targets. "
-        "The chart shows the 20 most represented species; the CSV includes "
-        "every supported target species."
+        "**Observation.** A few species account for a large share of"
+        " recordings, while many are sparsely represented."
     )
     DURATION_CONFIDENCE: Final[str] = (
-        "Each point relates the original recording's duration to the "
-        "maximum exported confidence for its supported primary species. "
-        "Zero indicates that the target was absent from exported predictions. "
-        "Up to 5,000 recordings are selected across processing order. "
-        "Longer recordings offer more windows for a maximum; this plot "
-        "describes an association rather than a causal effect."
+        "**Observation.** Longer recordings tend to have a higher maximum"
+        " score; they also provide more analysis windows."
     )
     BATCH_HISTORY: Final[str] = (
-        "Curves pool all measured recordings up to each batch, giving each "
-        "recording equal weight. The latest batch includes its committed "
-        "recordings even when it is incomplete. Counts refer to "
-        "noise-eligible recordings. Stability does not establish that the "
-        "processed subset represents the complete catalogue."
+        "**Observation.** Estimates change as recordings are added, and"
+        " the 0 dB condition remains the most difficult."
     )
 
 
@@ -220,8 +178,157 @@ class ReportMessage:
     NOTEBOOK_PDF_FAILED: Final[str] = "Notebook PDF rendering failed: {error}"
     EMPTY_NOTEBOOK_PDF: Final[str] = "The notebook PDF contains no pages."
     NOTEBOOK_PREVIEW_TITLE: Final[str] = (
-        "Cumulative Xeno-canto experiment results"
+        "Bird acoustic recognition experiments"
     )
     FIGURE_ALTERNATIVE_TEXT: Final[str] = (
         "Cumulative Xeno-canto results: {section}."
+    )
+    UNKNOWN_EXPERIMENT: Final[str] = "Unknown experiment result: {section}"
+    EXPERIMENT_ALTERNATIVE_TEXT: Final[str] = "Experimental results: {section}"
+
+
+class AnalysisError:
+    """Reject inconsistent saved measurements before publishing statistics."""
+
+    INVALID_NOISE_COVERAGE: Final[str] = (
+        "Noise conditions must cover the same unique recordings."
+    )
+    INVALID_REPETITIONS: Final[str] = (
+        "Noise trial counts do not match the saved experiment."
+    )
+    INVALID_EXCLUSIONS: Final[str] = (
+        "Noise eligibility and exclusions do not cover supported targets."
+    )
+    INVALID_CONFIDENCE: Final[str] = "Noise confidences must be within [0, 1]."
+    INCONSISTENT_MEANS: Final[str] = (
+        "Saved recording means do not match their noise trials."
+    )
+    INVALID_PAIRS: Final[str] = (
+        "Overlap mixtures must use the same disjoint recording pairs."
+    )
+
+
+class ExperimentLabel:
+    """Centralize experiment table headings and graph labels."""
+
+    CONDITION: Final[str] = "Condition"
+    SOURCE_SPLIT: Final[str] = "Sources (calibration / test)"
+    CONTROL_GROUPS: Final[str] = "Groups"
+    CONTROL_UNITS: Final[str] = "Units"
+    PAIRED_POINTS: Final[str] = "Paired difference (points) [CI]"
+    ISOLATED_RECOVERY: Final[str] = "Isolated controls"
+    RECORDINGS: Final[str] = "Recordings"
+    SPECIES: Final[str] = "Species"
+    SCORE_INTERVAL: Final[str] = "Score [CI]"
+    RECOVERY_INTERVAL: Final[str] = "Recovery [CI]"
+    PAIRED_INTERVAL: Final[str] = "Paired difference [CI]"
+    SPECIES_SCORE_INTERVAL: Final[str] = "Species score [CI]"
+    SPECIES_RECOVERY_INTERVAL: Final[str] = "Species recovery [CI]"
+    SPECIES_CLUSTER_INTERVAL: Final[str] = "Species-cluster difference [CI]"
+    THRESHOLD: Final[str] = "Threshold"
+    FILE_INTERVAL: Final[str] = "Per recording [CI]"
+    SPECIES_INTERVAL: Final[str] = "Per species [CI]"
+    VERSION: Final[str] = "Version"
+    PRECISION: Final[str] = "Precision"
+    RECALL: Final[str] = "Recall"
+    F1_INTERVAL: Final[str] = "Micro F1 [CI]"
+    F1_MACRO: Final[str] = "Macro F1"
+    TP: Final[str] = "TP"
+    FP: Final[str] = "FP"
+    FN: Final[str] = "FN"
+    NEGATIVE_FALSE_ALARMS: Final[str] = "False alarms on negative clips"
+    CLIPS: Final[str] = "Clips"
+    SOURCES: Final[str] = "Sources"
+    POSITIVE_CLASSES: Final[str] = "Classes with positives"
+    NEGATIVE_CLIPS: Final[str] = "Negative clips"
+    DATASET: Final[str] = "Dataset"
+    F1_DIFFERENCE: Final[str] = "F1 difference (3.0 - 2.4)"
+    INTERVAL: Final[str] = "95% CI"
+    COUNTRY: Final[str] = "Country"
+    QUALITY_XENO_CANTO: Final[str] = "Xeno-canto quality"
+    FILE: Final[str] = "Per recording"
+    SPECIES_WEIGHTED: Final[str] = "Per species"
+    MIX: Final[str] = "Mixture"
+    BOTH_INTERVAL: Final[str] = "Both targets [95% CI]"
+    CLUSTERS_INTERVAL: Final[str] = "Species clusters [CI]"
+    QUALITY: Final[str] = "Quality"
+    RECOVERY_95_INTERVAL: Final[str] = "Recovery [95% CI]"
+    PREDICTIONS: Final[str] = "Predictions"
+    DISTINCT_LABELS: Final[str] = "Distinct labels"
+    TARGET_RECOVERED: Final[str] = "Target recovered"
+    MINIMUM: Final[str] = "Minimum"
+    Q1: Final[str] = "Q1"
+    MEDIAN: Final[str] = "Median"
+    Q3: Final[str] = "Q3"
+    MAXIMUM: Final[str] = "Maximum"
+    BOTH: Final[str] = "Both targets"
+    ONLY_A: Final[str] = "Only A"
+    ONLY_B: Final[str] = "Only B"
+    NEITHER: Final[str] = "Neither"
+    F1_95_INTERVAL: Final[str] = "Micro F1 [95% CI]"
+    COMMON_FALSE_ALARMS: Final[str] = "False alarms (15 clips)"
+    WITH_FALSE_ALARM: Final[str] = "With false alarm"
+    F1_MICRO: Final[str] = "Micro F1"
+    F1_DIFFERENCE_INTERVAL: Final[str] = "F1 difference (3.0 - 2.4) [95% CI]"
+    CONFIDENCE_INTERVAL: Final[str] = "Confidence [95% CI]"
+    PAIRED_DIFFERENCE: Final[str] = "Paired difference"
+    MEAN_CONFIDENCE: Final[str] = "Mean confidence"
+    ORIGINAL_DIFFERENCE: Final[str] = "Difference from original"
+    ADDED_SNR: Final[str] = "Added SNR (dB)"
+    CONFIDENCE_THRESHOLD: Final[str] = "Confidence threshold"
+    NOISE_FILE_TITLE: Final[str] = "Noise: results per recording, 95% CI"
+    NOISE_SPECIES_TITLE: Final[str] = (
+        "Noise: equal species weights and clusters, 95% CI"
+    )
+    THRESHOLD_TITLE: Final[str] = "Thresholds: target recovery, 95% CI"
+    PAIRED_TITLE: Final[str] = "Paired model comparison, 95% CI"
+    GROUP_TITLE: Final[str] = (
+        "Recovery at threshold 0.10, groups with at least 30 recordings"
+    )
+    METRICS_TITLE: Final[str] = "{dataset}: precision, recall and F1, {scope}"
+    COUNTS_TITLE: Final[str] = (
+        "{dataset}: clip/species counts and false alarms"
+    )
+    CONTEXT_TITLE: Final[str] = "{dataset}: evaluated vocabulary counts"
+    MODEL_LEGEND: Final[str] = "BirdNET {version}"
+
+
+class ExperimentObservation:
+    """Describe the saved additional results in short notebook observations."""
+
+    PREFIX: Final[str] = "**Observation.** "
+    MISSING: Final[str] = "This experiment has not been run yet."
+    NOISE_FIGURE: Final[str] = (
+        "The score decrease under noise is visible with the 95% intervals."
+    )
+    COMPARISON: Final[str] = (
+        "The model ranking depends on the dataset and decision threshold."
+    )
+    NOISE_INTERVALS: Final[str] = (
+        "Degradation persists when species have equal weights; cluster"
+        " intervals are wider."
+    )
+    THRESHOLDS: Final[str] = (
+        "Filtering reduces recovery; the species average remains below the"
+        " recording average."
+    )
+    COMMON_SPECIES: Final[str] = (
+        "The advantage of 3.0 on NBP remains visible for the 50 common"
+        " classes. The 15 negative clips here are negative only within this"
+        " reduced vocabulary."
+    )
+    SOUNDSCAPES: Final[str] = (
+        "3.0 achieves a higher F1 on NBP; on HSN, the result depends on"
+        " the threshold."
+    )
+    PAIRED: Final[str] = (
+        "The difference favours 3.0 on NBP and changes sign with the"
+        " threshold on HSN."
+    )
+    COUNTRIES: Final[str] = (
+        "Rates vary between countries, but species and conditions also differ."
+    )
+    QUALITY: Final[str] = (
+        "Quality categories have different rates; this comparison remains"
+        " descriptive."
     )

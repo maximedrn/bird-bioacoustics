@@ -4,8 +4,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+from typing import cast
 
-from IPython.display import Image, Markdown, display
+from IPython.display import HTML, Image, Markdown, display
+from nbformat import NotebookNode
 from pandas import DataFrame
 
 from app.domain.constants import Artifact, CoverageKey, MetadataKey
@@ -13,10 +15,15 @@ from app.domain.messages import ErrorMessage
 from app.domain.models import NoiseExperimentOutput, ResultSnapshot
 from app.domain.settings import ProjectPaths
 from app.domain.types import CorpusStatus
+from app.experiments.validation import run_validation
+from app.reporting.analysis import run_analysis
+from app.reporting.constants import NotebookContent, NotebookKey
+from app.reporting.controlled import prepare_extensions
 from app.reporting.diagnostics import DIAGNOSTIC_OBSERVATIONS, DIAGNOSTIC_PLOTS
-from app.reporting.messages import ReportMessage
+from app.reporting.messages import ObservationMessage, ReportMessage
 from app.reporting.observations import NotebookReporter
 from app.reporting.plots import ExperimentPlotter
+from app.reporting.publication import experiment_outputs, prepare_tables
 from app.reporting.results import ExperimentResults
 
 
@@ -28,17 +35,22 @@ class ExperimentReport:
     snapshot: ResultSnapshot
 
     def coverage_text(self) -> str:
-        """Summarize the observed database coverage in English Markdown.
+        """Summarize saved coverage with a simple observation.
 
         :return: Counts and the committed cursor.
         :rtype: str
         """
         status: CorpusStatus = self.snapshot.status
-        return ReportMessage.COVERAGE.format(
+        counts: str = ReportMessage.COVERAGE.format(
             processed=status[CoverageKey.PROCESSED_RECORDINGS.value],
             failed=status[CoverageKey.FAILED_RECORDINGS.value],
             batches=status[CoverageKey.COMPLETED_BATCHES.value],
             cursor=status[MetadataKey.CURSOR.value],
+        )
+        return counts + (
+            ObservationMessage.PARTIAL_COVERAGE
+            if not status[CoverageKey.ALL_RECORDINGS_ATTEMPTED.value]
+            else ObservationMessage.COMPLETE_COVERAGE
         )
 
     def figure(self, artifact: Artifact) -> Path | None:
@@ -121,7 +133,38 @@ class ExperimentReport:
             return NotebookReporter.overlap(self.snapshot.overlap)
         if artifact == Artifact.THRESHOLD:
             return NotebookReporter.threshold(self.snapshot.thresholds)
+        if artifact == Artifact.PROGRESS:
+            return ObservationMessage.PROGRESS
+        if artifact == Artifact.SPECTROGRAM:
+            return ObservationMessage.SPECTROGRAM
         return DIAGNOSTIC_OBSERVATIONS.get(artifact)
+
+    def show_result(self, section: str) -> None:
+        """Display measured results with their simple observation.
+
+        :param section: Stable identifier of an additional experiment cell.
+        :type section: str
+        :return: None.
+        :rtype: None
+        """
+        output: NotebookNode
+        for output in experiment_outputs(section, self.paths.results):
+            data: dict[str, str] = cast(dict[str, str], output["data"])
+            if NotebookContent.PNG in data:
+                metadata: dict[str, str] = cast(
+                    dict[str, str], output[NotebookKey.METADATA]
+                )
+                display(
+                    Image(
+                        filename=str(
+                            self.paths.results / metadata[NotebookKey.FILENAME]
+                        )
+                    )
+                )
+            elif NotebookContent.HTML in data:
+                display(HTML(data[NotebookContent.HTML]))
+            else:
+                display(Markdown(data[NotebookContent.MARKDOWN]))
 
     def save_figures(self) -> tuple[Path, ...]:
         """Save available figures for notebook publication and direct viewing.
@@ -160,4 +203,9 @@ def load_report(paths: ProjectPaths | None = None) -> ExperimentReport:
         snapshot: ResultSnapshot = reader.export(
             selected.results, selected.annotations
         )
+    if len(snapshot.details.species_coverage) and len(snapshot.noise):
+        run_analysis(selected)
+        run_validation(selected)
+        prepare_tables(selected)
+        prepare_extensions(selected)
     return ExperimentReport(selected, snapshot)

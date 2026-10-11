@@ -4,13 +4,28 @@ from __future__ import annotations
 
 from typing import TypedDict
 
-from numpy import float32, float64
+from numpy import bool_, float32, float64, int64
 from numpy.typing import NDArray
 
 type FloatArray = NDArray[float32]
 
 
 type Float64Array = NDArray[float64]
+
+
+type BooleanArray = NDArray[bool_]
+
+
+type IntegerArray = NDArray[int64]
+
+
+type StatisticalInterval = tuple[float, float, float]
+
+
+type MetricValues = dict[str, float | int]
+
+
+type BenchmarkMetricRow = dict[str, str | float | int]
 
 
 type ReferenceLabels = dict[str, frozenset[str]]

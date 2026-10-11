@@ -142,7 +142,6 @@ class RecordingWorkerFactory:
             predictor, processor, scratch, self._experiment
         )
         species: dict[str, str] = {}
-        label: str
         for label in self._model.species_list:
             species[label.split("_", 1)[0]] = label
         analysis: RecordingAnalysisService = RecordingAnalysisService(
