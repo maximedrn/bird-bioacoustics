@@ -54,6 +54,7 @@ _From [`notebook.ipynb`](notebook.ipynb)_
 ```bash
 uv run app report
 latexmk -cd -pdf -interaction=nonstopmode -halt-on-error latex/report.tex
+latexmk -cd -pdf -interaction=nonstopmode -halt-on-error latex/research_notebook.tex
 ```
 
 ## Development

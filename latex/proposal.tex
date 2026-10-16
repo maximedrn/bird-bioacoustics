@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{titlesec}
+
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.12em,topsep=0.15em}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.15em}{0.35em}
+
+\begin{document}
+
+\textbf{Nom -- Prénom :} Maxime DRÉAN \hfill
+\textbf{Date de dépôt :} 18/09/2026
+
+\vspace{0.8cm}
+
+\begin{center}
+    {\Large \textbf{Proposition et validation du sujet de veille}}\\[0.15cm]
+    {\normalsize Veille scientifique et technologique -- M2 AIDN}
+\end{center}
+
+\vspace{0.55cm}
+
+\textbf{Objectif.} Proposer un sujet suffisamment précis pour lancer la veille. La question pourra encore être affinée à partir des premières recherches.
+
+\section*{1. Domaine}
+\textbf{Domaine 3 -- Agriculture, forêts et biodiversité}
+
+\section*{2. Sous-domaine}
+\textbf{Suivi de l'avifaune par bioacoustique et reconnaissance automatique des espèces d'oiseaux}
+
+\section*{3. Question de veille}
+\begin{quote}
+\textit{Dans quelle mesure les modèles de deep learning permettent-ils de détecter et d'identifier automatiquement les espèces d'oiseaux à partir d'enregistrements acoustiques réalisés en milieu naturel, malgré le bruit ambiant, les vocalisations simultanées et la variabilité géographique ?}
+\end{quote}
+
+\section*{4. Périmètre envisagé}
+La veille sera centrée sur la reconnaissance automatique des espèces d'oiseaux à partir de leurs chants et cris, dans le contexte du suivi acoustique passif de l'avifaune. Elle étudiera principalement les architectures de deep learning utilisées pour la détection et la classification, les jeux de données et protocoles d'évaluation, ainsi que la robustesse des modèles face au bruit ambiant, au chevauchement de plusieurs espèces et aux différences entre régions ou habitats. L'objectif sera également d'identifier les limites actuelles de généralisation des modèles lors d'un déploiement sur des enregistrements réels. La localisation spatiale des oiseaux, l'analyse détaillée de leur comportement et la génération artificielle de chants seront exclues du périmètre.
+
+\section*{5. Premiers mots-clés de recherche}
+\begin{itemize}
+    \item \textit{bird sound recognition}
+    \item \textit{bird species classification deep learning}
+    \item \textit{avian bioacoustics}
+    \item \textit{passive acoustic monitoring birds}
+    \item \textit{bird vocalization detection}
+    \item \textit{bird sound classification in soundscapes}
+    \item \textit{robust bird audio classification}
+    \item \textit{domain generalization avian bioacoustics}
+\end{itemize}
+
+\section*{6. Premières sources repérées}
+\begin{itemize}
+    \item \textbf{Stowell, D. (2022) -- Revue scientifique de synthèse.}\\
+    \textit{Computational bioacoustics with deep learning: a review and roadmap}. PeerJ, 10, e13152. Cette revue présente l'état de l'art du deep learning en bioacoustique, les principales tâches de classification et de détection, les difficultés liées aux données naturelles et plusieurs pistes de recherche. Elle fournit un cadre général utile pour situer la reconnaissance des oiseaux dans le domaine.\\
+    \href{https://doi.org/10.7717/peerj.13152}{doi:10.7717/peerj.13152}.
+
+    \item \textbf{Kahl, S., Wood, C. M., Eibl, M. \& Klinck, H. (2021) -- Article scientifique / modèle de référence.}\\
+    \textit{BirdNET: A deep learning solution for avian diversity monitoring}. Ecological Informatics, 61, 101236. L'article décrit BirdNET, un réseau neuronal conçu pour reconnaître automatiquement de nombreuses espèces d'oiseaux à partir de leurs vocalisations. Les auteurs l'évaluent à la fois sur des enregistrements isolés et sur des paysages sonores réels, notamment en présence de bruit et de vocalisations superposées.\\
+    \href{https://doi.org/10.1016/j.ecoinf.2021.101236}{doi:10.1016/j.ecoinf.2021.101236}.
+
+    \item \textbf{Rauch, L. et al. (2024) -- Jeu de données / benchmark scientifique.}\\
+    \textit{BirdSet: A Large-Scale Dataset for Audio Classification in Avian Bioacoustics}. BirdSet regroupe plus de 6 800 heures d'enregistrements d'entraînement et des jeux d'évaluation fortement annotés. Il permet de comparer différents modèles sur des tâches telles que la classification multi-label, les changements de distribution ou l'apprentissage auto-supervisé.\\
+    \href{https://arxiv.org/abs/2403.10380}{arXiv:2403.10380}.
+
+    \item \textbf{Xeno-canto -- Base de données collaborative de sons d'oiseaux.}\\
+    Plateforme internationale ouverte contenant des enregistrements de chants et cris accompagnés de métadonnées (espèce, lieu, date, type de vocalisation, qualité, etc.). Elle constitue une source de données très utilisée pour entraîner ou compléter des jeux de données de reconnaissance automatique, tout en posant des questions de qualité et d'hétérogénéité des annotations.\\
+    \href{https://xeno-canto.org/}{xeno-canto.org}.
+
+    \item \textbf{Macaulay Library, Cornell Lab of Ornithology -- Archive scientifique multimédia.}\\
+    Cette archive de référence rassemble plusieurs millions d'enregistrements audio d'oiseaux ainsi que des photos et vidéos, avec des métadonnées naturalistes détaillées. Elle est particulièrement intéressante pour disposer de données issues de nombreuses espèces, régions et conditions d'enregistrement, et elle est utilisée dans de nombreuses publications scientifiques.\\
+    \href{https://www.macaulaylibrary.org/}{macaulaylibrary.org}.
+
+    \item \textbf{BirdCLEF -- Challenge scientifique / benchmark international.}\\
+    BirdCLEF propose régulièrement des tâches de reconnaissance d'espèces d'oiseaux à partir d'enregistrements audio et de paysages sonores. Les compétitions fournissent des jeux d'entraînement et des protocoles d'évaluation communs, ce qui permet de comparer les approches récentes et d'observer les techniques les plus performantes sur des données réalistes.\\
+    \href{https://www.imageclef.org/BirdCLEF}{imageclef.org/BirdCLEF}.
+
+    \item \textbf{BirdNET -- Outil et plateforme de reconnaissance automatique.}\\
+    Le projet BirdNET du Cornell Lab met à disposition des modèles, outils et ressources permettant d'identifier automatiquement les oiseaux par le son. Il constitue un bon exemple de transfert d'un modèle de recherche vers un outil utilisable pour le suivi de biodiversité à grande échelle.\\
+    \href{https://birdnet.cornell.edu/}{birdnet.cornell.edu}.
+\end{itemize}
+
+\end{document}

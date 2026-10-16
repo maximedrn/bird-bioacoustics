@@ -28,9 +28,10 @@ data/results/**
 .env.*
 !.env.example
 
-# Keep the compiled report and experiment figures; ignore other PDFs.
+# Keep the compiled reports and experiment figures; ignore other PDFs.
 *.pdf
 !latex/report.pdf
+!latex/research_notebook.pdf
 !data/results/**/*.pdf
 data/results/**/.*
 

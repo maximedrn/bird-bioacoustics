@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{parskip}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{cite}
+\setlength{\emergencystretch}{1.5em}
+\setlength{\headheight}{14pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\brokenpenalty=10000
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Carnet de recherche}
+\fancyhead[R]{\small Maxime DRÉAN}
+\fancyfoot[C]{\thepage}
+\newcommand{\weblink}[2]{\href{#1}{#2}}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
+
+\title{Carnet de recherche\\[0.3em]
+\large Reconnaissance acoustique des oiseaux\\par apprentissage profond}
+\author{Maxime DRÉAN\\\small Master 2 -- Informatique 2349}
+\date{Septembre -- octobre 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\section{Lectures et recherches}
+
+Le sujet de départ porte sur l'identification automatique des oiseaux dans
+des enregistrements naturels. J'ai retenu trois difficultés : le bruit ambiant,
+les vocalisations simultanées et le changement de région. La question de veille
+est donc : dans quelle mesure les modèles d'apprentissage profond permettent-ils
+de détecter et d'identifier les espèces malgré ces conditions ? Le périmètre
+comprend les chants, les cris, les modèles et les données d'évaluation ; il
+laisse de côté la localisation spatiale et l'estimation d'abondance.
+
+La revue de Stowell a servi à situer les méthodes et les difficultés de la
+bioacoustique automatique\cite{stowell2022}. BirdNET a fourni un premier
+exemple de système utilisable, et BirdSet un cadre pour comparer des modèles
+sur des données aviaires\cite{kahl2021,birdset2025}. Xeno-canto, Macaulay
+Library et BirdCLEF ont été repérés comme ressources possibles. Xeno-canto
+a été retenu pour les premiers essais ; BirdSet a ensuite fourni les données
+annotées nécessaires à une évaluation plus précise.
+
+Les mots-clés ont suivi cette progression : \emph{bird sound recognition},
+\emph{BirdNET}, \emph{bioacoustics deep learning}, puis \emph{noise robustness},
+\emph{overlapping vocalizations} et \emph{soundscapes}. Le questionnement
+s'est ensuite étendu au transfert avec \emph{audio embeddings},
+\emph{self-supervised learning} et \emph{domain generalization}.
+Les lectures ont été prolongées au fil des essais, notamment lorsque les
+résultats ont soulevé la question du seuil et du changement de jeu de données.
+
+Les travaux de Ghani et al. ont orienté la comparaison vers les représentations
+réutilisables et les paramètres réellement ajustés\cite{ghani2023,ghani2025}.
+AVES, Bird-MAE et Perch 2.0 ont été retenus pour comparer des objectifs de
+préentraînement et des modes d'adaptation différents
+\cite{aves2023,birdmae2025,perch2025}. Les évaluations de Sethi et de Funosas
+ont complété cette lecture par les conditions d'usage sur le terrain
+\cite{sethi2024,funosas2026}. Les dépôts et fiches de modèles ont servi à
+vérifier les formats, les outils disponibles et les licences. La synthèse
+retient surtout les travaux qui éclairent ces choix, plutôt qu'une succession
+de descriptions de modèles.
+
+\section{Première expérimentation}
+
+J'ai choisi BirdNET pour disposer d'un modèle préentraîné et tester directement
+l'effet du bruit, des mélanges et du seuil. Les essais reposent d'abord sur
+3\,591 enregistrements Xeno-canto. L'espèce principale annoncée fournit une
+cible à rechercher ; les autres sorties sont conservées pour explorer le
+comportement du modèle.
+
+L'expérience de bruit porte sur 2\,937 enregistrements dont la cible est
+retrouvée au départ. Le segment où son score est maximal reçoit un bruit
+gaussien à 20, 10, 5 et 0~dB, avec cinq réalisations par niveau. Les mélanges
+portent sur 1\,416 paires, aux coefficients 50/50, 75/25 et 90/10. Un autre
+essai fait varier le seuil pour observer quelles sorties sont conservées.
+
+La collecte et l'analyse ont été organisées par lots pour reprendre le
+traitement sans recommencer les calculs terminés. Les difficultés d'exécution
+ont concerné notamment CUDA/cuDNN et les entrées ONNX de durée variable.
+Un signal non silencieux a servi à vérifier le fonctionnement de l'inférence.
+Le notebook a été conservé pour réunir les tableaux, les figures et les
+observations ; les calculs ont été regroupés dans l'application Python.
+
+Les premières sorties montrent une diminution des scores sous bruit et une
+récupération conjointe plus difficile dans les mélanges. Elles font surtout
+apparaître un problème de protocole : sélectionner une cible déjà reconnue
+et son meilleur segment favorise le point de départ. L'étiquette principale
+Xeno-canto ne permet pas non plus de classer toutes les autres prédictions
+en présences réelles ou en fausses alertes. J'ai donc complété l'exploration
+par des données annotées et des témoins acoustiques.
+
+\section{Amélioration de l'expérimentation}
+
+Deux sous-ensembles de BirdSet ont été retenus : NBP, issu de NIPS4BPlus,
+et HSN, issu de \emph{High Sierras}. NBP apporte 539 extraits annotés ;
+HSN apporte 600 segments provenant de 100 sources, dont 333 segments sans
+annotation d'oiseau. Ces derniers permettent d'observer les alertes en
+l'absence de présence de référence. BirdNET 2.4 et 3.0 sont comparés sur
+les mêmes extraits, sans filtrage géographique.
+
+L'harmonisation des espèces a demandé de rapprocher les annotations des
+vocabulaires des deux versions. Une espèce absente de 2.4 est comptée comme
+omission ; un second calcul porte sur les classes communes. La comparaison
+à seuil identique est complétée par un réglage propre à chaque couple
+modèle/jeu : 25\,\% des sources servent au choix du seuil, les autres à
+l'évaluation. Les segments d'un même enregistrement HSN restent groupés.
+Les intervalles de confiance sont calculés par bootstrap apparié par source.
+
+Le protocole acoustique a également été revu. Les 40 extraits positifs de
+chaque jeu sont choisis à partir des annotations, en gardant les omissions
+initiales. Des fonds enregistrés complètent le bruit gaussien. Pour les
+mélanges, les niveaux efficaces sont égalisés et les deux signaux isolés
+sont évalués avec les mêmes gains que dans le mélange. Les 20 paires NBP
+et 19 paires HSN permettent ainsi de comparer la récupération conjointe
+avant et après superposition.
+
+Cette seconde étape a changé l'interprétation des essais. BirdNET 3.0
+obtient un meilleur F1 sur NBP ; sur HSN, le seuil modifie fortement le
+compromis entre omissions et fausses alertes. Après réglage séparé, aucun
+avantage n'est établi sur HSN dans la partition retenue. Les témoins
+confirment une baisse sous les perturbations étudiées, y compris lorsque
+les extraits sont choisis par annotation. La variabilité géographique
+reste discutée à partir des publications : les différences entre NBP
+et HSN combinent aussi des espèces et des ambiances différentes.
+
+\section{Rédaction du rapport final}
+
+Le rapport final est organisé autour de la question de veille,
+de la comparaison des méthodes et des résultats qui aident à choisir un
+outil. L'état de l'art distingue la reconnaissance directe du transfert de
+représentations, puis relie ces méthodes aux annotations, au masquage et au
+changement de domaine. Les descriptions détaillées du code sont laissées
+dans le rendu de l'expérimentation.
+
+Pour la partie expérimentale, j'ai retenu la comparaison des versions et
+des seuils, le bruit ajouté et les mélanges avec témoins. Le corpus Xeno-canto
+explique le point de départ et l'évolution du protocole. Les tableaux et
+figures mettent en avant les résultats utiles à l'argumentation, avec les
+effectifs et les intervalles nécessaires à leur lecture.
+
+La discussion confronte les observations aux travaux sur le transfert et
+aux évaluations de terrain. Elle distingue les résultats mesurés des
+explications possibles, par exemple pour l'écart entre bruit gaussien et
+fonds enregistrés. La conclusion revient au choix conjoint du modèle,
+des données et du seuil. Les prolongements retenus sont un test multisite
+sur des espèces communes et une comparaison d'adaptations avec le même
+budget d'annotations.
+
+\bibliographystyle{unsrt}
+{\small\bibliography{references}}
+
+\end{document}

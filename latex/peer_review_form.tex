@@ -1,0 +1,239 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{titlesec}
+
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.12em,topsep=0.15em}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.15em}{0.35em}
+\renewcommand{\arraystretch}{1.22}
+
+\newcommand{\checkbox}{\ensuremath{\square}}
+\newcommand{\checkedbox}{\ensuremath{\rlap{\checkmark}\square}}
+\newcommand{\neval}{\textit{N/E}}
+\newcommand{\reviewquestion}[1]{\textbf{#1}\par}
+
+\begin{document}
+
+\textbf{Nom -- Prénom :} Maxime DRÉAN
+
+\vspace{0.8cm}
+
+\begin{center}
+    {\Large \textbf{Fiche de review par les pairs}}\\[0.15cm]
+    {\normalsize UE -- Veille technologique assistée par l'IA}
+\end{center}
+
+\vspace{0.55cm}
+
+\textbf{Objectif.} Une fiche de review est remplie collectivement par le groupe pour chaque sujet présenté. Cette fiche a pour objectif d'aider les autres étudiants à améliorer leur projet. Elle ne constitue pas une note mais une évaluation critique, argumentée et constructive.
+
+\section*{1. Informations générales}
+
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}p{4.6cm}X@{}}
+\toprule
+Nom Prénom de l'étudiant & Maxime DRÉAN \\
+\midrule
+Projet évalué & Identification automatique d'espèces animales par deep learning à partir d'enregistrements bioacoustiques \\
+\midrule
+Domaine & Domaine 3 -- Agriculture, forêts et biodiversité \\
+\midrule
+Sous-domaine & Suivi de la biodiversité par bioacoustique et reconnaissance automatique d'espèces \\
+\midrule
+Question de veille & Dans quelle mesure les méthodes de deep learning permettent-elles d'identifier automatiquement des espèces animales à partir d'enregistrements acoustiques réalisés en milieu naturel ? \\
+\bottomrule
+\end{tabularx}
+\setlength{\tabcolsep}{6pt}
+\normalsize
+
+\section*{2. Compréhension du projet}
+
+\textbf{Résumez en quelques lignes le projet tel que vous l'avez compris :}
+
+Le projet vise à étudier l'identification automatique d'espèces animales à partir de leurs vocalisations, dans le cadre du suivi passif de la biodiversité en milieu naturel. La veille se concentre sur les méthodes de deep learning appliquées à la bioacoustique, en examinant leurs performances, leur robustesse au bruit et aux vocalisations simultanées, ainsi que leurs limites de généralisation. La localisation acoustique, l'analyse comportementale et la génération de sons sont exclues du périmètre.
+
+\section*{3. Évaluation scientifique lors de la table ronde (reviewers)}
+
+\small
+\setlength{\tabcolsep}{2.2pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{3.0cm}
+                        >{\centering\arraybackslash}p{0.70cm}
+                        >{\centering\arraybackslash}p{0.70cm}
+                        >{\centering\arraybackslash}p{0.70cm}
+                        >{\centering\arraybackslash}p{0.70cm}
+                        >{\raggedright\arraybackslash}p{9.6cm}@{}}
+\toprule
+\textbf{Critère} & \multicolumn{4}{c}{\textbf{Évaluation}} & \textbf{Commentaires / recommandations} \\
+\cmidrule(lr){2-5}
+& \textbf{F} & \textbf{M} & \textbf{B} & \textbf{E} & \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Critère} & \multicolumn{4}{c}{\textbf{Évaluation}} & \textbf{Commentaires / recommandations} \\
+\cmidrule(lr){2-5}
+& \textbf{F} & \textbf{M} & \textbf{B} & \textbf{E} & \\
+\midrule
+\endhead
+
+Pertinence du sujet
+& \checkbox & \checkbox & \checkbox & \checkedbox
+& Sujet pertinent, actuel et bien relié au suivi de la biodiversité. Le périmètre est déjà clairement orienté vers la reconnaissance acoustique en conditions naturelles. \\
+\addlinespace[0.35em]
+
+Qualité de la veille
+& \checkbox & \checkbox & \checkedbox & \checkbox
+& La démarche est bien engagée : question, périmètre, mots-clés et premières sources sont définis. La veille doit encore être élargie et structurée. \\
+\addlinespace[0.35em]
+
+Actualité de la bibliographie
+& \checkbox & \checkbox & \checkedbox & \checkbox
+& Les premières références (2021, 2022 et 2024) sont pertinentes et relativement récentes. Il faudra compléter la bibliographie avec des travaux plus récents et diversifiés. \\
+\addlinespace[0.35em]
+
+Pertinence du jeu de données
+& \checkbox & \checkbox & \checkbox & \checkbox
+& \neval{} -- BirdSet est repéré comme source/dataset potentiel, mais le jeu de données de l'expérimentation n'est pas encore arrêté. \\
+\addlinespace[0.35em]
+
+Pertinence de la méthode IA
+& \checkbox & \checkbox & \checkbox & \checkbox
+& \neval{} -- Le deep learning constitue l'axe méthodologique, mais l'architecture ou les modèles à comparer ne sont pas encore définis. \\
+\addlinespace[0.35em]
+
+Cohérence veille / expérimentation
+& \checkbox & \checkbox & \checkbox & \checkbox
+& \neval{} -- L'expérimentation n'est pas encore définie. Elle devra mesurer un aspect directement étudié dans la veille (robustesse, bruit, généralisation, etc.). \\
+\addlinespace[0.35em]
+
+Analyse critique des résultats
+& \checkbox & \checkbox & \checkbox & \checkbox
+& \neval{} -- Aucun résultat expérimental n'est disponible à ce stade. \\
+
+\bottomrule
+\end{longtable}
+\setlength{\tabcolsep}{6pt}
+\normalsize
+
+\textit{F = Faible ; M = Moyen ; B = Bon ; E = Excellent.}\\
+\textit{N/E : Non défini / non évalué à ce stade.}
+
+\section*{4. Analyse de la démarche}
+
+\reviewquestion{L'étudiant justifie-t-il ses choix ?}
+Oui, globalement. Le choix de se concentrer sur la reconnaissance d'espèces en milieu naturel est cohérent, et les exclusions permettent de limiter le sujet. La justification du choix de la population animale étudiée pourra toutefois être précisée.
+
+\reviewquestion{Les informations issues de l'IA semblent-elles avoir été vérifiées ?}
+Non évaluable complètement à partir de la fiche. Les éléments actuellement cités s'appuient sur des sources scientifiques identifiables ; la traçabilité et la vérification des informations éventuellement obtenues par IA devront être explicitées dans le carnet de recherche.
+
+\reviewquestion{Les décisions importantes sont-elles argumentées ?}
+Plutôt oui. Les principales limites du périmètre sont explicites. Les prochaines décisions importantes --- espèces ciblées, jeu de données, modèles et métriques --- devront être argumentées à partir de la littérature.
+
+\reviewquestion{Le niveau de confiance accordé aux différentes sources paraît-il pertinent ?}
+Oui pour les premières sources, avec une nuance : les articles publiés en revue peuvent recevoir un niveau de confiance élevé, tandis qu'une prépublication comme BirdSet doit être distinguée d'un article évalué par les pairs.
+
+\section*{5. Regard critique}
+
+\reviewquestion{Principal point fort du projet}
+Question de veille cohérente et périmètre déjà bien délimité, avec un axe intéressant sur la robustesse des méthodes en conditions naturelles plutôt que sur la seule performance de classification.
+
+\reviewquestion{Principal point faible}
+Le terme « espèces animales » reste très large et la bibliographie initiale ne comporte encore que trois références. Le périmètre expérimental n'est pas encore suffisamment opérationnel.
+
+\reviewquestion{Question que vous souhaiteriez poser}
+Faut-il conserver une veille générale sur plusieurs groupes animaux ou se concentrer sur un groupe, par exemple les oiseaux, afin de comparer plus précisément les méthodes, datasets et performances ?
+
+\reviewquestion{Amélioration prioritaire}
+Resserrer le périmètre expérimental et définir ce que signifie concrètement « robustesse » : bruit de fond, vocalisations simultanées, changement de site, classes rares ou généralisation à un autre jeu de données.
+
+\section*{6. Recommandations (1 à 3)}
+
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{longtable}{@{}>{\centering\arraybackslash}p{1.50cm}
+                        >{\raggedright\arraybackslash}p{6.80cm}
+                        >{\raggedright\arraybackslash}p{7.00cm}@{}}
+\toprule
+\textbf{Priorité} & \textbf{Recommandation} & \textbf{Justification} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Priorité} & \textbf{Recommandation} & \textbf{Justification} \\
+\midrule
+\endhead
+
+1
+& Préciser le périmètre taxonomique de l'étude et, pour l'expérimentation, envisager de se limiter à un groupe d'espèces clairement défini.
+& Cela rendra la comparaison des méthodes et des jeux de données plus cohérente et l'expérimentation plus réalisable. \\
+\addlinespace[0.45em]
+
+2
+& Définir des critères mesurables de robustesse : bruit, chevauchement des vocalisations, classes rares et/ou généralisation entre sites ou datasets.
+& Ces critères traduisent directement les limites annoncées dans le périmètre et permettront une analyse critique autre qu'une simple comparaison d'accuracy. \\
+\addlinespace[0.45em]
+
+3
+& Élargir et actualiser la bibliographie puis relier les principales familles de modèles identifiées à un jeu de données et à une expérimentation réaliste.
+& La veille gagnera en profondeur et pourra déboucher sur une expérimentation clairement justifiée par l'état de l'art. \\
+
+\bottomrule
+\end{longtable}
+\setlength{\tabcolsep}{6pt}
+\normalsize
+
+\section*{7. Synthèse finale --- support pour la restitution par l'étudiant évalué}
+
+\textit{À lire par un étudiant du groupe.}
+
+\textbf{Ce projet est convaincant parce que :}
+
+La question est claire, pertinente et directement liée à un enjeu réel de suivi de la biodiversité. Le périmètre exclut déjà plusieurs axes hors sujet et met l'accent sur des difficultés importantes des conditions naturelles : bruit, vocalisations simultanées et généralisation. Les premières sources identifiées sont cohérentes avec le sujet et constituent une bonne base de départ.
+
+\textbf{Il serait encore meilleur si :}
+
+Le périmètre était encore davantage resserré pour l'expérimentation, notamment en précisant le groupe d'espèces étudié. La notion de robustesse était traduite en critères et métriques mesurables, et la bibliographie était enrichie par davantage de travaux récents permettant de comparer plusieurs approches.
+
+\textbf{Appréciation globale à ce stade :}
+\begin{itemize}[label={},leftmargin=0pt]
+    \item \checkbox{} Démarche encore à préciser
+    \item \checkedbox{} Démarche bien engagée
+    \item \checkbox{} Démarche solide
+    \item \checkbox{} Démarche très aboutie
+\end{itemize}
+
+\section*{Séance 5 -- Complément après expérimentation --- Review par les pairs (non encadrée)}
+
+Après la séance de travail consacrée à l'expérimentation, le groupe examine à nouveau chaque projet et apporte un retour critique sur les points suivants.
+
+\reviewquestion{Jeu de données : pertinent et suffisamment documenté ?}
+Non évalué à ce stade --- le jeu de données expérimental n'est pas encore défini.
+
+\reviewquestion{Méthode IA : pertinente et justifiée ?}
+Non évalué à ce stade --- la méthode / architecture IA de l'expérimentation n'est pas encore définie.
+
+\reviewquestion{Cohérence entre veille et expérimentation : convaincante ?}
+Non évalué à ce stade --- à compléter après la mise en place de l'expérimentation.
+
+\reviewquestion{Résultats : correctement interprétés et discutés de manière critique ?}
+Non évalué à ce stade --- aucun résultat expérimental n'est encore disponible.
+
+\reviewquestion{Une recommandation prioritaire pour la soutenance}
+À définir après expérimentation ; en priorité, relier clairement les résultats obtenus aux limites et conclusions issues de la veille.
+
+\end{document}

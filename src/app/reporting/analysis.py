@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from json import dumps, loads
 from pathlib import Path
+from re import sub
 from typing import cast
 
 from matplotlib.figure import Figure
@@ -30,6 +31,7 @@ from app.domain.types import Float64Array, StatisticalInterval
 from app.experiments.constants import ExperimentColumn, StatisticalSetting
 from app.experiments.statistics import bootstrap_mean
 from app.reporting.constants import (
+    FRENCH_COUNTRIES,
     LATEX_TABLE_HEADINGS,
     AnalysisSetting,
     DetailColumn,
@@ -79,7 +81,31 @@ def tex_table(frame: DataFrame, path: Path) -> None:
     column_format: str = "l" + "r" * (len(frame.columns) - 1)
     table: Styler = frame.style
     table.hide(axis="index")
-    table.format(escape="latex")
+    for column in frame.columns:
+
+        def french_cell(value: object, heading: str = str(column)) -> str:
+            text: str = str(value)
+            if heading == ExperimentLabel.CONDITION:
+                for source, label in (
+                    ("original", "Sans ajout"),
+                    ("clean", "Sans ajout"),
+                    ("gaussian", "Gaussien"),
+                    ("natural", "Fond"),
+                ):
+                    if text == source or text.startswith(source + " "):
+                        text = label + text[len(source) :]
+                        break
+            if heading == ExperimentLabel.COUNTRY:
+                text = FRENCH_COUNTRIES.get(text, text)
+            if heading == ExperimentLabel.QUALITY and text == "no score":
+                text = "Non renseignée"
+            if heading != ExperimentLabel.VERSION:
+                text = sub(r"([+-]?\d+\.\d+)", r"\\num{\1}", text)
+                text = text.replace(r"\%", r"\,\%")
+                text = text.replace("; ", r"\,; ")
+            return text
+
+        table.format(french_cell, subset=[column], escape="latex")
     table.format_index(
         lambda value: LATEX_TABLE_HEADINGS[str(value)], axis="columns"
     )
@@ -680,6 +706,7 @@ def plot_noise_intervals(results: DataFrame, output: Path) -> None:
             )
             axis.set_xlabel(ExperimentLabel.ADDED_SNR)
             axis.set_ylabel(label)
+            axis.set_xticks(ExperimentSettings().snr_values_db)
             axis.invert_xaxis()
             axis.grid(alpha=0.2)
         ExperimentPlotter.save_figure_formats(

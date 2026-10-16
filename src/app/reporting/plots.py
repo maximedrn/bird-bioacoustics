@@ -9,7 +9,9 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg
 from matplotlib.collections import QuadMesh
 from matplotlib.container import BarContainer
 from matplotlib.figure import Figure
+from matplotlib.layout_engine import ConstrainedLayoutEngine
 from matplotlib.pyplot import close
+from matplotlib.ticker import FuncFormatter, ScalarFormatter
 from numpy import bool_, float64, isfinite, log10, maximum
 from numpy.typing import NDArray
 from pandas import DataFrame, Series
@@ -30,6 +32,36 @@ from app.reporting.writing import atomic_output
 
 class ExperimentPlotter:
     """Render and save all experiment figures."""
+
+    @staticmethod
+    def prepare_figure(figure: Figure) -> None:
+        """Keep French numeric labels legible at the report's printed width.
+
+        :param figure: Completed figure, before its final layout pass.
+        :type figure: Figure
+        :return: None.
+        :rtype: None
+        """
+
+        def french_tick(value: float, _position: float | None) -> str:
+            return f"{value:g}".replace(".", ",")
+
+        for axis in figure.axes:
+            cast(PlotAxis, axis).tick_params(labelsize=12)
+            axis.xaxis.label.set_fontsize(12)
+            axis.yaxis.label.set_fontsize(12)
+            axis.title.set_fontsize(13)
+            for coordinate in (axis.xaxis, axis.yaxis):
+                if isinstance(
+                    coordinate.get_major_formatter(), ScalarFormatter
+                ):
+                    coordinate.set_major_formatter(FuncFormatter(french_tick))
+            legend = axis.get_legend()
+            if legend is not None:
+                for label in legend.get_texts():
+                    label.set_fontsize(11)
+        if not isinstance(figure.get_layout_engine(), ConstrainedLayoutEngine):
+            figure.tight_layout()
 
     @staticmethod
     def create_figure(figsize: tuple[float, float]) -> Figure:
@@ -69,6 +101,7 @@ class ExperimentPlotter:
         :rtype: None
         """
         try:
+            ExperimentPlotter.prepare_figure(figure)
             with atomic_output(destination) as temporary:
                 cast(PlotFigure, figure).savefig(
                     temporary, dpi=180, format="png"
@@ -91,6 +124,7 @@ class ExperimentPlotter:
         """
         destination: Path
         try:
+            ExperimentPlotter.prepare_figure(figure)
             for destination in destinations:
                 format_name: Literal["png", "pdf"] = cast(
                     Literal["png", "pdf"], destination.suffix[1:]
@@ -133,12 +167,16 @@ class ExperimentPlotter:
         )
         catalogue_axis.bar_label(
             catalogue_bars,
-            labels=[f"{value:,}" for value in catalogue_counts],
+            labels=[
+                f"{value:,}".replace(",", " ") for value in catalogue_counts
+            ],
             padding=3,
         )
         catalogue_axis.set_ylim(0, max(1, *catalogue_counts) * 1.15)
         catalogue_axis.set_title(
-            PlotLabel.CATALOGUE_COVERAGE.format(ratio=cached / expected)
+            PlotLabel.CATALOGUE_COVERAGE.format(
+                ratio=cached / expected
+            ).replace(".", ",")
             if expected
             else PlotLabel.CATALOGUE_COVERAGE_TOTAL_UNKNOWN
         )
@@ -152,7 +190,9 @@ class ExperimentPlotter:
         )
         processing_axis.bar_label(
             outcome_bars,
-            labels=[f"{value:,}" for value in outcome_counts],
+            labels=[
+                f"{value:,}".replace(",", " ") for value in outcome_counts
+            ],
             padding=3,
         )
         processing_axis.set_ylim(0, max(1, *outcome_counts) * 1.15)
@@ -231,6 +271,8 @@ class ExperimentPlotter:
         rate_axis.set_title(PlotLabel.NOISE_TARGET_DETECTION_RATE)
         for axis in (confidence_axis, rate_axis):
             axis.set_xlabel(PlotLabel.SNR_DB_LOWER_VALUES_MEAN_STRONGER_NOISE)
+            axis.set_xticks(plot_data[ResultColumn.SNR_DB].to_numpy())
+            axis.invert_xaxis()
             axis.set_ylim(0.0, 1.05)
             axis.grid(True, alpha=0.25)
             axis.legend()
@@ -262,9 +304,10 @@ class ExperimentPlotter:
             results[ResultColumn.MIX],
             results[ResultColumn.CONFIDENCE_B_MEAN].astype(float),
             yerr=results[ResultColumn.CONFIDENCE_B_STD].astype(float),
-            marker="o",
+            marker="s",
             capsize=4,
             label=PlotLabel.TARGET_B_MEAN_1_SD,
+            linestyle="--",
         )
         axis.set_xlabel(PlotLabel.A_B_MIX_AMPLITUDE_COEFFICIENTS)
         axis.set_ylabel(PlotLabel.BIRDNET_CONFIDENCE)
@@ -331,6 +374,7 @@ class ExperimentPlotter:
         for axis_value in (count_axis, rate_axis):
             axis: PlotAxis = axis_value
             axis.set_xlabel(PlotLabel.CONFIDENCE_THRESHOLD)
+            axis.set_xticks(thresholds.to_numpy())
             axis.grid(True, alpha=0.25)
             axis.legend()
         figure.tight_layout()

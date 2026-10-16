@@ -53,7 +53,7 @@ class DiagnosticPlotter:
 
         :param value: Stored condition name.
         :type value: str
-        :return: English condition label.
+        :return: French condition label.
         :rtype: str
         """
         return (
@@ -149,7 +149,7 @@ class DiagnosticPlotter:
         ).reindex(index=species, columns=conditions)
         matrix: Float64Array = rates.to_numpy(dtype=float64)
         figure: Figure = ExperimentPlotter.create_figure(
-            (12.0, max(4.8, len(species) * 0.5 + 1.5))
+            (10.0, max(4.8, len(species) * 0.4 + 1.5))
         )
         axis: DiagnosticAxis = DiagnosticPlotter._axis(figure)
         image: AxesImage = axis.imshow(
@@ -200,7 +200,7 @@ class DiagnosticPlotter:
                 ha="center",
                 va="center",
                 color="black" if rate > 0.55 else "white",
-                fontsize=8,
+                fontsize=12,
             )
 
     @staticmethod
@@ -279,23 +279,28 @@ class DiagnosticPlotter:
                 results[ResultColumn.MIX], counts, strict=True
             )
         ]
-        for column, label, color in (
-            (DetailColumn.BOTH, PlotLabel.BOTH, "C2"),
-            (DetailColumn.ONLY_A, PlotLabel.ONLY_A, "C0"),
-            (DetailColumn.ONLY_B, PlotLabel.ONLY_B, "C1"),
-            (DetailColumn.NEITHER, PlotLabel.NEITHER, "C3"),
+        for column, label, color, hatch in (
+            (DetailColumn.BOTH, PlotLabel.BOTH, "C2", "//"),
+            (DetailColumn.ONLY_A, PlotLabel.ONLY_A, "C0", ""),
+            (DetailColumn.ONLY_B, PlotLabel.ONLY_B, "C1", ".."),
+            (DetailColumn.NEITHER, PlotLabel.NEITHER, "C3", "xx"),
         ):
             proportions: Float64Array = (
                 results[column].to_numpy(dtype=float64) / counts
             )
             axis.bar(
-                labels, proportions, bottom=bottom, label=label, color=color
+                labels,
+                proportions,
+                bottom=bottom,
+                label=label,
+                color=color,
+                hatch=hatch,
             )
             bottom += proportions
         axis.set_title(
             PlotLabel.OVERLAP_OUTCOMES.format(
                 threshold=float(results[ResultColumn.THRESHOLD].iloc[0])
-            )
+            ).replace(".", ",")
         )
         axis.set_xlabel(PlotLabel.A_B_MIX_AMPLITUDE_COEFFICIENTS)
         axis.set_ylabel(PlotLabel.PAIR_PROPORTION)

@@ -173,6 +173,27 @@ class TableFormat:
     HIGH_SUFFIX: Final[str] = "_high"
 
 
+FRENCH_COUNTRIES: Final[dict[str, str]] = {
+    "Brazil": "Brésil",
+    "Ecuador": "Équateur",
+    "Colombia": "Colombie",
+    "Tanzania": "Tanzanie",
+    "Peru": "Pérou",
+    "Malaysia": "Malaisie",
+    "Indonesia": "Indonésie",
+    "Mexico": "Mexique",
+    "Bolivia": "Bolivie",
+    "Saudi Arabia": "Arabie saoudite",
+    "Japan": "Japon",
+    "United States": "États-Unis",
+    "French Guiana": "Guyane française",
+    "Australia": "Australie",
+    "Argentina": "Argentine",
+    "New Zealand": "Nouvelle-Zélande",
+    "United Kingdom": "Royaume-Uni",
+}
+
+
 EXPERIMENT_FIGURES: Final[dict[str, Path]] = {
     ExperimentSection.CONTROLLED_NOISE_FIGURE: Path(
         "controlled/noise/comparison.png"

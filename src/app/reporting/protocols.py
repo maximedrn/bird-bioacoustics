@@ -25,6 +25,16 @@ from numpy.typing import ArrayLike
 class PlotAxis(Protocol):
     """Declare the actual axis operations and named style options we use."""
 
+    def tick_params(self, *, labelsize: float) -> None:
+        """Set the font size of major tick labels on both axes.
+
+        :param labelsize: Font size in points.
+        :type labelsize: float
+        :return: None.
+        :rtype: None
+        """
+        raise NotImplementedError
+
     def bar(
         self,
         x: Sequence[str],
@@ -33,6 +43,7 @@ class PlotAxis(Protocol):
         color: Sequence[str] | str,
         bottom: ArrayLike | None = None,
         label: str | None = None,
+        hatch: str | None = None,
     ) -> BarContainer:
         """Draw labelled counts.
 
@@ -46,6 +57,8 @@ class PlotAxis(Protocol):
         :type bottom: ArrayLike | None
         :param label: Optional series name.
         :type label: str | None
+        :param hatch: Pattern distinguishing stacked series in print.
+        :type hatch: str | None
         :return: Bars available for annotation.
         :rtype: BarContainer
         """
@@ -102,6 +115,7 @@ class PlotAxis(Protocol):
         marker: str,
         capsize: float,
         label: str | None = None,
+        linestyle: str = "-",
     ) -> ErrorbarContainer:
         """Draw means and dispersion.
 
@@ -117,6 +131,8 @@ class PlotAxis(Protocol):
         :type capsize: float
         :param label: Legend label.
         :type label: str | None
+        :param linestyle: Stroke style, also distinguishing printed series.
+        :type linestyle: str
         :return: Rendered mean and deviation artists.
         :rtype: ErrorbarContainer
         """
@@ -127,6 +143,20 @@ class PlotAxis(Protocol):
 
         :return: None.
         :rtype: None
+        """
+        raise NotImplementedError
+
+    def set_xticks(
+        self, ticks: ArrayLike, labels: Sequence[str] | None = None
+    ) -> Sequence[object]:
+        """Show the conditions actually tested.
+
+        :param ticks: Tested horizontal coordinates.
+        :type ticks: ArrayLike
+        :param labels: Optional readable condition labels.
+        :type labels: Sequence[str] | None
+        :return: Tick label artists.
+        :rtype: Sequence[object]
         """
         raise NotImplementedError
 

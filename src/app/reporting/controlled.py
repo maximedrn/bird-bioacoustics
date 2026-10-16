@@ -160,7 +160,7 @@ def plot_controls(frame: DataFrame, kind: str, root: Path) -> None:
                 ),
                 linestyle="--",
                 linewidth=1,
-                label="No added noise",
+                label="Sans ajout",
             )
             for condition in (ControlSetting.GAUSSIAN, ControlSetting.NATURAL):
                 series: DataFrame = subset[
@@ -175,13 +175,23 @@ def plot_controls(frame: DataFrame, kind: str, root: Path) -> None:
                         series[ControlColumn.HIGH]
                         - series[ControlColumn.ESTIMATE],
                     ],
-                    marker="o",
+                    marker="o"
+                    if condition == ControlSetting.GAUSSIAN
+                    else "s",
                     capsize=3,
-                    label=condition.capitalize(),
+                    label=(
+                        "Bruit gaussien"
+                        if condition == ControlSetting.GAUSSIAN
+                        else "Fond enregistré"
+                    ),
+                    linestyle="-"
+                    if condition == ControlSetting.GAUSSIAN
+                    else "--",
                 )
-            axis.set_xlabel("Added signal-to-noise ratio (dB)")
+            axis.set_xlabel(ExperimentLabel.ADDED_SNR)
+            axis.set_xticks([20, 10, 5, 0])
             axis.invert_xaxis()
-            axis.set_ylabel("Mean annotated-species recovery per clip")
+            axis.set_ylabel("Récupération moyenne par extrait")
         else:
             subset = subset.sort_values(ControlColumn.RATIO)
             levels: list[float] = [
@@ -193,7 +203,7 @@ def plot_controls(frame: DataFrame, kind: str, root: Path) -> None:
                 subset[ControlColumn.CLEAN_RECOVERY],
                 marker="s",
                 linestyle="--",
-                label="Both targets in isolated controls",
+                label="Deux cibles retrouvées\n(témoins isolés)",
             )
             axis.errorbar(
                 levels,
@@ -205,10 +215,11 @@ def plot_controls(frame: DataFrame, kind: str, root: Path) -> None:
                 ],
                 marker="o",
                 capsize=3,
-                label="Both targets in mixture",
+                label="Deux cibles retrouvées\n(mélange)",
             )
-            axis.set_xlabel("First source amplitude coefficient")
-            axis.set_ylabel("Joint target recovery")
+            axis.set_xticks(levels, ["50/50", "75/25", "90/10"])
+            axis.set_xlabel("Coefficients d'amplitude A/B")
+            axis.set_ylabel("Récupération conjointe")
         axis.set_title(str(dataset))
         axis.set_ylim(0, 1)
         axis.grid(alpha=0.2)

@@ -864,12 +864,14 @@ def plot_soundscapes(metrics: DataFrame, output: Path) -> None:
                     rows[MetricColumn.F1_MICRO_HIGH]
                     - rows[MetricColumn.F1_MICRO],
                 ],
-                marker="o",
+                marker="o" if version == SoundscapeVersion.V2_4 else "s",
                 capsize=3,
                 label=ExperimentLabel.MODEL_LEGEND.format(version=version),
+                linestyle="-" if version == SoundscapeVersion.V2_4 else "--",
             )
         ax.set_title(dataset)
         ax.set_xlabel(ExperimentLabel.CONFIDENCE_THRESHOLD)
+        ax.set_xticks(list(SoundscapeSetting.THRESHOLDS))
         ax.set_ylabel(ExperimentLabel.F1_MICRO)
         ax.set_ylim(0, 1)
         ax.grid(alpha=0.2)
